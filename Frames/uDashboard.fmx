@@ -1,0 +1,5 @@
+object fDashboard: TfDashboard
+  Size.Width = 571.000000000000000000
+  Size.Height = 416.000000000000000000
+  Size.PlatformDefault = False
+end

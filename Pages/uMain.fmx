@@ -1,0 +1,277 @@
+object frmMain: TfrmMain
+  Left = 0
+  Top = 0
+  Caption = 'Form1'
+  ClientHeight = 505
+  ClientWidth = 756
+  Position = DesktopCenter
+  StyleBook = dm.StyleBook1
+  WindowState = wsMaximized
+  FormFactor.Width = 320
+  FormFactor.Height = 480
+  FormFactor.Devices = [Desktop]
+  ShowFullScreenIcon = True
+  OnCreate = FormCreate
+  DesignerMasterStyle = 0
+  object lytContent: TLayout
+    Align = Client
+    Size.Width = 556.000000000000000000
+    Size.Height = 505.000000000000000000
+    Size.PlatformDefault = False
+    TabOrder = 0
+    object TabControl1: TTabControl
+      Align = Client
+      Size.Width = 556.000000000000000000
+      Size.Height = 440.000000000000000000
+      Size.PlatformDefault = False
+      TabIndex = 0
+      TabOrder = 0
+      TabPosition = None
+      Sizes = (
+        556s
+        440s
+        556s
+        440s
+        556s
+        440s)
+      object tiDashboard: TTabItem
+        CustomIcon = <
+          item
+          end>
+        TextSettings.Trimming = None
+        IsSelected = True
+        Size.Width = 12.000000000000000000
+        Size.Height = 12.000000000000000000
+        Size.PlatformDefault = False
+        StyleLookup = ''
+        TabOrder = 0
+        Text = 'Dashboard'
+        object ScrollBox1: TScrollBox
+          Align = Client
+          Size.Width = 556.000000000000000000
+          Size.Height = 440.000000000000000000
+          Size.PlatformDefault = False
+          TabOrder = 0
+          Viewport.Width = 556.000000000000000000
+          Viewport.Height = 440.000000000000000000
+          object FlowLayout1: TFlowLayout
+            Align = Top
+            Padding.Left = 15.000000000000000000
+            Padding.Top = 15.000000000000000000
+            Padding.Right = 15.000000000000000000
+            Size.Width = 556.000000000000000000
+            Size.Height = 193.000000000000000000
+            Size.PlatformDefault = False
+            TabOrder = 0
+            Justify = Left
+            JustifyLastLine = Left
+            FlowDirection = LeftToRight
+            object Rectangle1: TRectangle
+              Align = Top
+              Margins.Left = 5.000000000000000000
+              Margins.Top = 5.000000000000000000
+              Margins.Right = 5.000000000000000000
+              Margins.Bottom = 5.000000000000000000
+              Position.X = 20.000000000000000000
+              Position.Y = 20.000000000000000000
+              Size.Width = 244.000000000000000000
+              Size.Height = 140.000000000000000000
+              Size.PlatformDefault = False
+              XRadius = 10.000000000000000000
+              YRadius = 10.000000000000000000
+            end
+            object Rectangle2: TRectangle
+              Align = Top
+              Margins.Left = 5.000000000000000000
+              Margins.Top = 5.000000000000000000
+              Margins.Right = 5.000000000000000000
+              Margins.Bottom = 5.000000000000000000
+              Position.X = 274.000000000000000000
+              Position.Y = 20.000000000000000000
+              Size.Width = 244.000000000000000000
+              Size.Height = 140.000000000000000000
+              Size.PlatformDefault = False
+              XRadius = 10.000000000000000000
+              YRadius = 10.000000000000000000
+            end
+            object Rectangle3: TRectangle
+              Align = Top
+              Margins.Left = 5.000000000000000000
+              Margins.Top = 5.000000000000000000
+              Margins.Right = 5.000000000000000000
+              Margins.Bottom = 5.000000000000000000
+              Position.X = 20.000000000000000000
+              Position.Y = 170.000000000000000000
+              Size.Width = 244.000000000000000000
+              Size.Height = 140.000000000000000000
+              Size.PlatformDefault = False
+              XRadius = 10.000000000000000000
+              YRadius = 10.000000000000000000
+            end
+            object Rectangle4: TRectangle
+              Align = Top
+              Margins.Left = 5.000000000000000000
+              Margins.Top = 5.000000000000000000
+              Margins.Right = 5.000000000000000000
+              Margins.Bottom = 5.000000000000000000
+              Position.X = 274.000000000000000000
+              Position.Y = 170.000000000000000000
+              Size.Width = 244.000000000000000000
+              Size.Height = 140.000000000000000000
+              Size.PlatformDefault = False
+              XRadius = 10.000000000000000000
+              YRadius = 10.000000000000000000
+            end
+          end
+        end
+      end
+      object tiClients: TTabItem
+        CustomIcon = <
+          item
+          end>
+        TextSettings.Trimming = None
+        IsSelected = False
+        Size.Width = 12.000000000000000000
+        Size.Height = 12.000000000000000000
+        Size.PlatformDefault = False
+        StyleLookup = ''
+        TabOrder = 0
+        Text = 'Clients'
+      end
+      object tiContracts: TTabItem
+        CustomIcon = <
+          item
+          end>
+        TextSettings.Trimming = None
+        IsSelected = False
+        Size.Width = 12.000000000000000000
+        Size.Height = 12.000000000000000000
+        Size.PlatformDefault = False
+        StyleLookup = ''
+        TabOrder = 0
+        Text = 'Contracts'
+      end
+    end
+    object lytHeader: TLayout
+      Align = Top
+      Margins.Top = 10.000000000000000000
+      Position.Y = 10.000000000000000000
+      Size.Width = 556.000000000000000000
+      Size.Height = 55.000000000000000000
+      Size.PlatformDefault = False
+      TabOrder = 1
+      object lbTitle: TLabel
+        Align = Client
+        StyledSettings = [Family, Style, FontColor]
+        Margins.Left = 30.000000000000000000
+        Size.Width = 312.000000000000000000
+        Size.Height = 55.000000000000000000
+        Size.PlatformDefault = False
+        TextSettings.Font.Size = 25.000000000000000000
+        Text = 'Dashboard'
+        TabOrder = 0
+      end
+      object btnTrigger: TCornerButton
+        Align = Right
+        Margins.Top = 8.000000000000000000
+        Margins.Right = 35.000000000000000000
+        Margins.Bottom = 8.000000000000000000
+        Position.X = 342.000000000000000000
+        Position.Y = 8.000000000000000000
+        Sides = [Top, Left, Bottom, Right]
+        Size.Width = 179.000000000000000000
+        Size.Height = 39.000000000000000000
+        Size.PlatformDefault = False
+        TabOrder = 1
+        Text = 'Create New Contract'
+        TextSettings.Trimming = None
+        XRadius = 8.000000000000000000
+        YRadius = 8.000000000000000000
+      end
+    end
+  end
+  object lytSidebar: TLayout
+    Align = Left
+    Size.Width = 200.000000000000000000
+    Size.Height = 505.000000000000000000
+    Size.PlatformDefault = False
+    TabOrder = 1
+    object mvSidebar: TMultiView
+      MasterButton = sbMenu
+      ShadowOptions.Enabled = False
+      Size.Width = 200.000000000000000000
+      Size.Height = 505.000000000000000000
+      Size.PlatformDefault = False
+      TabOrder = 0
+      OnResize = mvSidebarResize
+      object sbSettings: TSpeedButton
+        StaysPressed = True
+        Align = Bottom
+        GroupName = 'Navigations'
+        Position.Y = 455.000000000000000000
+        Size.Width = 200.000000000000000000
+        Size.Height = 50.000000000000000000
+        Size.PlatformDefault = False
+        StyleLookup = 'settingstoolbuttonmultiview'
+        Text = 'Settings'
+        TextSettings.HorzAlign = Leading
+        TextSettings.Trimming = None
+      end
+      object sbMenu: TSpeedButton
+        Align = Top
+        Size.Width = 200.000000000000000000
+        Size.Height = 50.000000000000000000
+        Size.PlatformDefault = False
+        StyleLookup = 'detailstoolbuttonmultiview'
+        Text = 'ECO PRO'
+        TextSettings.HorzAlign = Leading
+        TextSettings.Trimming = None
+      end
+      object sbContracts: TSpeedButton
+        StaysPressed = True
+        Align = Top
+        GroupName = 'Navigations'
+        Images = dm.ImageList1
+        ImageIndex = 1
+        Position.Y = 150.000000000000000000
+        Size.Width = 200.000000000000000000
+        Size.Height = 50.000000000000000000
+        Size.PlatformDefault = False
+        StyleLookup = 'sidebarButton'
+        Text = 'Contracts'
+        TextSettings.HorzAlign = Leading
+        TextSettings.Trimming = None
+      end
+      object sbDashboard: TSpeedButton
+        StaysPressed = True
+        Align = Top
+        GroupName = 'Navigations'
+        Images = dm.ImageList1
+        ImageIndex = 0
+        Position.Y = 50.000000000000000000
+        Size.Width = 200.000000000000000000
+        Size.Height = 50.000000000000000000
+        Size.PlatformDefault = False
+        StyleLookup = 'sidebarButton'
+        Text = 'Dashboard'
+        TextSettings.HorzAlign = Leading
+        TextSettings.Trimming = None
+      end
+      object sbClients: TSpeedButton
+        StaysPressed = True
+        Align = Top
+        GroupName = 'Navigations'
+        Images = dm.ImageList1
+        ImageIndex = 2
+        Position.Y = 100.000000000000000000
+        Size.Width = 200.000000000000000000
+        Size.Height = 50.000000000000000000
+        Size.PlatformDefault = False
+        StyleLookup = 'sidebarButton'
+        Text = 'Clients'
+        TextSettings.HorzAlign = Leading
+        TextSettings.Trimming = None
+      end
+    end
+  end
+end
