@@ -8,7 +8,10 @@ uses
   FMX.Controls.Presentation, FMX.MultiView, System.ImageList, FMX.ImgList,
   FMX.Layouts, uDashboard, FMX.Objects, FMX.TabControl, FMX.Effects,
   FMX.Filter.Effects, FMX.ListView.Types, FMX.ListView.Appearances,
-  FMX.ListView.Adapters.Base, FMX.ListView, System.Skia, FMX.Skia;
+  FMX.ListView.Adapters.Base, FMX.ListView, System.Skia, FMX.Skia, uClients,
+  Data.Bind.EngExt, Fmx.Bind.DBEngExt, Fmx.Bind.Grid, System.Rtti,
+  System.Bindings.Outputs, Fmx.Bind.Editors, Data.Bind.Components,
+  Data.Bind.Grid, Data.Bind.DBScope;
 
 type
   TfrmMain = class(TForm)
@@ -24,11 +27,11 @@ type
     tiDashboard: TTabItem;
     tiClients: TTabItem;
     tiContracts: TTabItem;
-    lytHeader: TLayout;
-    lbTitle: TLabel;
-    btnTrigger: TCornerButton;
     fDashboard1: TfDashboard;
-    cbtnViewAllContracts: TCornerButton;
+    fClients1: TfClients;
+    BindSourceDB1: TBindSourceDB;
+    BindingsList1: TBindingsList;
+    LinkGridToDataSourceBindSourceDB1: TLinkGridToDataSource;
     procedure mvSidebarResize(Sender: TObject);
     procedure FormCreate(Sender: TObject);
     procedure FormResize(Sender: TObject);
@@ -50,6 +53,7 @@ uses uDm;
 procedure TfrmMain.FormCreate(Sender: TObject);
 begin
   mvSidebar.ShowMaster;
+  fDashboard1.Visible := true;
 end;
 
 procedure TfrmMain.FormResize(Sender: TObject);

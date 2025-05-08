@@ -3,7 +3,7 @@ object frmMain: TfrmMain
   Top = 0
   Caption = 'Form1'
   ClientHeight = 505
-  ClientWidth = 780
+  ClientWidth = 782
   Position = DesktopCenter
   StyleBook = dm.StyleBook1
   WindowState = wsMaximized
@@ -16,31 +16,31 @@ object frmMain: TfrmMain
   DesignerMasterStyle = 0
   object lytContent: TLayout
     Align = Client
-    Size.Width = 580.000000000000000000
+    Size.Width = 582.000000000000000000
     Size.Height = 505.000000000000000000
     Size.PlatformDefault = False
     TabOrder = 0
     object TabControl1: TTabControl
       Align = Client
-      Size.Width = 580.000000000000000000
-      Size.Height = 440.000000000000000000
+      Size.Width = 582.000000000000000000
+      Size.Height = 505.000000000000000000
       Size.PlatformDefault = False
-      TabIndex = 0
+      TabIndex = 1
       TabOrder = 0
       TabPosition = None
       Sizes = (
-        580s
-        440s
-        580s
-        440s
-        580s
-        440s)
+        582s
+        505s
+        582s
+        505s
+        582s
+        505s)
       object tiDashboard: TTabItem
         CustomIcon = <
           item
           end>
         TextSettings.Trimming = None
-        IsSelected = True
+        IsSelected = False
         Size.Width = 12.000000000000000000
         Size.Height = 12.000000000000000000
         Size.PlatformDefault = False
@@ -51,56 +51,35 @@ object frmMain: TfrmMain
         ExplicitSize.cy = 12.000000000000000000
         inline fDashboard1: TfDashboard
           Align = Client
-          Size.Width = 580.000000000000000000
-          Size.Height = 440.000000000000000000
+          Size.Width = 582.000000000000000000
+          Size.Height = 505.000000000000000000
           Size.PlatformDefault = False
           inherited ScrollBox1: TScrollBox
-            Size.Width = 580.000000000000000000
-            Size.Height = 440.000000000000000000
-            Viewport.Width = 569.000000000000000000
-            Viewport.Height = 440.000000000000000000
+            Size.Width = 582.000000000000000000
+            Size.Height = 505.000000000000000000
+            Viewport.Width = 571.000000000000000000
+            Viewport.Height = 505.000000000000000000
             inherited lytBottom: TLayout
-              Position.Y = 813.000000000000000000
-              Size.Width = 569.000000000000000000
+              Size.Width = 571.000000000000000000
             end
             inherited rRecentContracts: TRectangle
-              Padding.Left = 20.000000000000000000
-              Padding.Top = 20.000000000000000000
-              Padding.Right = 20.000000000000000000
-              Padding.Bottom = 20.000000000000000000
-              Size.Width = 529.000000000000000000
-              Size.Height = 452.000000000000000000
+              Size.Width = 531.000000000000000000
               inherited Layout2: TLayout
-                Position.Y = 20.000000000000000000
-                Size.Width = 489.000000000000000000
-                TabOrder = 2
+                Size.Width = 491.000000000000000000
                 inherited SkLabel1: TSkLabel
-                  Size.Width = 489.000000000000000000
+                  Size.Width = 491.000000000000000000
                 end
               end
               inherited ListView1: TListView
-                Position.Y = 90.000000000000000000
-                Size.Width = 489.000000000000000000
+                Size.Width = 491.000000000000000000
               end
-              object cbtnViewAllContracts: TCornerButton
-                Align = Top
-                Margins.Top = 10.000000000000000000
-                Position.X = 20.000000000000000000
-                Position.Y = 400.000000000000000000
-                Sides = [Top, Left, Bottom, Right]
-                Size.Width = 489.000000000000000000
-                Size.Height = 35.000000000000000000
-                Size.PlatformDefault = False
-                TabOrder = 3
-                Text = 'View All Contracts'
-                TextSettings.Trimming = None
-                XRadius = 5.000000000000000000
-                YRadius = 5.000000000000000000
+              inherited cbtnViewAllContracts: TCornerButton
+                Size.Width = 491.000000000000000000
               end
             end
             inherited glytCards: TGridLayout
               Padding.Right = 15.000000000000000000
-              Size.Width = 569.000000000000000000
+              Size.Width = 556.000000000000000000
               inherited rCard1: TRectangle
                 inherited lytCardD1: TLayout
                   inherited lbTotalContracts: TLabel
@@ -112,7 +91,7 @@ object frmMain: TfrmMain
                 end
               end
               inherited rCard2: TRectangle
-                inherited Layout1: TLayout
+                inherited lytCardD2: TLayout
                   inherited lbActiveClients: TLabel
                     TextSettings.Font.StyleExt = {00070000000000000004000000}
                   end
@@ -122,7 +101,7 @@ object frmMain: TfrmMain
                 end
               end
               inherited rCard3: TRectangle
-                inherited Layout3: TLayout
+                inherited lytCardD3: TLayout
                   inherited lbFullyPaid: TLabel
                     TextSettings.Font.StyleExt = {00070000000000000004000000}
                   end
@@ -132,7 +111,7 @@ object frmMain: TfrmMain
                 end
               end
               inherited rCard4: TRectangle
-                inherited Layout4: TLayout
+                inherited lytCardD4: TLayout
                   inherited lbNotYetPaid: TLabel
                     TextSettings.Font.StyleExt = {00070000000000000004000000}
                   end
@@ -140,6 +119,15 @@ object frmMain: TfrmMain
                 inherited lbNotYetPaidC: TLabel
                   TextSettings.Font.StyleExt = {00070000000000000004000000}
                 end
+              end
+            end
+            inherited lytHeader: TLayout
+              Size.Width = 571.000000000000000000
+              inherited lbTitle: TLabel
+                Size.Width = 342.000000000000000000
+              end
+              inherited btnTrigger: TCornerButton
+                Position.X = 372.000000000000000000
               end
             end
           end
@@ -150,7 +138,7 @@ object frmMain: TfrmMain
           item
           end>
         TextSettings.Trimming = None
-        IsSelected = False
+        IsSelected = True
         Size.Width = 12.000000000000000000
         Size.Height = 12.000000000000000000
         Size.PlatformDefault = False
@@ -159,6 +147,51 @@ object frmMain: TfrmMain
         Text = 'Clients'
         ExplicitSize.cx = 12.000000000000000000
         ExplicitSize.cy = 12.000000000000000000
+        inline fClients1: TfClients
+          Align = Client
+          Size.Width = 582.000000000000000000
+          Size.Height = 505.000000000000000000
+          Size.PlatformDefault = False
+          inherited lytHeader: TLayout
+            Size.Width = 582.000000000000000000
+            inherited lbTitle: TLabel
+              Size.Width = 382.000000000000000000
+            end
+            inherited btnTrigger: TCornerButton
+              Position.X = 412.000000000000000000
+            end
+          end
+          inherited ScrollBox1: TScrollBox
+            Size.Width = 582.000000000000000000
+            Size.Height = 440.000000000000000000
+            Viewport.Width = 571.000000000000000000
+            Viewport.Height = 440.000000000000000000
+            inherited rRecentContracts: TRectangle
+              Size.Width = 531.000000000000000000
+              inherited Layout2: TLayout
+                Size.Width = 491.000000000000000000
+                inherited SkLabel1: TSkLabel
+                  Size.Width = 491.000000000000000000
+                end
+              end
+              inherited ScrollBox2: TScrollBox
+                Size.Width = 491.000000000000000000
+                Viewport.Width = 491.000000000000000000
+                Viewport.Height = 341.000000000000000000
+                inherited gTableRecord: TGrid
+                  Align = None
+                  Size.Width = 630.000000000000000000
+                  Size.Height = 330.000000000000000000
+                  Viewport.Width = 626.000000000000000000
+                  Viewport.Height = 305.000000000000000000
+                end
+              end
+            end
+            inherited Layout1: TLayout
+              Size.Width = 571.000000000000000000
+            end
+          end
+        end
       end
       object tiContracts: TTabItem
         CustomIcon = <
@@ -174,43 +207,6 @@ object frmMain: TfrmMain
         Text = 'Contracts'
         ExplicitSize.cx = 12.000000000000000000
         ExplicitSize.cy = 12.000000000000000000
-      end
-    end
-    object lytHeader: TLayout
-      Align = Top
-      Margins.Top = 10.000000000000000000
-      Position.Y = 10.000000000000000000
-      Size.Width = 580.000000000000000000
-      Size.Height = 55.000000000000000000
-      Size.PlatformDefault = False
-      TabOrder = 1
-      object lbTitle: TLabel
-        Align = Client
-        StyledSettings = [Family, Style, FontColor]
-        Margins.Left = 30.000000000000000000
-        Size.Width = 336.000000000000000000
-        Size.Height = 55.000000000000000000
-        Size.PlatformDefault = False
-        TextSettings.Font.Size = 25.000000000000000000
-        Text = 'Dashboard'
-        TabOrder = 0
-      end
-      object btnTrigger: TCornerButton
-        Align = Right
-        Margins.Top = 8.000000000000000000
-        Margins.Right = 35.000000000000000000
-        Margins.Bottom = 8.000000000000000000
-        Position.X = 366.000000000000000000
-        Position.Y = 8.000000000000000000
-        Sides = [Top, Left, Bottom, Right]
-        Size.Width = 179.000000000000000000
-        Size.Height = 39.000000000000000000
-        Size.PlatformDefault = False
-        TabOrder = 1
-        Text = 'Create New Contract'
-        TextSettings.Trimming = None
-        XRadius = 8.000000000000000000
-        YRadius = 8.000000000000000000
       end
     end
   end
@@ -296,6 +292,44 @@ object frmMain: TfrmMain
         TextSettings.HorzAlign = Leading
         TextSettings.Trimming = None
       end
+    end
+  end
+  object BindSourceDB1: TBindSourceDB
+    DataSet = dm.qClients
+    ScopeMappings = <>
+    Left = 376
+    Top = 240
+  end
+  object BindingsList1: TBindingsList
+    Methods = <>
+    OutputConverters = <>
+    Left = 20
+    Top = 5
+    object LinkGridToDataSourceBindSourceDB1: TLinkGridToDataSource
+      Category = 'Quick Bindings'
+      DataSource = BindSourceDB1
+      GridControl = fClients1.gTableRecord
+      Columns = <
+        item
+          MemberName = 'name'
+          Header = 'Full Name'
+          Width = 150
+        end
+        item
+          MemberName = 'address'
+          Header = 'Address'
+          Width = 150
+        end
+        item
+          MemberName = 'contract_price'
+          Header = 'Contract Price'
+          Width = 150
+        end
+        item
+          MemberName = 'contract_date'
+          Header = 'Contract Date'
+          Width = 180
+        end>
     end
   end
 end

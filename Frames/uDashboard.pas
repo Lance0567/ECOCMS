@@ -7,7 +7,7 @@ uses
   FMX.Types, FMX.Graphics, FMX.Controls, FMX.Forms, FMX.Dialogs, FMX.StdCtrls,
   System.Skia, FMX.ListView.Types, FMX.ListView.Appearances,
   FMX.ListView.Adapters.Base, FMX.ListView, FMX.Skia, FMX.Layouts, FMX.Objects,
-  FMX.Controls.Presentation;
+  FMX.Controls.Presentation, FMX.ImgList;
 
 type
   TfDashboard = class(TFrame)
@@ -21,23 +21,27 @@ type
     rCard1: TRectangle;
     lytCardD1: TLayout;
     lbTotalContracts: TLabel;
-    Image1: TImage;
     lbTotalContractsC: TLabel;
     rCard2: TRectangle;
-    Layout1: TLayout;
+    lytCardD2: TLayout;
     lbActiveClients: TLabel;
-    Image2: TImage;
     lbActiveClientsC: TLabel;
     rCard3: TRectangle;
-    Layout3: TLayout;
+    lytCardD3: TLayout;
     lbFullyPaid: TLabel;
-    Image3: TImage;
     lbFullyPaidC: TLabel;
     rCard4: TRectangle;
-    Layout4: TLayout;
+    lytCardD4: TLayout;
     lbNotYetPaid: TLabel;
-    Image4: TImage;
     lbNotYetPaidC: TLabel;
+    cbtnViewAllContracts: TCornerButton;
+    Glyph1: TGlyph;
+    Glyph2: TGlyph;
+    Glyph3: TGlyph;
+    Glyph4: TGlyph;
+    lytHeader: TLayout;
+    lbTitle: TLabel;
+    btnTrigger: TCornerButton;
     procedure FrameResize(Sender: TObject);
   private
     { Private declarations }
@@ -49,7 +53,7 @@ implementation
 
 {$R *.fmx}
 
-uses uMain;
+uses uMain, uDm;
 
 procedure TfDashboard.FrameResize(Sender: TObject);
 begin
@@ -57,12 +61,12 @@ begin
   if frmMain.ClientWidth >= 1300 then
   begin
     glytCards.Height := 170;
-    glytCards.ItemWidth := 272;
+    glytCards.ItemWidth := 280;
   end
   else
   begin
     glytCards.Height := 321;
-    glytCards.ItemWidth := 262;
+    glytCards.ItemWidth := 270;
   end;
 end;
 

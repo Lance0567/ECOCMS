@@ -1,0 +1,122 @@
+object fClients: TfClients
+  Size.Width = 714.000000000000000000
+  Size.Height = 479.000000000000000000
+  Size.PlatformDefault = False
+  OnResize = FrameResize
+  object lytHeader: TLayout
+    Align = Top
+    Margins.Top = 10.000000000000000000
+    Position.Y = 10.000000000000000000
+    Size.Width = 714.000000000000000000
+    Size.Height = 55.000000000000000000
+    Size.PlatformDefault = False
+    TabOrder = 1
+    object lbTitle: TLabel
+      Align = Client
+      StyledSettings = [Family, Style, FontColor]
+      Margins.Left = 30.000000000000000000
+      Size.Width = 514.000000000000000000
+      Size.Height = 55.000000000000000000
+      Size.PlatformDefault = False
+      TextSettings.Font.Size = 25.000000000000000000
+      Text = 'Clients'
+      TabOrder = 0
+    end
+    object btnTrigger: TCornerButton
+      Align = Right
+      Margins.Top = 8.000000000000000000
+      Margins.Right = 35.000000000000000000
+      Margins.Bottom = 8.000000000000000000
+      Position.X = 544.000000000000000000
+      Position.Y = 8.000000000000000000
+      Sides = [Top, Left, Bottom, Right]
+      Size.Width = 135.000000000000000000
+      Size.Height = 39.000000000000000000
+      Size.PlatformDefault = False
+      TabOrder = 1
+      Text = 'Add Client'
+      TextSettings.Trimming = None
+      XRadius = 8.000000000000000000
+      YRadius = 8.000000000000000000
+    end
+  end
+  object ScrollBox1: TScrollBox
+    Align = Client
+    Size.Width = 714.000000000000000000
+    Size.Height = 414.000000000000000000
+    Size.PlatformDefault = False
+    TabOrder = 4
+    Viewport.Width = 698.000000000000000000
+    Viewport.Height = 414.000000000000000000
+    object rRecentContracts: TRectangle
+      Align = Top
+      Padding.Left = 20.000000000000000000
+      Padding.Top = 20.000000000000000000
+      Padding.Right = 20.000000000000000000
+      Padding.Bottom = 20.000000000000000000
+      Margins.Left = 20.000000000000000000
+      Margins.Top = 20.000000000000000000
+      Margins.Right = 20.000000000000000000
+      Position.X = 20.000000000000000000
+      Position.Y = 20.000000000000000000
+      Size.Width = 658.000000000000000000
+      Size.Height = 452.000000000000000000
+      Size.PlatformDefault = False
+      Stroke.Kind = None
+      XRadius = 10.000000000000000000
+      YRadius = 10.000000000000000000
+      object Layout2: TLayout
+        Align = Top
+        Position.X = 20.000000000000000000
+        Position.Y = 20.000000000000000000
+        Size.Width = 618.000000000000000000
+        Size.Height = 60.000000000000000000
+        Size.PlatformDefault = False
+        TabOrder = 1
+        object SkLabel1: TSkLabel
+          Align = Top
+          Size.Width = 618.000000000000000000
+          Size.Height = 32.000000000000000000
+          Size.PlatformDefault = False
+          Words = <
+            item
+              Font.Size = 24.000000000000000000
+              Font.Weight = Semibold
+              StyledSettings = [Family, FontColor]
+              Text = 'Client List'
+            end>
+        end
+      end
+      object ScrollBox2: TScrollBox
+        Align = Client
+        Size.Width = 618.000000000000000000
+        Size.Height = 352.000000000000000000
+        Size.PlatformDefault = False
+        TabOrder = 2
+        Viewport.Width = 618.000000000000000000
+        Viewport.Height = 352.000000000000000000
+        object gTableRecord: TGrid
+          Align = Contents
+          CanFocus = True
+          ClipChildren = True
+          Size.Width = 618.000000000000000000
+          Size.Height = 352.000000000000000000
+          Size.PlatformDefault = False
+          TabOrder = 1
+          RowCount = 0
+          Viewport.Width = 618.000000000000000000
+          Viewport.Height = 352.000000000000000000
+        end
+      end
+    end
+    object Layout1: TLayout
+      Align = Top
+      Margins.Top = 50.000000000000000000
+      Position.Y = 522.000000000000000000
+      Size.Width = 698.000000000000000000
+      Size.Height = 50.000000000000000000
+      Size.PlatformDefault = False
+      TabOrder = 1
+    end
+  end
+end
