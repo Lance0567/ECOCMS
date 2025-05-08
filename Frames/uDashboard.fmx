@@ -2,4 +2,344 @@ object fDashboard: TfDashboard
   Size.Width = 571.000000000000000000
   Size.Height = 416.000000000000000000
   Size.PlatformDefault = False
+  OnResize = FrameResize
+  object ScrollBox1: TScrollBox
+    Align = Client
+    Size.Width = 571.000000000000000000
+    Size.Height = 416.000000000000000000
+    Size.PlatformDefault = False
+    TabOrder = 0
+    Viewport.Width = 555.000000000000000000
+    Viewport.Height = 416.000000000000000000
+    object lytBottom: TLayout
+      Align = Top
+      Margins.Top = 20.000000000000000000
+      Position.Y = 761.000000000000000000
+      Size.Width = 555.000000000000000000
+      Size.Height = 50.000000000000000000
+      Size.PlatformDefault = False
+      TabOrder = 0
+    end
+    object rRecentContracts: TRectangle
+      Align = Top
+      Margins.Left = 20.000000000000000000
+      Margins.Top = 20.000000000000000000
+      Margins.Right = 20.000000000000000000
+      Position.X = 20.000000000000000000
+      Position.Y = 341.000000000000000000
+      Size.Width = 515.000000000000000000
+      Size.Height = 400.000000000000000000
+      Size.PlatformDefault = False
+      Stroke.Kind = None
+      XRadius = 10.000000000000000000
+      YRadius = 10.000000000000000000
+      object Layout2: TLayout
+        Align = Top
+        Margins.Left = 20.000000000000000000
+        Margins.Top = 10.000000000000000000
+        Margins.Right = 20.000000000000000000
+        Position.X = 20.000000000000000000
+        Position.Y = 10.000000000000000000
+        Size.Width = 475.000000000000000000
+        Size.Height = 70.000000000000000000
+        Size.PlatformDefault = False
+        TabOrder = 3
+        object SkLabel1: TSkLabel
+          Align = Top
+          Size.Width = 475.000000000000000000
+          Size.Height = 53.000000000000000000
+          Size.PlatformDefault = False
+          Words = <
+            item
+              Font.Families = 'Segue UI'
+              Font.Size = 24.000000000000000000
+              Font.Weight = Bold
+              Name = 'Item 0'
+              StyledSettings = [FontColor]
+              Text = 'Recent Contracts'
+            end
+            item
+              Font.Families = 'Inter'
+              Font.Size = 16.000000000000000000
+              FontColor = claDimgray
+              Name = 'Item 1'
+              StyledSettings = [Style]
+              Text = #13#10'Your most recently created contracts'
+            end>
+        end
+      end
+      object ListView1: TListView
+        ItemAppearanceClassName = 'TListItemAppearance'
+        ItemEditAppearanceClassName = 'TListItemShowCheckAppearance'
+        HeaderAppearanceClassName = 'TListHeaderObjects'
+        FooterAppearanceClassName = 'TListHeaderObjects'
+        Align = Top
+        Margins.Left = 20.000000000000000000
+        Margins.Right = 20.000000000000000000
+        Margins.Bottom = 20.000000000000000000
+        Position.X = 20.000000000000000000
+        Position.Y = 80.000000000000000000
+        Size.Width = 475.000000000000000000
+        Size.Height = 300.000000000000000000
+        Size.PlatformDefault = False
+        TabOrder = 1
+      end
+    end
+    object glytCards: TGridLayout
+      Align = Top
+      ItemHeight = 150.000000000000000000
+      ItemWidth = 262.000000000000000000
+      Padding.Left = 15.000000000000000000
+      Padding.Top = 15.000000000000000000
+      Orientation = Horizontal
+      Size.Width = 555.000000000000000000
+      Size.Height = 321.000000000000000000
+      Size.PlatformDefault = False
+      TabOrder = 2
+      object rCard1: TRectangle
+        Align = Top
+        Fill.Color = claWhite
+        Padding.Left = 20.000000000000000000
+        Padding.Top = 20.000000000000000000
+        Padding.Right = 20.000000000000000000
+        Padding.Bottom = 30.000000000000000000
+        Margins.Left = 5.000000000000000000
+        Margins.Top = 5.000000000000000000
+        Margins.Right = 5.000000000000000000
+        Margins.Bottom = 5.000000000000000000
+        Position.X = 20.000000000000000000
+        Position.Y = 20.000000000000000000
+        Size.Width = 252.000000000000000000
+        Size.Height = 140.000000000000000000
+        Size.PlatformDefault = False
+        XRadius = 10.000000000000000000
+        YRadius = 10.000000000000000000
+        object lytCardD1: TLayout
+          Align = Top
+          Position.X = 20.000000000000000000
+          Position.Y = 20.000000000000000000
+          Size.Width = 212.000000000000000000
+          Size.Height = 35.000000000000000000
+          Size.PlatformDefault = False
+          TabOrder = 0
+          object lbTotalContracts: TLabel
+            Align = Client
+            StyledSettings = []
+            Size.Width = 162.000000000000000000
+            Size.Height = 35.000000000000000000
+            Size.PlatformDefault = False
+            TextSettings.Font.Family = 'Inter Variable Text'
+            TextSettings.Font.Size = 15.000000000000000000
+            TextSettings.Font.StyleExt = {00070000000000000004000000}
+            Text = 'Total Contracts'
+            TabOrder = 0
+          end
+          object Image1: TImage
+            MultiResBitmap = <
+              item
+              end>
+            Align = Right
+            Position.X = 162.000000000000000000
+            Size.Width = 50.000000000000000000
+            Size.Height = 35.000000000000000000
+            Size.PlatformDefault = False
+          end
+        end
+        object lbTotalContractsC: TLabel
+          Align = Client
+          StyledSettings = [Family]
+          Size.Width = 212.000000000000000000
+          Size.Height = 55.000000000000000000
+          Size.PlatformDefault = False
+          TextSettings.Font.Size = 24.000000000000000000
+          TextSettings.Font.StyleExt = {00070000000000000004000000}
+          Text = '0'
+          TabOrder = 1
+        end
+      end
+      object rCard2: TRectangle
+        Align = Top
+        Fill.Color = claWhite
+        Padding.Left = 20.000000000000000000
+        Padding.Top = 20.000000000000000000
+        Padding.Right = 20.000000000000000000
+        Padding.Bottom = 30.000000000000000000
+        Margins.Left = 5.000000000000000000
+        Margins.Top = 5.000000000000000000
+        Margins.Right = 5.000000000000000000
+        Margins.Bottom = 5.000000000000000000
+        Position.X = 282.000000000000000000
+        Position.Y = 20.000000000000000000
+        Size.Width = 252.000000000000000000
+        Size.Height = 140.000000000000000000
+        Size.PlatformDefault = False
+        XRadius = 10.000000000000000000
+        YRadius = 10.000000000000000000
+        object Layout1: TLayout
+          Align = Top
+          Position.X = 20.000000000000000000
+          Position.Y = 20.000000000000000000
+          Size.Width = 212.000000000000000000
+          Size.Height = 35.000000000000000000
+          Size.PlatformDefault = False
+          TabOrder = 0
+          object lbActiveClients: TLabel
+            Align = Client
+            StyledSettings = []
+            Size.Width = 162.000000000000000000
+            Size.Height = 35.000000000000000000
+            Size.PlatformDefault = False
+            TextSettings.Font.Family = 'Inter Variable Text'
+            TextSettings.Font.Size = 15.000000000000000000
+            TextSettings.Font.StyleExt = {00070000000000000004000000}
+            Text = 'Active Clients'
+            TabOrder = 0
+          end
+          object Image2: TImage
+            MultiResBitmap = <
+              item
+              end>
+            Align = Right
+            Position.X = 162.000000000000000000
+            Size.Width = 50.000000000000000000
+            Size.Height = 35.000000000000000000
+            Size.PlatformDefault = False
+          end
+        end
+        object lbActiveClientsC: TLabel
+          Align = Client
+          StyledSettings = [Family]
+          Size.Width = 212.000000000000000000
+          Size.Height = 55.000000000000000000
+          Size.PlatformDefault = False
+          TextSettings.Font.Size = 24.000000000000000000
+          TextSettings.Font.StyleExt = {00070000000000000004000000}
+          Text = '0'
+          TabOrder = 1
+        end
+      end
+      object rCard3: TRectangle
+        Align = Top
+        Fill.Color = claWhite
+        Padding.Left = 20.000000000000000000
+        Padding.Top = 20.000000000000000000
+        Padding.Right = 20.000000000000000000
+        Padding.Bottom = 30.000000000000000000
+        Margins.Left = 5.000000000000000000
+        Margins.Top = 5.000000000000000000
+        Margins.Right = 5.000000000000000000
+        Margins.Bottom = 5.000000000000000000
+        Position.X = 20.000000000000000000
+        Position.Y = 170.000000000000000000
+        Size.Width = 252.000000000000000000
+        Size.Height = 140.000000000000000000
+        Size.PlatformDefault = False
+        XRadius = 10.000000000000000000
+        YRadius = 10.000000000000000000
+        object Layout3: TLayout
+          Align = Top
+          Position.X = 20.000000000000000000
+          Position.Y = 20.000000000000000000
+          Size.Width = 212.000000000000000000
+          Size.Height = 35.000000000000000000
+          Size.PlatformDefault = False
+          TabOrder = 0
+          object lbFullyPaid: TLabel
+            Align = Client
+            StyledSettings = []
+            Size.Width = 162.000000000000000000
+            Size.Height = 35.000000000000000000
+            Size.PlatformDefault = False
+            TextSettings.Font.Family = 'Inter Variable Text'
+            TextSettings.Font.Size = 15.000000000000000000
+            TextSettings.Font.StyleExt = {00070000000000000004000000}
+            Text = 'Fully Paid'
+            TabOrder = 0
+          end
+          object Image3: TImage
+            MultiResBitmap = <
+              item
+              end>
+            Align = Right
+            Position.X = 162.000000000000000000
+            Size.Width = 50.000000000000000000
+            Size.Height = 35.000000000000000000
+            Size.PlatformDefault = False
+          end
+        end
+        object lbFullyPaidC: TLabel
+          Align = Client
+          StyledSettings = [Family]
+          Size.Width = 212.000000000000000000
+          Size.Height = 55.000000000000000000
+          Size.PlatformDefault = False
+          TextSettings.Font.Size = 24.000000000000000000
+          TextSettings.Font.StyleExt = {00070000000000000004000000}
+          Text = '0'
+          TabOrder = 1
+        end
+      end
+      object rCard4: TRectangle
+        Align = Top
+        Fill.Color = claWhite
+        Padding.Left = 20.000000000000000000
+        Padding.Top = 20.000000000000000000
+        Padding.Right = 20.000000000000000000
+        Padding.Bottom = 30.000000000000000000
+        Margins.Left = 5.000000000000000000
+        Margins.Top = 5.000000000000000000
+        Margins.Right = 5.000000000000000000
+        Margins.Bottom = 5.000000000000000000
+        Position.X = 282.000000000000000000
+        Position.Y = 170.000000000000000000
+        Size.Width = 252.000000000000000000
+        Size.Height = 140.000000000000000000
+        Size.PlatformDefault = False
+        XRadius = 10.000000000000000000
+        YRadius = 10.000000000000000000
+        object Layout4: TLayout
+          Align = Top
+          Position.X = 20.000000000000000000
+          Position.Y = 20.000000000000000000
+          Size.Width = 212.000000000000000000
+          Size.Height = 35.000000000000000000
+          Size.PlatformDefault = False
+          TabOrder = 0
+          object lbNotYetPaid: TLabel
+            Align = Client
+            StyledSettings = []
+            Size.Width = 162.000000000000000000
+            Size.Height = 35.000000000000000000
+            Size.PlatformDefault = False
+            TextSettings.Font.Family = 'Inter Variable Text'
+            TextSettings.Font.Size = 15.000000000000000000
+            TextSettings.Font.StyleExt = {00070000000000000004000000}
+            Text = 'Not Yet Paid'
+            TabOrder = 0
+          end
+          object Image4: TImage
+            MultiResBitmap = <
+              item
+              end>
+            Align = Right
+            Position.X = 162.000000000000000000
+            Size.Width = 50.000000000000000000
+            Size.Height = 35.000000000000000000
+            Size.PlatformDefault = False
+          end
+        end
+        object lbNotYetPaidC: TLabel
+          Align = Client
+          StyledSettings = [Family]
+          Size.Width = 212.000000000000000000
+          Size.Height = 55.000000000000000000
+          Size.PlatformDefault = False
+          TextSettings.Font.Size = 24.000000000000000000
+          TextSettings.Font.StyleExt = {00070000000000000004000000}
+          Text = '0'
+          TabOrder = 1
+        end
+      end
+    end
+  end
 end

@@ -7,7 +7,8 @@ uses
   FMX.Types, FMX.Controls, FMX.Forms, FMX.Graphics, FMX.Dialogs, FMX.StdCtrls,
   FMX.Controls.Presentation, FMX.MultiView, System.ImageList, FMX.ImgList,
   FMX.Layouts, uDashboard, FMX.Objects, FMX.TabControl, FMX.Effects,
-  FMX.Filter.Effects;
+  FMX.Filter.Effects, FMX.ListView.Types, FMX.ListView.Appearances,
+  FMX.ListView.Adapters.Base, FMX.ListView, System.Skia, FMX.Skia;
 
 type
   TfrmMain = class(TForm)
@@ -26,14 +27,11 @@ type
     lytHeader: TLayout;
     lbTitle: TLabel;
     btnTrigger: TCornerButton;
-    ScrollBox1: TScrollBox;
-    FlowLayout1: TFlowLayout;
-    Rectangle1: TRectangle;
-    Rectangle2: TRectangle;
-    Rectangle3: TRectangle;
-    Rectangle4: TRectangle;
+    fDashboard1: TfDashboard;
+    cbtnViewAllContracts: TCornerButton;
     procedure mvSidebarResize(Sender: TObject);
     procedure FormCreate(Sender: TObject);
+    procedure FormResize(Sender: TObject);
   private
     { Private declarations }
   public
@@ -52,6 +50,11 @@ uses uDm;
 procedure TfrmMain.FormCreate(Sender: TObject);
 begin
   mvSidebar.ShowMaster;
+end;
+
+procedure TfrmMain.FormResize(Sender: TObject);
+begin
+  Self.Caption := 'Main Form' + ' Height: ' + Self.Height.ToString + ' Width: ' + Self.Width.ToString;
 end;
 
 procedure TfrmMain.mvSidebarResize(Sender: TObject);

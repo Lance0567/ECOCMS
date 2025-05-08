@@ -3,7 +3,7 @@ object frmMain: TfrmMain
   Top = 0
   Caption = 'Form1'
   ClientHeight = 505
-  ClientWidth = 756
+  ClientWidth = 780
   Position = DesktopCenter
   StyleBook = dm.StyleBook1
   WindowState = wsMaximized
@@ -12,27 +12,28 @@ object frmMain: TfrmMain
   FormFactor.Devices = [Desktop]
   ShowFullScreenIcon = True
   OnCreate = FormCreate
+  OnResize = FormResize
   DesignerMasterStyle = 0
   object lytContent: TLayout
     Align = Client
-    Size.Width = 556.000000000000000000
+    Size.Width = 580.000000000000000000
     Size.Height = 505.000000000000000000
     Size.PlatformDefault = False
     TabOrder = 0
     object TabControl1: TTabControl
       Align = Client
-      Size.Width = 556.000000000000000000
+      Size.Width = 580.000000000000000000
       Size.Height = 440.000000000000000000
       Size.PlatformDefault = False
       TabIndex = 0
       TabOrder = 0
       TabPosition = None
       Sizes = (
-        556s
+        580s
         440s
-        556s
+        580s
         440s
-        556s
+        580s
         440s)
       object tiDashboard: TTabItem
         CustomIcon = <
@@ -46,81 +47,100 @@ object frmMain: TfrmMain
         StyleLookup = ''
         TabOrder = 0
         Text = 'Dashboard'
-        object ScrollBox1: TScrollBox
+        ExplicitSize.cx = 12.000000000000000000
+        ExplicitSize.cy = 12.000000000000000000
+        inline fDashboard1: TfDashboard
           Align = Client
-          Size.Width = 556.000000000000000000
+          Size.Width = 580.000000000000000000
           Size.Height = 440.000000000000000000
           Size.PlatformDefault = False
-          TabOrder = 0
-          Viewport.Width = 556.000000000000000000
-          Viewport.Height = 440.000000000000000000
-          object FlowLayout1: TFlowLayout
-            Align = Top
-            Padding.Left = 15.000000000000000000
-            Padding.Top = 15.000000000000000000
-            Padding.Right = 15.000000000000000000
-            Size.Width = 556.000000000000000000
-            Size.Height = 193.000000000000000000
-            Size.PlatformDefault = False
-            TabOrder = 0
-            Justify = Left
-            JustifyLastLine = Left
-            FlowDirection = LeftToRight
-            object Rectangle1: TRectangle
-              Align = Top
-              Margins.Left = 5.000000000000000000
-              Margins.Top = 5.000000000000000000
-              Margins.Right = 5.000000000000000000
-              Margins.Bottom = 5.000000000000000000
-              Position.X = 20.000000000000000000
-              Position.Y = 20.000000000000000000
-              Size.Width = 244.000000000000000000
-              Size.Height = 140.000000000000000000
-              Size.PlatformDefault = False
-              XRadius = 10.000000000000000000
-              YRadius = 10.000000000000000000
+          inherited ScrollBox1: TScrollBox
+            Size.Width = 580.000000000000000000
+            Size.Height = 440.000000000000000000
+            Viewport.Width = 569.000000000000000000
+            Viewport.Height = 440.000000000000000000
+            inherited lytBottom: TLayout
+              Position.Y = 813.000000000000000000
+              Size.Width = 569.000000000000000000
             end
-            object Rectangle2: TRectangle
-              Align = Top
-              Margins.Left = 5.000000000000000000
-              Margins.Top = 5.000000000000000000
-              Margins.Right = 5.000000000000000000
-              Margins.Bottom = 5.000000000000000000
-              Position.X = 274.000000000000000000
-              Position.Y = 20.000000000000000000
-              Size.Width = 244.000000000000000000
-              Size.Height = 140.000000000000000000
-              Size.PlatformDefault = False
-              XRadius = 10.000000000000000000
-              YRadius = 10.000000000000000000
+            inherited rRecentContracts: TRectangle
+              Padding.Left = 20.000000000000000000
+              Padding.Top = 20.000000000000000000
+              Padding.Right = 20.000000000000000000
+              Padding.Bottom = 20.000000000000000000
+              Size.Width = 529.000000000000000000
+              Size.Height = 452.000000000000000000
+              inherited Layout2: TLayout
+                Position.Y = 20.000000000000000000
+                Size.Width = 489.000000000000000000
+                TabOrder = 2
+                inherited SkLabel1: TSkLabel
+                  Size.Width = 489.000000000000000000
+                end
+              end
+              inherited ListView1: TListView
+                Position.Y = 90.000000000000000000
+                Size.Width = 489.000000000000000000
+              end
+              object cbtnViewAllContracts: TCornerButton
+                Align = Top
+                Margins.Top = 10.000000000000000000
+                Position.X = 20.000000000000000000
+                Position.Y = 400.000000000000000000
+                Sides = [Top, Left, Bottom, Right]
+                Size.Width = 489.000000000000000000
+                Size.Height = 35.000000000000000000
+                Size.PlatformDefault = False
+                TabOrder = 3
+                Text = 'View All Contracts'
+                TextSettings.Trimming = None
+                XRadius = 5.000000000000000000
+                YRadius = 5.000000000000000000
+              end
             end
-            object Rectangle3: TRectangle
-              Align = Top
-              Margins.Left = 5.000000000000000000
-              Margins.Top = 5.000000000000000000
-              Margins.Right = 5.000000000000000000
-              Margins.Bottom = 5.000000000000000000
-              Position.X = 20.000000000000000000
-              Position.Y = 170.000000000000000000
-              Size.Width = 244.000000000000000000
-              Size.Height = 140.000000000000000000
-              Size.PlatformDefault = False
-              XRadius = 10.000000000000000000
-              YRadius = 10.000000000000000000
-            end
-            object Rectangle4: TRectangle
-              Align = Top
-              Margins.Left = 5.000000000000000000
-              Margins.Top = 5.000000000000000000
-              Margins.Right = 5.000000000000000000
-              Margins.Bottom = 5.000000000000000000
-              Position.X = 274.000000000000000000
-              Position.Y = 170.000000000000000000
-              Size.Width = 244.000000000000000000
-              Size.Height = 140.000000000000000000
-              Size.PlatformDefault = False
-              XRadius = 10.000000000000000000
-              YRadius = 10.000000000000000000
+            inherited glytCards: TGridLayout
+              Padding.Right = 15.000000000000000000
+              Size.Width = 569.000000000000000000
+              inherited rCard1: TRectangle
+                inherited lytCardD1: TLayout
+                  inherited lbTotalContracts: TLabel
+                    TextSettings.Font.StyleExt = {00070000000000000004000000}
+                  end
+                end
+                inherited lbTotalContractsC: TLabel
+                  TextSettings.Font.StyleExt = {00070000000000000004000000}
+                end
+              end
+              inherited rCard2: TRectangle
+                inherited Layout1: TLayout
+                  inherited lbActiveClients: TLabel
+                    TextSettings.Font.StyleExt = {00070000000000000004000000}
+                  end
+                end
+                inherited lbActiveClientsC: TLabel
+                  TextSettings.Font.StyleExt = {00070000000000000004000000}
+                end
+              end
+              inherited rCard3: TRectangle
+                inherited Layout3: TLayout
+                  inherited lbFullyPaid: TLabel
+                    TextSettings.Font.StyleExt = {00070000000000000004000000}
+                  end
+                end
+                inherited lbFullyPaidC: TLabel
+                  TextSettings.Font.StyleExt = {00070000000000000004000000}
+                end
+              end
+              inherited rCard4: TRectangle
+                inherited Layout4: TLayout
+                  inherited lbNotYetPaid: TLabel
+                    TextSettings.Font.StyleExt = {00070000000000000004000000}
+                  end
+                end
+                inherited lbNotYetPaidC: TLabel
+                  TextSettings.Font.StyleExt = {00070000000000000004000000}
+                end
+              end
             end
           end
         end
@@ -137,6 +157,8 @@ object frmMain: TfrmMain
         StyleLookup = ''
         TabOrder = 0
         Text = 'Clients'
+        ExplicitSize.cx = 12.000000000000000000
+        ExplicitSize.cy = 12.000000000000000000
       end
       object tiContracts: TTabItem
         CustomIcon = <
@@ -150,13 +172,15 @@ object frmMain: TfrmMain
         StyleLookup = ''
         TabOrder = 0
         Text = 'Contracts'
+        ExplicitSize.cx = 12.000000000000000000
+        ExplicitSize.cy = 12.000000000000000000
       end
     end
     object lytHeader: TLayout
       Align = Top
       Margins.Top = 10.000000000000000000
       Position.Y = 10.000000000000000000
-      Size.Width = 556.000000000000000000
+      Size.Width = 580.000000000000000000
       Size.Height = 55.000000000000000000
       Size.PlatformDefault = False
       TabOrder = 1
@@ -164,7 +188,7 @@ object frmMain: TfrmMain
         Align = Client
         StyledSettings = [Family, Style, FontColor]
         Margins.Left = 30.000000000000000000
-        Size.Width = 312.000000000000000000
+        Size.Width = 336.000000000000000000
         Size.Height = 55.000000000000000000
         Size.PlatformDefault = False
         TextSettings.Font.Size = 25.000000000000000000
@@ -176,7 +200,7 @@ object frmMain: TfrmMain
         Margins.Top = 8.000000000000000000
         Margins.Right = 35.000000000000000000
         Margins.Bottom = 8.000000000000000000
-        Position.X = 342.000000000000000000
+        Position.X = 366.000000000000000000
         Position.Y = 8.000000000000000000
         Sides = [Top, Left, Bottom, Right]
         Size.Width = 179.000000000000000000
