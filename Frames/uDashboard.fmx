@@ -111,8 +111,9 @@ object fDashboard: TfDashboard
       Size.Height = 321.000000000000000000
       Size.PlatformDefault = False
       TabOrder = 3
+      OnResize = glytCardsResize
       object rCard1: TRectangle
-        Align = Top
+        Align = Center
         Fill.Color = claWhite
         Padding.Left = 20.000000000000000000
         Padding.Top = 20.000000000000000000
@@ -122,8 +123,6 @@ object fDashboard: TfDashboard
         Margins.Top = 5.000000000000000000
         Margins.Right = 5.000000000000000000
         Margins.Bottom = 5.000000000000000000
-        Position.X = 5.000000000000000000
-        Position.Y = 20.000000000000000000
         Size.Width = 260.000000000000000000
         Size.Height = 140.000000000000000000
         Size.PlatformDefault = False
@@ -172,7 +171,7 @@ object fDashboard: TfDashboard
         end
       end
       object rCard2: TRectangle
-        Align = Top
+        Align = Center
         Fill.Color = claWhite
         Padding.Left = 20.000000000000000000
         Padding.Top = 20.000000000000000000
@@ -182,8 +181,6 @@ object fDashboard: TfDashboard
         Margins.Top = 5.000000000000000000
         Margins.Right = 5.000000000000000000
         Margins.Bottom = 5.000000000000000000
-        Position.X = 275.000000000000000000
-        Position.Y = 20.000000000000000000
         Size.Width = 260.000000000000000000
         Size.Height = 140.000000000000000000
         Size.PlatformDefault = False
@@ -232,7 +229,7 @@ object fDashboard: TfDashboard
         end
       end
       object rCard3: TRectangle
-        Align = Top
+        Align = Center
         Fill.Color = claWhite
         Padding.Left = 20.000000000000000000
         Padding.Top = 20.000000000000000000
@@ -242,8 +239,6 @@ object fDashboard: TfDashboard
         Margins.Top = 5.000000000000000000
         Margins.Right = 5.000000000000000000
         Margins.Bottom = 5.000000000000000000
-        Position.X = 5.000000000000000000
-        Position.Y = 170.000000000000000000
         Size.Width = 260.000000000000000000
         Size.Height = 140.000000000000000000
         Size.PlatformDefault = False
@@ -292,7 +287,7 @@ object fDashboard: TfDashboard
         end
       end
       object rCard4: TRectangle
-        Align = Top
+        Align = Center
         Fill.Color = claWhite
         Padding.Left = 20.000000000000000000
         Padding.Top = 20.000000000000000000
@@ -302,8 +297,6 @@ object fDashboard: TfDashboard
         Margins.Top = 5.000000000000000000
         Margins.Right = 5.000000000000000000
         Margins.Bottom = 5.000000000000000000
-        Position.X = 275.000000000000000000
-        Position.Y = 170.000000000000000000
         Size.Width = 260.000000000000000000
         Size.Height = 140.000000000000000000
         Size.PlatformDefault = False

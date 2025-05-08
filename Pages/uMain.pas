@@ -23,7 +23,7 @@ type
     sbContracts: TSpeedButton;
     sbDashboard: TSpeedButton;
     sbClients: TSpeedButton;
-    TabControl1: TTabControl;
+    tcController: TTabControl;
     tiDashboard: TTabItem;
     tiClients: TTabItem;
     tiContracts: TTabItem;
@@ -35,6 +35,8 @@ type
     procedure mvSidebarResize(Sender: TObject);
     procedure FormCreate(Sender: TObject);
     procedure FormResize(Sender: TObject);
+    procedure sbDashboardClick(Sender: TObject);
+    procedure sbClientsClick(Sender: TObject);
   private
     { Private declarations }
   public
@@ -54,6 +56,13 @@ procedure TfrmMain.FormCreate(Sender: TObject);
 begin
   mvSidebar.ShowMaster;
   fDashboard1.Visible := true;
+
+  // default tab index
+  tcController.TabIndex := 0;
+  fDashboard1.Visible := true;
+
+  // hide other components
+  fClients1.Visible := false;
 end;
 
 procedure TfrmMain.FormResize(Sender: TObject);
@@ -64,6 +73,26 @@ end;
 procedure TfrmMain.mvSidebarResize(Sender: TObject);
 begin
   lytSidebar.Width := mvSidebar.Width;
+end;
+
+{Show Tab for clients}
+procedure TfrmMain.sbClientsClick(Sender: TObject);
+begin
+  tcController.TabIndex := 1;
+  fClients1.Visible := true;
+
+  // hide other components
+  fDashboard1.Visible := false;
+end;
+
+{Show Tab for dashbaord}
+procedure TfrmMain.sbDashboardClick(Sender: TObject);
+begin
+  tcController.TabIndex := 0;
+  fDashboard1.Visible := true;
+
+  // hide other components
+  fClients1.Visible := false;
 end;
 
 end.

@@ -53187,6 +53187,7 @@ object dm: Tdm
     Top = 56
   end
   object qClients: TFDQuery
+    Active = True
     Connection = cData
     SQL.Strings = (
       'SELECT * FROM clients')

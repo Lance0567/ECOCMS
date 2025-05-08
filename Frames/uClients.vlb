@@ -26,6 +26,7 @@ Coordinates=219,80,82,33
 
 [dm.qClients]
 Coordinates=490,40,88,195
+Visible=False
 
 [Layout1]
 Coordinates=0,0,53,33

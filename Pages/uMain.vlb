@@ -156,9 +156,6 @@ Coordinates=220,215,60,51
 [fDashboard1.Glyph3]
 Coordinates=635,276,115,33
 
-[TabControl1]
-Coordinates=551,276,74,33
-
 [fDashboard1.lbFullyPaid]
 Coordinates=366,215,135,51
 
@@ -177,4 +174,7 @@ Coordinates=10,10,92,213
 
 [BindingsList1]
 Coordinates=121,170,82,33
+
+[tcController]
+Coordinates=551,276,74,33
 

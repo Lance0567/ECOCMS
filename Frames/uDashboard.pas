@@ -7,7 +7,7 @@ uses
   FMX.Types, FMX.Graphics, FMX.Controls, FMX.Forms, FMX.Dialogs, FMX.StdCtrls,
   System.Skia, FMX.ListView.Types, FMX.ListView.Appearances,
   FMX.ListView.Adapters.Base, FMX.ListView, FMX.Skia, FMX.Layouts, FMX.Objects,
-  FMX.Controls.Presentation, FMX.ImgList;
+  FMX.Controls.Presentation, FMX.ImgList, Math;
 
 type
   TfDashboard = class(TFrame)
@@ -43,6 +43,7 @@ type
     lbTitle: TLabel;
     btnTrigger: TCornerButton;
     procedure FrameResize(Sender: TObject);
+    procedure glytCardsResize(Sender: TObject);
   private
     { Private declarations }
   public
@@ -63,11 +64,24 @@ begin
     glytCards.Height := 170;
     glytCards.ItemWidth := 280;
   end
+  else if frmMain.ClientWidth <= 800 then
+  begin
+    glytCards.Height := 610;
+  end
   else
   begin
     glytCards.Height := 321;
     glytCards.ItemWidth := 270;
   end;
+end;
+
+procedure TfDashboard.glytCardsResize(Sender: TObject);
+var
+  AvailableWidth, ItemsPerRow: Integer;
+begin
+  AvailableWidth := Trunc(glytCards.Width);
+  ItemsPerRow := Max(1, AvailableWidth div 280); // 270 + 10 margin
+  glytCards.ItemWidth := Trunc((AvailableWidth - (ItemsPerRow + 1) * 10) / ItemsPerRow);
 end;
 
 end.

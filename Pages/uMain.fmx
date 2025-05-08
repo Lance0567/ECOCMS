@@ -20,12 +20,12 @@ object frmMain: TfrmMain
     Size.Height = 505.000000000000000000
     Size.PlatformDefault = False
     TabOrder = 0
-    object TabControl1: TTabControl
+    object tcController: TTabControl
       Align = Client
       Size.Width = 582.000000000000000000
       Size.Height = 505.000000000000000000
       Size.PlatformDefault = False
-      TabIndex = 1
+      TabIndex = 0
       TabOrder = 0
       TabPosition = None
       Sizes = (
@@ -40,7 +40,7 @@ object frmMain: TfrmMain
           item
           end>
         TextSettings.Trimming = None
-        IsSelected = False
+        IsSelected = True
         Size.Width = 12.000000000000000000
         Size.Height = 12.000000000000000000
         Size.PlatformDefault = False
@@ -138,7 +138,7 @@ object frmMain: TfrmMain
           item
           end>
         TextSettings.Trimming = None
-        IsSelected = True
+        IsSelected = False
         Size.Width = 12.000000000000000000
         Size.Height = 12.000000000000000000
         Size.PlatformDefault = False
@@ -177,13 +177,11 @@ object frmMain: TfrmMain
               inherited ScrollBox2: TScrollBox
                 Size.Width = 491.000000000000000000
                 Viewport.Width = 491.000000000000000000
-                Viewport.Height = 341.000000000000000000
+                Viewport.Height = 352.000000000000000000
                 inherited gTableRecord: TGrid
-                  Align = None
-                  Size.Width = 630.000000000000000000
-                  Size.Height = 330.000000000000000000
-                  Viewport.Width = 626.000000000000000000
-                  Viewport.Height = 305.000000000000000000
+                  Size.Width = 491.000000000000000000
+                  Viewport.Width = 491.000000000000000000
+                  Viewport.Height = 352.000000000000000000
                 end
               end
             end
@@ -276,6 +274,7 @@ object frmMain: TfrmMain
         Text = 'Dashboard'
         TextSettings.HorzAlign = Leading
         TextSettings.Trimming = None
+        OnClick = sbDashboardClick
       end
       object sbClients: TSpeedButton
         StaysPressed = True
@@ -291,6 +290,7 @@ object frmMain: TfrmMain
         Text = 'Clients'
         TextSettings.HorzAlign = Leading
         TextSettings.Trimming = None
+        OnClick = sbClientsClick
       end
     end
   end

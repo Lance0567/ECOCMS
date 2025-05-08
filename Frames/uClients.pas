@@ -23,6 +23,7 @@ type
     Layout1: TLayout;
     ScrollBox2: TScrollBox;
     procedure FrameResize(Sender: TObject);
+    procedure gTableRecordResized(Sender: TObject);
   private
     { Private declarations }
   public
@@ -41,6 +42,17 @@ begin
   begin
 
   end;
+end;
+
+// Responsive grid
+procedure TfClients.gTableRecordResized(Sender: TObject);
+var
+  i: Integer;
+  NewWidth: Single;
+begin
+  NewWidth := gTableRecord.Width / gTableRecord.ColumnCount;
+  for i := 0 to gTableRecord.ColumnCount - 1 do
+    gTableRecord.Columns[i].Width := NewWidth;
 end;
 
 end.
