@@ -1,4 +1,5 @@
 object fClients: TfClients
+  PopupMenu = PopupMenu1
   Size.Width = 714.000000000000000000
   Size.Height = 479.000000000000000000
   Size.PlatformDefault = False
@@ -105,8 +106,8 @@ object fClients: TfClients
           TabOrder = 1
           RowCount = 0
           OnResized = gTableRecordResized
-          Viewport.Width = 614.000000000000000000
-          Viewport.Height = 327.000000000000000000
+          Viewport.Width = 618.000000000000000000
+          Viewport.Height = 352.000000000000000000
         end
       end
     end
@@ -118,6 +119,19 @@ object fClients: TfClients
       Size.Height = 50.000000000000000000
       Size.PlatformDefault = False
       TabOrder = 1
+    end
+  end
+  object PopupMenu1: TPopupMenu
+    Left = 344
+    Top = 224
+    object Edit: TMenuItem
+      Text = 'Edit'
+    end
+    object Delete: TMenuItem
+      Text = 'Delete'
+    end
+    object Preview: TMenuItem
+      Text = 'Preview'
     end
   end
 end

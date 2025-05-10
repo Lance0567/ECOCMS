@@ -11,7 +11,7 @@ uses
   FMX.ListView.Adapters.Base, FMX.ListView, System.Skia, FMX.Skia, uClients,
   Data.Bind.EngExt, Fmx.Bind.DBEngExt, Fmx.Bind.Grid, System.Rtti,
   System.Bindings.Outputs, Fmx.Bind.Editors, Data.Bind.Components,
-  Data.Bind.Grid, Data.Bind.DBScope;
+  Data.Bind.Grid, Data.Bind.DBScope, FMX.Edit, FMX.DateTimeCtrls;
 
 type
   TfrmMain = class(TForm)
@@ -32,11 +32,42 @@ type
     BindSourceDB1: TBindSourceDB;
     BindingsList1: TBindingsList;
     LinkGridToDataSourceBindSourceDB1: TLinkGridToDataSource;
+    eSearch: TEdit;
+    SearchEditButton1: TSearchEditButton;
+    rBackground: TRectangle;
+    lytContainer: TLayout;
+    rModalAdd: TRectangle;
+    ScrollBox1: TScrollBox;
+    lytTitle: TLayout;
+    Label1: TLabel;
+    btnClose: TButton;
+    lFullname: TLabel;
+    eFullname: TEdit;
+    lAddress: TLabel;
+    eAddress: TEdit;
+    lContactDate: TLabel;
+    lContactPrice: TLabel;
+    eContactPrice: TEdit;
+    lFirstTD: TLabel;
+    dContactDate: TDateEdit;
+    SpinEditButton1: TSpinEditButton;
+    dFirstTD: TDateEdit;
+    lSecondTD: TLabel;
+    lThirdTD: TLabel;
+    lytBtn: TLayout;
+    dSecondTD: TDateEdit;
+    dThirdTD: TDateEdit;
+    btnCancel: TCornerButton;
+    btnSave: TCornerButton;
     procedure mvSidebarResize(Sender: TObject);
     procedure FormCreate(Sender: TObject);
     procedure FormResize(Sender: TObject);
     procedure sbDashboardClick(Sender: TObject);
     procedure sbClientsClick(Sender: TObject);
+    procedure fClients1btnTriggerClick(Sender: TObject);
+    procedure btnCloseClick(Sender: TObject);
+    procedure btnCancelClick(Sender: TObject);
+    procedure FormClose(Sender: TObject; var Action: TCloseAction);
   private
     { Private declarations }
   public
@@ -52,10 +83,48 @@ implementation
 
 uses uDm;
 
+{ Cancel button }
+procedure TfrmMain.btnCancelClick(Sender: TObject);
+begin
+  // hide the visibility of Add client modal
+  rBackground.Visible := False;
+  rModalAdd.Visible := False;
+end;
+
+{ Close modal button }
+procedure TfrmMain.btnCloseClick(Sender: TObject);
+begin
+  // visibility show of Add client modal
+  rBackground.Visible := False;
+  rModalAdd.Visible := False;
+end;
+
+{ Save button }
+procedure TfrmMain.fClients1btnTriggerClick(Sender: TObject);
+begin
+  // visibility show of Add client modal
+  rBackground.Visible := True;
+  rModalAdd.Visible := True;
+
+  // Add client logic
+  dm.qClients.append;
+end;
+
+{ Form Close }
+procedure TfrmMain.FormClose(Sender: TObject; var Action: TCloseAction);
+begin
+  Application.Terminate;
+end;
+
+{ Form Create }
 procedure TfrmMain.FormCreate(Sender: TObject);
 begin
+  // default Show
   mvSidebar.ShowMaster;
-  fDashboard1.Visible := true;
+
+  // default hide the visibility of Add client modal
+  rBackground.Visible := False;
+  rModalAdd.Visible := False;
 
   // default tab index
   tcController.TabIndex := 0;
@@ -75,7 +144,7 @@ begin
   lytSidebar.Width := mvSidebar.Width;
 end;
 
-{Show Tab for clients}
+{ Show Tab for clients }
 procedure TfrmMain.sbClientsClick(Sender: TObject);
 begin
   tcController.TabIndex := 1;
@@ -85,7 +154,7 @@ begin
   fDashboard1.Visible := false;
 end;
 
-{Show Tab for dashbaord}
+{ Show Tab for dashbaord }
 procedure TfrmMain.sbDashboardClick(Sender: TObject);
 begin
   tcController.TabIndex := 0;

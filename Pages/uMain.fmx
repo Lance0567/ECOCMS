@@ -12,299 +12,618 @@ object frmMain: TfrmMain
   FormFactor.Devices = [Desktop]
   ShowFullScreenIcon = True
   OnCreate = FormCreate
+  OnClose = FormClose
   OnResize = FormResize
   DesignerMasterStyle = 0
-  object lytContent: TLayout
+  object lytContainer: TLayout
     Align = Client
-    Size.Width = 582.000000000000000000
+    Size.Width = 782.000000000000000000
     Size.Height = 505.000000000000000000
     Size.PlatformDefault = False
-    TabOrder = 0
-    object tcController: TTabControl
+    TabOrder = 2
+    object lytContent: TLayout
       Align = Client
       Size.Width = 582.000000000000000000
       Size.Height = 505.000000000000000000
       Size.PlatformDefault = False
-      TabIndex = 0
       TabOrder = 0
-      TabPosition = None
-      Sizes = (
-        582s
-        505s
-        582s
-        505s
-        582s
-        505s)
-      object tiDashboard: TTabItem
-        CustomIcon = <
-          item
-          end>
-        TextSettings.Trimming = None
-        IsSelected = True
-        Size.Width = 12.000000000000000000
-        Size.Height = 12.000000000000000000
+      object tcController: TTabControl
+        Align = Client
+        Size.Width = 582.000000000000000000
+        Size.Height = 505.000000000000000000
         Size.PlatformDefault = False
-        StyleLookup = ''
+        TabIndex = 1
         TabOrder = 0
-        Text = 'Dashboard'
-        ExplicitSize.cx = 12.000000000000000000
-        ExplicitSize.cy = 12.000000000000000000
-        inline fDashboard1: TfDashboard
-          Align = Client
-          Size.Width = 582.000000000000000000
-          Size.Height = 505.000000000000000000
+        TabPosition = None
+        Sizes = (
+          582s
+          505s
+          582s
+          505s
+          582s
+          505s)
+        object tiDashboard: TTabItem
+          CustomIcon = <
+            item
+            end>
+          TextSettings.Trimming = None
+          IsSelected = False
+          Size.Width = 12.000000000000000000
+          Size.Height = 12.000000000000000000
           Size.PlatformDefault = False
-          inherited ScrollBox1: TScrollBox
+          StyleLookup = ''
+          TabOrder = 0
+          Text = 'Dashboard'
+          ExplicitSize.cx = 12.000000000000000000
+          ExplicitSize.cy = 12.000000000000000000
+          inline fDashboard1: TfDashboard
+            Align = Client
             Size.Width = 582.000000000000000000
             Size.Height = 505.000000000000000000
-            Viewport.Width = 571.000000000000000000
-            Viewport.Height = 505.000000000000000000
-            inherited lytBottom: TLayout
-              Size.Width = 571.000000000000000000
-            end
-            inherited rRecentContracts: TRectangle
-              Size.Width = 531.000000000000000000
-              inherited Layout2: TLayout
-                Size.Width = 491.000000000000000000
-                inherited SkLabel1: TSkLabel
+            Size.PlatformDefault = False
+            inherited ScrollBox1: TScrollBox
+              Size.Width = 582.000000000000000000
+              Size.Height = 505.000000000000000000
+              Viewport.Width = 571.000000000000000000
+              Viewport.Height = 505.000000000000000000
+              inherited lytBottom: TLayout
+                Size.Width = 571.000000000000000000
+              end
+              inherited rRecentContracts: TRectangle
+                Size.Width = 531.000000000000000000
+                inherited Layout2: TLayout
+                  Size.Width = 491.000000000000000000
+                  inherited SkLabel1: TSkLabel
+                    Size.Width = 491.000000000000000000
+                  end
+                end
+                inherited ListView1: TListView
+                  Size.Width = 491.000000000000000000
+                end
+                inherited cbtnViewAllContracts: TCornerButton
                   Size.Width = 491.000000000000000000
                 end
               end
-              inherited ListView1: TListView
-                Size.Width = 491.000000000000000000
+              inherited glytCards: TGridLayout
+                Padding.Right = 15.000000000000000000
+                Size.Width = 556.000000000000000000
+                inherited rCard1: TRectangle
+                  inherited lytCardD1: TLayout
+                    inherited lbTotalContracts: TLabel
+                      TextSettings.Font.StyleExt = {00070000000000000004000000}
+                    end
+                  end
+                  inherited lbTotalContractsC: TLabel
+                    TextSettings.Font.StyleExt = {00070000000000000004000000}
+                  end
+                end
+                inherited rCard2: TRectangle
+                  inherited lytCardD2: TLayout
+                    inherited lbActiveClients: TLabel
+                      TextSettings.Font.StyleExt = {00070000000000000004000000}
+                    end
+                  end
+                  inherited lbActiveClientsC: TLabel
+                    TextSettings.Font.StyleExt = {00070000000000000004000000}
+                  end
+                end
+                inherited rCard3: TRectangle
+                  inherited lytCardD3: TLayout
+                    inherited lbFullyPaid: TLabel
+                      TextSettings.Font.StyleExt = {00070000000000000004000000}
+                    end
+                  end
+                  inherited lbFullyPaidC: TLabel
+                    TextSettings.Font.StyleExt = {00070000000000000004000000}
+                  end
+                end
+                inherited rCard4: TRectangle
+                  inherited lytCardD4: TLayout
+                    inherited lbNotYetPaid: TLabel
+                      TextSettings.Font.StyleExt = {00070000000000000004000000}
+                    end
+                  end
+                  inherited lbNotYetPaidC: TLabel
+                    TextSettings.Font.StyleExt = {00070000000000000004000000}
+                  end
+                end
               end
-              inherited cbtnViewAllContracts: TCornerButton
-                Size.Width = 491.000000000000000000
+              inherited lytHeader: TLayout
+                Size.Width = 571.000000000000000000
+                inherited lbTitle: TLabel
+                  Size.Width = 342.000000000000000000
+                end
+                inherited btnTrigger: TCornerButton
+                  Position.X = 372.000000000000000000
+                end
               end
             end
-            inherited glytCards: TGridLayout
-              Padding.Right = 15.000000000000000000
-              Size.Width = 556.000000000000000000
-              inherited rCard1: TRectangle
-                inherited lytCardD1: TLayout
-                  inherited lbTotalContracts: TLabel
-                    TextSettings.Font.StyleExt = {00070000000000000004000000}
-                  end
-                end
-                inherited lbTotalContractsC: TLabel
-                  TextSettings.Font.StyleExt = {00070000000000000004000000}
-                end
-              end
-              inherited rCard2: TRectangle
-                inherited lytCardD2: TLayout
-                  inherited lbActiveClients: TLabel
-                    TextSettings.Font.StyleExt = {00070000000000000004000000}
-                  end
-                end
-                inherited lbActiveClientsC: TLabel
-                  TextSettings.Font.StyleExt = {00070000000000000004000000}
-                end
-              end
-              inherited rCard3: TRectangle
-                inherited lytCardD3: TLayout
-                  inherited lbFullyPaid: TLabel
-                    TextSettings.Font.StyleExt = {00070000000000000004000000}
-                  end
-                end
-                inherited lbFullyPaidC: TLabel
-                  TextSettings.Font.StyleExt = {00070000000000000004000000}
-                end
-              end
-              inherited rCard4: TRectangle
-                inherited lytCardD4: TLayout
-                  inherited lbNotYetPaid: TLabel
-                    TextSettings.Font.StyleExt = {00070000000000000004000000}
-                  end
-                end
-                inherited lbNotYetPaidC: TLabel
-                  TextSettings.Font.StyleExt = {00070000000000000004000000}
-                end
-              end
-            end
+          end
+        end
+        object tiClients: TTabItem
+          CustomIcon = <
+            item
+            end>
+          TextSettings.Trimming = None
+          IsSelected = True
+          Size.Width = 12.000000000000000000
+          Size.Height = 12.000000000000000000
+          Size.PlatformDefault = False
+          StyleLookup = ''
+          TabOrder = 0
+          Text = 'Clients'
+          ExplicitSize.cx = 12.000000000000000000
+          ExplicitSize.cy = 12.000000000000000000
+          inline fClients1: TfClients
+            Align = Client
+            PopupMenu = fClients1.PopupMenu1
+            Size.Width = 582.000000000000000000
+            Size.Height = 505.000000000000000000
+            Size.PlatformDefault = False
             inherited lytHeader: TLayout
-              Size.Width = 571.000000000000000000
+              Size.Width = 582.000000000000000000
               inherited lbTitle: TLabel
-                Size.Width = 342.000000000000000000
+                Size.Width = 387.000000000000000000
               end
               inherited btnTrigger: TCornerButton
-                Position.X = 372.000000000000000000
+                Margins.Right = 30.000000000000000000
+                Position.X = 417.000000000000000000
+                OnClick = fClients1btnTriggerClick
               end
             end
-          end
-        end
-      end
-      object tiClients: TTabItem
-        CustomIcon = <
-          item
-          end>
-        TextSettings.Trimming = None
-        IsSelected = False
-        Size.Width = 12.000000000000000000
-        Size.Height = 12.000000000000000000
-        Size.PlatformDefault = False
-        StyleLookup = ''
-        TabOrder = 0
-        Text = 'Clients'
-        ExplicitSize.cx = 12.000000000000000000
-        ExplicitSize.cy = 12.000000000000000000
-        inline fClients1: TfClients
-          Align = Client
-          Size.Width = 582.000000000000000000
-          Size.Height = 505.000000000000000000
-          Size.PlatformDefault = False
-          inherited lytHeader: TLayout
-            Size.Width = 582.000000000000000000
-            inherited lbTitle: TLabel
-              Size.Width = 382.000000000000000000
-            end
-            inherited btnTrigger: TCornerButton
-              Position.X = 412.000000000000000000
-            end
-          end
-          inherited ScrollBox1: TScrollBox
-            Size.Width = 582.000000000000000000
-            Size.Height = 440.000000000000000000
-            Viewport.Width = 571.000000000000000000
-            Viewport.Height = 440.000000000000000000
-            inherited rRecentContracts: TRectangle
-              Size.Width = 531.000000000000000000
-              inherited Layout2: TLayout
-                Size.Width = 491.000000000000000000
-                inherited SkLabel1: TSkLabel
+            inherited ScrollBox1: TScrollBox
+              Size.Width = 582.000000000000000000
+              Size.Height = 440.000000000000000000
+              Viewport.Width = 571.000000000000000000
+              Viewport.Height = 440.000000000000000000
+              inherited rRecentContracts: TRectangle
+                Size.Width = 531.000000000000000000
+                inherited Layout2: TLayout
                   Size.Width = 491.000000000000000000
+                  Size.Height = 40.000000000000000000
+                  inherited SkLabel1: TSkLabel
+                    Align = Left
+                    Size.Width = 106.489997863769500000
+                    Size.Height = 40.000000000000000000
+                  end
+                  object eSearch: TEdit
+                    Touch.InteractiveGestures = [LongTap, DoubleTap]
+                    Align = Right
+                    StyleLookup = 'eSearchStyle1'
+                    TabOrder = 0
+                    Position.X = 272.000000000000000000
+                    Position.Y = 4.000000000000000000
+                    Size.Width = 219.000000000000000000
+                    Size.Height = 32.000000000000000000
+                    Size.PlatformDefault = False
+                    TextPrompt = 'Search clients...'
+                    object SearchEditButton1: TSearchEditButton
+                      Touch.InteractiveGestures = [LongTap]
+                      CanFocus = False
+                      Cursor = crArrow
+                      TextSettings.HorzAlign = Leading
+                      TextSettings.Trimming = None
+                      TabOrder = 0
+                      TextAlign = Leading
+                    end
+                  end
                 end
-              end
-              inherited ScrollBox2: TScrollBox
-                Size.Width = 491.000000000000000000
-                Viewport.Width = 491.000000000000000000
-                Viewport.Height = 352.000000000000000000
-                inherited gTableRecord: TGrid
+                inherited ScrollBox2: TScrollBox
                   Size.Width = 491.000000000000000000
+                  Size.Height = 372.000000000000000000
                   Viewport.Width = 491.000000000000000000
-                  Viewport.Height = 352.000000000000000000
+                  Viewport.Height = 372.000000000000000000
+                  inherited gTableRecord: TGrid
+                    Margins.Top = 15.000000000000000000
+                    PopupMenu = fClients1.PopupMenu1
+                    Size.Width = 491.000000000000000000
+                    Size.Height = 357.000000000000000000
+                    Viewport.Width = 487.000000000000000000
+                    Viewport.Height = 332.000000000000000000
+                  end
                 end
               end
-            end
-            inherited Layout1: TLayout
-              Size.Width = 571.000000000000000000
+              inherited Layout1: TLayout
+                Size.Width = 571.000000000000000000
+              end
             end
           end
         end
-      end
-      object tiContracts: TTabItem
-        CustomIcon = <
-          item
-          end>
-        TextSettings.Trimming = None
-        IsSelected = False
-        Size.Width = 12.000000000000000000
-        Size.Height = 12.000000000000000000
-        Size.PlatformDefault = False
-        StyleLookup = ''
-        TabOrder = 0
-        Text = 'Contracts'
-        ExplicitSize.cx = 12.000000000000000000
-        ExplicitSize.cy = 12.000000000000000000
+        object tiContracts: TTabItem
+          CustomIcon = <
+            item
+            end>
+          TextSettings.Trimming = None
+          IsSelected = False
+          Size.Width = 12.000000000000000000
+          Size.Height = 12.000000000000000000
+          Size.PlatformDefault = False
+          StyleLookup = ''
+          TabOrder = 0
+          Text = 'Contracts'
+          ExplicitSize.cx = 12.000000000000000000
+          ExplicitSize.cy = 12.000000000000000000
+        end
       end
     end
-  end
-  object lytSidebar: TLayout
-    Align = Left
-    Size.Width = 200.000000000000000000
-    Size.Height = 505.000000000000000000
-    Size.PlatformDefault = False
-    TabOrder = 1
-    object mvSidebar: TMultiView
-      MasterButton = sbMenu
-      ShadowOptions.Enabled = False
+    object lytSidebar: TLayout
+      Align = Left
       Size.Width = 200.000000000000000000
       Size.Height = 505.000000000000000000
       Size.PlatformDefault = False
+      TabOrder = 1
+      object mvSidebar: TMultiView
+        MasterButton = sbMenu
+        ShadowOptions.Enabled = False
+        Size.Width = 200.000000000000000000
+        Size.Height = 505.000000000000000000
+        Size.PlatformDefault = False
+        TabOrder = 0
+        OnResize = mvSidebarResize
+        object sbSettings: TSpeedButton
+          StaysPressed = True
+          Align = Bottom
+          GroupName = 'Navigations'
+          Position.Y = 455.000000000000000000
+          Size.Width = 200.000000000000000000
+          Size.Height = 50.000000000000000000
+          Size.PlatformDefault = False
+          StyleLookup = 'settingstoolbuttonmultiview'
+          Text = 'Settings'
+          TextSettings.HorzAlign = Leading
+          TextSettings.Trimming = None
+        end
+        object sbMenu: TSpeedButton
+          Align = Top
+          Size.Width = 200.000000000000000000
+          Size.Height = 50.000000000000000000
+          Size.PlatformDefault = False
+          StyleLookup = 'detailstoolbuttonmultiview'
+          Text = 'ECO PRO'
+          TextSettings.HorzAlign = Leading
+          TextSettings.Trimming = None
+        end
+        object sbContracts: TSpeedButton
+          StaysPressed = True
+          Align = Top
+          GroupName = 'Navigations'
+          Images = dm.ImageList1
+          ImageIndex = 1
+          Position.Y = 150.000000000000000000
+          Size.Width = 200.000000000000000000
+          Size.Height = 50.000000000000000000
+          Size.PlatformDefault = False
+          StyleLookup = 'sidebarButton'
+          Text = 'Contracts'
+          TextSettings.HorzAlign = Leading
+          TextSettings.Trimming = None
+        end
+        object sbDashboard: TSpeedButton
+          StaysPressed = True
+          Align = Top
+          GroupName = 'Navigations'
+          Images = dm.ImageList1
+          ImageIndex = 0
+          Position.Y = 50.000000000000000000
+          Size.Width = 200.000000000000000000
+          Size.Height = 50.000000000000000000
+          Size.PlatformDefault = False
+          StyleLookup = 'sidebarButton'
+          Text = 'Dashboard'
+          TextSettings.HorzAlign = Leading
+          TextSettings.Trimming = None
+          OnClick = sbDashboardClick
+        end
+        object sbClients: TSpeedButton
+          StaysPressed = True
+          Align = Top
+          GroupName = 'Navigations'
+          Images = dm.ImageList1
+          ImageIndex = 2
+          Position.Y = 100.000000000000000000
+          Size.Width = 200.000000000000000000
+          Size.Height = 50.000000000000000000
+          Size.PlatformDefault = False
+          StyleLookup = 'sidebarButton'
+          Text = 'Clients'
+          TextSettings.HorzAlign = Leading
+          TextSettings.Trimming = None
+          OnClick = sbClientsClick
+        end
+      end
+    end
+    object rBackground: TRectangle
+      Align = Contents
+      Fill.Color = claBlack
+      Opacity = 0.699999988079071000
+      Size.Width = 782.000000000000000000
+      Size.Height = 505.000000000000000000
+      Size.PlatformDefault = False
+      Visible = False
+    end
+  end
+  object rModalAdd: TRectangle
+    Align = Center
+    Margins.Top = 30.000000000000000000
+    Margins.Bottom = 30.000000000000000000
+    Size.Width = 420.000000000000000000
+    Size.Height = 450.000000000000000000
+    Size.PlatformDefault = False
+    Visible = False
+    XRadius = 8.000000000000000000
+    YRadius = 8.000000000000000000
+    object ScrollBox1: TScrollBox
+      Align = Client
+      Padding.Left = 15.000000000000000000
+      Padding.Right = 15.000000000000000000
+      Padding.Bottom = 25.000000000000000000
+      Size.Width = 420.000000000000000000
+      Size.Height = 450.000000000000000000
+      Size.PlatformDefault = False
       TabOrder = 0
-      OnResize = mvSidebarResize
-      object sbSettings: TSpeedButton
-        StaysPressed = True
-        Align = Bottom
-        GroupName = 'Navigations'
-        Position.Y = 455.000000000000000000
-        Size.Width = 200.000000000000000000
+      Viewport.Width = 409.000000000000000000
+      Viewport.Height = 450.000000000000000000
+      object lytTitle: TLayout
+        Align = Top
+        Position.X = 15.000000000000000000
+        Size.Width = 379.000000000000000000
         Size.Height = 50.000000000000000000
         Size.PlatformDefault = False
-        StyleLookup = 'settingstoolbuttonmultiview'
-        Text = 'Settings'
-        TextSettings.HorzAlign = Leading
-        TextSettings.Trimming = None
+        TabOrder = 7
+        object Label1: TLabel
+          Align = Client
+          StyledSettings = [Family, Size]
+          Size.Width = 351.000000000000000000
+          Size.Height = 50.000000000000000000
+          Size.PlatformDefault = False
+          TextSettings.Font.StyleExt = {00070000000000000004000000}
+          Text = 'Add New Client'
+          TabOrder = 0
+        end
+        object btnClose: TButton
+          Align = Right
+          Position.X = 351.000000000000000000
+          Position.Y = 11.000000000000000000
+          Size.Width = 28.000000000000000000
+          Size.Height = 28.000000000000000000
+          Size.PlatformDefault = False
+          StyleLookup = 'cleareditbutton'
+          TabOrder = 1
+          Text = 'Close'
+          TextSettings.Trimming = None
+          OnClick = btnCloseClick
+        end
       end
-      object sbMenu: TSpeedButton
+      object dFirstTD: TDateEdit
+        Date = 45787.000000000000000000
         Align = Top
-        Size.Width = 200.000000000000000000
-        Size.Height = 50.000000000000000000
+        Position.X = 15.000000000000000000
+        Position.Y = 388.000000000000000000
+        Size.Width = 379.000000000000000000
+        Size.Height = 32.000000000000000000
         Size.PlatformDefault = False
-        StyleLookup = 'detailstoolbuttonmultiview'
-        Text = 'ECO PRO'
-        TextSettings.HorzAlign = Leading
-        TextSettings.Trimming = None
+        StyleLookup = 'Customdateeditstyle'
+        TabOrder = 14
       end
-      object sbContracts: TSpeedButton
-        StaysPressed = True
+      object dContactDate: TDateEdit
+        Date = 45787.000000000000000000
         Align = Top
-        GroupName = 'Navigations'
-        Images = dm.ImageList1
-        ImageIndex = 1
-        Position.Y = 150.000000000000000000
-        Size.Width = 200.000000000000000000
-        Size.Height = 50.000000000000000000
+        Position.X = 15.000000000000000000
+        Position.Y = 240.000000000000000000
+        Size.Width = 379.000000000000000000
+        Size.Height = 32.000000000000000000
         Size.PlatformDefault = False
-        StyleLookup = 'sidebarButton'
-        Text = 'Contracts'
-        TextSettings.HorzAlign = Leading
-        TextSettings.Trimming = None
+        StyleLookup = 'Customdateeditstyle'
+        TabOrder = 17
       end
-      object sbDashboard: TSpeedButton
-        StaysPressed = True
+      object eAddress: TEdit
+        Touch.InteractiveGestures = [LongTap, DoubleTap]
         Align = Top
-        GroupName = 'Navigations'
-        Images = dm.ImageList1
-        ImageIndex = 0
+        StyleLookup = 'Modaleditstyle'
+        TabOrder = 8
+        Text = '123 Main St, City, State, Zip'
+        Position.X = 15.000000000000000000
+        Position.Y = 166.000000000000000000
+        Size.Width = 379.000000000000000000
+        Size.Height = 32.000000000000000000
+        Size.PlatformDefault = False
+      end
+      object eContactPrice: TEdit
+        Touch.InteractiveGestures = [LongTap, DoubleTap]
+        Align = Top
+        StyleLookup = 'Modaleditstyle'
+        TabOrder = 9
+        Text = '0.00'
+        Position.X = 15.000000000000000000
+        Position.Y = 314.000000000000000000
+        Size.Width = 379.000000000000000000
+        Size.Height = 32.000000000000000000
+        Size.PlatformDefault = False
+        object SpinEditButton1: TSpinEditButton
+          AutoTranslate = False
+          CanFocus = False
+          Cursor = crArrow
+          StyleLookup = 'SpinEditButton1Style1'
+          TabOrder = 0
+        end
+      end
+      object eFullname: TEdit
+        Touch.InteractiveGestures = [LongTap, DoubleTap]
+        Align = Top
+        StyleLookup = 'Modaleditstyle'
+        TabOrder = 18
+        Text = 'Francis'
+        Position.X = 15.000000000000000000
+        Position.Y = 92.000000000000000000
+        Size.Width = 379.000000000000000000
+        Size.Height = 32.000000000000000000
+        Size.PlatformDefault = False
+      end
+      object lAddress: TLabel
+        Align = Top
+        StyledSettings = [Family]
+        Position.X = 15.000000000000000000
+        Position.Y = 124.000000000000000000
+        Size.Width = 379.000000000000000000
+        Size.Height = 42.000000000000000000
+        Size.PlatformDefault = False
+        TextSettings.Font.Size = 14.000000000000000000
+        TextSettings.Font.StyleExt = {00060000000000000004000000}
+        Text = 'Address'
+        TabOrder = 6
+      end
+      object lContactDate: TLabel
+        Align = Top
+        StyledSettings = [Family]
+        Position.X = 15.000000000000000000
+        Position.Y = 198.000000000000000000
+        Size.Width = 379.000000000000000000
+        Size.Height = 42.000000000000000000
+        Size.PlatformDefault = False
+        TextSettings.Font.Size = 14.000000000000000000
+        TextSettings.Font.StyleExt = {00060000000000000004000000}
+        Text = 'Contact Date'
+        TabOrder = 5
+      end
+      object lContactPrice: TLabel
+        Align = Top
+        StyledSettings = [Family]
+        Position.X = 15.000000000000000000
+        Position.Y = 272.000000000000000000
+        Size.Width = 379.000000000000000000
+        Size.Height = 42.000000000000000000
+        Size.PlatformDefault = False
+        TextSettings.Font.Size = 14.000000000000000000
+        TextSettings.Font.StyleExt = {00060000000000000004000000}
+        Text = 'Contact Price'
+        TabOrder = 4
+      end
+      object lFirstTD: TLabel
+        Align = Top
+        StyledSettings = [Family]
+        Position.X = 15.000000000000000000
+        Position.Y = 346.000000000000000000
+        Size.Width = 379.000000000000000000
+        Size.Height = 42.000000000000000000
+        Size.PlatformDefault = False
+        TextSettings.Font.Size = 14.000000000000000000
+        TextSettings.Font.StyleExt = {00060000000000000004000000}
+        Text = 'First Treatment Date'
+        TabOrder = 3
+      end
+      object lFullname: TLabel
+        Align = Top
+        StyledSettings = [Family]
+        Position.X = 15.000000000000000000
         Position.Y = 50.000000000000000000
-        Size.Width = 200.000000000000000000
-        Size.Height = 50.000000000000000000
+        Size.Width = 379.000000000000000000
+        Size.Height = 42.000000000000000000
         Size.PlatformDefault = False
-        StyleLookup = 'sidebarButton'
-        Text = 'Dashboard'
-        TextSettings.HorzAlign = Leading
-        TextSettings.Trimming = None
-        OnClick = sbDashboardClick
+        TextSettings.Font.Size = 14.000000000000000000
+        TextSettings.Font.StyleExt = {00060000000000000004000000}
+        Text = 'Full Name'
+        TabOrder = 0
       end
-      object sbClients: TSpeedButton
-        StaysPressed = True
+      object lSecondTD: TLabel
         Align = Top
-        GroupName = 'Navigations'
-        Images = dm.ImageList1
-        ImageIndex = 2
-        Position.Y = 100.000000000000000000
-        Size.Width = 200.000000000000000000
-        Size.Height = 50.000000000000000000
+        StyledSettings = [Family]
+        Position.X = 15.000000000000000000
+        Position.Y = 420.000000000000000000
+        Size.Width = 379.000000000000000000
+        Size.Height = 42.000000000000000000
         Size.PlatformDefault = False
-        StyleLookup = 'sidebarButton'
-        Text = 'Clients'
-        TextSettings.HorzAlign = Leading
-        TextSettings.Trimming = None
-        OnClick = sbClientsClick
+        TextSettings.Font.Size = 14.000000000000000000
+        TextSettings.Font.StyleExt = {00060000000000000004000000}
+        Text = 'Second Treatment Date'
+        TabOrder = 2
+      end
+      object lThirdTD: TLabel
+        Align = Top
+        StyledSettings = [Family]
+        Position.X = 15.000000000000000000
+        Position.Y = 494.000000000000000000
+        Size.Width = 379.000000000000000000
+        Size.Height = 42.000000000000000000
+        Size.PlatformDefault = False
+        TextSettings.Font.Size = 14.000000000000000000
+        TextSettings.Font.StyleExt = {00060000000000000004000000}
+        Text = 'Third Treatment Date'
+        TabOrder = 1
+      end
+      object lytBtn: TLayout
+        Align = Top
+        Margins.Top = 35.000000000000000000
+        Position.X = 15.000000000000000000
+        Position.Y = 603.000000000000000000
+        Size.Width = 379.000000000000000000
+        Size.Height = 40.000000000000000000
+        Size.PlatformDefault = False
+        TabOrder = 19
+        object btnCancel: TCornerButton
+          Align = Right
+          Margins.Right = 8.000000000000000000
+          Position.X = 231.000000000000000000
+          Sides = [Top, Left, Bottom, Right]
+          Size.Width = 75.000000000000000000
+          Size.Height = 40.000000000000000000
+          Size.PlatformDefault = False
+          TabOrder = 1
+          Text = 'Cancel'
+          TextSettings.Trimming = None
+          XRadius = 5.000000000000000000
+          YRadius = 5.000000000000000000
+          OnClick = btnCancelClick
+        end
+        object btnSave: TCornerButton
+          Align = Right
+          Position.X = 314.000000000000000000
+          Sides = [Top, Left, Bottom, Right]
+          Size.Width = 65.000000000000000000
+          Size.Height = 40.000000000000000000
+          Size.PlatformDefault = False
+          StyleLookup = 'btnSaveStyle1'
+          TabOrder = 0
+          Text = 'Save'
+          TextSettings.Trimming = None
+          XRadius = 5.000000000000000000
+          YRadius = 5.000000000000000000
+        end
+      end
+      object dSecondTD: TDateEdit
+        Date = 45787.000000000000000000
+        Align = Top
+        Position.X = 15.000000000000000000
+        Position.Y = 462.000000000000000000
+        Size.Width = 379.000000000000000000
+        Size.Height = 32.000000000000000000
+        Size.PlatformDefault = False
+        StyleLookup = 'Customdateeditstyle'
+        TabOrder = 16
+      end
+      object dThirdTD: TDateEdit
+        Date = 45787.000000000000000000
+        Align = Top
+        Position.X = 15.000000000000000000
+        Position.Y = 536.000000000000000000
+        Size.Width = 379.000000000000000000
+        Size.Height = 32.000000000000000000
+        Size.PlatformDefault = False
+        StyleLookup = 'Customdateeditstyle'
+        TabOrder = 15
       end
     end
   end
   object BindSourceDB1: TBindSourceDB
     DataSet = dm.qClients
     ScopeMappings = <>
-    Left = 376
-    Top = 240
+    Left = 64
+    Top = 304
   end
   object BindingsList1: TBindingsList
     Methods = <>
     OutputConverters = <>
-    Left = 20
-    Top = 5
+    Left = 68
+    Top = 237
     object LinkGridToDataSourceBindSourceDB1: TLinkGridToDataSource
       Category = 'Quick Bindings'
       DataSource = BindSourceDB1

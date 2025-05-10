@@ -8,7 +8,8 @@ uses
   FMX.Controls.Presentation, FMX.Layouts, System.Skia, System.Rtti,
   FMX.Grid.Style, FMX.ScrollBox, FMX.Grid, FMX.Skia, FMX.Objects,
   Data.Bind.EngExt, Fmx.Bind.DBEngExt, Fmx.Bind.Grid, System.Bindings.Outputs,
-  Fmx.Bind.Editors, Data.Bind.Components, Data.Bind.Grid, Data.Bind.DBScope;
+  Fmx.Bind.Editors, Data.Bind.Components, Data.Bind.Grid, Data.Bind.DBScope,
+  FMX.Menus;
 
 type
   TfClients = class(TFrame)
@@ -22,6 +23,10 @@ type
     ScrollBox1: TScrollBox;
     Layout1: TLayout;
     ScrollBox2: TScrollBox;
+    PopupMenu1: TPopupMenu;
+    Edit: TMenuItem;
+    Delete: TMenuItem;
+    Preview: TMenuItem;
     procedure FrameResize(Sender: TObject);
     procedure gTableRecordResized(Sender: TObject);
   private
