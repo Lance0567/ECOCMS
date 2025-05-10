@@ -6,7 +6,8 @@ uses
   uMain in 'Pages\uMain.pas' {frmMain},
   uDm in 'Data module\uDm.pas' {dm: TDataModule},
   uDashboard in 'Frames\uDashboard.pas' {fDashboard: TFrame},
-  uClients in 'Frames\uClients.pas' {fClients: TFrame};
+  uClients in 'Frames\uClients.pas' {fClients: TFrame},
+  uContracts in 'Frames\uContracts.pas' {fContracts: TFrame};
 
 {$R *.res}
 

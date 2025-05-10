@@ -8,9 +8,6 @@ Coordinates=365,10,65,33
 [lytHeader]
 Coordinates=142,215,61,33
 
-[rRecentContracts]
-Coordinates=255,10,100,33
-
 [lbTitle]
 Coordinates=108,10,44,51
 
@@ -36,4 +33,7 @@ Coordinates=22,52,68,33
 
 [dm.]
 Coordinates=129,130,95,33
+
+[rContainer]
+Coordinates=255,10,100,33
 

@@ -64,7 +64,6 @@ type
     procedure FormResize(Sender: TObject);
     procedure sbDashboardClick(Sender: TObject);
     procedure sbClientsClick(Sender: TObject);
-    procedure fClients1btnTriggerClick(Sender: TObject);
     procedure btnCloseClick(Sender: TObject);
     procedure btnCancelClick(Sender: TObject);
     procedure FormClose(Sender: TObject; var Action: TCloseAction);
@@ -81,7 +80,7 @@ implementation
 
 {$R *.fmx}
 
-uses uDm;
+uses uDm, uModal;
 
 { Cancel button }
 procedure TfrmMain.btnCancelClick(Sender: TObject);
@@ -97,18 +96,7 @@ begin
   // visibility show of Add client modal
   rBackground.Visible := False;
   rModalAdd.Visible := False;
-end;
-
-{ Save button }
-procedure TfrmMain.fClients1btnTriggerClick(Sender: TObject);
-begin
-  // visibility show of Add client modal
-  rBackground.Visible := True;
-  rModalAdd.Visible := True;
-
-  // Add client logic
-  dm.qClients.append;
-end;
+end;s
 
 { Form Close }
 procedure TfrmMain.FormClose(Sender: TObject; var Action: TCloseAction);
@@ -136,6 +124,7 @@ end;
 
 procedure TfrmMain.FormResize(Sender: TObject);
 begin
+  { Remove code below after the application is completed }
   Self.Caption := 'Main Form' + ' Height: ' + Self.Height.ToString + ' Width: ' + Self.Width.ToString;
 end;
 

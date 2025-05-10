@@ -1,9 +1,7 @@
-object fClients: TfClients
-  PopupMenu = PopupMenu1
+object fContracts: TfContracts
   Size.Width = 715.000000000000000000
   Size.Height = 480.000000000000000000
   Size.PlatformDefault = False
-  OnResize = FrameResize
   object lytHeader: TLayout
     Align = Top
     Margins.Top = 10.000000000000000000
@@ -20,7 +18,7 @@ object fClients: TfClients
       Size.Height = 55.000000000000000000
       Size.PlatformDefault = False
       TextSettings.Font.Size = 25.000000000000000000
-      Text = 'Clients'
+      Text = 'Contracts'
       TabOrder = 0
     end
     object btnTrigger: TCornerButton
@@ -35,11 +33,23 @@ object fClients: TfClients
       Size.Height = 39.000000000000000000
       Size.PlatformDefault = False
       TabOrder = 1
-      Text = 'Add Client'
+      Text = 'Create Contract'
       TextSettings.Trimming = None
       XRadius = 8.000000000000000000
       YRadius = 8.000000000000000000
-      OnClick = btnTriggerClick
+    end
+  end
+  object PopupMenu1: TPopupMenu
+    Left = 292
+    Top = 212
+    object Edit: TMenuItem
+      Text = 'Edit'
+    end
+    object Delete: TMenuItem
+      Text = 'Delete'
+    end
+    object Preview: TMenuItem
+      Text = 'Preview'
     end
   end
   object ScrollBox1: TScrollBox
@@ -85,7 +95,7 @@ object fClients: TfClients
               Font.Size = 24.000000000000000000
               Font.Weight = Semibold
               StyledSettings = [Family, FontColor]
-              Text = 'Client List'
+              Text = 'Contract List'
             end>
         end
       end
@@ -106,7 +116,6 @@ object fClients: TfClients
           Size.PlatformDefault = False
           TabOrder = 1
           RowCount = 0
-          OnResized = gTableRecordResized
           Viewport.Width = 615.000000000000000000
           Viewport.Height = 327.000000000000000000
         end
@@ -120,19 +129,6 @@ object fClients: TfClients
       Size.Height = 50.000000000000000000
       Size.PlatformDefault = False
       TabOrder = 1
-    end
-  end
-  object PopupMenu1: TPopupMenu
-    Left = 344
-    Top = 224
-    object Edit: TMenuItem
-      Text = 'Edit'
-    end
-    object Delete: TMenuItem
-      Text = 'Delete'
-    end
-    object Preview: TMenuItem
-      Text = 'Preview'
     end
   end
 end

@@ -16,7 +16,7 @@ type
     lytHeader: TLayout;
     lbTitle: TLabel;
     btnTrigger: TCornerButton;
-    rRecentContracts: TRectangle;
+    rContainer: TRectangle;
     Layout2: TLayout;
     SkLabel1: TSkLabel;
     gTableRecord: TGrid;
@@ -29,6 +29,7 @@ type
     Preview: TMenuItem;
     procedure FrameResize(Sender: TObject);
     procedure gTableRecordResized(Sender: TObject);
+    procedure btnTriggerClick(Sender: TObject);
   private
     { Private declarations }
   public
@@ -40,6 +41,16 @@ implementation
 {$R *.fmx}
 
 uses uDm, uMain;
+
+procedure TfClients.btnTriggerClick(Sender: TObject);
+begin
+  // visibility show of Add client modal
+  frmMain.rBackground.Visible := True;
+  frmMain.rModalAdd.Visible := True;
+
+  // Add client logic
+//  dm.qClients.append;
+end;
 
 procedure TfClients.FrameResize(Sender: TObject);
 begin

@@ -32,7 +32,7 @@ object frmMain: TfrmMain
         Size.Width = 582.000000000000000000
         Size.Height = 505.000000000000000000
         Size.PlatformDefault = False
-        TabIndex = 1
+        TabIndex = 0
         TabOrder = 0
         TabPosition = None
         Sizes = (
@@ -47,7 +47,7 @@ object frmMain: TfrmMain
             item
             end>
           TextSettings.Trimming = None
-          IsSelected = False
+          IsSelected = True
           Size.Width = 12.000000000000000000
           Size.Height = 12.000000000000000000
           Size.PlatformDefault = False
@@ -145,7 +145,7 @@ object frmMain: TfrmMain
             item
             end>
           TextSettings.Trimming = None
-          IsSelected = True
+          IsSelected = False
           Size.Width = 12.000000000000000000
           Size.Height = 12.000000000000000000
           Size.PlatformDefault = False
@@ -168,7 +168,6 @@ object frmMain: TfrmMain
               inherited btnTrigger: TCornerButton
                 Margins.Right = 30.000000000000000000
                 Position.X = 417.000000000000000000
-                OnClick = fClients1btnTriggerClick
               end
             end
             inherited ScrollBox1: TScrollBox
@@ -176,7 +175,7 @@ object frmMain: TfrmMain
               Size.Height = 440.000000000000000000
               Viewport.Width = 571.000000000000000000
               Viewport.Height = 440.000000000000000000
-              inherited rRecentContracts: TRectangle
+              inherited rContainer: TRectangle
                 Size.Width = 531.000000000000000000
                 inherited Layout2: TLayout
                   Size.Width = 491.000000000000000000
@@ -218,8 +217,8 @@ object frmMain: TfrmMain
                     PopupMenu = fClients1.PopupMenu1
                     Size.Width = 491.000000000000000000
                     Size.Height = 357.000000000000000000
-                    Viewport.Width = 487.000000000000000000
-                    Viewport.Height = 332.000000000000000000
+                    Viewport.Width = 491.000000000000000000
+                    Viewport.Height = 357.000000000000000000
                   end
                 end
               end
