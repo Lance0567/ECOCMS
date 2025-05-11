@@ -43,11 +43,11 @@ type
     eFullname: TEdit;
     lAddress: TLabel;
     eAddress: TEdit;
-    lContactDate: TLabel;
-    lContactPrice: TLabel;
-    eContactPrice: TEdit;
+    lContractDate: TLabel;
+    lContractPrice: TLabel;
+    eContractPrice: TEdit;
     lFirstTD: TLabel;
-    dContactDate: TDateEdit;
+    dContractDate: TDateEdit;
     SpinEditButton1: TSpinEditButton;
     dFirstTD: TDateEdit;
     lSecondTD: TLabel;
@@ -57,6 +57,10 @@ type
     dThirdTD: TDateEdit;
     btnCancel: TCornerButton;
     btnSave: TCornerButton;
+    BindSourceDB2: TBindSourceDB;
+    LinkPropertyToFieldText: TLinkPropertyToField;
+    lFullnameR: TLabel;
+    lytFullnameC: TLayout;
     procedure mvSidebarResize(Sender: TObject);
     procedure FormCreate(Sender: TObject);
     procedure FormResize(Sender: TObject);
@@ -66,6 +70,10 @@ type
     procedure btnCancelClick(Sender: TObject);
     procedure FormClose(Sender: TObject; var Action: TCloseAction);
     procedure btnSaveClick(Sender: TObject);
+    procedure fClients1btnTriggerClick(Sender: TObject);
+    procedure ClearItems;
+    procedure HideComponents;
+    procedure AdjustLayoutHeight(ALayout: TLayout; AHeight: Single);
   private
     { Private declarations }
   public
@@ -81,15 +89,39 @@ implementation
 
 uses uDm;
 
-procedure ClearItems;
+procedure TfrmMain.HideComponents;
 begin
-  frmMain.eFullname.Text.Empty;
-  frmMain.eAddress.Text.Empty;
-  frmMain.eContactPrice.Text.Empty;
-  frmMain.dContactDate.Date := now;
+  // from add client modal
+  lFullnameR.Visible := False;
+
+end;
+
+{ Adjust Layout height for modal required fields }
+procedure TfrmMain.AdjustLayoutHeight(ALayout: TLayout; AHeight: Single);
+begin
+  if Assigned(ALayout) then
+  begin
+    ALayout.Height := AHeight;
+  end;
+end;
+
+procedure TfrmMain.ClearItems;
+begin
+  frmMain.eFullname.Text := '';
+  frmMain.eAddress.Text := '';
+  frmMain.eContractPrice.Text := '';
+  frmMain.dContractDate.Date := now;
   frmMain.dFirstTD.Date := now;
   frmMain.dSecondTD.Date := now;
   frmMain.dThirdTD.Date := now;
+
+  // Labels color
+  lFullname.TextSettings.FontColor := TAlphaColors.Black;
+  lAddress.TextSettings.FontColor := TAlphaColors.Black;
+  lContractPrice.TextSettings.FontColor := TAlphaColors.Black;
+
+  // Layout height
+  AdjustLayoutHeight(lytFullnameC, 75);
 end;
 
 { Cancel button }
@@ -106,33 +138,72 @@ begin
   // visibility hide of Add client modal
   rBackground.Visible := False;
   rModalAdd.Visible := False;
-
-  // Close query
-  dm.qClients.Close;
 end;
 
+{ Save button }
 procedure TfrmMain.btnSaveClick(Sender: TObject);
 begin
+  // Required fields checker
+  if eFullname.Text = '' then
+  begin
+    rModalAdd.Tag := 1;
+    AdjustLayoutHeight(lytFullnameC, 95);
+    lFullnameR.Visible := True;
+    lFullname.TextSettings.FontColor := TAlphaColors.Red;
+    ScrollBox1.ViewportPosition := PointF(0, eFullname.Position.Y - 50);
+    Exit;
+  end
+  else
+    lFullname.TextSettings.FontColor := TAlphaColors.Black;
+    AdjustLayoutHeight(lytFullnameC, 75);
+
+  if eAddress.Text = '' then
+  begin
+    rModalAdd.Tag := 1;
+    lAddress.TextSettings.FontColor := TAlphaColors.Red;
+    ScrollBox1.ViewportPosition := PointF(0, eAddress.Position.Y - 10);
+    Exit;
+  end
+  else
+    lAddress.TextSettings.FontColor := TAlphaColors.Black;
+
+  if eContractPrice.Text = '' then
+  begin
+    rModalAdd.Tag := 1;
+    lContractPrice.TextSettings.FontColor := TAlphaColors.Red;
+    ScrollBox1.ViewportPosition := PointF(0, eContractPrice.Position.Y - 10);
+    Exit;
+  end
+  else
+    lContractPrice.TextSettings.FontColor := TAlphaColors.Black;
+
+  // Append only after validation
   dm.qClients.Append;
 
   // fields to save
   dm.qClients.FieldByName('name').AsString := eFullname.Text;
   dm.qClients.FieldByName('address').AsString := eAddress.Text;
-  dm.qClients.FieldByName('contract_price').AsFloat := StrToFloat(eContactPrice.Text);
-  dm.qClients.FieldByName('contract_date').AsDateTime := dContactDate.Date;
+  dm.qClients.FieldByName('contract_price').AsFloat := StrToFloat(eContractPrice.Text);
+  dm.qClients.FieldByName('contract_date').AsDateTime := dContractDate.Date;
   dm.qClients.FieldByName('first_treatment').AsDateTime := dFirstTD.Date;
   dm.qClients.FieldByName('second_treatment').AsDateTime := dSecondTD.Date;
   dm.qClients.FieldByName('third_treatment').AsDateTime := dThirdTD.Date;
 
   dm.qClients.Post;
   dm.qClients.Refresh;
+  dm.qActiveClients.Refresh;
 
-  // visibility hide of Add client modal
+  // Hide Add client modal
   rBackground.Visible := False;
   rModalAdd.Visible := False;
 
   // Clear items from the modal
   ClearItems;
+end;
+
+procedure TfrmMain.fClients1btnTriggerClick(Sender: TObject);
+begin
+  fClients1.btnTriggerClick(Sender);
 end;
 
 { Form Close }
@@ -144,6 +215,12 @@ end;
 { Form Create }
 procedure TfrmMain.FormCreate(Sender: TObject);
 begin
+  // components to hide
+  HideComponents;
+
+  // Add modal layout adjustments
+  AdjustLayoutHeight(lytFullnameC, 75);
+
   // default Show
   mvSidebar.ShowMaster;
 

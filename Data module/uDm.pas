@@ -17,6 +17,7 @@ type
     ImageList1: TImageList;
     cData: TFDConnection;
     qClients: TFDQuery;
+    qActiveClients: TFDQuery;
   private
     { Private declarations }
   public

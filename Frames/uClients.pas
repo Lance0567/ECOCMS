@@ -50,10 +50,13 @@ begin
   frmMain.rModalAdd.Visible := True;
 
   // Set Date component to the current date
-  frmMain.dContactDate.Date := now;
+  frmMain.dContractDate.Date := now;
   frmMain.dFirstTD.Date := now;
   frmMain.dSecondTD.Date := now;
   frmMain.dThirdTD.Date := now;
+
+  frmMain.ScrollBox1.ViewportPosition := PointF(0,0);
+  frmMain.ClearItems;
 end;
 
 procedure TfClients.FrameResize(Sender: TObject);

@@ -44,6 +44,7 @@ type
     btnTrigger: TCornerButton;
     procedure FrameResize(Sender: TObject);
     procedure glytCardsResize(Sender: TObject);
+    procedure GridResponsive;
   private
     { Private declarations }
   public
@@ -56,13 +57,15 @@ implementation
 
 uses uMain, uDm;
 
-procedure TfDashboard.FrameResize(Sender: TObject);
+procedure TfDashboard.GridResponsive;
 begin
   // Cards responsive
   if frmMain.ClientWidth >= 1300 then
   begin
     glytCards.Height := 170;
-    glytCards.ItemWidth := 280;
+    glytCards.ItemWidth := 345;
+    glytCards.Padding.Right := 0;
+    glytCards.Padding.Left := 0;
   end
   else if frmMain.ClientWidth <= 800 then
   begin
@@ -71,17 +74,23 @@ begin
   else
   begin
     glytCards.Height := 321;
-    glytCards.ItemWidth := 270;
+//    glytCards.ItemWidth := 270;
   end;
+end;
+
+procedure TfDashboard.FrameResize(Sender: TObject);
+begin
+  GridResponsive;
 end;
 
 procedure TfDashboard.glytCardsResize(Sender: TObject);
 var
-  AvailableWidth, ItemsPerRow: Integer;
+  AvailableWidth: Integer;
+  ItemsPerRow: Integer;
 begin
   AvailableWidth := Trunc(glytCards.Width);
-  ItemsPerRow := Max(1, AvailableWidth div 280); // 270 + 10 margin
-  glytCards.ItemWidth := Trunc((AvailableWidth - (ItemsPerRow + 1) * 10) / ItemsPerRow);
+  ItemsPerRow := Max(1, AvailableWidth div 285);
+  glytCards.ItemWidth := Trunc((AvailableWidth - (ItemsPerRow + 1) * 5) / ItemsPerRow);
 end;
 
 end.

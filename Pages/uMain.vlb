@@ -3,166 +3,169 @@ Coordinates=1060,261,82,33
 Visible=True
 
 [sbMenu]
-Coordinates=104,292,53,51
+Coordinates=849,10,53,51
 
 [fDashboard1.cbtnViewAllContracts]
-Coordinates=187,460,186,33
+Coordinates=149,716,186,33
 
 [fDashboard1.lytCardD2]
-Coordinates=10,646,128,33
+Coordinates=869,657,128,33
 
 [fDashboard1.btnTrigger]
-Coordinates=10,460,131,33
+Coordinates=825,480,131,33
 
 [fDashboard1.ListView1]
-Coordinates=371,10,127,141
+Coordinates=337,10,127,141
 
 [mvSidebar]
-Coordinates=889,376,67,33
+Coordinates=681,539,67,33
+Visible=True
 
 [fClients1.btnTrigger]
-Coordinates=325,522,112,33
+Coordinates=150,598,112,33
 
 [fDashboard1.Glyph2]
-Coordinates=341,646,115,33
+Coordinates=515,598,115,33
 
 [fDashboard1.lbTotalContracts]
-Coordinates=544,10,161,51
+Coordinates=1021,249,161,51
 
 [fDashboard1.lytCardD1]
-Coordinates=834,646,128,33
+Coordinates=164,539,128,33
 
 [fDashboard1.lbTotalContractsC]
-Coordinates=813,292,169,51
+Coordinates=628,326,169,51
+Visible=True
 
 [fDashboard1.lbTitle]
-Coordinates=384,376,110,51
+Coordinates=398,326,110,51
 
 [lytContent]
-Coordinates=1038,522,65,33
+Coordinates=1103,657,65,33
 
 [fClients1.Layout2]
-Coordinates=749,376,100,33
+Coordinates=598,657,100,33
 
 [fClients1]
-Coordinates=277,708,57,33
+Coordinates=840,716,57,33
 
 [fDashboard1.Layout2]
-Coordinates=671,646,119,33
+Coordinates=724,657,119,33
 
 [sbDashboard]
-Coordinates=291,292,80,51
+Coordinates=720,403,80,51
 
 [fClients1.lbTitle]
-Coordinates=1034,292,91,51
+Coordinates=113,403,91,51
 
 [fClients1.Layout1]
-Coordinates=368,708,100,33
+Coordinates=366,657,100,33
 
 [fDashboard1.lytHeader]
-Coordinates=960,584,127,33
+Coordinates=781,598,127,33
 
 [fDashboard1.glytCards]
-Coordinates=499,646,127,33
+Coordinates=459,539,127,33
 
 [fClients1.rRecentContracts]
 Coordinates=564,584,147,33
 
 [fDashboard1.lytCardD3]
-Coordinates=755,460,128,33
+Coordinates=1094,403,128,33
 
 [sbSettings]
-Coordinates=190,292,66,51
+Coordinates=929,249,66,51
 
 [fDashboard1.Glyph4]
-Coordinates=1009,646,115,33
+Coordinates=10,775,115,33
 
 [fDashboard1.lytCardD4]
-Coordinates=765,708,128,33
+Coordinates=10,539,128,33
 
 [fDashboard1.lbActiveClientsC]
-Coordinates=537,376,161,51
+Coordinates=490,28,161,51
 
 [sbContracts]
-Coordinates=946,10,74,51
+Coordinates=410,403,74,51
 
 [fDashboard1.rCard2]
-Coordinates=168,522,113,33
+Coordinates=343,480,113,33
 
 [fClients1.ScrollBox1]
-Coordinates=185,646,114,33
+Coordinates=10,598,114,33
 
 [fDashboard1.rRecentContracts]
-Coordinates=10,584,166,33
+Coordinates=10,480,166,33
 
 [fDashboard1.lytBottom]
-Coordinates=427,460,128,33
+Coordinates=854,539,128,33
 
 [fDashboard1.lbNotYetPaidC]
-Coordinates=408,292,151,51
+Coordinates=917,403,151,51
 
 [fDashboard1.lbActiveClients]
-Coordinates=610,292,154,51
+Coordinates=230,403,154,51
 
 [lytSidebar]
-Coordinates=940,522,64,33
+Coordinates=612,716,64,33
 
 [fDashboard1.rCard1]
-Coordinates=598,460,113,33
+Coordinates=1080,480,113,33
 
 [fDashboard1]
-Coordinates=759,584,77,33
+Coordinates=1148,716,77,33
 
 [fDashboard1.rCard3]
-Coordinates=228,584,113,33
+Coordinates=10,657,113,33
 
 [tiClients]
-Coordinates=873,584,54,33
+Coordinates=774,539,54,33
 
 [fDashboard1.ScrollBox1]
-Coordinates=385,584,133,33
+Coordinates=482,480,133,33
+Visible=True
 
 [fClients1.lytHeader]
-Coordinates=508,708,107,33
+Coordinates=382,598,107,33
 
 [fClients1.SkLabel1]
-Coordinates=478,522,105,33
+Coordinates=923,716,105,33
 
 [fDashboard1.lbFullyPaidC]
-Coordinates=756,10,142,51
+Coordinates=10,326,142,51
 
 [tiContracts]
-Coordinates=991,376,68,33
+Coordinates=288,598,68,33
 
 [fDashboard1.SkLabel1]
-Coordinates=930,460,125,33
+Coordinates=361,716,125,33
 
 [fDashboard1.lbNotYetPaid]
-Coordinates=10,376,144,51
+Coordinates=823,326,144,51
 
 [fDashboard1.Glyph1]
-Coordinates=10,522,115,33
+Coordinates=318,539,115,33
 
 [fDashboard1.rCard4]
-Coordinates=10,708,113,33
+Coordinates=10,716,113,33
 
 [sbClients]
-Coordinates=10,292,60,51
+Coordinates=239,249,60,51
 
 [fDashboard1.Glyph3]
-Coordinates=782,522,115,33
+Coordinates=202,480,115,33
 
 [fDashboard1.lbFullyPaid]
-Coordinates=203,376,135,51
+Coordinates=575,249,135,51
 
 [tiDashboard]
-Coordinates=167,708,74,33
+Coordinates=149,657,74,33
 
 [fClients1.ScrollBox2]
-Coordinates=626,522,114,33
+Coordinates=1055,598,114,33
 
 [fClients1.gTableRecord]
-Coordinates=196,76,129,105
+Coordinates=182,55,129,123
 Visible=True
 
 [BindSourceDB1]
@@ -172,9 +175,109 @@ Coordinates=10,10,92,213
 Coordinates=121,170,82,33
 
 [tcController]
-Coordinates=658,708,72,33
+Coordinates=982,480,72,33
 
 [dm.qClients]
 Visible=False
 Coordinates=293,87,73,33
+
+[lAddress]
+Coordinates=636,403,58,51
+
+[eFullname]
+Coordinates=826,403,65,51
+
+[lytBtn]
+Coordinates=612,539,43,33
+
+[dSecondTD]
+Coordinates=434,249,115,51
+
+[SpinEditButton1]
+Coordinates=934,598,95,33
+
+[lFullname]
+Coordinates=10,249,62,51
+
+[eAddress]
+Coordinates=736,249,61,51
+
+[fClients1.Preview]
+Coordinates=656,598,99,33
+
+[lFirstTD]
+Coordinates=319,326,53,51
+
+[lytTitle]
+Coordinates=1112,539,47,33
+
+[lytContainer]
+Coordinates=512,716,74,33
+
+[fClients1.rContainer]
+Coordinates=702,716,112,33
+
+[Label1]
+Coordinates=928,10,46,51
+
+[fClients1.Delete]
+Coordinates=249,657,91,33
+
+[rModalAdd]
+Coordinates=1054,716,68,33
+
+[btnClose]
+Coordinates=993,326,58,51
+
+[lSecondTD]
+Coordinates=534,326,68,51
+
+[lThirdTD]
+Coordinates=1077,326,56,51
+
+[dFirstTD]
+Coordinates=1000,10,115,51
+
+[btnSave]
+Coordinates=1023,657,54,33
+
+[rBackground]
+Coordinates=1008,539,78,33
+
+[fClients1.Edit]
+Coordinates=492,657,80,33
+
+[fClients1.PopupMenu1]
+Coordinates=1257,221,125,33
+
+[btnCancel]
+Coordinates=641,480,64,33
+
+[dThirdTD]
+Coordinates=178,326,115,51
+
+[ScrollBox1]
+Coordinates=731,480,68,33
+
+[dm.qActiveClients]
+Coordinates=544,10,104,33
+Visible=False
+
+[fClients1.eSearch]
+Coordinates=510,403,100,51
+
+[BindSourceDB2]
+Coordinates=731,10,92,87
+
+[lContractDate]
+Coordinates=10,403,77,51
+
+[lContractPrice]
+Coordinates=823,249,80,51
+
+[eContractPrice]
+Coordinates=325,249,83,51
+
+[dContractDate]
+Coordinates=98,249,115,51
 

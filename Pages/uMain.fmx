@@ -3,7 +3,7 @@ object frmMain: TfrmMain
   Top = 0
   Caption = 'Form1'
   ClientHeight = 505
-  ClientWidth = 782
+  ClientWidth = 817
   Position = DesktopCenter
   StyleBook = dm.StyleBook1
   WindowState = wsMaximized
@@ -17,37 +17,37 @@ object frmMain: TfrmMain
   DesignerMasterStyle = 0
   object lytContainer: TLayout
     Align = Client
-    Size.Width = 782.000000000000000000
+    Size.Width = 817.000000000000000000
     Size.Height = 505.000000000000000000
     Size.PlatformDefault = False
     TabOrder = 2
     object lytContent: TLayout
       Align = Client
-      Size.Width = 582.000000000000000000
+      Size.Width = 617.000000000000000000
       Size.Height = 505.000000000000000000
       Size.PlatformDefault = False
       TabOrder = 0
       object tcController: TTabControl
         Align = Client
-        Size.Width = 582.000000000000000000
+        Size.Width = 617.000000000000000000
         Size.Height = 505.000000000000000000
         Size.PlatformDefault = False
-        TabIndex = 0
+        TabIndex = 1
         TabOrder = 0
         TabPosition = None
         Sizes = (
-          582s
+          617s
           505s
-          582s
+          617s
           505s
-          582s
+          617s
           505s)
         object tiDashboard: TTabItem
           CustomIcon = <
             item
             end>
           TextSettings.Trimming = None
-          IsSelected = True
+          IsSelected = False
           Size.Width = 12.000000000000000000
           Size.Height = 12.000000000000000000
           Size.PlatformDefault = False
@@ -58,83 +58,112 @@ object frmMain: TfrmMain
           ExplicitSize.cy = 12.000000000000000000
           inline fDashboard1: TfDashboard
             Align = Client
-            Size.Width = 582.000000000000000000
+            Size.Width = 617.000000000000000000
             Size.Height = 505.000000000000000000
             Size.PlatformDefault = False
             inherited ScrollBox1: TScrollBox
-              Size.Width = 582.000000000000000000
+              Size.Width = 617.000000000000000000
               Size.Height = 505.000000000000000000
-              Viewport.Width = 571.000000000000000000
+              Viewport.Width = 606.000000000000000000
               Viewport.Height = 505.000000000000000000
               inherited lytBottom: TLayout
-                Size.Width = 571.000000000000000000
+                Size.Width = 606.000000000000000000
               end
               inherited rRecentContracts: TRectangle
-                Size.Width = 531.000000000000000000
+                Size.Width = 566.000000000000000000
                 inherited Layout2: TLayout
-                  Size.Width = 491.000000000000000000
+                  Size.Width = 526.000000000000000000
                   inherited SkLabel1: TSkLabel
-                    Size.Width = 491.000000000000000000
+                    Size.Width = 526.000000000000000000
                   end
                 end
                 inherited ListView1: TListView
-                  Size.Width = 491.000000000000000000
+                  Size.Width = 526.000000000000000000
                 end
                 inherited cbtnViewAllContracts: TCornerButton
-                  Size.Width = 491.000000000000000000
+                  Size.Width = 526.000000000000000000
                 end
               end
               inherited glytCards: TGridLayout
-                Padding.Right = 15.000000000000000000
-                Size.Width = 556.000000000000000000
+                ItemWidth = 290.000000000000000000
+                Size.Width = 591.000000000000000000
                 inherited rCard1: TRectangle
+                  Size.Width = 280.000000000000000000
                   inherited lytCardD1: TLayout
+                    Size.Width = 240.000000000000000000
                     inherited lbTotalContracts: TLabel
+                      Size.Width = 240.000000000000000000
                       TextSettings.Font.StyleExt = {00070000000000000004000000}
+                      inherited Glyph1: TGlyph
+                        Position.X = 196.000000000000000000
+                      end
                     end
                   end
                   inherited lbTotalContractsC: TLabel
+                    Size.Width = 240.000000000000000000
                     TextSettings.Font.StyleExt = {00070000000000000004000000}
                   end
                 end
                 inherited rCard2: TRectangle
+                  Size.Width = 280.000000000000000000
                   inherited lytCardD2: TLayout
+                    Size.Width = 240.000000000000000000
                     inherited lbActiveClients: TLabel
+                      Size.Width = 240.000000000000000000
                       TextSettings.Font.StyleExt = {00070000000000000004000000}
+                      inherited Glyph2: TGlyph
+                        Position.X = 196.000000000000000000
+                      end
                     end
                   end
                   inherited lbActiveClientsC: TLabel
+                    Size.Width = 240.000000000000000000
                     TextSettings.Font.StyleExt = {00070000000000000004000000}
+                    Text = '7'
                   end
                 end
                 inherited rCard3: TRectangle
+                  Size.Width = 280.000000000000000000
                   inherited lytCardD3: TLayout
+                    Size.Width = 240.000000000000000000
                     inherited lbFullyPaid: TLabel
+                      Size.Width = 240.000000000000000000
                       TextSettings.Font.StyleExt = {00070000000000000004000000}
+                      inherited Glyph3: TGlyph
+                        Position.X = 196.000000000000000000
+                      end
                     end
                   end
                   inherited lbFullyPaidC: TLabel
+                    Size.Width = 240.000000000000000000
                     TextSettings.Font.StyleExt = {00070000000000000004000000}
                   end
                 end
                 inherited rCard4: TRectangle
+                  Size.Width = 280.000000000000000000
                   inherited lytCardD4: TLayout
+                    Size.Width = 240.000000000000000000
                     inherited lbNotYetPaid: TLabel
+                      Size.Width = 240.000000000000000000
                       TextSettings.Font.StyleExt = {00070000000000000004000000}
+                      inherited Glyph4: TGlyph
+                        Position.X = 196.000000000000000000
+                      end
                     end
                   end
                   inherited lbNotYetPaidC: TLabel
+                    Size.Width = 240.000000000000000000
                     TextSettings.Font.StyleExt = {00070000000000000004000000}
                   end
                 end
               end
               inherited lytHeader: TLayout
-                Size.Width = 571.000000000000000000
+                Size.Width = 606.000000000000000000
                 inherited lbTitle: TLabel
-                  Size.Width = 342.000000000000000000
+                  Size.Width = 377.000000000000000000
                 end
                 inherited btnTrigger: TCornerButton
-                  Position.X = 372.000000000000000000
+                  Position.X = 407.000000000000000000
                 end
               end
             end
@@ -145,7 +174,7 @@ object frmMain: TfrmMain
             item
             end>
           TextSettings.Trimming = None
-          IsSelected = False
+          IsSelected = True
           Size.Width = 12.000000000000000000
           Size.Height = 12.000000000000000000
           Size.PlatformDefault = False
@@ -157,49 +186,52 @@ object frmMain: TfrmMain
           inline fClients1: TfClients
             Align = Client
             PopupMenu = fClients1.PopupMenu1
-            Size.Width = 582.000000000000000000
+            Size.Width = 617.000000000000000000
             Size.Height = 505.000000000000000000
             Size.PlatformDefault = False
             inherited lytHeader: TLayout
-              Size.Width = 582.000000000000000000
+              Size.Width = 617.000000000000000000
               inherited lbTitle: TLabel
-                Size.Width = 387.000000000000000000
+                Size.Width = 422.000000000000000000
               end
               inherited btnTrigger: TCornerButton
                 Margins.Right = 30.000000000000000000
-                Position.X = 417.000000000000000000
+                Position.X = 452.000000000000000000
+                OnClick = fClients1btnTriggerClick
               end
             end
             inherited ScrollBox1: TScrollBox
-              Size.Width = 582.000000000000000000
+              Size.Width = 617.000000000000000000
               Size.Height = 440.000000000000000000
-              Viewport.Width = 571.000000000000000000
+              Viewport.Width = 606.000000000000000000
               Viewport.Height = 440.000000000000000000
               inherited rContainer: TRectangle
-                Size.Width = 531.000000000000000000
+                Size.Width = 566.000000000000000000
                 inherited Layout2: TLayout
-                  Size.Width = 491.000000000000000000
+                  Size.Width = 526.000000000000000000
                   inherited eSearch: TEdit
                     StyleLookup = 'searchedit'
-                    Position.X = 272.000000000000000000
+                    Position.X = 307.000000000000000000
                     Position.Y = 4.000000000000000000
                     Size.Height = 32.000000000000000000
                   end
                 end
                 inherited ScrollBox2: TScrollBox
-                  Size.Width = 491.000000000000000000
-                  Viewport.Width = 491.000000000000000000
+                  Size.Width = 526.000000000000000000
+                  Viewport.Width = 526.000000000000000000
                   Viewport.Height = 372.000000000000000000
                   inherited gTableRecord: TGrid
                     PopupMenu = fClients1.PopupMenu1
-                    Size.Width = 491.000000000000000000
-                    Viewport.Width = 491.000000000000000000
-                    Viewport.Height = 352.000000000000000000
+                    Size.Width = 526.000000000000000000
+                    RowCount = 7
+                    Options = [Editing, ColumnResize, ColumnMove, ColLines, RowLines, RowSelect, Tabs, Header, HeaderClick, AutoDisplacement]
+                    Viewport.Width = 522.000000000000000000
+                    Viewport.Height = 316.000000000000000000
                   end
                 end
               end
               inherited Layout1: TLayout
-                Size.Width = 571.000000000000000000
+                Size.Width = 606.000000000000000000
               end
             end
             inherited PopupMenu1: TPopupMenu
@@ -328,7 +360,6 @@ object frmMain: TfrmMain
     Size.Width = 420.000000000000000000
     Size.Height = 450.000000000000000000
     Size.PlatformDefault = False
-    Visible = False
     XRadius = 8.000000000000000000
     YRadius = 8.000000000000000000
     object ScrollBox1: TScrollBox
@@ -348,7 +379,7 @@ object frmMain: TfrmMain
         Size.Width = 379.000000000000000000
         Size.Height = 50.000000000000000000
         Size.PlatformDefault = False
-        TabOrder = 7
+        TabOrder = 6
         object Label1: TLabel
           Align = Client
           StyledSettings = [Family, Size]
@@ -377,43 +408,43 @@ object frmMain: TfrmMain
         Date = 45787.000000000000000000
         Align = Top
         Position.X = 15.000000000000000000
-        Position.Y = 388.000000000000000000
+        Position.Y = 409.000000000000000000
         Size.Width = 379.000000000000000000
         Size.Height = 32.000000000000000000
         Size.PlatformDefault = False
         StyleLookup = 'Customdateeditstyle'
-        TabOrder = 14
+        TabOrder = 13
       end
-      object dContactDate: TDateEdit
+      object dContractDate: TDateEdit
         Date = 45787.000000000000000000
         Align = Top
         Position.X = 15.000000000000000000
-        Position.Y = 240.000000000000000000
+        Position.Y = 261.000000000000000000
         Size.Width = 379.000000000000000000
         Size.Height = 32.000000000000000000
         Size.PlatformDefault = False
         StyleLookup = 'Customdateeditstyle'
-        TabOrder = 17
+        TabOrder = 16
       end
       object eAddress: TEdit
         Touch.InteractiveGestures = [LongTap, DoubleTap]
         Align = Top
         StyleLookup = 'Modaleditstyle'
-        TabOrder = 8
+        TabOrder = 7
         Position.X = 15.000000000000000000
-        Position.Y = 166.000000000000000000
+        Position.Y = 187.000000000000000000
         Size.Width = 379.000000000000000000
         Size.Height = 32.000000000000000000
         Size.PlatformDefault = False
         TextPrompt = '123 Main St, City, State, Zip'
       end
-      object eContactPrice: TEdit
+      object eContractPrice: TEdit
         Touch.InteractiveGestures = [LongTap, DoubleTap]
         Align = Top
         StyleLookup = 'Modaleditstyle'
-        TabOrder = 9
+        TabOrder = 8
         Position.X = 15.000000000000000000
-        Position.Y = 314.000000000000000000
+        Position.Y = 335.000000000000000000
         Size.Width = 379.000000000000000000
         Size.Height = 32.000000000000000000
         Size.PlatformDefault = False
@@ -426,118 +457,93 @@ object frmMain: TfrmMain
           TabOrder = 0
         end
       end
-      object eFullname: TEdit
-        Touch.InteractiveGestures = [LongTap, DoubleTap]
-        Align = Top
-        StyleLookup = 'Modaleditstyle'
-        TabOrder = 18
-        Position.X = 15.000000000000000000
-        Position.Y = 92.000000000000000000
-        Size.Width = 379.000000000000000000
-        Size.Height = 32.000000000000000000
-        Size.PlatformDefault = False
-        TextPrompt = 'Francis'
-      end
       object lAddress: TLabel
         Align = Top
         StyledSettings = [Family]
         Position.X = 15.000000000000000000
-        Position.Y = 124.000000000000000000
+        Position.Y = 145.000000000000000000
         Size.Width = 379.000000000000000000
         Size.Height = 42.000000000000000000
         Size.PlatformDefault = False
         TextSettings.Font.Size = 14.000000000000000000
         TextSettings.Font.StyleExt = {00060000000000000004000000}
         Text = 'Address'
-        TabOrder = 6
-      end
-      object lContactDate: TLabel
-        Align = Top
-        StyledSettings = [Family]
-        Position.X = 15.000000000000000000
-        Position.Y = 198.000000000000000000
-        Size.Width = 379.000000000000000000
-        Size.Height = 42.000000000000000000
-        Size.PlatformDefault = False
-        TextSettings.Font.Size = 14.000000000000000000
-        TextSettings.Font.StyleExt = {00060000000000000004000000}
-        Text = 'Contact Date'
         TabOrder = 5
       end
-      object lContactPrice: TLabel
+      object lContractDate: TLabel
         Align = Top
         StyledSettings = [Family]
         Position.X = 15.000000000000000000
-        Position.Y = 272.000000000000000000
+        Position.Y = 219.000000000000000000
         Size.Width = 379.000000000000000000
         Size.Height = 42.000000000000000000
         Size.PlatformDefault = False
         TextSettings.Font.Size = 14.000000000000000000
         TextSettings.Font.StyleExt = {00060000000000000004000000}
-        Text = 'Contact Price'
+        Text = 'Contract Date'
         TabOrder = 4
+      end
+      object lContractPrice: TLabel
+        Align = Top
+        StyledSettings = [Family]
+        Position.X = 15.000000000000000000
+        Position.Y = 293.000000000000000000
+        Size.Width = 379.000000000000000000
+        Size.Height = 42.000000000000000000
+        Size.PlatformDefault = False
+        TextSettings.Font.Size = 14.000000000000000000
+        TextSettings.Font.StyleExt = {00060000000000000004000000}
+        Text = 'Contract Price'
+        TabOrder = 3
       end
       object lFirstTD: TLabel
         Align = Top
         StyledSettings = [Family]
         Position.X = 15.000000000000000000
-        Position.Y = 346.000000000000000000
+        Position.Y = 367.000000000000000000
         Size.Width = 379.000000000000000000
         Size.Height = 42.000000000000000000
         Size.PlatformDefault = False
         TextSettings.Font.Size = 14.000000000000000000
         TextSettings.Font.StyleExt = {00060000000000000004000000}
         Text = 'First Treatment Date'
-        TabOrder = 3
-      end
-      object lFullname: TLabel
-        Align = Top
-        StyledSettings = [Family]
-        Position.X = 15.000000000000000000
-        Position.Y = 50.000000000000000000
-        Size.Width = 379.000000000000000000
-        Size.Height = 42.000000000000000000
-        Size.PlatformDefault = False
-        TextSettings.Font.Size = 14.000000000000000000
-        TextSettings.Font.StyleExt = {00060000000000000004000000}
-        Text = 'Full Name'
-        TabOrder = 0
+        TabOrder = 2
       end
       object lSecondTD: TLabel
         Align = Top
         StyledSettings = [Family]
         Position.X = 15.000000000000000000
-        Position.Y = 420.000000000000000000
+        Position.Y = 441.000000000000000000
         Size.Width = 379.000000000000000000
         Size.Height = 42.000000000000000000
         Size.PlatformDefault = False
         TextSettings.Font.Size = 14.000000000000000000
         TextSettings.Font.StyleExt = {00060000000000000004000000}
         Text = 'Second Treatment Date'
-        TabOrder = 2
+        TabOrder = 1
       end
       object lThirdTD: TLabel
         Align = Top
         StyledSettings = [Family]
         Position.X = 15.000000000000000000
-        Position.Y = 494.000000000000000000
+        Position.Y = 515.000000000000000000
         Size.Width = 379.000000000000000000
         Size.Height = 42.000000000000000000
         Size.PlatformDefault = False
         TextSettings.Font.Size = 14.000000000000000000
         TextSettings.Font.StyleExt = {00060000000000000004000000}
         Text = 'Third Treatment Date'
-        TabOrder = 1
+        TabOrder = 0
       end
       object lytBtn: TLayout
         Align = Top
         Margins.Top = 35.000000000000000000
         Position.X = 15.000000000000000000
-        Position.Y = 603.000000000000000000
+        Position.Y = 624.000000000000000000
         Size.Width = 379.000000000000000000
         Size.Height = 40.000000000000000000
         Size.PlatformDefault = False
-        TabOrder = 19
+        TabOrder = 17
         object btnCancel: TCornerButton
           Align = Right
           Margins.Right = 8.000000000000000000
@@ -573,23 +579,67 @@ object frmMain: TfrmMain
         Date = 45787.000000000000000000
         Align = Top
         Position.X = 15.000000000000000000
-        Position.Y = 462.000000000000000000
-        Size.Width = 379.000000000000000000
-        Size.Height = 32.000000000000000000
-        Size.PlatformDefault = False
-        StyleLookup = 'Customdateeditstyle'
-        TabOrder = 16
-      end
-      object dThirdTD: TDateEdit
-        Date = 45787.000000000000000000
-        Align = Top
-        Position.X = 15.000000000000000000
-        Position.Y = 536.000000000000000000
+        Position.Y = 483.000000000000000000
         Size.Width = 379.000000000000000000
         Size.Height = 32.000000000000000000
         Size.PlatformDefault = False
         StyleLookup = 'Customdateeditstyle'
         TabOrder = 15
+      end
+      object dThirdTD: TDateEdit
+        Date = 45787.000000000000000000
+        Align = Top
+        Position.X = 15.000000000000000000
+        Position.Y = 557.000000000000000000
+        Size.Width = 379.000000000000000000
+        Size.Height = 32.000000000000000000
+        Size.PlatformDefault = False
+        StyleLookup = 'Customdateeditstyle'
+        TabOrder = 14
+      end
+      object lytFullnameC: TLayout
+        Align = Top
+        Position.X = 15.000000000000000000
+        Position.Y = 50.000000000000000000
+        Size.Width = 379.000000000000000000
+        Size.Height = 95.000000000000000000
+        Size.PlatformDefault = False
+        TabOrder = 18
+        object eFullname: TEdit
+          Touch.InteractiveGestures = [LongTap, DoubleTap]
+          Align = Top
+          StyleLookup = 'Modaleditstyle'
+          TabOrder = 18
+          Position.Y = 42.000000000000000000
+          Size.Width = 379.000000000000000000
+          Size.Height = 32.000000000000000000
+          Size.PlatformDefault = False
+          TextPrompt = 'Francis'
+        end
+        object lFullname: TLabel
+          Align = Top
+          StyledSettings = [Family]
+          Size.Width = 379.000000000000000000
+          Size.Height = 42.000000000000000000
+          Size.PlatformDefault = False
+          TextSettings.Font.Size = 14.000000000000000000
+          TextSettings.Font.StyleExt = {00060000000000000004000000}
+          Text = 'Full Name'
+          TabOrder = 0
+        end
+        object lFullnameR: TLabel
+          Align = Top
+          StyledSettings = []
+          Margins.Top = 5.000000000000000000
+          Position.Y = 79.000000000000000000
+          Size.Width = 379.000000000000000000
+          Size.Height = 17.000000000000000000
+          Size.PlatformDefault = False
+          TextSettings.Font.Size = 15.000000000000000000
+          TextSettings.FontColor = claRed
+          Text = 'Full name is required'
+          TabOrder = 4
+        end
       end
     end
   end
@@ -630,5 +680,18 @@ object frmMain: TfrmMain
           Width = 180
         end>
     end
+    object LinkPropertyToFieldText: TLinkPropertyToField
+      Category = 'Quick Bindings'
+      DataSource = BindSourceDB2
+      FieldName = 'Active Clients'
+      Component = fDashboard1.lbActiveClientsC
+      ComponentProperty = 'Text'
+    end
+  end
+  object BindSourceDB2: TBindSourceDB
+    DataSet = dm.qActiveClients
+    ScopeMappings = <>
+    Left = 161
+    Top = 305
   end
 end
