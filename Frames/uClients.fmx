@@ -3,7 +3,6 @@ object fClients: TfClients
   Size.Width = 715.000000000000000000
   Size.Height = 480.000000000000000000
   Size.PlatformDefault = False
-  OnResize = FrameResize
   object lytHeader: TLayout
     Align = Top
     Margins.Top = 10.000000000000000000

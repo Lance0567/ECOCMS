@@ -61,6 +61,13 @@ type
     LinkPropertyToFieldText: TLinkPropertyToField;
     lFullnameR: TLabel;
     lytFullnameC: TLayout;
+    lytAddressC: TLayout;
+    lAddressR: TLabel;
+    lContractPriceR: TLabel;
+    lytContractPriceC: TLayout;
+    Label2: TLabel;
+    Label3: TLabel;
+    Label4: TLabel;
     procedure mvSidebarResize(Sender: TObject);
     procedure FormCreate(Sender: TObject);
     procedure FormResize(Sender: TObject);
@@ -93,7 +100,8 @@ procedure TfrmMain.HideComponents;
 begin
   // from add client modal
   lFullnameR.Visible := False;
-
+  lAddressR.Visible := False;
+  lContractPriceR.Visible := False;
 end;
 
 { Adjust Layout height for modal required fields }
@@ -122,6 +130,8 @@ begin
 
   // Layout height
   AdjustLayoutHeight(lytFullnameC, 75);
+  AdjustLayoutHeight(lytAddressC, 75);
+  AdjustLayoutHeight(lytContractPriceC, 75);
 end;
 
 { Cancel button }
@@ -142,45 +152,76 @@ end;
 
 { Save button }
 procedure TfrmMain.btnSaveClick(Sender: TObject);
+var
+  HasError: Boolean;
+  FirstInvalidPos: Single;
 begin
-  // Required fields checker
+  HasError := False;
+  FirstInvalidPos := -1;
+
+  // Full Name validation
   if eFullname.Text = '' then
   begin
     rModalAdd.Tag := 1;
     AdjustLayoutHeight(lytFullnameC, 95);
     lFullnameR.Visible := True;
     lFullname.TextSettings.FontColor := TAlphaColors.Red;
-    ScrollBox1.ViewportPosition := PointF(0, eFullname.Position.Y - 50);
-    Exit;
+    if FirstInvalidPos = -1 then
+      FirstInvalidPos := eFullname.Position.Y;
+    HasError := True;
   end
   else
-    lFullname.TextSettings.FontColor := TAlphaColors.Black;
+  begin
     AdjustLayoutHeight(lytFullnameC, 75);
+    lFullnameR.Visible := False;
+    lFullname.TextSettings.FontColor := TAlphaColors.Black;
+  end;
 
+  // Address validation
   if eAddress.Text = '' then
   begin
     rModalAdd.Tag := 1;
+    AdjustLayoutHeight(lytAddressC, 95);
+    lAddressR.Visible := True;
     lAddress.TextSettings.FontColor := TAlphaColors.Red;
-    ScrollBox1.ViewportPosition := PointF(0, eAddress.Position.Y - 10);
-    Exit;
+    if FirstInvalidPos = -1 then
+      FirstInvalidPos := eAddress.Position.Y;
+    HasError := True;
   end
   else
+  begin
+    AdjustLayoutHeight(lytAddressC, 75);
+    lAddressR.Visible := False;
     lAddress.TextSettings.FontColor := TAlphaColors.Black;
+  end;
 
+  // Contract Price validation
   if eContractPrice.Text = '' then
   begin
     rModalAdd.Tag := 1;
+    AdjustLayoutHeight(lytContractPriceC, 95);
+    lContractPriceR.Visible := True;
     lContractPrice.TextSettings.FontColor := TAlphaColors.Red;
-    ScrollBox1.ViewportPosition := PointF(0, eContractPrice.Position.Y - 10);
-    Exit;
+    if FirstInvalidPos = -1 then
+      FirstInvalidPos := eContractPrice.Position.Y;
+    HasError := True;
   end
   else
+  begin
+    AdjustLayoutHeight(lytContractPriceC, 75);
+    lContractPriceR.Visible := False;
     lContractPrice.TextSettings.FontColor := TAlphaColors.Black;
+  end;
 
-  // Append only after validation
+  // Stop if any error is found
+  if HasError then
+  begin
+    ScrollBox1.ViewportPosition := PointF(0, FirstInvalidPos - 50);
+    Exit;
+  end;
+
+  // Proceed to save
   dm.qClients.Append;
-
-  // fields to save
   dm.qClients.FieldByName('name').AsString := eFullname.Text;
   dm.qClients.FieldByName('address').AsString := eAddress.Text;
   dm.qClients.FieldByName('contract_price').AsFloat := StrToFloat(eContractPrice.Text);
@@ -188,16 +229,14 @@ begin
   dm.qClients.FieldByName('first_treatment').AsDateTime := dFirstTD.Date;
   dm.qClients.FieldByName('second_treatment').AsDateTime := dSecondTD.Date;
   dm.qClients.FieldByName('third_treatment').AsDateTime := dThirdTD.Date;
-
   dm.qClients.Post;
+
   dm.qClients.Refresh;
   dm.qActiveClients.Refresh;
 
-  // Hide Add client modal
   rBackground.Visible := False;
   rModalAdd.Visible := False;
 
-  // Clear items from the modal
   ClearItems;
 end;
 
@@ -220,6 +259,8 @@ begin
 
   // Add modal layout adjustments
   AdjustLayoutHeight(lytFullnameC, 75);
+  AdjustLayoutHeight(lytAddressC, 75);
+  AdjustLayoutHeight(lytContractPriceC, 75);
 
   // default Show
   mvSidebar.ShowMaster;

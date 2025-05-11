@@ -37,3 +37,6 @@ Coordinates=129,130,95,33
 [rContainer]
 Coordinates=255,10,100,33
 
+[dm.qActiveClients]
+Visible=False
+

@@ -162,13 +162,13 @@
             <FormType>fmx</FormType>
             <DesignClass>TFrame</DesignClass>
         </DCCReference>
-        <DCCReference Include="Frames\uClients.pas">
-            <Form>fClients</Form>
+        <DCCReference Include="Frames\uContracts.pas">
+            <Form>fContracts</Form>
             <FormType>fmx</FormType>
             <DesignClass>TFrame</DesignClass>
         </DCCReference>
-        <DCCReference Include="Frames\uContracts.pas">
-            <Form>fContracts</Form>
+        <DCCReference Include="Frames\uClients.pas">
+            <Form>fClients</Form>
             <FormType>fmx</FormType>
             <DesignClass>TFrame</DesignClass>
         </DCCReference>

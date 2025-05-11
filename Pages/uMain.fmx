@@ -1,6 +1,7 @@
 object frmMain: TfrmMain
   Left = 0
   Top = 0
+  ActiveControl = fClients1.gTableRecord
   Caption = 'Form1'
   ClientHeight = 505
   ClientWidth = 817
@@ -360,12 +361,13 @@ object frmMain: TfrmMain
     Size.Width = 420.000000000000000000
     Size.Height = 450.000000000000000000
     Size.PlatformDefault = False
+    Visible = False
     XRadius = 8.000000000000000000
     YRadius = 8.000000000000000000
     object ScrollBox1: TScrollBox
       Align = Client
-      Padding.Left = 15.000000000000000000
-      Padding.Right = 15.000000000000000000
+      Padding.Left = 20.000000000000000000
+      Padding.Right = 20.000000000000000000
       Padding.Bottom = 25.000000000000000000
       Size.Width = 420.000000000000000000
       Size.Height = 450.000000000000000000
@@ -375,15 +377,15 @@ object frmMain: TfrmMain
       Viewport.Height = 450.000000000000000000
       object lytTitle: TLayout
         Align = Top
-        Position.X = 15.000000000000000000
-        Size.Width = 379.000000000000000000
+        Position.X = 20.000000000000000000
+        Size.Width = 369.000000000000000000
         Size.Height = 50.000000000000000000
         Size.PlatformDefault = False
-        TabOrder = 6
+        TabOrder = 4
         object Label1: TLabel
           Align = Client
           StyledSettings = [Family, Size]
-          Size.Width = 351.000000000000000000
+          Size.Width = 341.000000000000000000
           Size.Height = 50.000000000000000000
           Size.PlatformDefault = False
           TextSettings.Font.StyleExt = {00070000000000000004000000}
@@ -392,7 +394,7 @@ object frmMain: TfrmMain
         end
         object btnClose: TButton
           Align = Right
-          Position.X = 351.000000000000000000
+          Position.X = 341.000000000000000000
           Position.Y = 11.000000000000000000
           Size.Width = 28.000000000000000000
           Size.Height = 28.000000000000000000
@@ -407,101 +409,46 @@ object frmMain: TfrmMain
       object dFirstTD: TDateEdit
         Date = 45787.000000000000000000
         Align = Top
-        Position.X = 15.000000000000000000
-        Position.Y = 409.000000000000000000
-        Size.Width = 379.000000000000000000
+        Position.X = 20.000000000000000000
+        Position.Y = 483.000000000000000000
+        Size.Width = 369.000000000000000000
         Size.Height = 32.000000000000000000
         Size.PlatformDefault = False
         StyleLookup = 'Customdateeditstyle'
-        TabOrder = 13
+        TabOrder = 9
       end
       object dContractDate: TDateEdit
         Date = 45787.000000000000000000
         Align = Top
-        Position.X = 15.000000000000000000
-        Position.Y = 261.000000000000000000
-        Size.Width = 379.000000000000000000
+        Position.X = 20.000000000000000000
+        Position.Y = 298.000000000000000000
+        Size.Width = 369.000000000000000000
         Size.Height = 32.000000000000000000
         Size.PlatformDefault = False
         StyleLookup = 'Customdateeditstyle'
-        TabOrder = 16
-      end
-      object eAddress: TEdit
-        Touch.InteractiveGestures = [LongTap, DoubleTap]
-        Align = Top
-        StyleLookup = 'Modaleditstyle'
-        TabOrder = 7
-        Position.X = 15.000000000000000000
-        Position.Y = 187.000000000000000000
-        Size.Width = 379.000000000000000000
-        Size.Height = 32.000000000000000000
-        Size.PlatformDefault = False
-        TextPrompt = '123 Main St, City, State, Zip'
-      end
-      object eContractPrice: TEdit
-        Touch.InteractiveGestures = [LongTap, DoubleTap]
-        Align = Top
-        StyleLookup = 'Modaleditstyle'
-        TabOrder = 8
-        Position.X = 15.000000000000000000
-        Position.Y = 335.000000000000000000
-        Size.Width = 379.000000000000000000
-        Size.Height = 32.000000000000000000
-        Size.PlatformDefault = False
-        TextPrompt = '0.00'
-        object SpinEditButton1: TSpinEditButton
-          AutoTranslate = False
-          CanFocus = False
-          Cursor = crArrow
-          StyleLookup = 'SpinEditButton1Style1'
-          TabOrder = 0
-        end
-      end
-      object lAddress: TLabel
-        Align = Top
-        StyledSettings = [Family]
-        Position.X = 15.000000000000000000
-        Position.Y = 145.000000000000000000
-        Size.Width = 379.000000000000000000
-        Size.Height = 42.000000000000000000
-        Size.PlatformDefault = False
-        TextSettings.Font.Size = 14.000000000000000000
-        TextSettings.Font.StyleExt = {00060000000000000004000000}
-        Text = 'Address'
-        TabOrder = 5
+        TabOrder = 12
       end
       object lContractDate: TLabel
         Align = Top
         StyledSettings = [Family]
-        Position.X = 15.000000000000000000
-        Position.Y = 219.000000000000000000
-        Size.Width = 379.000000000000000000
+        Margins.Top = 8.000000000000000000
+        Position.X = 20.000000000000000000
+        Position.Y = 256.000000000000000000
+        Size.Width = 369.000000000000000000
         Size.Height = 42.000000000000000000
         Size.PlatformDefault = False
         TextSettings.Font.Size = 14.000000000000000000
         TextSettings.Font.StyleExt = {00060000000000000004000000}
         Text = 'Contract Date'
-        TabOrder = 4
-      end
-      object lContractPrice: TLabel
-        Align = Top
-        StyledSettings = [Family]
-        Position.X = 15.000000000000000000
-        Position.Y = 293.000000000000000000
-        Size.Width = 379.000000000000000000
-        Size.Height = 42.000000000000000000
-        Size.PlatformDefault = False
-        TextSettings.Font.Size = 14.000000000000000000
-        TextSettings.Font.StyleExt = {00060000000000000004000000}
-        Text = 'Contract Price'
         TabOrder = 3
       end
       object lFirstTD: TLabel
         Align = Top
         StyledSettings = [Family]
-        Position.X = 15.000000000000000000
-        Position.Y = 367.000000000000000000
-        Size.Width = 379.000000000000000000
+        Margins.Top = 8.000000000000000000
+        Position.X = 20.000000000000000000
+        Position.Y = 441.000000000000000000
+        Size.Width = 369.000000000000000000
         Size.Height = 42.000000000000000000
         Size.PlatformDefault = False
         TextSettings.Font.Size = 14.000000000000000000
@@ -512,9 +459,10 @@ object frmMain: TfrmMain
       object lSecondTD: TLabel
         Align = Top
         StyledSettings = [Family]
-        Position.X = 15.000000000000000000
-        Position.Y = 441.000000000000000000
-        Size.Width = 379.000000000000000000
+        Margins.Top = 8.000000000000000000
+        Position.X = 20.000000000000000000
+        Position.Y = 523.000000000000000000
+        Size.Width = 369.000000000000000000
         Size.Height = 42.000000000000000000
         Size.PlatformDefault = False
         TextSettings.Font.Size = 14.000000000000000000
@@ -525,9 +473,10 @@ object frmMain: TfrmMain
       object lThirdTD: TLabel
         Align = Top
         StyledSettings = [Family]
-        Position.X = 15.000000000000000000
-        Position.Y = 515.000000000000000000
-        Size.Width = 379.000000000000000000
+        Margins.Top = 8.000000000000000000
+        Position.X = 20.000000000000000000
+        Position.Y = 605.000000000000000000
+        Size.Width = 369.000000000000000000
         Size.Height = 42.000000000000000000
         Size.PlatformDefault = False
         TextSettings.Font.Size = 14.000000000000000000
@@ -538,16 +487,16 @@ object frmMain: TfrmMain
       object lytBtn: TLayout
         Align = Top
         Margins.Top = 35.000000000000000000
-        Position.X = 15.000000000000000000
-        Position.Y = 624.000000000000000000
-        Size.Width = 379.000000000000000000
+        Position.X = 20.000000000000000000
+        Position.Y = 714.000000000000000000
+        Size.Width = 369.000000000000000000
         Size.Height = 40.000000000000000000
         Size.PlatformDefault = False
-        TabOrder = 17
+        TabOrder = 13
         object btnCancel: TCornerButton
           Align = Right
           Margins.Right = 8.000000000000000000
-          Position.X = 231.000000000000000000
+          Position.X = 221.000000000000000000
           Sides = [Top, Left, Bottom, Right]
           Size.Width = 75.000000000000000000
           Size.Height = 40.000000000000000000
@@ -561,7 +510,7 @@ object frmMain: TfrmMain
         end
         object btnSave: TCornerButton
           Align = Right
-          Position.X = 314.000000000000000000
+          Position.X = 304.000000000000000000
           Sides = [Top, Left, Bottom, Right]
           Size.Width = 65.000000000000000000
           Size.Height = 40.000000000000000000
@@ -578,40 +527,40 @@ object frmMain: TfrmMain
       object dSecondTD: TDateEdit
         Date = 45787.000000000000000000
         Align = Top
-        Position.X = 15.000000000000000000
-        Position.Y = 483.000000000000000000
-        Size.Width = 379.000000000000000000
+        Position.X = 20.000000000000000000
+        Position.Y = 565.000000000000000000
+        Size.Width = 369.000000000000000000
         Size.Height = 32.000000000000000000
         Size.PlatformDefault = False
         StyleLookup = 'Customdateeditstyle'
-        TabOrder = 15
+        TabOrder = 11
       end
       object dThirdTD: TDateEdit
         Date = 45787.000000000000000000
         Align = Top
-        Position.X = 15.000000000000000000
-        Position.Y = 557.000000000000000000
-        Size.Width = 379.000000000000000000
+        Position.X = 20.000000000000000000
+        Position.Y = 647.000000000000000000
+        Size.Width = 369.000000000000000000
         Size.Height = 32.000000000000000000
         Size.PlatformDefault = False
         StyleLookup = 'Customdateeditstyle'
-        TabOrder = 14
+        TabOrder = 10
       end
       object lytFullnameC: TLayout
         Align = Top
-        Position.X = 15.000000000000000000
+        Position.X = 20.000000000000000000
         Position.Y = 50.000000000000000000
-        Size.Width = 379.000000000000000000
+        Size.Width = 369.000000000000000000
         Size.Height = 95.000000000000000000
         Size.PlatformDefault = False
-        TabOrder = 18
+        TabOrder = 14
         object eFullname: TEdit
           Touch.InteractiveGestures = [LongTap, DoubleTap]
           Align = Top
           StyleLookup = 'Modaleditstyle'
           TabOrder = 18
           Position.Y = 42.000000000000000000
-          Size.Width = 379.000000000000000000
+          Size.Width = 369.000000000000000000
           Size.Height = 32.000000000000000000
           Size.PlatformDefault = False
           TextPrompt = 'Francis'
@@ -619,25 +568,149 @@ object frmMain: TfrmMain
         object lFullname: TLabel
           Align = Top
           StyledSettings = [Family]
-          Size.Width = 379.000000000000000000
+          Size.Width = 369.000000000000000000
           Size.Height = 42.000000000000000000
           Size.PlatformDefault = False
           TextSettings.Font.Size = 14.000000000000000000
           TextSettings.Font.StyleExt = {00060000000000000004000000}
           Text = 'Full Name'
           TabOrder = 0
+          object Label2: TLabel
+            StyledSettings = [Family, Style]
+            Position.X = 69.000000000000000000
+            Position.Y = 15.000000000000000000
+            TextSettings.Font.Size = 17.000000000000000000
+            TextSettings.FontColor = claRed
+            Text = '*'
+            TabOrder = 4
+          end
         end
         object lFullnameR: TLabel
           Align = Top
           StyledSettings = []
           Margins.Top = 5.000000000000000000
           Position.Y = 79.000000000000000000
-          Size.Width = 379.000000000000000000
+          Size.Width = 369.000000000000000000
           Size.Height = 17.000000000000000000
           Size.PlatformDefault = False
           TextSettings.Font.Size = 15.000000000000000000
           TextSettings.FontColor = claRed
           Text = 'Full name is required'
+          TabOrder = 4
+        end
+      end
+      object lytAddressC: TLayout
+        Align = Top
+        Margins.Top = 8.000000000000000000
+        Position.X = 20.000000000000000000
+        Position.Y = 153.000000000000000000
+        Size.Width = 369.000000000000000000
+        Size.Height = 95.000000000000000000
+        Size.PlatformDefault = False
+        TabOrder = 15
+        object eAddress: TEdit
+          Touch.InteractiveGestures = [LongTap, DoubleTap]
+          Align = Top
+          StyleLookup = 'Modaleditstyle'
+          TabOrder = 7
+          Position.Y = 42.000000000000000000
+          Size.Width = 369.000000000000000000
+          Size.Height = 32.000000000000000000
+          Size.PlatformDefault = False
+          TextPrompt = '123 Main St, City, State, Zip'
+        end
+        object lAddress: TLabel
+          Align = Top
+          StyledSettings = [Family]
+          Size.Width = 369.000000000000000000
+          Size.Height = 42.000000000000000000
+          Size.PlatformDefault = False
+          TextSettings.Font.Size = 14.000000000000000000
+          TextSettings.Font.StyleExt = {00060000000000000004000000}
+          Text = 'Address'
+          TabOrder = 5
+          object Label3: TLabel
+            StyledSettings = [Family, Style]
+            Position.X = 56.000000000000000000
+            Position.Y = 15.000000000000000000
+            TextSettings.Font.Size = 17.000000000000000000
+            TextSettings.FontColor = claRed
+            Text = '*'
+            TabOrder = 4
+          end
+        end
+        object lAddressR: TLabel
+          Align = Top
+          StyledSettings = []
+          Margins.Top = 5.000000000000000000
+          Position.Y = 79.000000000000000000
+          Size.Width = 369.000000000000000000
+          Size.Height = 17.000000000000000000
+          Size.PlatformDefault = False
+          TextSettings.Font.Size = 15.000000000000000000
+          TextSettings.FontColor = claRed
+          Text = 'Address is required'
+          TabOrder = 4
+        end
+      end
+      object lytContractPriceC: TLayout
+        Align = Top
+        Margins.Top = 8.000000000000000000
+        Position.X = 20.000000000000000000
+        Position.Y = 338.000000000000000000
+        Size.Width = 369.000000000000000000
+        Size.Height = 95.000000000000000000
+        Size.PlatformDefault = False
+        TabOrder = 16
+        object eContractPrice: TEdit
+          Touch.InteractiveGestures = [LongTap, DoubleTap]
+          Align = Top
+          StyleLookup = 'Modaleditstyle'
+          TabOrder = 6
+          Position.Y = 42.000000000000000000
+          Size.Width = 369.000000000000000000
+          Size.Height = 32.000000000000000000
+          Size.PlatformDefault = False
+          TextPrompt = '0.00'
+          object SpinEditButton1: TSpinEditButton
+            AutoTranslate = False
+            CanFocus = False
+            Cursor = crArrow
+            StyleLookup = 'SpinEditButton1Style1'
+            TabOrder = 0
+          end
+        end
+        object lContractPrice: TLabel
+          Align = Top
+          StyledSettings = [Family]
+          Size.Width = 369.000000000000000000
+          Size.Height = 42.000000000000000000
+          Size.PlatformDefault = False
+          TextSettings.Font.Size = 14.000000000000000000
+          TextSettings.Font.StyleExt = {00060000000000000004000000}
+          Text = 'Contract Price'
+          TabOrder = 3
+          object Label4: TLabel
+            StyledSettings = [Family, Style]
+            Position.X = 95.000000000000000000
+            Position.Y = 15.000000000000000000
+            TextSettings.Font.Size = 17.000000000000000000
+            TextSettings.FontColor = claRed
+            Text = '*'
+            TabOrder = 4
+          end
+        end
+        object lContractPriceR: TLabel
+          Align = Top
+          StyledSettings = []
+          Margins.Top = 5.000000000000000000
+          Position.Y = 79.000000000000000000
+          Size.Width = 369.000000000000000000
+          Size.Height = 17.000000000000000000
+          Size.PlatformDefault = False
+          TextSettings.Font.Size = 15.000000000000000000
+          TextSettings.FontColor = claRed
+          Text = 'Contract Price is required'
           TabOrder = 4
         end
       end
@@ -673,6 +746,8 @@ object frmMain: TfrmMain
           MemberName = 'contract_price'
           Header = 'Contract Price'
           Width = 150
+          ShowThousandSeparator = True
+          Alignment = taLeftJustify
         end
         item
           MemberName = 'contract_date'

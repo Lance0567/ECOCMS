@@ -18,6 +18,14 @@ type
     cData: TFDConnection;
     qClients: TFDQuery;
     qActiveClients: TFDQuery;
+    qClientsid: TFDAutoIncField;
+    qClientsname: TStringField;
+    qClientsaddress: TStringField;
+    qClientscontract_price: TBCDField;
+    qClientscontract_date: TDateField;
+    qClientsfirst_treatment: TDateField;
+    qClientssecond_treatment: TDateField;
+    qClientsthird_treatment: TDateField;
   private
     { Private declarations }
   public

@@ -53309,6 +53309,45 @@ object dm: Tdm
       'SELECT * FROM clients')
     Left = 168
     Top = 56
+    object qClientsid: TFDAutoIncField
+      FieldName = 'id'
+      Origin = 'id'
+      ProviderFlags = [pfInWhere, pfInKey]
+      ReadOnly = False
+    end
+    object qClientsname: TStringField
+      FieldName = 'name'
+      Origin = 'name'
+      Size = 100
+    end
+    object qClientsaddress: TStringField
+      FieldName = 'address'
+      Origin = 'address'
+      Size = 255
+    end
+    object qClientscontract_price: TBCDField
+      FieldName = 'contract_price'
+      Origin = 'contract_price'
+      DisplayFormat = #8369'0,.00'
+      Precision = 15
+      Size = 2
+    end
+    object qClientscontract_date: TDateField
+      FieldName = 'contract_date'
+      Origin = 'contract_date'
+    end
+    object qClientsfirst_treatment: TDateField
+      FieldName = 'first_treatment'
+      Origin = 'first_treatment'
+    end
+    object qClientssecond_treatment: TDateField
+      FieldName = 'second_treatment'
+      Origin = 'second_treatment'
+    end
+    object qClientsthird_treatment: TDateField
+      FieldName = 'third_treatment'
+      Origin = 'third_treatment'
+    end
   end
   object qActiveClients: TFDQuery
     Active = True
