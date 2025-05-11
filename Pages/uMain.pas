@@ -32,8 +32,6 @@ type
     BindSourceDB1: TBindSourceDB;
     BindingsList1: TBindingsList;
     LinkGridToDataSourceBindSourceDB1: TLinkGridToDataSource;
-    eSearch: TEdit;
-    SearchEditButton1: TSearchEditButton;
     rBackground: TRectangle;
     lytContainer: TLayout;
     rModalAdd: TRectangle;
@@ -67,6 +65,7 @@ type
     procedure btnCloseClick(Sender: TObject);
     procedure btnCancelClick(Sender: TObject);
     procedure FormClose(Sender: TObject; var Action: TCloseAction);
+    procedure btnSaveClick(Sender: TObject);
   private
     { Private declarations }
   public
@@ -80,7 +79,18 @@ implementation
 
 {$R *.fmx}
 
-uses uDm, uModal;
+uses uDm;
+
+procedure ClearItems;
+begin
+  frmMain.eFullname.Text.Empty;
+  frmMain.eAddress.Text.Empty;
+  frmMain.eContactPrice.Text.Empty;
+  frmMain.dContactDate.Date := now;
+  frmMain.dFirstTD.Date := now;
+  frmMain.dSecondTD.Date := now;
+  frmMain.dThirdTD.Date := now;
+end;
 
 { Cancel button }
 procedure TfrmMain.btnCancelClick(Sender: TObject);
@@ -93,10 +103,37 @@ end;
 { Close modal button }
 procedure TfrmMain.btnCloseClick(Sender: TObject);
 begin
-  // visibility show of Add client modal
+  // visibility hide of Add client modal
   rBackground.Visible := False;
   rModalAdd.Visible := False;
-end;s
+
+  // Close query
+  dm.qClients.Close;
+end;
+
+procedure TfrmMain.btnSaveClick(Sender: TObject);
+begin
+  dm.qClients.Append;
+
+  // fields to save
+  dm.qClients.FieldByName('name').AsString := eFullname.Text;
+  dm.qClients.FieldByName('address').AsString := eAddress.Text;
+  dm.qClients.FieldByName('contract_price').AsFloat := StrToFloat(eContactPrice.Text);
+  dm.qClients.FieldByName('contract_date').AsDateTime := dContactDate.Date;
+  dm.qClients.FieldByName('first_treatment').AsDateTime := dFirstTD.Date;
+  dm.qClients.FieldByName('second_treatment').AsDateTime := dSecondTD.Date;
+  dm.qClients.FieldByName('third_treatment').AsDateTime := dThirdTD.Date;
+
+  dm.qClients.Post;
+  dm.qClients.Refresh;
+
+  // visibility hide of Add client modal
+  rBackground.Visible := False;
+  rModalAdd.Visible := False;
+
+  // Clear items from the modal
+  ClearItems;
+end;
 
 { Form Close }
 procedure TfrmMain.FormClose(Sender: TObject; var Action: TCloseAction);
@@ -141,6 +178,7 @@ begin
 
   // hide other components
   fDashboard1.Visible := false;
+  fClients1.ScrollBox1.ViewportPosition := PointF(0,0); // reset scroll bar
 end;
 
 { Show Tab for dashbaord }
@@ -151,6 +189,7 @@ begin
 
   // hide other components
   fClients1.Visible := false;
+  fDashboard1.ScrollBox1.ViewportPosition := PointF(0,0); // reset scroll bar
 end;
 
 end.

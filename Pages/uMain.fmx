@@ -179,52 +179,32 @@ object frmMain: TfrmMain
                 Size.Width = 531.000000000000000000
                 inherited Layout2: TLayout
                   Size.Width = 491.000000000000000000
-                  Size.Height = 40.000000000000000000
-                  inherited SkLabel1: TSkLabel
-                    Align = Left
-                    Size.Width = 106.489997863769500000
-                    Size.Height = 40.000000000000000000
-                  end
-                  object eSearch: TEdit
-                    Touch.InteractiveGestures = [LongTap, DoubleTap]
-                    Align = Right
-                    StyleLookup = 'eSearchStyle1'
-                    TabOrder = 0
+                  inherited eSearch: TEdit
+                    StyleLookup = 'searchedit'
                     Position.X = 272.000000000000000000
                     Position.Y = 4.000000000000000000
-                    Size.Width = 219.000000000000000000
                     Size.Height = 32.000000000000000000
-                    Size.PlatformDefault = False
-                    TextPrompt = 'Search clients...'
-                    object SearchEditButton1: TSearchEditButton
-                      Touch.InteractiveGestures = [LongTap]
-                      CanFocus = False
-                      Cursor = crArrow
-                      TextSettings.HorzAlign = Leading
-                      TextSettings.Trimming = None
-                      TabOrder = 0
-                      TextAlign = Leading
-                    end
                   end
                 end
                 inherited ScrollBox2: TScrollBox
                   Size.Width = 491.000000000000000000
-                  Size.Height = 372.000000000000000000
                   Viewport.Width = 491.000000000000000000
                   Viewport.Height = 372.000000000000000000
                   inherited gTableRecord: TGrid
-                    Margins.Top = 15.000000000000000000
                     PopupMenu = fClients1.PopupMenu1
                     Size.Width = 491.000000000000000000
-                    Size.Height = 357.000000000000000000
                     Viewport.Width = 491.000000000000000000
-                    Viewport.Height = 357.000000000000000000
+                    Viewport.Height = 352.000000000000000000
                   end
                 end
               end
               inherited Layout1: TLayout
                 Size.Width = 571.000000000000000000
               end
+            end
+            inherited PopupMenu1: TPopupMenu
+              Left = 160
+              Top = 237
             end
           end
         end
@@ -420,24 +400,24 @@ object frmMain: TfrmMain
         Align = Top
         StyleLookup = 'Modaleditstyle'
         TabOrder = 8
-        Text = '123 Main St, City, State, Zip'
         Position.X = 15.000000000000000000
         Position.Y = 166.000000000000000000
         Size.Width = 379.000000000000000000
         Size.Height = 32.000000000000000000
         Size.PlatformDefault = False
+        TextPrompt = '123 Main St, City, State, Zip'
       end
       object eContactPrice: TEdit
         Touch.InteractiveGestures = [LongTap, DoubleTap]
         Align = Top
         StyleLookup = 'Modaleditstyle'
         TabOrder = 9
-        Text = '0.00'
         Position.X = 15.000000000000000000
         Position.Y = 314.000000000000000000
         Size.Width = 379.000000000000000000
         Size.Height = 32.000000000000000000
         Size.PlatformDefault = False
+        TextPrompt = '0.00'
         object SpinEditButton1: TSpinEditButton
           AutoTranslate = False
           CanFocus = False
@@ -451,12 +431,12 @@ object frmMain: TfrmMain
         Align = Top
         StyleLookup = 'Modaleditstyle'
         TabOrder = 18
-        Text = 'Francis'
         Position.X = 15.000000000000000000
         Position.Y = 92.000000000000000000
         Size.Width = 379.000000000000000000
         Size.Height = 32.000000000000000000
         Size.PlatformDefault = False
+        TextPrompt = 'Francis'
       end
       object lAddress: TLabel
         Align = Top
@@ -586,6 +566,7 @@ object frmMain: TfrmMain
           TextSettings.Trimming = None
           XRadius = 5.000000000000000000
           YRadius = 5.000000000000000000
+          OnClick = btnSaveClick
         end
       end
       object dSecondTD: TDateEdit

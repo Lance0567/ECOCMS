@@ -9,7 +9,7 @@ uses
   FMX.Grid.Style, FMX.ScrollBox, FMX.Grid, FMX.Skia, FMX.Objects,
   Data.Bind.EngExt, Fmx.Bind.DBEngExt, Fmx.Bind.Grid, System.Bindings.Outputs,
   Fmx.Bind.Editors, Data.Bind.Components, Data.Bind.Grid, Data.Bind.DBScope,
-  FMX.Menus;
+  FMX.Menus, FMX.Edit;
 
 type
   TfClients = class(TFrame)
@@ -27,6 +27,7 @@ type
     Edit: TMenuItem;
     Delete: TMenuItem;
     Preview: TMenuItem;
+    eSearch: TEdit;
     procedure FrameResize(Sender: TObject);
     procedure gTableRecordResized(Sender: TObject);
     procedure btnTriggerClick(Sender: TObject);
@@ -48,8 +49,11 @@ begin
   frmMain.rBackground.Visible := True;
   frmMain.rModalAdd.Visible := True;
 
-  // Add client logic
-//  dm.qClients.append;
+  // Set Date component to the current date
+  frmMain.dContactDate.Date := now;
+  frmMain.dFirstTD.Date := now;
+  frmMain.dSecondTD.Date := now;
+  frmMain.dThirdTD.Date := now;
 end;
 
 procedure TfClients.FrameResize(Sender: TObject);
