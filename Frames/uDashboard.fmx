@@ -356,8 +356,8 @@ object fDashboard: TfDashboard
       object lbTitle: TLabel
         Align = Client
         StyledSettings = [Family, Style, FontColor]
-        Margins.Left = 30.000000000000000000
-        Size.Width = 335.000000000000000000
+        Margins.Left = 20.000000000000000000
+        Size.Width = 345.000000000000000000
         Size.Height = 55.000000000000000000
         Size.PlatformDefault = False
         TextSettings.Font.Size = 25.000000000000000000

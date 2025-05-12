@@ -42,4 +42,6 @@ implementation
 
 {$R *.dfm}
 
+// TODO -oLance -cImportant: Create a procedure for relative path of DBbtnTrigger
+
 end.

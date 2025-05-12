@@ -6,7 +6,7 @@ uses
   System.SysUtils, System.Types, System.UITypes, System.Classes, System.Variants, 
   FMX.Types, FMX.Graphics, FMX.Controls, FMX.Forms, FMX.Dialogs, FMX.StdCtrls,
   System.Skia, System.Rtti, FMX.Grid.Style, FMX.ScrollBox, FMX.Grid, FMX.Skia,
-  FMX.Objects, FMX.Layouts, FMX.Menus, FMX.Controls.Presentation;
+  FMX.Objects, FMX.Layouts, FMX.Menus, FMX.Controls.Presentation, FMX.Edit;
 
 type
   TfContracts = class(TFrame)
@@ -24,6 +24,7 @@ type
     ScrollBox2: TScrollBox;
     gTableRecord: TGrid;
     Layout1: TLayout;
+    eSearch: TEdit;
     procedure gTableRecordResized(Sender: TObject);
   private
     { Private declarations }

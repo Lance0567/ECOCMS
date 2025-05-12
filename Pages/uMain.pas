@@ -11,7 +11,8 @@ uses
   FMX.ListView.Adapters.Base, FMX.ListView, System.Skia, FMX.Skia, uClients,
   Data.Bind.EngExt, Fmx.Bind.DBEngExt, Fmx.Bind.Grid, System.Rtti,
   System.Bindings.Outputs, Fmx.Bind.Editors, Data.Bind.Components,
-  Data.Bind.Grid, Data.Bind.DBScope, FMX.Edit, FMX.DateTimeCtrls, uContracts;
+  Data.Bind.Grid, Data.Bind.DBScope, FMX.Edit, FMX.DateTimeCtrls, uContracts,
+  FMX.Memo.Types, FMX.ScrollBox, FMX.Memo;
 
 type
   TfrmMain = class(TForm)
@@ -266,7 +267,7 @@ begin
   AdjustLayoutHeight(lytAddressC, 75);
   AdjustLayoutHeight(lytContractPriceC, 75);
 
-  // default Show
+  // default Show sidebar
   mvSidebar.ShowMaster;
 
   // default hide the visibility of Add client modal
@@ -275,10 +276,11 @@ begin
 
   // default tab index
   tcController.TabIndex := 0;
-  fDashboard1.Visible := true;
+  fDashboard1.Visible := True;
 
   // hide other components
-  fClients1.Visible := false;
+  fClients1.Visible := False;
+  fContracts1.Visible := False;
 end;
 
 procedure TfrmMain.FormResize(Sender: TObject);

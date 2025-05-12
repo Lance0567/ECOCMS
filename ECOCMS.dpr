@@ -7,7 +7,8 @@ uses
   uDm in 'Data module\uDm.pas' {dm: TDataModule},
   uDashboard in 'Frames\uDashboard.pas' {fDashboard: TFrame},
   uContracts in 'Frames\uContracts.pas' {fContracts: TFrame},
-  uClients in 'Frames\uClients.pas' {fClients: TFrame};
+  uClients in 'Frames\uClients.pas' {fClients: TFrame},
+  uCreateContract in 'Modals\uCreateContract.pas' {fCreateContract: TFrame};
 
 {$R *.res}
 

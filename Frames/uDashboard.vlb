@@ -98,3 +98,9 @@ Coordinates=340,10,78,51
 [lbPartiallyPaidC]
 Coordinates=428,10,85,51
 
+[dm.qActiveClients]
+Visible=False
+
+[dm.qContracts]
+Visible=False
+

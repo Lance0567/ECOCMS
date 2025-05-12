@@ -1,0 +1,217 @@
+object fCreateContract: TfCreateContract
+  Size.Width = 715.000000000000000000
+  Size.Height = 480.000000000000000000
+  Size.PlatformDefault = False
+  object lTitleC: TLayout
+    Align = Top
+    Padding.Left = 20.000000000000000000
+    Padding.Top = 10.000000000000000000
+    Padding.Right = 20.000000000000000000
+    Size.Width = 715.000000000000000000
+    Size.Height = 57.000000000000000000
+    Size.PlatformDefault = False
+    TabOrder = 0
+    object lTitle: TLabel
+      Align = Client
+      StyledSettings = [Family]
+      Size.Width = 675.000000000000000000
+      Size.Height = 47.000000000000000000
+      Size.PlatformDefault = False
+      TextSettings.Font.Size = 28.000000000000000000
+      TextSettings.Font.StyleExt = {00070000000000000004000000}
+      TextSettings.FontColor = claGreen
+      TextSettings.VertAlign = Leading
+      Text = 'Create Contract'
+      TabOrder = 0
+    end
+  end
+  object ScrollBox1: TScrollBox
+    Align = Client
+    Padding.Left = 20.000000000000000000
+    Padding.Top = 15.000000000000000000
+    Padding.Right = 15.000000000000000000
+    Padding.Bottom = 20.000000000000000000
+    Size.Width = 715.000000000000000000
+    Size.Height = 423.000000000000000000
+    Size.PlatformDefault = False
+    TabOrder = 1
+    Viewport.Width = 699.000000000000000000
+    Viewport.Height = 423.000000000000000000
+    object rClientSelection: TRectangle
+      Align = Top
+      Padding.Left = 20.000000000000000000
+      Padding.Top = 15.000000000000000000
+      Padding.Right = 20.000000000000000000
+      Padding.Bottom = 15.000000000000000000
+      Position.X = 20.000000000000000000
+      Position.Y = 15.000000000000000000
+      Size.Width = 664.000000000000000000
+      Size.Height = 141.000000000000000000
+      Size.PlatformDefault = False
+      Stroke.Kind = None
+      XRadius = 10.000000000000000000
+      YRadius = 10.000000000000000000
+      object lClientSelection: TLabel
+        Align = Top
+        StyledSettings = [Family, FontColor]
+        Position.X = 20.000000000000000000
+        Position.Y = 15.000000000000000000
+        Size.Width = 624.000000000000000000
+        Size.Height = 37.000000000000000000
+        Size.PlatformDefault = False
+        TextSettings.Font.Size = 24.000000000000000000
+        TextSettings.Font.StyleExt = {00060000000000000004000000}
+        TextSettings.VertAlign = Leading
+        Text = 'Client Selection'
+        TabOrder = 0
+      end
+      object lDescription1: TLabel
+        Align = Top
+        StyledSettings = [Family, Style]
+        Position.X = 20.000000000000000000
+        Position.Y = 52.000000000000000000
+        Size.Width = 624.000000000000000000
+        Size.Height = 17.000000000000000000
+        Size.PlatformDefault = False
+        TextSettings.Font.Size = 14.000000000000000000
+        TextSettings.FontColor = claDimgray
+        Text = 'Select a client for this contract'
+        TabOrder = 1
+      end
+      object ceClientSelection: TComboEdit
+        Touch.InteractiveGestures = [LongTap, DoubleTap]
+        Align = Top
+        TabOrder = 2
+        ItemHeight = 19.000000000000000000
+        ItemIndex = -1
+        Position.X = 20.000000000000000000
+        Position.Y = 89.000000000000000000
+        Margins.Top = 20.000000000000000000
+        Size.Width = 624.000000000000000000
+        Size.Height = 30.000000000000000000
+        Size.PlatformDefault = False
+      end
+    end
+    object rContractDetails: TRectangle
+      Align = Top
+      Padding.Left = 20.000000000000000000
+      Padding.Top = 15.000000000000000000
+      Padding.Right = 20.000000000000000000
+      Padding.Bottom = 15.000000000000000000
+      Margins.Top = 15.000000000000000000
+      Position.X = 20.000000000000000000
+      Position.Y = 171.000000000000000000
+      Size.Width = 664.000000000000000000
+      Size.Height = 400.000000000000000000
+      Size.PlatformDefault = False
+      Stroke.Kind = None
+      XRadius = 10.000000000000000000
+      YRadius = 10.000000000000000000
+      object lbContractDetails: TLabel
+        Align = Top
+        StyledSettings = [Family, FontColor]
+        Position.X = 20.000000000000000000
+        Position.Y = 15.000000000000000000
+        Size.Width = 624.000000000000000000
+        Size.Height = 37.000000000000000000
+        Size.PlatformDefault = False
+        TextSettings.Font.Size = 24.000000000000000000
+        TextSettings.Font.StyleExt = {00060000000000000004000000}
+        TextSettings.VertAlign = Leading
+        Text = 'Contract Details'
+        TabOrder = 0
+      end
+      object lDescription2: TLabel
+        Align = Top
+        StyledSettings = [Family, Style]
+        Position.X = 20.000000000000000000
+        Position.Y = 52.000000000000000000
+        Size.Width = 624.000000000000000000
+        Size.Height = 17.000000000000000000
+        Size.PlatformDefault = False
+        TextSettings.Font.Size = 14.000000000000000000
+        TextSettings.FontColor = claDimgray
+        Text = 'Define the terms of your contract'
+        TabOrder = 1
+      end
+      object gbRadioQuestion: TGroupBox
+        Align = Top
+        StyledSettings = [Family, FontColor, Other]
+        Padding.Top = 10.000000000000000000
+        Margins.Top = 20.000000000000000000
+        Position.X = 20.000000000000000000
+        Position.Y = 89.000000000000000000
+        Size.Width = 624.000000000000000000
+        Size.Height = 60.000000000000000000
+        Size.PlatformDefault = False
+        Text = 'Type of Treatment'
+        TextSettings.Font.Size = 14.000000000000000000
+        TextSettings.Font.StyleExt = {00060000000000000004000000}
+        TabOrder = 2
+        object rbTypeA: TRadioButton
+          Align = Left
+          StyledSettings = [Family, Style, FontColor]
+          Position.Y = 10.000000000000000000
+          Size.Width = 85.000000000000000000
+          Size.Height = 50.000000000000000000
+          Size.PlatformDefault = False
+          TabOrder = 4
+          Text = 'Type A'
+          TextSettings.Font.Size = 14.000000000000000000
+        end
+        object rbTypeB: TRadioButton
+          Align = Left
+          StyledSettings = [Family, Style, FontColor]
+          Position.X = 85.000000000000000000
+          Position.Y = 10.000000000000000000
+          Size.Width = 85.000000000000000000
+          Size.Height = 50.000000000000000000
+          Size.PlatformDefault = False
+          TabOrder = 3
+          Text = 'Type B'
+          TextSettings.Font.Size = 14.000000000000000000
+        end
+        object rbTypeC: TRadioButton
+          Align = Left
+          StyledSettings = [Family, Style, FontColor]
+          Position.X = 170.000000000000000000
+          Position.Y = 10.000000000000000000
+          Size.Width = 85.000000000000000000
+          Size.Height = 50.000000000000000000
+          Size.PlatformDefault = False
+          TabOrder = 2
+          Text = 'Type C'
+          TextSettings.Font.Size = 14.000000000000000000
+        end
+      end
+      object lServiceDescription: TLabel
+        Align = Top
+        StyledSettings = [Family, FontColor]
+        Margins.Top = 10.000000000000000000
+        Position.X = 20.000000000000000000
+        Position.Y = 159.000000000000000000
+        Size.Width = 624.000000000000000000
+        Size.Height = 17.000000000000000000
+        Size.PlatformDefault = False
+        TextSettings.Font.Size = 14.000000000000000000
+        TextSettings.Font.StyleExt = {00060000000000000004000000}
+        Text = 'Service Description'
+        TabOrder = 3
+      end
+      object Memo1: TMemo
+        Touch.InteractiveGestures = [Pan, LongTap, DoubleTap]
+        DataDetectorTypes = []
+        Align = Top
+        Margins.Top = 10.000000000000000000
+        Position.X = 20.000000000000000000
+        Position.Y = 186.000000000000000000
+        Size.Width = 624.000000000000000000
+        Size.Height = 140.000000000000000000
+        Size.PlatformDefault = False
+        TabOrder = 4
+        Viewport.Width = 620.000000000000000000
+        Viewport.Height = 136.000000000000000000
+      end
+    end
+  end
+end

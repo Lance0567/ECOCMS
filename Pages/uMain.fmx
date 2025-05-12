@@ -33,7 +33,7 @@ object frmMain: TfrmMain
         Size.Width = 617.000000000000000000
         Size.Height = 505.000000000000000000
         Size.PlatformDefault = False
-        TabIndex = 0
+        TabIndex = 2
         TabOrder = 0
         TabPosition = None
         Sizes = (
@@ -48,7 +48,7 @@ object frmMain: TfrmMain
             item
             end>
           TextSettings.Trimming = None
-          IsSelected = True
+          IsSelected = False
           Size.Width = 12.000000000000000000
           Size.Height = 12.000000000000000000
           Size.PlatformDefault = False
@@ -120,7 +120,7 @@ object frmMain: TfrmMain
                   inherited lbActiveClientsC: TLabel
                     Size.Width = 240.000000000000000000
                     TextSettings.Font.StyleExt = {00070000000000000004000000}
-                    Text = '7'
+                    Text = '4'
                   end
                 end
                 inherited rCard3: TRectangle
@@ -161,7 +161,7 @@ object frmMain: TfrmMain
               inherited lytHeader: TLayout
                 Size.Width = 606.000000000000000000
                 inherited lbTitle: TLabel
-                  Size.Width = 377.000000000000000000
+                  Size.Width = 387.000000000000000000
                 end
                 inherited btnTrigger: TCornerButton
                   Position.X = 407.000000000000000000
@@ -193,11 +193,14 @@ object frmMain: TfrmMain
             inherited lytHeader: TLayout
               Size.Width = 617.000000000000000000
               inherited lbTitle: TLabel
-                Size.Width = 422.000000000000000000
+                Size.Width = 432.000000000000000000
               end
               inherited btnTrigger: TCornerButton
+                Images = dm.ImageList1
+                ImageIndex = 7
                 Margins.Right = 30.000000000000000000
                 Position.X = 452.000000000000000000
+                StyleLookup = 'Framescornerbuttonstyle'
                 OnClick = fClients1btnTriggerClick
               end
             end
@@ -224,10 +227,10 @@ object frmMain: TfrmMain
                   inherited gTableRecord: TGrid
                     PopupMenu = fClients1.PopupMenu1
                     Size.Width = 526.000000000000000000
-                    RowCount = 7
+                    RowCount = 4
                     Options = [Editing, ColumnResize, ColumnMove, ColLines, RowLines, RowSelect, Tabs, Header, HeaderClick, AutoDisplacement]
-                    Viewport.Width = 522.000000000000000000
-                    Viewport.Height = 316.000000000000000000
+                    Viewport.Width = 526.000000000000000000
+                    Viewport.Height = 352.000000000000000000
                   end
                 end
               end
@@ -246,7 +249,7 @@ object frmMain: TfrmMain
             item
             end>
           TextSettings.Trimming = None
-          IsSelected = False
+          IsSelected = True
           Size.Width = 12.000000000000000000
           Size.Height = 12.000000000000000000
           Size.PlatformDefault = False
@@ -263,10 +266,14 @@ object frmMain: TfrmMain
             inherited lytHeader: TLayout
               Size.Width = 617.000000000000000000
               inherited lbTitle: TLabel
-                Size.Width = 417.000000000000000000
+                Size.Width = 392.000000000000000000
               end
               inherited btnTrigger: TCornerButton
-                Position.X = 447.000000000000000000
+                Images = dm.ImageList1
+                ImageIndex = 7
+                Position.X = 412.000000000000000000
+                Size.Width = 170.000000000000000000
+                StyleLookup = 'Framescornerbuttonstyle'
               end
             end
             inherited PopupMenu1: TPopupMenu
@@ -283,17 +290,25 @@ object frmMain: TfrmMain
                 inherited Layout2: TLayout
                   Size.Width = 526.000000000000000000
                   inherited SkLabel1: TSkLabel
-                    Size.Width = 526.000000000000000000
+                    Size.Width = 307.000000000000000000
+                  end
+                  inherited eSearch: TEdit
+                    StyleLookup = 'searchedit'
+                    Position.X = 307.000000000000000000
+                    Position.Y = 4.000000000000000000
+                    Size.Height = 32.000000000000000000
+                    TextPrompt = 'Search contracts...'
                   end
                 end
                 inherited ScrollBox2: TScrollBox
                   Size.Width = 526.000000000000000000
                   Viewport.Width = 526.000000000000000000
-                  Viewport.Height = 352.000000000000000000
+                  Viewport.Height = 372.000000000000000000
                   inherited gTableRecord: TGrid
                     Size.Width = 526.000000000000000000
-                    Viewport.Width = 522.000000000000000000
-                    Viewport.Height = 327.000000000000000000
+                    RowCount = 1
+                    Viewport.Width = 526.000000000000000000
+                    Viewport.Height = 352.000000000000000000
                   end
                 end
               end
@@ -630,7 +645,7 @@ object frmMain: TfrmMain
             TextSettings.Font.Size = 17.000000000000000000
             TextSettings.FontColor = claRed
             Text = '*'
-            TabOrder = 4
+            TabOrder = 3
           end
         end
         object lFullnameR: TLabel
@@ -684,7 +699,7 @@ object frmMain: TfrmMain
             TextSettings.Font.Size = 17.000000000000000000
             TextSettings.FontColor = claRed
             Text = '*'
-            TabOrder = 4
+            TabOrder = 3
           end
         end
         object lAddressR: TLabel
@@ -745,7 +760,7 @@ object frmMain: TfrmMain
             TextSettings.Font.Size = 17.000000000000000000
             TextSettings.FontColor = claRed
             Text = '*'
-            TabOrder = 4
+            TabOrder = 3
           end
         end
         object lContractPriceR: TLabel

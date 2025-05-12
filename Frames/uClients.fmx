@@ -14,8 +14,8 @@ object fClients: TfClients
     object lbTitle: TLabel
       Align = Client
       StyledSettings = [Family, Style, FontColor]
-      Margins.Left = 30.000000000000000000
-      Size.Width = 515.000000000000000000
+      Margins.Left = 20.000000000000000000
+      Size.Width = 525.000000000000000000
       Size.Height = 55.000000000000000000
       Size.PlatformDefault = False
       TextSettings.Font.Size = 25.000000000000000000
@@ -33,6 +33,7 @@ object fClients: TfClients
       Size.Width = 135.000000000000000000
       Size.Height = 39.000000000000000000
       Size.PlatformDefault = False
+      StyleLookup = 'cornerbuttonstyle'
       TabOrder = 1
       Text = 'Add Client'
       TextSettings.Trimming = None
@@ -118,8 +119,8 @@ object fClients: TfClients
           TabOrder = 1
           RowCount = 0
           OnResized = gTableRecordResized
-          Viewport.Width = 615.000000000000000000
-          Viewport.Height = 327.000000000000000000
+          Viewport.Width = 619.000000000000000000
+          Viewport.Height = 352.000000000000000000
         end
       end
     end
