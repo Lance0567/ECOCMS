@@ -24,6 +24,7 @@ type
     ScrollBox2: TScrollBox;
     gTableRecord: TGrid;
     Layout1: TLayout;
+    procedure gTableRecordResized(Sender: TObject);
   private
     { Private declarations }
   public
@@ -33,5 +34,26 @@ type
 implementation
 
 {$R *.fmx}
+
+procedure TfContracts.gTableRecordResized(Sender: TObject);
+var
+  i, ColCount: Integer;
+  TotalWidth, ColumnWidth: Single;
+begin
+  ColCount := gTableRecord.ColumnCount;
+
+  if ColCount = 0 then
+    Exit;
+
+  // Adjust for internal padding or scrollbar
+  TotalWidth := gTableRecord.Width; // Use ClientWidth instead of Width
+
+  // Subtract 1 pixel to prevent overflow and scrollbar
+  ColumnWidth := (TotalWidth - 10) / ColCount;
+
+  // Set all columns to equal width
+  for i := 0 to ColCount - 1 do
+    gTableRecord.Columns[i].Width := ColumnWidth;
+end;
 
 end.

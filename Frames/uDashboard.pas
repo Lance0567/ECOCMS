@@ -32,8 +32,8 @@ type
     lbFullyPaidC: TLabel;
     rCard4: TRectangle;
     lytCardD4: TLayout;
-    lbNotYetPaid: TLabel;
-    lbNotYetPaidC: TLabel;
+    lbPartiallyPaid: TLabel;
+    lbPartiallyPaidC: TLabel;
     cbtnViewAllContracts: TCornerButton;
     Glyph1: TGlyph;
     Glyph2: TGlyph;

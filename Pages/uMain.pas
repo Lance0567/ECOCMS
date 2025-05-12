@@ -11,7 +11,7 @@ uses
   FMX.ListView.Adapters.Base, FMX.ListView, System.Skia, FMX.Skia, uClients,
   Data.Bind.EngExt, Fmx.Bind.DBEngExt, Fmx.Bind.Grid, System.Rtti,
   System.Bindings.Outputs, Fmx.Bind.Editors, Data.Bind.Components,
-  Data.Bind.Grid, Data.Bind.DBScope, FMX.Edit, FMX.DateTimeCtrls;
+  Data.Bind.Grid, Data.Bind.DBScope, FMX.Edit, FMX.DateTimeCtrls, uContracts;
 
 type
   TfrmMain = class(TForm)
@@ -31,7 +31,7 @@ type
     fClients1: TfClients;
     BindSourceDB1: TBindSourceDB;
     BindingsList1: TBindingsList;
-    LinkGridToDataSourceBindSourceDB1: TLinkGridToDataSource;
+    LinkGridToDSBDBClient: TLinkGridToDataSource;
     rBackground: TRectangle;
     lytContainer: TLayout;
     rModalAdd: TRectangle;
@@ -68,6 +68,9 @@ type
     Label2: TLabel;
     Label3: TLabel;
     Label4: TLabel;
+    fContracts1: TfContracts;
+    BindSourceDB3: TBindSourceDB;
+    LinkGridToDSBDBContracts: TLinkGridToDataSource;
     procedure mvSidebarResize(Sender: TObject);
     procedure FormCreate(Sender: TObject);
     procedure FormResize(Sender: TObject);
@@ -81,6 +84,7 @@ type
     procedure ClearItems;
     procedure HideComponents;
     procedure AdjustLayoutHeight(ALayout: TLayout; AHeight: Single);
+    procedure sbContractsClick(Sender: TObject);
   private
     { Private declarations }
   public
@@ -292,22 +296,36 @@ end;
 procedure TfrmMain.sbClientsClick(Sender: TObject);
 begin
   tcController.TabIndex := 1;
-  fClients1.Visible := true;
+  fClients1.Visible := True;
+  fClients1.ScrollBox1.ViewportPosition := PointF(0,0); // reset scroll bar
 
   // hide other components
-  fDashboard1.Visible := false;
-  fClients1.ScrollBox1.ViewportPosition := PointF(0,0); // reset scroll bar
+  fDashboard1.Visible := False;
+  fContracts1.Visible := False;
+end;
+
+{ Show Tab for contracts }
+procedure TfrmMain.sbContractsClick(Sender: TObject);
+begin
+  tcController.TabIndex := 2;
+  fContracts1.Visible := True;
+  fContracts1.ScrollBox1.ViewportPosition := PointF(0,0); // reset scroll bar
+
+  // hide other components
+  fClients1.Visible := False;
+  fDashboard1.Visible := False;
 end;
 
 { Show Tab for dashbaord }
 procedure TfrmMain.sbDashboardClick(Sender: TObject);
 begin
   tcController.TabIndex := 0;
-  fDashboard1.Visible := true;
+  fDashboard1.Visible := True;
+  fDashboard1.ScrollBox1.ViewportPosition := PointF(0,0); // reset scroll bar
 
   // hide other components
-  fClients1.Visible := false;
-  fDashboard1.ScrollBox1.ViewportPosition := PointF(0,0); // reset scroll bar
+  fClients1.Visible := False;
+  fContracts1.Visible := False;
 end;
 
 end.

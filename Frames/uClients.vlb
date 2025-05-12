@@ -40,3 +40,6 @@ Coordinates=255,10,100,33
 [dm.qActiveClients]
 Visible=False
 
+[dm.qContracts]
+Visible=False
+

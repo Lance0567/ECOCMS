@@ -1,9 +1,6 @@
 ﻿[SkLabel1]
 Coordinates=540,319,59,33
 
-[lbNotYetPaid]
-Coordinates=340,10,78,51
-
 [lytBottom]
 Coordinates=468,319,62,33
 
@@ -61,9 +58,6 @@ Coordinates=330,276,68,33
 [ListView1]
 Coordinates=108,10,89,141
 
-[lbNotYetPaidC]
-Coordinates=428,10,85,51
-
 [lytCardD3]
 Coordinates=258,276,62,33
 
@@ -97,4 +91,10 @@ Coordinates=413,215,49,33
 
 [dm.]
 Coordinates=245,427,95,33
+
+[lbPartiallyPaid]
+Coordinates=340,10,78,51
+
+[lbPartiallyPaidC]
+Coordinates=428,10,85,51
 

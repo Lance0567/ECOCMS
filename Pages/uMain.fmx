@@ -33,7 +33,7 @@ object frmMain: TfrmMain
         Size.Width = 617.000000000000000000
         Size.Height = 505.000000000000000000
         Size.PlatformDefault = False
-        TabIndex = 1
+        TabIndex = 0
         TabOrder = 0
         TabPosition = None
         Sizes = (
@@ -48,7 +48,7 @@ object frmMain: TfrmMain
             item
             end>
           TextSettings.Trimming = None
-          IsSelected = False
+          IsSelected = True
           Size.Width = 12.000000000000000000
           Size.Height = 12.000000000000000000
           Size.PlatformDefault = False
@@ -144,7 +144,7 @@ object frmMain: TfrmMain
                   Size.Width = 280.000000000000000000
                   inherited lytCardD4: TLayout
                     Size.Width = 240.000000000000000000
-                    inherited lbNotYetPaid: TLabel
+                    inherited lbPartiallyPaid: TLabel
                       Size.Width = 240.000000000000000000
                       TextSettings.Font.StyleExt = {00070000000000000004000000}
                       inherited Glyph4: TGlyph
@@ -152,7 +152,7 @@ object frmMain: TfrmMain
                       end
                     end
                   end
-                  inherited lbNotYetPaidC: TLabel
+                  inherited lbPartiallyPaidC: TLabel
                     Size.Width = 240.000000000000000000
                     TextSettings.Font.StyleExt = {00070000000000000004000000}
                   end
@@ -175,7 +175,7 @@ object frmMain: TfrmMain
             item
             end>
           TextSettings.Trimming = None
-          IsSelected = True
+          IsSelected = False
           Size.Width = 12.000000000000000000
           Size.Height = 12.000000000000000000
           Size.PlatformDefault = False
@@ -255,6 +255,53 @@ object frmMain: TfrmMain
           Text = 'Contracts'
           ExplicitSize.cx = 12.000000000000000000
           ExplicitSize.cy = 12.000000000000000000
+          inline fContracts1: TfContracts
+            Align = Client
+            Size.Width = 617.000000000000000000
+            Size.Height = 505.000000000000000000
+            Size.PlatformDefault = False
+            inherited lytHeader: TLayout
+              Size.Width = 617.000000000000000000
+              inherited lbTitle: TLabel
+                Size.Width = 417.000000000000000000
+              end
+              inherited btnTrigger: TCornerButton
+                Position.X = 447.000000000000000000
+              end
+            end
+            inherited PopupMenu1: TPopupMenu
+              Left = 164
+              Top = 396
+            end
+            inherited ScrollBox1: TScrollBox
+              Size.Width = 617.000000000000000000
+              Size.Height = 440.000000000000000000
+              Viewport.Width = 606.000000000000000000
+              Viewport.Height = 440.000000000000000000
+              inherited rContainer: TRectangle
+                Size.Width = 566.000000000000000000
+                inherited Layout2: TLayout
+                  Size.Width = 526.000000000000000000
+                  inherited SkLabel1: TSkLabel
+                    Size.Width = 526.000000000000000000
+                  end
+                end
+                inherited ScrollBox2: TScrollBox
+                  Size.Width = 526.000000000000000000
+                  Viewport.Width = 526.000000000000000000
+                  Viewport.Height = 352.000000000000000000
+                  inherited gTableRecord: TGrid
+                    Size.Width = 526.000000000000000000
+                    Viewport.Width = 522.000000000000000000
+                    Viewport.Height = 327.000000000000000000
+                  end
+                end
+              end
+              inherited Layout1: TLayout
+                Size.Width = 606.000000000000000000
+              end
+            end
+          end
         end
       end
     end
@@ -309,6 +356,7 @@ object frmMain: TfrmMain
           Text = 'Contracts'
           TextSettings.HorzAlign = Leading
           TextSettings.Trimming = None
+          OnClick = sbContractsClick
         end
         object sbDashboard: TSpeedButton
           StaysPressed = True
@@ -727,7 +775,7 @@ object frmMain: TfrmMain
     OutputConverters = <>
     Left = 68
     Top = 237
-    object LinkGridToDataSourceBindSourceDB1: TLinkGridToDataSource
+    object LinkGridToDSBDBClient: TLinkGridToDataSource
       Category = 'Quick Bindings'
       DataSource = BindSourceDB1
       GridControl = fClients1.gTableRecord
@@ -762,11 +810,48 @@ object frmMain: TfrmMain
       Component = fDashboard1.lbActiveClientsC
       ComponentProperty = 'Text'
     end
+    object LinkGridToDSBDBContracts: TLinkGridToDataSource
+      Category = 'Quick Bindings'
+      DataSource = BindSourceDB3
+      GridControl = fContracts1.gTableRecord
+      Columns = <
+        item
+          MemberName = 'client_name'
+          Header = 'Client Name'
+          Width = 170
+        end
+        item
+          MemberName = 'type_of_treatment'
+          Header = 'Type of Treatment'
+          Width = 200
+        end
+        item
+          MemberName = 'start_date'
+          Header = 'Start Date'
+          Width = 150
+        end
+        item
+          MemberName = 'end_date'
+          Header = 'End Date'
+          Width = 15
+        end
+        item
+          MemberName = 'status'
+          Header = 'Payment Status'
+          Width = 150
+        end>
+    end
   end
   object BindSourceDB2: TBindSourceDB
     DataSet = dm.qActiveClients
     ScopeMappings = <>
     Left = 161
     Top = 305
+  end
+  object BindSourceDB3: TBindSourceDB
+    DataSet = dm.qContracts
+    ScopeMappings = <>
+    Left = 62
+    Top = 397
   end
 end

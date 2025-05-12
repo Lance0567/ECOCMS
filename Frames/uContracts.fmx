@@ -116,6 +116,7 @@ object fContracts: TfContracts
           Size.PlatformDefault = False
           TabOrder = 1
           RowCount = 0
+          OnResized = gTableRecordResized
           Viewport.Width = 615.000000000000000000
           Viewport.Height = 327.000000000000000000
         end
