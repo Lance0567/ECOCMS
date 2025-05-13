@@ -12,12 +12,13 @@ object fContracts: TfContracts
     TabOrder = 1
     object lbTitle: TLabel
       Align = Client
-      StyledSettings = [Family, Style, FontColor]
+      StyledSettings = [Family, FontColor]
       Margins.Left = 20.000000000000000000
       Size.Width = 525.000000000000000000
       Size.Height = 55.000000000000000000
       Size.PlatformDefault = False
-      TextSettings.Font.Size = 25.000000000000000000
+      TextSettings.Font.Size = 28.000000000000000000
+      TextSettings.Font.StyleExt = {00070000000000000004000000}
       Text = 'Contracts'
       TabOrder = 0
     end
@@ -128,8 +129,9 @@ object fContracts: TfContracts
           Size.PlatformDefault = False
           TabOrder = 1
           RowCount = 0
-          Viewport.Width = 619.000000000000000000
-          Viewport.Height = 352.000000000000000000
+          OnResized = gTableRecordResized
+          Viewport.Width = 615.000000000000000000
+          Viewport.Height = 327.000000000000000000
         end
       end
     end

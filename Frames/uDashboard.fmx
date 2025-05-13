@@ -355,12 +355,13 @@ object fDashboard: TfDashboard
       TabOrder = 1
       object lbTitle: TLabel
         Align = Client
-        StyledSettings = [Family, Style, FontColor]
+        StyledSettings = [Family, FontColor]
         Margins.Left = 20.000000000000000000
         Size.Width = 345.000000000000000000
         Size.Height = 55.000000000000000000
         Size.PlatformDefault = False
-        TextSettings.Font.Size = 25.000000000000000000
+        TextSettings.Font.Size = 28.000000000000000000
+        TextSettings.Font.StyleExt = {00070000000000000004000000}
         Text = 'Dashboard'
         TabOrder = 0
       end

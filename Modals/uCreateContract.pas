@@ -6,7 +6,7 @@ uses
   System.SysUtils, System.Types, System.UITypes, System.Classes, System.Variants, 
   FMX.Types, FMX.Graphics, FMX.Controls, FMX.Forms, FMX.Dialogs, FMX.StdCtrls,
   FMX.Controls.Presentation, FMX.Layouts, FMX.Objects, FMX.Edit, FMX.ComboEdit,
-  FMX.Memo.Types, FMX.ScrollBox, FMX.Memo;
+  FMX.Memo.Types, FMX.ScrollBox, FMX.Memo, FMX.DateTimeCtrls;
 
 type
   TfCreateContract = class(TFrame)
@@ -26,6 +26,13 @@ type
     rbTypeC: TRadioButton;
     lServiceDescription: TLabel;
     Memo1: TMemo;
+    FlowLayout1: TFlowLayout;
+    lStartDate: TLabel;
+    lytStartDate: TLayout;
+    dStartDate: TDateEdit;
+    Layout1: TLayout;
+    lEndDate: TLabel;
+    DateEdit1: TDateEdit;
   private
     { Private declarations }
   public

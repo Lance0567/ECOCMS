@@ -12,7 +12,7 @@ uses
   Data.Bind.EngExt, Fmx.Bind.DBEngExt, Fmx.Bind.Grid, System.Rtti,
   System.Bindings.Outputs, Fmx.Bind.Editors, Data.Bind.Components,
   Data.Bind.Grid, Data.Bind.DBScope, FMX.Edit, FMX.DateTimeCtrls, uContracts,
-  FMX.Memo.Types, FMX.ScrollBox, FMX.Memo;
+  FMX.Memo.Types, FMX.ScrollBox, FMX.Memo, uCreateContract;
 
 type
   TfrmMain = class(TForm)
@@ -72,6 +72,8 @@ type
     fContracts1: TfContracts;
     BindSourceDB3: TBindSourceDB;
     LinkGridToDSBDBContracts: TLinkGridToDataSource;
+    tiCreateContract: TTabItem;
+    fCreateContract1: TfCreateContract;
     procedure mvSidebarResize(Sender: TObject);
     procedure FormCreate(Sender: TObject);
     procedure sbDashboardClick(Sender: TObject);
@@ -87,7 +89,11 @@ type
     procedure sbContractsClick(Sender: TObject);
     procedure tcControllerChange(Sender: TObject);
     procedure mvSidebarResized(Sender: TObject);
+    procedure fContracts1btnTriggerClick(Sender: TObject);
+    procedure lytSidebarResized(Sender: TObject);
+    procedure FormResize(Sender: TObject);
   private
+    procedure HideFrames;
     { Private declarations }
   public
     { Public declarations }
@@ -149,6 +155,15 @@ begin
   AdjustLayoutHeight(lytFullnameC, 75);
   AdjustLayoutHeight(lytAddressC, 75);
   AdjustLayoutHeight(lytContractPriceC, 75);
+end;
+
+{ Hide Frames }
+procedure TfrmMain.HideFrames;
+begin
+  fDashboard1.Visible := False;
+  fClients1.Visible := False;
+  fContracts1.Visible := False;
+  fCreateContract1.Visible := False;
 end;
 
 { Cancel button }
@@ -271,7 +286,10 @@ end;
 { Form Create }
 procedure TfrmMain.FormCreate(Sender: TObject);
 begin
-  // components to hide
+  fClients1.Tag := 0;
+  fContracts1.Tag := 0;
+
+  // Components to hide
   HideComponents;
 
   // Add modal layout adjustments
@@ -295,12 +313,26 @@ begin
   fContracts1.Visible := False;
 end;
 
+procedure TfrmMain.FormResize(Sender: TObject);
+begin
+  case tcController.TabIndex of
+    1:fClients1.GridContentsResponsive;
+    2:fContracts1.GridContentsResponsive;
+  end;
+end;
+
 { Sidebar Resize }
 procedure TfrmMain.mvSidebarResize(Sender: TObject);
 begin
   lytSidebar.Width := mvSidebar.Width;
-  Self.Caption := 'Main Form' + ' Height: ' + Self.Height.ToString + ' Width: ' + Self.Width.ToString + ' Multiview collapsed width: ' + FloatToStr(mvSidebar.Width);
-  if mvSidebar.Width = 50 then
+  Self.Caption := 'Main Form' + ' Height: '
+  + Self.Height.ToString + ' Width: ' + Self.Width.ToString
+  + ' Multiview collapsed width: ' + FloatToStr(mvSidebar.Width);
+end;
+
+procedure TfrmMain.lytSidebarResized(Sender: TObject);
+begin
+  if lytSidebar.Width = 50 then
   begin
     case tcController.TabIndex of
       1:fClients1.GridContentsResponsive;
@@ -308,7 +340,7 @@ begin
     end;
   end;
 
-  if mvSidebar.Width = 200 then
+  if lytSidebar.Width = 200 then
   begin
     case tcController.TabIndex of
       1:fClients1.GridContentsResponsive;
@@ -319,17 +351,18 @@ end;
 
 procedure TfrmMain.mvSidebarResized(Sender: TObject);
 begin
-  if mvSidebar.Width <= 51 then
+  if lytSidebar.Width <= 51 then
   begin
-    mvSidebar.Width := 50
+    lytSidebar.Width := 50
   end;
 
-  if mvSidebar.Width >= 199 then
+  if lytSidebar.Width >= 199 then
   begin
-    mvSidebar.Width := 200
+    lytSidebar.Width := 200
   end;
 end;
 
+{ Open query based on the tab }
 procedure TfrmMain.tcControllerChange(Sender: TObject);
 begin
   // Deactivate first all queries
@@ -358,27 +391,43 @@ end;
 { Show Tab for clients }
 procedure TfrmMain.sbClientsClick(Sender: TObject);
 begin
+  // hide other components
+  HideFrames;
+
   // Switch tab index
   tcController.TabIndex := 1;
   fClients1.Visible := True;
   fClients1.ScrollBox1.ViewportPosition := PointF(0,0); // reset scroll bar
 
-  // hide other components
-  fDashboard1.Visible := False;
-  fContracts1.Visible := False;
+  // Activate responsiveness
+  fClients1.GridContentsResponsive;
 end;
 
 { Show Tab for contracts }
 procedure TfrmMain.sbContractsClick(Sender: TObject);
 begin
+  // hide other components
+  HideFrames;
+
   // Switch tab index
   tcController.TabIndex := 2;
   fContracts1.Visible := True;
   fContracts1.ScrollBox1.ViewportPosition := PointF(0,0); // reset scroll bar
 
-  // hide other components
-  fClients1.Visible := False;
-  fDashboard1.Visible := False;
+  // Activate responsiveness
+  fContracts1.GridContentsResponsive;
+end;
+
+{ Show Tab for contracts }
+procedure TfrmMain.fContracts1btnTriggerClick(Sender: TObject);
+begin
+    // hide other components
+  HideFrames;
+
+  // Switch tab index
+  tcController.TabIndex := 3;
+  fCreateContract1.Visible := True;
+  fCreateContract1.ScrollBox1.ViewportPosition := PointF(0,0); // reset scroll bar
 end;
 
 end.

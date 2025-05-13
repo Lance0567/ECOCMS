@@ -13,12 +13,13 @@ object fClients: TfClients
     TabOrder = 1
     object lbTitle: TLabel
       Align = Client
-      StyledSettings = [Family, Style, FontColor]
+      StyledSettings = [Family, FontColor]
       Margins.Left = 20.000000000000000000
       Size.Width = 525.000000000000000000
       Size.Height = 55.000000000000000000
       Size.PlatformDefault = False
-      TextSettings.Font.Size = 25.000000000000000000
+      TextSettings.Font.Size = 28.000000000000000000
+      TextSettings.Font.StyleExt = {00070000000000000004000000}
       Text = 'Clients'
       TabOrder = 0
     end
@@ -80,6 +81,8 @@ object fClients: TfClients
           Size.Width = 106.489997863769500000
           Size.Height = 40.000000000000000000
           Size.PlatformDefault = False
+          StyledSettings = [Family, Size, FontColor]
+          TextSettings.Font.Weight = Semibold
           Words = <
             item
               Font.Size = 24.000000000000000000
@@ -118,6 +121,7 @@ object fClients: TfClients
           Size.PlatformDefault = False
           TabOrder = 1
           RowCount = 0
+          OnResized = gTableRecordResized
           Viewport.Width = 619.000000000000000000
           Viewport.Height = 352.000000000000000000
         end

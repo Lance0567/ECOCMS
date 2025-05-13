@@ -19,7 +19,6 @@ object fCreateContract: TfCreateContract
       Size.PlatformDefault = False
       TextSettings.Font.Size = 28.000000000000000000
       TextSettings.Font.StyleExt = {00070000000000000004000000}
-      TextSettings.FontColor = claGreen
       TextSettings.VertAlign = Leading
       Text = 'Create Contract'
       TabOrder = 0
@@ -102,7 +101,7 @@ object fCreateContract: TfCreateContract
       Position.X = 20.000000000000000000
       Position.Y = 171.000000000000000000
       Size.Width = 664.000000000000000000
-      Size.Height = 400.000000000000000000
+      Size.Height = 600.000000000000000000
       Size.PlatformDefault = False
       Stroke.Kind = None
       XRadius = 10.000000000000000000
@@ -211,6 +210,75 @@ object fCreateContract: TfCreateContract
         TabOrder = 4
         Viewport.Width = 620.000000000000000000
         Viewport.Height = 136.000000000000000000
+      end
+      object FlowLayout1: TFlowLayout
+        Align = Client
+        Margins.Top = 10.000000000000000000
+        Size.Width = 624.000000000000000000
+        Size.Height = 249.000000000000000000
+        Size.PlatformDefault = False
+        TabOrder = 5
+        Justify = Left
+        JustifyLastLine = Left
+        FlowDirection = LeftToRight
+        object lytStartDate: TLayout
+          Align = Client
+          Margins.Left = 10.000000000000000000
+          Margins.Top = 5.000000000000000000
+          Size.Width = 220.000000000000000000
+          Size.Height = 60.000000000000000000
+          Size.PlatformDefault = False
+          TabOrder = 1
+          object lStartDate: TLabel
+            Align = Top
+            StyledSettings = [Family, FontColor]
+            Size.Width = 220.000000000000000000
+            Size.Height = 20.000000000000000000
+            Size.PlatformDefault = False
+            TextSettings.Font.Size = 16.000000000000000000
+            TextSettings.Font.StyleExt = {00060000000000000004000000}
+            Text = 'Start Date'
+            TabOrder = 0
+          end
+          object dStartDate: TDateEdit
+            Date = 45790.000000000000000000
+            Align = Client
+            Margins.Top = 5.000000000000000000
+            Size.Width = 220.000000000000000000
+            Size.Height = 35.000000000000000000
+            Size.PlatformDefault = False
+            TabOrder = 1
+          end
+        end
+        object Layout1: TLayout
+          Align = Client
+          Margins.Left = 10.000000000000000000
+          Margins.Top = 5.000000000000000000
+          Size.Width = 220.000000000000000000
+          Size.Height = 60.000000000000000000
+          Size.PlatformDefault = False
+          TabOrder = 0
+          object lEndDate: TLabel
+            Align = Top
+            StyledSettings = [Family, FontColor]
+            Size.Width = 220.000000000000000000
+            Size.Height = 20.000000000000000000
+            Size.PlatformDefault = False
+            TextSettings.Font.Size = 16.000000000000000000
+            TextSettings.Font.StyleExt = {00060000000000000004000000}
+            Text = 'End Date'
+            TabOrder = 0
+          end
+          object DateEdit1: TDateEdit
+            Date = 45790.000000000000000000
+            Align = Client
+            Margins.Top = 5.000000000000000000
+            Size.Width = 220.000000000000000000
+            Size.Height = 35.000000000000000000
+            Size.PlatformDefault = False
+            TabOrder = 1
+          end
+        end
       end
     end
   end
