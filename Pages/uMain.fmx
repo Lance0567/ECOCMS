@@ -14,7 +14,6 @@ object frmMain: TfrmMain
   ShowFullScreenIcon = True
   OnCreate = FormCreate
   OnClose = FormClose
-  OnResize = FormResize
   DesignerMasterStyle = 0
   object lytContainer: TLayout
     Align = Client
@@ -36,6 +35,7 @@ object frmMain: TfrmMain
         TabIndex = 2
         TabOrder = 0
         TabPosition = None
+        OnChange = tcControllerChange
         Sizes = (
           617s
           505s
@@ -334,6 +334,7 @@ object frmMain: TfrmMain
         Size.PlatformDefault = False
         TabOrder = 0
         OnResize = mvSidebarResize
+        OnResized = mvSidebarResized
         object sbSettings: TSpeedButton
           StaysPressed = True
           Align = Bottom
@@ -645,7 +646,7 @@ object frmMain: TfrmMain
             TextSettings.Font.Size = 17.000000000000000000
             TextSettings.FontColor = claRed
             Text = '*'
-            TabOrder = 3
+            TabOrder = 4
           end
         end
         object lFullnameR: TLabel
@@ -699,7 +700,7 @@ object frmMain: TfrmMain
             TextSettings.Font.Size = 17.000000000000000000
             TextSettings.FontColor = claRed
             Text = '*'
-            TabOrder = 3
+            TabOrder = 4
           end
         end
         object lAddressR: TLabel
@@ -760,7 +761,7 @@ object frmMain: TfrmMain
             TextSettings.Font.Size = 17.000000000000000000
             TextSettings.FontColor = claRed
             Text = '*'
-            TabOrder = 3
+            TabOrder = 4
           end
         end
         object lContractPriceR: TLabel

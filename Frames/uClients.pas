@@ -28,12 +28,12 @@ type
     Delete: TMenuItem;
     Preview: TMenuItem;
     eSearch: TEdit;
-    procedure gTableRecordResized(Sender: TObject);
     procedure btnTriggerClick(Sender: TObject);
   private
     { Private declarations }
   public
     { Public declarations }
+    procedure GridContentsResponsive;
   end;
 
 implementation
@@ -59,8 +59,8 @@ begin
   frmMain.ClearItems;
 end;
 
-// Responsive grid
-procedure TfClients.gTableRecordResized(Sender: TObject);
+{ Responsive grid procedure }
+procedure TfClients.GridContentsResponsive;
 var
   i, ColCount: Integer;
   TotalWidth, ColumnWidth: Single;

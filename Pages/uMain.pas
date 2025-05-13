@@ -74,7 +74,6 @@ type
     LinkGridToDSBDBContracts: TLinkGridToDataSource;
     procedure mvSidebarResize(Sender: TObject);
     procedure FormCreate(Sender: TObject);
-    procedure FormResize(Sender: TObject);
     procedure sbDashboardClick(Sender: TObject);
     procedure sbClientsClick(Sender: TObject);
     procedure btnCloseClick(Sender: TObject);
@@ -86,10 +85,13 @@ type
     procedure HideComponents;
     procedure AdjustLayoutHeight(ALayout: TLayout; AHeight: Single);
     procedure sbContractsClick(Sender: TObject);
+    procedure tcControllerChange(Sender: TObject);
+    procedure mvSidebarResized(Sender: TObject);
   private
     { Private declarations }
   public
     { Public declarations }
+    procedure QueryHandler;
   end;
 
 var
@@ -101,9 +103,18 @@ implementation
 
 uses uDm;
 
+{ Query Management }
+procedure TfrmMain.QueryHandler;
+begin
+  dm.qActiveClients.Active := false;
+  dm.qClients.Active := false;
+  dm.qContracts.Active := false;
+end;
+
+{ Hide fields from the add client modal }
 procedure TfrmMain.HideComponents;
 begin
-  // from add client modal
+  // Default hide Label Required fields
   lFullnameR.Visible := False;
   lAddressR.Visible := False;
   lContractPriceR.Visible := False;
@@ -118,6 +129,7 @@ begin
   end;
 end;
 
+{ Clear items for add client modal }
 procedure TfrmMain.ClearItems;
 begin
   frmMain.eFullname.Text := '';
@@ -283,20 +295,70 @@ begin
   fContracts1.Visible := False;
 end;
 
-procedure TfrmMain.FormResize(Sender: TObject);
-begin
-  { Remove code below after the application is completed }
-  Self.Caption := 'Main Form' + ' Height: ' + Self.Height.ToString + ' Width: ' + Self.Width.ToString;
-end;
-
+{ Sidebar Resize }
 procedure TfrmMain.mvSidebarResize(Sender: TObject);
 begin
   lytSidebar.Width := mvSidebar.Width;
+  Self.Caption := 'Main Form' + ' Height: ' + Self.Height.ToString + ' Width: ' + Self.Width.ToString + ' Multiview collapsed width: ' + FloatToStr(mvSidebar.Width);
+  if mvSidebar.Width = 50 then
+  begin
+    case tcController.TabIndex of
+      1:fClients1.GridContentsResponsive;
+      2:fContracts1.GridContentsResponsive;
+    end;
+  end;
+
+  if mvSidebar.Width = 200 then
+  begin
+    case tcController.TabIndex of
+      1:fClients1.GridContentsResponsive;
+      2:fContracts1.GridContentsResponsive;
+    end;
+  end;
+end;
+
+procedure TfrmMain.mvSidebarResized(Sender: TObject);
+begin
+  if mvSidebar.Width <= 51 then
+  begin
+    mvSidebar.Width := 50
+  end;
+
+  if mvSidebar.Width >= 199 then
+  begin
+    mvSidebar.Width := 200
+  end;
+end;
+
+procedure TfrmMain.tcControllerChange(Sender: TObject);
+begin
+  // Deactivate first all queries
+  QueryHandler;
+
+  case tcController.TabIndex of
+    0: dm.qActiveClients.Active := true;
+    1: dm.qClients.Active := true;
+    2: dm.qContracts.Active := true;
+  end;
+end;
+
+{ Show Tab for dashbaord }
+procedure TfrmMain.sbDashboardClick(Sender: TObject);
+begin
+  // Switch tab index
+  tcController.TabIndex := 0;
+  fDashboard1.Visible := True;
+  fDashboard1.ScrollBox1.ViewportPosition := PointF(0,0); // reset scroll bar
+
+  // hide other components
+  fClients1.Visible := False;
+  fContracts1.Visible := False;
 end;
 
 { Show Tab for clients }
 procedure TfrmMain.sbClientsClick(Sender: TObject);
 begin
+  // Switch tab index
   tcController.TabIndex := 1;
   fClients1.Visible := True;
   fClients1.ScrollBox1.ViewportPosition := PointF(0,0); // reset scroll bar
@@ -309,6 +371,7 @@ end;
 { Show Tab for contracts }
 procedure TfrmMain.sbContractsClick(Sender: TObject);
 begin
+  // Switch tab index
   tcController.TabIndex := 2;
   fContracts1.Visible := True;
   fContracts1.ScrollBox1.ViewportPosition := PointF(0,0); // reset scroll bar
@@ -316,18 +379,6 @@ begin
   // hide other components
   fClients1.Visible := False;
   fDashboard1.Visible := False;
-end;
-
-{ Show Tab for dashbaord }
-procedure TfrmMain.sbDashboardClick(Sender: TObject);
-begin
-  tcController.TabIndex := 0;
-  fDashboard1.Visible := True;
-  fDashboard1.ScrollBox1.ViewportPosition := PointF(0,0); // reset scroll bar
-
-  // hide other components
-  fClients1.Visible := False;
-  fContracts1.Visible := False;
 end;
 
 end.

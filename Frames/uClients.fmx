@@ -118,7 +118,6 @@ object fClients: TfClients
           Size.PlatformDefault = False
           TabOrder = 1
           RowCount = 0
-          OnResized = gTableRecordResized
           Viewport.Width = 619.000000000000000000
           Viewport.Height = 352.000000000000000000
         end

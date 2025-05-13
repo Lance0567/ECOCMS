@@ -25,18 +25,19 @@ type
     gTableRecord: TGrid;
     Layout1: TLayout;
     eSearch: TEdit;
-    procedure gTableRecordResized(Sender: TObject);
   private
     { Private declarations }
   public
     { Public declarations }
+    procedure GridContentsResponsive;
   end;
 
 implementation
 
 {$R *.fmx}
 
-procedure TfContracts.gTableRecordResized(Sender: TObject);
+{ Responsive grid procedure }
+procedure TfContracts.GridContentsResponsive;
 var
   i, ColCount: Integer;
   TotalWidth, ColumnWidth: Single;
@@ -54,7 +55,7 @@ begin
 
   // Set all columns to equal width
   for i := 0 to ColCount - 1 do
-    gTableRecord.Columns[i].Width := ColumnWidth;
+    gTableRecord.Columns[i].Width := ColumnWidth;;
 end;
 
 end.
