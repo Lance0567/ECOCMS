@@ -42,12 +42,23 @@ uses uMain;
 { Responsive grid procedure }
 procedure TfContracts.GridContentsResponsive;
 var
-  i: Integer;
-  NewWidth: Single;
+  i, ColCount: Integer;
+  TotalWidth, ColumnWidth: Single;
 begin
-  NewWidth := gTableRecord.Width / gTableRecord.ColumnCount;
-  for i := 0 to gTableRecord.ColumnCount - 1 do
-    gTableRecord.Columns[i].Width := NewWidth;
+  ColCount := gTableRecord.ColumnCount;
+
+  if ColCount = 0 then
+    Exit;
+
+  // Adjust for internal padding or scrollbar
+  TotalWidth := gTableRecord.Width; // Use ClientWidth instead of Width
+
+  // Subtract 1 pixel to prevent overflow and scrollbar
+  ColumnWidth := (TotalWidth - 1) / ColCount;
+
+  // Set all columns to equal width
+  for i := 0 to ColCount - 1 do
+    gTableRecord.Columns[i].Width := ColumnWidth;
 end;
 
 procedure TfContracts.gTableRecordResized(Sender: TObject);

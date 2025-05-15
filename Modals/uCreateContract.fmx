@@ -45,7 +45,7 @@ object fCreateContract: TfCreateContract
       Position.X = 20.000000000000000000
       Position.Y = 15.000000000000000000
       Size.Width = 664.000000000000000000
-      Size.Height = 141.000000000000000000
+      Size.Height = 240.000000000000000000
       Size.PlatformDefault = False
       Stroke.Kind = None
       XRadius = 10.000000000000000000
@@ -90,6 +90,47 @@ object fCreateContract: TfCreateContract
         Size.Height = 30.000000000000000000
         Size.PlatformDefault = False
       end
+      object rClientData: TRectangle
+        Align = Top
+        Padding.Left = 5.000000000000000000
+        Padding.Top = 10.000000000000000000
+        Padding.Right = 15.000000000000000000
+        Padding.Bottom = 10.000000000000000000
+        Margins.Top = 15.000000000000000000
+        Position.X = 20.000000000000000000
+        Position.Y = 134.000000000000000000
+        Size.Width = 624.000000000000000000
+        Size.Height = 80.000000000000000000
+        Size.PlatformDefault = False
+        Stroke.Kind = None
+        object lName: TLabel
+          Align = Top
+          StyledSettings = [Family]
+          Position.X = 5.000000000000000000
+          Position.Y = 10.000000000000000000
+          Size.Width = 604.000000000000000000
+          Size.Height = 17.000000000000000000
+          Size.PlatformDefault = False
+          TextSettings.Font.Size = 16.000000000000000000
+          TextSettings.Font.StyleExt = {00070000000000000004000000}
+          Text = 'Name:'
+          TabOrder = 1
+        end
+        object lAddress: TLabel
+          Align = Top
+          StyledSettings = [Family]
+          Margins.Top = 8.000000000000000000
+          Position.X = 5.000000000000000000
+          Position.Y = 35.000000000000000000
+          Size.Width = 604.000000000000000000
+          Size.Height = 17.000000000000000000
+          Size.PlatformDefault = False
+          TextSettings.Font.Size = 16.000000000000000000
+          TextSettings.Font.StyleExt = {00070000000000000004000000}
+          Text = 'Address:'
+          TabOrder = 0
+        end
+      end
     end
     object rContractDetails: TRectangle
       Align = Top
@@ -99,9 +140,9 @@ object fCreateContract: TfCreateContract
       Padding.Bottom = 15.000000000000000000
       Margins.Top = 15.000000000000000000
       Position.X = 20.000000000000000000
-      Position.Y = 171.000000000000000000
+      Position.Y = 270.000000000000000000
       Size.Width = 664.000000000000000000
-      Size.Height = 600.000000000000000000
+      Size.Height = 340.000000000000000000
       Size.PlatformDefault = False
       Stroke.Kind = None
       XRadius = 10.000000000000000000
@@ -118,9 +159,9 @@ object fCreateContract: TfCreateContract
         TextSettings.Font.StyleExt = {00060000000000000004000000}
         TextSettings.VertAlign = Leading
         Text = 'Contract Details'
-        TabOrder = 0
+        TabOrder = 2
       end
-      object lDescription2: TLabel
+      object lDescription: TLabel
         Align = Top
         StyledSettings = [Family, Style]
         Position.X = 20.000000000000000000
@@ -131,154 +172,60 @@ object fCreateContract: TfCreateContract
         TextSettings.Font.Size = 14.000000000000000000
         TextSettings.FontColor = claDimgray
         Text = 'Define the terms of your contract'
-        TabOrder = 1
+        TabOrder = 3
       end
-      object gbRadioQuestion: TGroupBox
-        Align = Top
-        StyledSettings = [Family, FontColor, Other]
-        Padding.Top = 10.000000000000000000
-        Margins.Top = 20.000000000000000000
-        Position.X = 20.000000000000000000
-        Position.Y = 89.000000000000000000
-        Size.Width = 624.000000000000000000
-        Size.Height = 60.000000000000000000
-        Size.PlatformDefault = False
-        Text = 'Type of Treatment'
-        TextSettings.Font.Size = 14.000000000000000000
-        TextSettings.Font.StyleExt = {00060000000000000004000000}
-        TabOrder = 2
-        object rbTypeA: TRadioButton
-          Align = Left
-          StyledSettings = [Family, Style, FontColor]
-          Position.Y = 10.000000000000000000
-          Size.Width = 85.000000000000000000
-          Size.Height = 50.000000000000000000
-          Size.PlatformDefault = False
-          TabOrder = 4
-          Text = 'Type A'
-          TextSettings.Font.Size = 14.000000000000000000
-        end
-        object rbTypeB: TRadioButton
-          Align = Left
-          StyledSettings = [Family, Style, FontColor]
-          Position.X = 85.000000000000000000
-          Position.Y = 10.000000000000000000
-          Size.Width = 85.000000000000000000
-          Size.Height = 50.000000000000000000
-          Size.PlatformDefault = False
-          TabOrder = 3
-          Text = 'Type B'
-          TextSettings.Font.Size = 14.000000000000000000
-        end
-        object rbTypeC: TRadioButton
-          Align = Left
-          StyledSettings = [Family, Style, FontColor]
-          Position.X = 170.000000000000000000
-          Position.Y = 10.000000000000000000
-          Size.Width = 85.000000000000000000
-          Size.Height = 50.000000000000000000
-          Size.PlatformDefault = False
-          TabOrder = 2
-          Text = 'Type C'
-          TextSettings.Font.Size = 14.000000000000000000
-        end
-      end
-      object lServiceDescription: TLabel
+      object lTreatmentInclusion: TLabel
         Align = Top
         StyledSettings = [Family, FontColor]
-        Margins.Top = 10.000000000000000000
+        Margins.Top = 25.000000000000000000
         Position.X = 20.000000000000000000
-        Position.Y = 159.000000000000000000
+        Position.Y = 94.000000000000000000
         Size.Width = 624.000000000000000000
         Size.Height = 17.000000000000000000
         Size.PlatformDefault = False
         TextSettings.Font.Size = 14.000000000000000000
         TextSettings.Font.StyleExt = {00060000000000000004000000}
-        Text = 'Service Description'
-        TabOrder = 3
+        Text = 'Treatment Inclusion'
+        TabOrder = 4
       end
-      object Memo1: TMemo
+      object mServiceDescription: TMemo
         Touch.InteractiveGestures = [Pan, LongTap, DoubleTap]
         DataDetectorTypes = []
         Align = Top
         Margins.Top = 10.000000000000000000
         Position.X = 20.000000000000000000
-        Position.Y = 186.000000000000000000
+        Position.Y = 121.000000000000000000
         Size.Width = 624.000000000000000000
         Size.Height = 140.000000000000000000
         Size.PlatformDefault = False
-        TabOrder = 4
+        TabOrder = 5
         Viewport.Width = 620.000000000000000000
         Viewport.Height = 136.000000000000000000
       end
-      object FlowLayout1: TFlowLayout
-        Align = Client
+      object lDate: TLabel
+        Align = Top
+        StyledSettings = [Family, FontColor]
         Margins.Top = 10.000000000000000000
+        Position.X = 20.000000000000000000
+        Position.Y = 271.000000000000000000
         Size.Width = 624.000000000000000000
-        Size.Height = 249.000000000000000000
+        Size.Height = 20.000000000000000000
         Size.PlatformDefault = False
-        TabOrder = 5
-        Justify = Left
-        JustifyLastLine = Left
-        FlowDirection = LeftToRight
-        object lytStartDate: TLayout
-          Align = Client
-          Margins.Left = 10.000000000000000000
-          Margins.Top = 5.000000000000000000
-          Size.Width = 220.000000000000000000
-          Size.Height = 60.000000000000000000
-          Size.PlatformDefault = False
-          TabOrder = 1
-          object lStartDate: TLabel
-            Align = Top
-            StyledSettings = [Family, FontColor]
-            Size.Width = 220.000000000000000000
-            Size.Height = 20.000000000000000000
-            Size.PlatformDefault = False
-            TextSettings.Font.Size = 16.000000000000000000
-            TextSettings.Font.StyleExt = {00060000000000000004000000}
-            Text = 'Start Date'
-            TabOrder = 0
-          end
-          object dStartDate: TDateEdit
-            Date = 45790.000000000000000000
-            Align = Client
-            Margins.Top = 5.000000000000000000
-            Size.Width = 220.000000000000000000
-            Size.Height = 35.000000000000000000
-            Size.PlatformDefault = False
-            TabOrder = 1
-          end
-        end
-        object Layout1: TLayout
-          Align = Client
-          Margins.Left = 10.000000000000000000
-          Margins.Top = 5.000000000000000000
-          Size.Width = 220.000000000000000000
-          Size.Height = 60.000000000000000000
-          Size.PlatformDefault = False
-          TabOrder = 0
-          object lEndDate: TLabel
-            Align = Top
-            StyledSettings = [Family, FontColor]
-            Size.Width = 220.000000000000000000
-            Size.Height = 20.000000000000000000
-            Size.PlatformDefault = False
-            TextSettings.Font.Size = 16.000000000000000000
-            TextSettings.Font.StyleExt = {00060000000000000004000000}
-            Text = 'End Date'
-            TabOrder = 0
-          end
-          object DateEdit1: TDateEdit
-            Date = 45790.000000000000000000
-            Align = Client
-            Margins.Top = 5.000000000000000000
-            Size.Width = 220.000000000000000000
-            Size.Height = 35.000000000000000000
-            Size.PlatformDefault = False
-            TabOrder = 1
-          end
-        end
+        TextSettings.Font.Size = 14.000000000000000000
+        TextSettings.Font.StyleExt = {00060000000000000004000000}
+        Text = 'Date'
+        TabOrder = 0
+      end
+      object dDate: TDateEdit
+        Date = 45790.000000000000000000
+        Align = Top
+        Margins.Top = 5.000000000000000000
+        Position.X = 20.000000000000000000
+        Position.Y = 296.000000000000000000
+        Size.Width = 624.000000000000000000
+        Size.Height = 35.000000000000000000
+        Size.PlatformDefault = False
+        TabOrder = 1
       end
     end
   end

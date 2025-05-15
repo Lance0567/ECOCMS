@@ -33,7 +33,7 @@ object frmMain: TfrmMain
         Size.Width = 617.000000000000000000
         Size.Height = 505.000000000000000000
         Size.PlatformDefault = False
-        TabIndex = 2
+        TabIndex = 0
         TabOrder = 0
         TabPosition = None
         OnChange = tcControllerChange
@@ -51,7 +51,7 @@ object frmMain: TfrmMain
             item
             end>
           TextSettings.Trimming = None
-          IsSelected = False
+          IsSelected = True
           Size.Width = 12.000000000000000000
           Size.Height = 12.000000000000000000
           Size.PlatformDefault = False
@@ -254,7 +254,7 @@ object frmMain: TfrmMain
             item
             end>
           TextSettings.Trimming = None
-          IsSelected = True
+          IsSelected = False
           Size.Width = 12.000000000000000000
           Size.Height = 12.000000000000000000
           Size.PlatformDefault = False
@@ -337,6 +337,8 @@ object frmMain: TfrmMain
           StyleLookup = ''
           TabOrder = 0
           Text = 'Create Contract'
+          ExplicitSize.cx = 12.000000000000000000
+          ExplicitSize.cy = 12.000000000000000000
           inline fCreateContract1: TfCreateContract
             Align = Client
             Size.Width = 617.000000000000000000
@@ -370,6 +372,27 @@ object frmMain: TfrmMain
                   Size.Width = 531.000000000000000000
                   Size.Height = 32.000000000000000000
                 end
+                inherited rClientData: TRectangle
+                  Fill.Color = xFFE6EDF2
+                  Padding.Left = 15.000000000000000000
+                  Padding.Top = 15.000000000000000000
+                  Position.Y = 136.000000000000000000
+                  Size.Width = 531.000000000000000000
+                  XRadius = 8.000000000000000000
+                  YRadius = 8.000000000000000000
+                  inherited lName: TLabel
+                    Position.X = 15.000000000000000000
+                    Position.Y = 15.000000000000000000
+                    Size.Width = 501.000000000000000000
+                    TextSettings.Font.StyleExt = {00070000000000000004000000}
+                  end
+                  inherited lAddress: TLabel
+                    Position.X = 15.000000000000000000
+                    Position.Y = 40.000000000000000000
+                    Size.Width = 501.000000000000000000
+                    TextSettings.Font.StyleExt = {00070000000000000004000000}
+                  end
+                end
               end
               inherited rContractDetails: TRectangle
                 Size.Width = 571.000000000000000000
@@ -378,53 +401,28 @@ object frmMain: TfrmMain
                   Size.Width = 531.000000000000000000
                   TextSettings.Font.StyleExt = {00060000000000000004000000}
                 end
-                inherited lDescription2: TLabel
+                inherited lDescription: TLabel
                   Size.Width = 531.000000000000000000
                   TextSettings.FontColor = claDarkslategray
                 end
-                inherited gbRadioQuestion: TGroupBox
-                  StyledSettings = [Family, Other]
-                  Size.Width = 531.000000000000000000
-                  StyleLookup = 'gbRadioQuestionStyle1'
-                  TextSettings.Font.StyleExt = {00060000000000000004000000}
-                  inherited rbTypeA: TRadioButton
-                    StyledSettings = [Family, Style]
-                  end
-                  inherited rbTypeB: TRadioButton
-                    StyledSettings = [Family, Style]
-                  end
-                  inherited rbTypeC: TRadioButton
-                    StyledSettings = [Family, Style]
-                  end
-                end
-                inherited lServiceDescription: TLabel
+                inherited lTreatmentInclusion: TLabel
                   StyledSettings = [Family]
                   Size.Width = 531.000000000000000000
                   TextSettings.Font.StyleExt = {00060000000000000004000000}
                 end
-                inherited Memo1: TMemo
+                inherited mServiceDescription: TMemo
                   Size.Width = 531.000000000000000000
                   Viewport.Width = 531.000000000000000000
                   Viewport.Height = 140.000000000000000000
                 end
-                inherited FlowLayout1: TFlowLayout
+                inherited lDate: TLabel
+                  StyledSettings = [Family]
                   Size.Width = 531.000000000000000000
-                  inherited lytStartDate: TLayout
-                    inherited lStartDate: TLabel
-                      TextSettings.Font.StyleExt = {00060000000000000004000000}
-                    end
-                    inherited dStartDate: TDateEdit
-                      Size.Height = 32.000000000000000000
-                    end
-                  end
-                  inherited Layout1: TLayout
-                    inherited lEndDate: TLabel
-                      TextSettings.Font.StyleExt = {00060000000000000004000000}
-                    end
-                    inherited DateEdit1: TDateEdit
-                      Size.Height = 32.000000000000000000
-                    end
-                  end
+                  TextSettings.Font.StyleExt = {00060000000000000004000000}
+                end
+                inherited dDate: TDateEdit
+                  Size.Width = 531.000000000000000000
+                  Size.Height = 32.000000000000000000
                 end
               end
             end
@@ -440,11 +438,14 @@ object frmMain: TfrmMain
       TabOrder = 1
       OnResized = lytSidebarResized
       object mvSidebar: TMultiView
+        BorderOptions.Color = xFFE7E5E5
         MasterButton = sbMenu
-        ShadowOptions.Enabled = False
+        ShadowOptions.Color = xFFE2DFDF
+        ShadowOptions.Opacity = 0.400000005960464500
         Size.Width = 200.000000000000000000
         Size.Height = 505.000000000000000000
         Size.PlatformDefault = False
+        StyleLookup = 'multiviewstyle'
         TabOrder = 0
         OnResize = mvSidebarResize
         OnResized = mvSidebarResized
@@ -452,22 +453,34 @@ object frmMain: TfrmMain
           StaysPressed = True
           Align = Bottom
           GroupName = 'Navigations'
+          StyledSettings = [Family, Size]
+          Images = dm.ImageList1
+          ImageIndex = 11
           Position.Y = 455.000000000000000000
           Size.Width = 200.000000000000000000
           Size.Height = 50.000000000000000000
           Size.PlatformDefault = False
           StyleLookup = 'settingstoolbuttonmultiview'
           Text = 'Settings'
+          TextSettings.Font.StyleExt = {00060000000000000004000000}
+          TextSettings.FontColorForState.Pressed = claBlack
+          TextSettings.FontColorForState.Focused = claBlack
           TextSettings.HorzAlign = Leading
           TextSettings.Trimming = None
         end
         object sbMenu: TSpeedButton
           Align = Top
+          StyledSettings = [Style]
+          Images = dm.ImageList1
+          ImageIndex = 12
           Size.Width = 200.000000000000000000
-          Size.Height = 50.000000000000000000
+          Size.Height = 70.000000000000000000
           Size.PlatformDefault = False
           StyleLookup = 'detailstoolbuttonmultiview'
           Text = 'ECO PRO'
+          TextSettings.Font.Family = 'Dubai'
+          TextSettings.Font.Size = 20.000000000000000000
+          TextSettings.FontColor = claGreen
           TextSettings.HorzAlign = Leading
           TextSettings.Trimming = None
         end
@@ -475,14 +488,20 @@ object frmMain: TfrmMain
           StaysPressed = True
           Align = Top
           GroupName = 'Navigations'
+          StyledSettings = [Family, Size]
           Images = dm.ImageList1
-          ImageIndex = 1
-          Position.Y = 150.000000000000000000
+          ImageIndex = 9
+          Position.Y = 175.000000000000000000
           Size.Width = 200.000000000000000000
           Size.Height = 50.000000000000000000
           Size.PlatformDefault = False
           StyleLookup = 'sidebarButton'
           Text = 'Contracts'
+          TextSettings.Font.StyleExt = {00060000000000000004000000}
+          TextSettings.FontColorForState.Normal = claBlack
+          TextSettings.FontColorForState.Hot = claBlack
+          TextSettings.FontColorForState.Pressed = claBlack
+          TextSettings.FontColorForState.Focused = claBlack
           TextSettings.HorzAlign = Leading
           TextSettings.Trimming = None
           OnClick = sbContractsClick
@@ -491,14 +510,20 @@ object frmMain: TfrmMain
           StaysPressed = True
           Align = Top
           GroupName = 'Navigations'
+          StyledSettings = [Family, Size]
           Images = dm.ImageList1
-          ImageIndex = 0
-          Position.Y = 50.000000000000000000
+          ImageIndex = 8
+          Position.Y = 75.000000000000000000
           Size.Width = 200.000000000000000000
           Size.Height = 50.000000000000000000
           Size.PlatformDefault = False
           StyleLookup = 'sidebarButton'
           Text = 'Dashboard'
+          TextSettings.Font.StyleExt = {00060000000000000004000000}
+          TextSettings.FontColorForState.Normal = claBlack
+          TextSettings.FontColorForState.Hot = claBlack
+          TextSettings.FontColorForState.Pressed = claBlack
+          TextSettings.FontColorForState.Focused = claBlack
           TextSettings.HorzAlign = Leading
           TextSettings.Trimming = None
           OnClick = sbDashboardClick
@@ -507,17 +532,32 @@ object frmMain: TfrmMain
           StaysPressed = True
           Align = Top
           GroupName = 'Navigations'
+          StyledSettings = [Family, Size]
           Images = dm.ImageList1
-          ImageIndex = 2
-          Position.Y = 100.000000000000000000
+          ImageIndex = 10
+          Position.Y = 125.000000000000000000
           Size.Width = 200.000000000000000000
           Size.Height = 50.000000000000000000
           Size.PlatformDefault = False
           StyleLookup = 'sidebarButton'
           Text = 'Clients'
+          TextSettings.Font.StyleExt = {00060000000000000004000000}
+          TextSettings.FontColorForState.Normal = claBlack
+          TextSettings.FontColorForState.Hot = claBlack
+          TextSettings.FontColorForState.Pressed = claBlack
+          TextSettings.FontColorForState.Focused = claBlack
           TextSettings.HorzAlign = Leading
           TextSettings.Trimming = None
           OnClick = sbClientsClick
+        end
+        object Line1: TLine
+          Align = Top
+          LineType = Bottom
+          Position.Y = 70.000000000000000000
+          Size.Width = 200.000000000000000000
+          Size.Height = 5.000000000000000000
+          Size.PlatformDefault = False
+          Stroke.Color = xFFDDDBDB
         end
       end
     end
@@ -759,7 +799,7 @@ object frmMain: TfrmMain
             TextSettings.Font.Size = 17.000000000000000000
             TextSettings.FontColor = claRed
             Text = '*'
-            TabOrder = 3
+            TabOrder = 4
           end
         end
         object lFullnameR: TLabel
@@ -813,7 +853,7 @@ object frmMain: TfrmMain
             TextSettings.Font.Size = 17.000000000000000000
             TextSettings.FontColor = claRed
             Text = '*'
-            TabOrder = 3
+            TabOrder = 4
           end
         end
         object lAddressR: TLabel
@@ -874,7 +914,7 @@ object frmMain: TfrmMain
             TextSettings.Font.Size = 17.000000000000000000
             TextSettings.FontColor = claRed
             Text = '*'
-            TabOrder = 3
+            TabOrder = 4
           end
         end
         object lContractPriceR: TLabel
@@ -911,7 +951,7 @@ object frmMain: TfrmMain
       Columns = <
         item
           MemberName = 'name'
-          Header = 'Full Name'
+          Header = 'Client Name'
           Width = 150
         end
         item
@@ -952,7 +992,7 @@ object frmMain: TfrmMain
         item
           MemberName = 'type_of_treatment'
           Header = 'Type of Treatment'
-          Width = 200
+          Width = 170
         end
         item
           MemberName = 'start_date'

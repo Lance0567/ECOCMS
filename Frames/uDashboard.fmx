@@ -22,6 +22,7 @@ object fDashboard: TfDashboard
     end
     object rRecentContracts: TRectangle
       Align = Top
+      Fill.Color = claWhite
       Padding.Left = 20.000000000000000000
       Padding.Top = 20.000000000000000000
       Padding.Right = 20.000000000000000000
@@ -34,7 +35,7 @@ object fDashboard: TfDashboard
       Size.Width = 524.000000000000000000
       Size.Height = 452.000000000000000000
       Size.PlatformDefault = False
-      Stroke.Kind = None
+      Stroke.Color = xFFE2EEF0
       XRadius = 10.000000000000000000
       YRadius = 10.000000000000000000
       object Layout2: TLayout
@@ -126,6 +127,7 @@ object fDashboard: TfDashboard
         Size.Width = 260.000000000000000000
         Size.Height = 140.000000000000000000
         Size.PlatformDefault = False
+        Stroke.Color = xFFE2EEF0
         XRadius = 10.000000000000000000
         YRadius = 10.000000000000000000
         object lytCardD1: TLayout
@@ -184,6 +186,7 @@ object fDashboard: TfDashboard
         Size.Width = 260.000000000000000000
         Size.Height = 140.000000000000000000
         Size.PlatformDefault = False
+        Stroke.Color = xFFE2EEF0
         XRadius = 10.000000000000000000
         YRadius = 10.000000000000000000
         object lytCardD2: TLayout
@@ -242,6 +245,7 @@ object fDashboard: TfDashboard
         Size.Width = 260.000000000000000000
         Size.Height = 140.000000000000000000
         Size.PlatformDefault = False
+        Stroke.Color = xFFE2EEF0
         XRadius = 10.000000000000000000
         YRadius = 10.000000000000000000
         object lytCardD3: TLayout
@@ -300,6 +304,7 @@ object fDashboard: TfDashboard
         Size.Width = 260.000000000000000000
         Size.Height = 140.000000000000000000
         Size.PlatformDefault = False
+        Stroke.Color = xFFE2EEF0
         XRadius = 10.000000000000000000
         YRadius = 10.000000000000000000
         object lytCardD4: TLayout
@@ -355,13 +360,15 @@ object fDashboard: TfDashboard
       TabOrder = 1
       object lbTitle: TLabel
         Align = Client
-        StyledSettings = [Family, FontColor]
+        StyledSettings = []
         Margins.Left = 20.000000000000000000
         Size.Width = 345.000000000000000000
         Size.Height = 55.000000000000000000
         Size.PlatformDefault = False
+        TextSettings.Font.Family = 'Arial Rounded MT'
         TextSettings.Font.Size = 28.000000000000000000
         TextSettings.Font.StyleExt = {00070000000000000004000000}
+        TextSettings.FontColor = claGreen
         Text = 'Dashboard'
         TabOrder = 0
       end

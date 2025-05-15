@@ -27547,8 +27547,8 @@ object TStyleContainer
   end
   object TRectangle
     StyleName = 'backgroundstyle'
-    Align = Contents
-    Fill.Color = xFF37474F
+    Align = Center
+    Fill.Color = claWhite
     HitTest = False
     Size.Width = 449.000000000000000000
     Size.Height = 532.000000000000000000
@@ -27996,11 +27996,11 @@ object TStyleContainer
       Size.PlatformDefault = False
       Text = 'Text'
       TextSettings.Font.Size = 16.000000000000000000
-      TextSettings.FontColor = claWhite
+      TextSettings.FontColor = claSlategray
       ShadowVisible = False
-      HotColor = claWhite
+      HotColor = claSlategray
       FocusedColor = claBlack
-      NormalColor = claWhite
+      NormalColor = claSlategray
       PressedColor = claWhite
     end
   end
@@ -37609,7 +37609,7 @@ object TStyleContainer
     StyleName = 'listviewstyle'
     object TColorObject
       StyleName = 'background'
-      Color = xFF4B5A62
+      Color = claGray
     end
     object TColorObject
       StyleName = 'itembackground'
@@ -38844,6 +38844,15 @@ object TStyleContainer
     object TBrushObject
       StyleName = 'dropline'
       Brush.Color = xFF37474F
+    end
+    object TRectangle
+      StyleName = 'rmBackground'
+      Align = Contents
+      Fill.Color = claWhite
+      Sides = [Left, Bottom, Right]
+      Size.Width = 50.000000000000000000
+      Size.Height = 50.000000000000000000
+      Size.PlatformDefault = False
     end
   end
   object TRectangle
@@ -42804,6 +42813,7 @@ object TStyleContainer
   end
   object TLayout
     StyleName = 'comboeditstyle'
+    Align = Center
     Visible = False
     TabOrder = 85
     FixedHeight = 32
@@ -42893,8 +42903,9 @@ object TStyleContainer
         StyleName = 'Arrow'
         Align = Right
         Locked = True
+        Margins.Right = 8.000000000000000000
         SourceLookup = 'Windows 10 Modern SlateGraystyle.png'
-        Position.X = 28.000000000000000000
+        Position.X = 20.000000000000000000
         Position.Y = 2.000000000000000000
         Size.Width = 20.000000000000000000
         Size.Height = 46.000000000000000000
@@ -43062,11 +43073,11 @@ object TStyleContainer
       StyleName = 'content'
       Align = Contents
       Locked = True
-      Margins.Left = 3.000000000000000000
+      Margins.Left = 10.000000000000000000
       Margins.Top = 3.000000000000000000
       Margins.Right = 23.000000000000000000
       Margins.Bottom = 3.000000000000000000
-      Size.Width = 24.000000000000000000
+      Size.Width = 17.000000000000000000
       Size.Height = 44.000000000000000000
       Size.PlatformDefault = False
     end
@@ -64271,13 +64282,12 @@ object TStyleContainer
   end
   object TLayout
     StyleName = 'detailstoolbuttonmultiview'
-    Align = Contents
+    Align = Center
     Size.Width = 449.000000000000000000
     Size.Height = 532.000000000000000000
     Size.PlatformDefault = False
-    Visible = False
     TabOrder = 175
-    FixedHeight = 50
+    FixedHeight = 70
     object TButtonStyleObject
       StyleName = 'background'
       Align = Contents
@@ -64571,6 +64581,7 @@ object TStyleContainer
       Size.Width = 399.000000000000000000
       Size.Height = 532.000000000000000000
       Size.PlatformDefault = False
+      Text = 'Text'
       TextSettings.Font.Size = 17.000000000000000000
       TextSettings.Font.StyleExt = {00070000000000000004000000}
       TextSettings.FontColor = claWhite
@@ -68605,6 +68616,7 @@ object TStyleContainer
       Size.Width = 40.000000000000000000
       Size.Height = 46.000000000000000000
       Size.PlatformDefault = False
+      Text = 'Text'
       TextSettings.Font.Size = 16.000000000000000000
       TextSettings.FontColor = claWhite
       TextSettings.WordWrap = False
@@ -68620,6 +68632,7 @@ object TStyleContainer
     Size.Width = 531.000000000000000000
     Size.Height = 60.000000000000000000
     Size.PlatformDefault = False
+    Visible = False
     TabOrder = 38
     object TText
       StyleName = 'text'

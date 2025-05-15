@@ -74,6 +74,7 @@ type
     LinkGridToDSBDBContracts: TLinkGridToDataSource;
     tiCreateContract: TTabItem;
     fCreateContract1: TfCreateContract;
+    Line1: TLine;
     procedure mvSidebarResize(Sender: TObject);
     procedure FormCreate(Sender: TObject);
     procedure sbDashboardClick(Sender: TObject);
