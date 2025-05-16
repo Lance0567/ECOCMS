@@ -476,3 +476,6 @@ Coordinates=1500,336,229,58
 [fCreateContract1.dDate]
 Coordinates=1420,420,150,58
 
+[dm.qClientsSelection]
+Visible=False
+

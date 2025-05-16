@@ -101,6 +101,14 @@ object fCreateContract: TfCreateContract
       end
       object cbClientSelection: TComboBox
         Align = Top
+        Items.Strings = (
+          'Lance'
+          'Lara'
+          'Kia'
+          'Nic'
+          ''
+          ''
+          '')
         Margins.Top = 10.000000000000000000
         Position.X = 20.000000000000000000
         Position.Y = 79.000000000000000000
@@ -303,6 +311,27 @@ object fCreateContract: TfCreateContract
         Text = 'Create Contract'
         TabOrder = 0
       end
+    end
+  end
+  object BindSourceDB1: TBindSourceDB
+    DataSet = dm.qClientsSelection
+    ScopeMappings = <>
+    Left = 408
+    Top = 13
+  end
+  object BindingsList1: TBindingsList
+    Methods = <>
+    OutputConverters = <>
+    Left = 316
+    Top = 13
+    object LinkListControlToField1: TLinkListControlToField
+      Category = 'Quick Bindings'
+      DataSource = BindSourceDB1
+      FieldName = 'name'
+      Control = cbClientSelection
+      FillExpressions = <>
+      FillHeaderExpressions = <>
+      FillBreakGroups = <>
     end
   end
 end

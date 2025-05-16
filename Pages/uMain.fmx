@@ -123,7 +123,7 @@ object frmMain: TfrmMain
                   inherited lbActiveClientsC: TLabel
                     Size.Width = 240.000000000000000000
                     TextSettings.Font.StyleExt = {00070000000000000004000000}
-                    Text = ''
+                    Text = '7'
                   end
                 end
                 inherited rCard3: TRectangle
@@ -240,6 +240,7 @@ object frmMain: TfrmMain
                   inherited gTableRecord: TGrid
                     PopupMenu = fClients1.PopupMenu1
                     Size.Width = 526.000000000000000000
+                    RowCount = 7
                     Options = [Editing, ColumnResize, ColumnMove, ColLines, RowLines, RowSelect, Tabs, Header, HeaderClick, AutoDisplacement]
                     Viewport.Width = 526.000000000000000000
                     Viewport.Height = 352.000000000000000000
@@ -376,6 +377,7 @@ object frmMain: TfrmMain
                 end
                 inherited rClientData: TRectangle
                   Fill.Color = xFFE6EDF2
+                  Position.Y = 126.000000000000000000
                   Size.Width = 531.000000000000000000
                   Stroke.Kind = None
                   inherited lName: TLabel
@@ -389,6 +391,7 @@ object frmMain: TfrmMain
                 end
                 inherited cbClientSelection: TComboBox
                   Size.Width = 531.000000000000000000
+                  Size.Height = 32.000000000000000000
                 end
               end
               inherited rContractDetails: TRectangle
@@ -411,8 +414,8 @@ object frmMain: TfrmMain
                 end
                 inherited mServiceDescription: TMemo
                   Size.Width = 531.000000000000000000
-                  Viewport.Width = 531.000000000000000000
-                  Viewport.Height = 140.000000000000000000
+                  Viewport.Width = 523.000000000000000000
+                  Viewport.Height = 132.000000000000000000
                 end
                 inherited lDate: TLabel
                   StyledSettings = [Family]
@@ -462,6 +465,14 @@ object frmMain: TfrmMain
                   TextSettings.FontColor = claGreen
                 end
               end
+            end
+            inherited BindSourceDB1: TBindSourceDB
+              Left = 256
+              Top = 301
+            end
+            inherited BindingsList1: TBindingsList
+              Left = 252
+              Top = 237
             end
           end
         end
@@ -839,7 +850,7 @@ object frmMain: TfrmMain
             TextSettings.Font.Size = 17.000000000000000000
             TextSettings.FontColor = claRed
             Text = '*'
-            TabOrder = 3
+            TabOrder = 4
           end
         end
         object lFullnameR: TLabel
@@ -893,7 +904,7 @@ object frmMain: TfrmMain
             TextSettings.Font.Size = 17.000000000000000000
             TextSettings.FontColor = claRed
             Text = '*'
-            TabOrder = 3
+            TabOrder = 4
           end
         end
         object lAddressR: TLabel
@@ -954,7 +965,7 @@ object frmMain: TfrmMain
             TextSettings.Font.Size = 17.000000000000000000
             TextSettings.FontColor = claRed
             Text = '*'
-            TabOrder = 3
+            TabOrder = 4
           end
         end
         object lContractPriceR: TLabel

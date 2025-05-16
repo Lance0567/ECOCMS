@@ -52956,7 +52956,7 @@ object dm: Tdm
           000000A001C00B4D617267696E732E546F700500000000000000A002C00D4D61
           7267696E732E5269676874050000000000000080FF3F0A506F736974696F6E2E
           580500000000000000C000C00A506F736974696F6E2E59050000000000000080
-          00C00A53697A652E576964746805000000000055258504400B53697A652E4865
+          00C00A53697A652E576964746805000000000000C08408400B53697A652E4865
           696768740500000000000040AA03401453697A652E506C6174666F726D446566
           61756C74080454657874060454657874165465787453657474696E67732E466F
           6E742E53697A650500000000000000800340165465787453657474696E67732E
@@ -53813,6 +53813,7 @@ object dm: Tdm
     Top = 56
   end
   object qClients: TFDQuery
+    Active = True
     Connection = cData
     SQL.Strings = (
       'SELECT * FROM clients')
@@ -53859,6 +53860,7 @@ object dm: Tdm
     end
   end
   object qActiveClients: TFDQuery
+    Active = True
     Connection = cData
     SQL.Strings = (
       'SELECT COUNT(id) as '#39'Active Clients'#39' '
@@ -53867,10 +53869,21 @@ object dm: Tdm
     Top = 56
   end
   object qContracts: TFDQuery
+    Active = True
     Connection = cData
     SQL.Strings = (
       'SELECT * FROM contracts')
     Left = 272
+    Top = 144
+  end
+  object qClientsSelection: TFDQuery
+    Active = True
+    Connection = cData
+    SQL.Strings = (
+      'SELECT * '
+      'FROM clients'
+      'WHERE contract = '#39'false'#39)
+    Left = 168
     Top = 144
   end
 end

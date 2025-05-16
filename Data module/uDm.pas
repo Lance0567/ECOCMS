@@ -27,6 +27,7 @@ type
     qClientssecond_treatment: TDateField;
     qClientsthird_treatment: TDateField;
     qContracts: TFDQuery;
+    qClientsSelection: TFDQuery;
   private
     { Private declarations }
   public

@@ -12,7 +12,7 @@ uses
   Data.Bind.EngExt, Fmx.Bind.DBEngExt, Fmx.Bind.Grid, System.Rtti,
   System.Bindings.Outputs, Fmx.Bind.Editors, Data.Bind.Components,
   Data.Bind.Grid, Data.Bind.DBScope, FMX.Edit, FMX.DateTimeCtrls, uContracts,
-  FMX.Memo.Types, FMX.ScrollBox, FMX.Memo, uCreateContract;
+  FMX.Memo.Types, FMX.ScrollBox, FMX.Memo, uCreateContract, uCompile;
 
 type
   TfrmMain = class(TForm)
@@ -86,7 +86,6 @@ type
     procedure fClients1btnTriggerClick(Sender: TObject);
     procedure ClearItems;
     procedure HideComponents;
-    procedure AdjustLayoutHeight(ALayout: TLayout; AHeight: Single);
     procedure sbContractsClick(Sender: TObject);
     procedure tcControllerChange(Sender: TObject);
     procedure mvSidebarResized(Sender: TObject);
@@ -125,15 +124,6 @@ begin
   lFullnameR.Visible := False;
   lAddressR.Visible := False;
   lContractPriceR.Visible := False;
-end;
-
-{ Adjust Layout height for modal required fields }
-procedure TfrmMain.AdjustLayoutHeight(ALayout: TLayout; AHeight: Single);
-begin
-  if Assigned(ALayout) then
-  begin
-    ALayout.Height := AHeight;
-  end;
 end;
 
 { Clear items for add client modal }
