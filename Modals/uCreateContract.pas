@@ -8,7 +8,7 @@ uses
   FMX.Controls.Presentation, FMX.Layouts, FMX.Objects, FMX.Edit, FMX.ComboEdit,
   FMX.Memo.Types, FMX.ScrollBox, FMX.Memo, FMX.DateTimeCtrls, FMX.ListBox,
   System.Rtti, System.Bindings.Outputs, Fmx.Bind.Editors, Data.Bind.EngExt,
-  Fmx.Bind.DBEngExt, Data.Bind.Components, Data.Bind.DBScope;
+  Fmx.Bind.DBEngExt, Data.Bind.Components, Data.Bind.DBScope, uContracts;
 
 type
   TfCreateContract = class(TFrame)
@@ -38,6 +38,8 @@ type
     BindingsList1: TBindingsList;
     LinkListControlToField1: TLinkListControlToField;
     procedure btnSaveContractClick(Sender: TObject);
+    procedure cbClientSelectionClosePopup(Sender: TObject);
+    procedure cbClientSelectionClick(Sender: TObject);
   private
     { Private declarations }
   public
@@ -49,6 +51,10 @@ implementation
 {$R *.fmx}
 
 uses uDm;
+
+var
+  qName: String;
+  qAddress: String;
 
 procedure TfCreateContract.btnSaveContractClick(Sender: TObject);
 var
@@ -62,6 +68,39 @@ begin
   if cbClientSelection.Text = '' then
   begin
 
+  end;
+end;
+
+procedure TfCreateContract.cbClientSelectionClick(Sender: TObject);
+begin
+  cbClientSelection.Items.Clear;
+  dm.qClientsSelection.Active := true;
+end;
+
+procedure TfCreateContract.cbClientSelectionClosePopup(Sender: TObject);
+begin
+  // Safety check
+  if rClientData.Visible = False then
+  begin
+    rClientSelection.Height := 240;  // extend
+    rClientData.Visible := true;  // show
+  end;
+
+  // Use query qTemp
+  dm.qTemp.Close;
+  dm.qTemp.SQL.Text := 'SELECT name, address FROM clients WHERE name = ' +
+  QuotedStr(cbClientSelection.Text);
+
+  // Populate variables from extracted query
+  if not dm.qTemp.IsEmpty then
+  begin
+    qName := dm.qTemp.FieldByName('name').AsString;
+    qAddress := dm.qTemp.FieldByName('address').AsString;
+  end
+  else
+  begin
+    qName := '';
+    qAddress := '';
   end;
 end;
 

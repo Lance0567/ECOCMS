@@ -92,6 +92,7 @@ type
     procedure fContracts1btnTriggerClick(Sender: TObject);
     procedure lytSidebarResized(Sender: TObject);
     procedure FormResize(Sender: TObject);
+    procedure fCreateContract1btnCancelClick(Sender: TObject);
   private
     procedure HideFrames;
     { Private declarations }
@@ -409,13 +410,33 @@ end;
 { Show Tab for contracts }
 procedure TfrmMain.fContracts1btnTriggerClick(Sender: TObject);
 begin
-    // hide other components
+  // hide other components
   HideFrames;
 
   // Switch tab index
   tcController.TabIndex := 3;
   fCreateContract1.Visible := True;
   fCreateContract1.ScrollBox1.ViewportPosition := PointF(0,0); // reset scroll bar
+
+  // Populate cbClientSelection (ComboBox)
+  fCreateContract1.cbClientSelection.Items.Clear;
+  fCreateContract1.cbClientSelection.Items.Add('Select a client');
+  fCreateContract1.rClientSelection.Height := 135;
+  fCreateContract1.rClientData.Visible := false;
+end;
+
+{ Cancel button from Create Contract }
+procedure TfrmMain.fCreateContract1btnCancelClick(Sender: TObject);
+begin
+  // hide other components
+  HideFrames;
+
+  // Switch tab index
+  tcController.TabIndex := 2;
+  fContracts1.Visible := True;
+  fCreateContract1.ScrollBox1.ViewportPosition := PointF(0, 0); // reset scroll bar
+
+  fContracts1.GridContentsResponsive;
 end;
 
 end.

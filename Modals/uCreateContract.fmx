@@ -109,6 +109,7 @@ object fCreateContract: TfCreateContract
           ''
           ''
           '')
+        ItemIndex = 0
         Margins.Top = 10.000000000000000000
         Position.X = 20.000000000000000000
         Position.Y = 79.000000000000000000
@@ -116,6 +117,8 @@ object fCreateContract: TfCreateContract
         Size.Height = 35.000000000000000000
         Size.PlatformDefault = False
         TabOrder = 2
+        OnClosePopup = cbClientSelectionClosePopup
+        OnClick = cbClientSelectionClick
       end
     end
     object rContractDetails: TRectangle

@@ -53886,4 +53886,9 @@ object dm: Tdm
     Left = 168
     Top = 144
   end
+  object qTemp: TFDQuery
+    Connection = cData
+    Left = 72
+    Top = 144
+  end
 end
