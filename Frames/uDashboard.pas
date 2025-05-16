@@ -90,7 +90,7 @@ var
 begin
   AvailableWidth := Trunc(glytCards.Width);
   ItemsPerRow := Max(1, AvailableWidth div 285);
-  glytCards.ItemWidth := Trunc((AvailableWidth - (ItemsPerRow + 1) * 5) / ItemsPerRow);
+  glytCards.ItemWidth := Trunc((AvailableWidth - (ItemsPerRow + 1) * 4) / ItemsPerRow);
 end;
 
 end.

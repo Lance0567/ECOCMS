@@ -75,7 +75,7 @@ object fContracts: TfContracts
       Size.Width = 659.000000000000000000
       Size.Height = 452.000000000000000000
       Size.PlatformDefault = False
-      Stroke.Kind = None
+      Stroke.Color = xFFDBD9D9
       XRadius = 10.000000000000000000
       YRadius = 10.000000000000000000
       object Layout2: TLayout

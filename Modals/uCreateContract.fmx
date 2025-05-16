@@ -2,52 +2,31 @@ object fCreateContract: TfCreateContract
   Size.Width = 715.000000000000000000
   Size.Height = 480.000000000000000000
   Size.PlatformDefault = False
-  object lTitleC: TLayout
-    Align = Top
-    Padding.Left = 20.000000000000000000
-    Padding.Top = 10.000000000000000000
-    Padding.Right = 20.000000000000000000
-    Size.Width = 715.000000000000000000
-    Size.Height = 57.000000000000000000
-    Size.PlatformDefault = False
-    TabOrder = 0
-    object lTitle: TLabel
-      Align = Client
-      StyledSettings = [Family]
-      Size.Width = 675.000000000000000000
-      Size.Height = 47.000000000000000000
-      Size.PlatformDefault = False
-      TextSettings.Font.Size = 28.000000000000000000
-      TextSettings.Font.StyleExt = {00070000000000000004000000}
-      TextSettings.VertAlign = Leading
-      Text = 'Create Contract'
-      TabOrder = 0
-    end
-  end
   object ScrollBox1: TScrollBox
     Align = Client
     Padding.Left = 20.000000000000000000
-    Padding.Top = 15.000000000000000000
+    Padding.Top = 10.000000000000000000
     Padding.Right = 15.000000000000000000
     Padding.Bottom = 20.000000000000000000
     Size.Width = 715.000000000000000000
-    Size.Height = 423.000000000000000000
+    Size.Height = 480.000000000000000000
     Size.PlatformDefault = False
-    TabOrder = 1
+    TabOrder = 0
     Viewport.Width = 699.000000000000000000
-    Viewport.Height = 423.000000000000000000
+    Viewport.Height = 480.000000000000000000
     object rClientSelection: TRectangle
       Align = Top
       Padding.Left = 20.000000000000000000
       Padding.Top = 15.000000000000000000
       Padding.Right = 20.000000000000000000
       Padding.Bottom = 15.000000000000000000
+      Margins.Top = 15.000000000000000000
       Position.X = 20.000000000000000000
-      Position.Y = 15.000000000000000000
+      Position.Y = 75.000000000000000000
       Size.Width = 664.000000000000000000
       Size.Height = 240.000000000000000000
       Size.PlatformDefault = False
-      Stroke.Kind = None
+      Stroke.Color = xFFDBD9D9
       XRadius = 10.000000000000000000
       YRadius = 10.000000000000000000
       object lClientSelection: TLabel
@@ -77,38 +56,27 @@ object fCreateContract: TfCreateContract
         Text = 'Select a client for this contract'
         TabOrder = 1
       end
-      object ceClientSelection: TComboEdit
-        Touch.InteractiveGestures = [LongTap, DoubleTap]
-        Align = Top
-        TabOrder = 2
-        ItemHeight = 19.000000000000000000
-        ItemIndex = -1
-        Position.X = 20.000000000000000000
-        Position.Y = 89.000000000000000000
-        Margins.Top = 20.000000000000000000
-        Size.Width = 624.000000000000000000
-        Size.Height = 30.000000000000000000
-        Size.PlatformDefault = False
-      end
       object rClientData: TRectangle
         Align = Top
-        Padding.Left = 5.000000000000000000
-        Padding.Top = 10.000000000000000000
+        Padding.Left = 15.000000000000000000
+        Padding.Top = 15.000000000000000000
         Padding.Right = 15.000000000000000000
         Padding.Bottom = 10.000000000000000000
         Margins.Top = 15.000000000000000000
         Position.X = 20.000000000000000000
-        Position.Y = 134.000000000000000000
+        Position.Y = 129.000000000000000000
         Size.Width = 624.000000000000000000
         Size.Height = 80.000000000000000000
         Size.PlatformDefault = False
-        Stroke.Kind = None
+        Stroke.Color = xFFDBD9D9
+        XRadius = 8.000000000000000000
+        YRadius = 8.000000000000000000
         object lName: TLabel
           Align = Top
           StyledSettings = [Family]
-          Position.X = 5.000000000000000000
-          Position.Y = 10.000000000000000000
-          Size.Width = 604.000000000000000000
+          Position.X = 15.000000000000000000
+          Position.Y = 15.000000000000000000
+          Size.Width = 594.000000000000000000
           Size.Height = 17.000000000000000000
           Size.PlatformDefault = False
           TextSettings.Font.Size = 16.000000000000000000
@@ -120,9 +88,9 @@ object fCreateContract: TfCreateContract
           Align = Top
           StyledSettings = [Family]
           Margins.Top = 8.000000000000000000
-          Position.X = 5.000000000000000000
-          Position.Y = 35.000000000000000000
-          Size.Width = 604.000000000000000000
+          Position.X = 15.000000000000000000
+          Position.Y = 40.000000000000000000
+          Size.Width = 594.000000000000000000
           Size.Height = 17.000000000000000000
           Size.PlatformDefault = False
           TextSettings.Font.Size = 16.000000000000000000
@@ -130,6 +98,16 @@ object fCreateContract: TfCreateContract
           Text = 'Address:'
           TabOrder = 0
         end
+      end
+      object cbClientSelection: TComboBox
+        Align = Top
+        Margins.Top = 10.000000000000000000
+        Position.X = 20.000000000000000000
+        Position.Y = 79.000000000000000000
+        Size.Width = 624.000000000000000000
+        Size.Height = 35.000000000000000000
+        Size.PlatformDefault = False
+        TabOrder = 2
       end
     end
     object rContractDetails: TRectangle
@@ -140,11 +118,11 @@ object fCreateContract: TfCreateContract
       Padding.Bottom = 15.000000000000000000
       Margins.Top = 15.000000000000000000
       Position.X = 20.000000000000000000
-      Position.Y = 270.000000000000000000
+      Position.Y = 330.000000000000000000
       Size.Width = 664.000000000000000000
-      Size.Height = 340.000000000000000000
+      Size.Height = 430.000000000000000000
       Size.PlatformDefault = False
-      Stroke.Kind = None
+      Stroke.Color = xFFDBD9D9
       XRadius = 10.000000000000000000
       YRadius = 10.000000000000000000
       object lbContractDetails: TLabel
@@ -159,7 +137,7 @@ object fCreateContract: TfCreateContract
         TextSettings.Font.StyleExt = {00060000000000000004000000}
         TextSettings.VertAlign = Leading
         Text = 'Contract Details'
-        TabOrder = 2
+        TabOrder = 3
       end
       object lDescription: TLabel
         Align = Top
@@ -172,7 +150,7 @@ object fCreateContract: TfCreateContract
         TextSettings.Font.Size = 14.000000000000000000
         TextSettings.FontColor = claDimgray
         Text = 'Define the terms of your contract'
-        TabOrder = 3
+        TabOrder = 4
       end
       object lTreatmentInclusion: TLabel
         Align = Top
@@ -186,7 +164,7 @@ object fCreateContract: TfCreateContract
         TextSettings.Font.Size = 14.000000000000000000
         TextSettings.Font.StyleExt = {00060000000000000004000000}
         Text = 'Treatment Inclusion'
-        TabOrder = 4
+        TabOrder = 5
       end
       object mServiceDescription: TMemo
         Touch.InteractiveGestures = [Pan, LongTap, DoubleTap]
@@ -198,7 +176,7 @@ object fCreateContract: TfCreateContract
         Size.Width = 624.000000000000000000
         Size.Height = 140.000000000000000000
         Size.PlatformDefault = False
-        TabOrder = 5
+        TabOrder = 6
         Viewport.Width = 620.000000000000000000
         Viewport.Height = 136.000000000000000000
       end
@@ -214,7 +192,7 @@ object fCreateContract: TfCreateContract
         TextSettings.Font.Size = 14.000000000000000000
         TextSettings.Font.StyleExt = {00060000000000000004000000}
         Text = 'Date'
-        TabOrder = 0
+        TabOrder = 1
       end
       object dDate: TDateEdit
         Date = 45790.000000000000000000
@@ -225,7 +203,105 @@ object fCreateContract: TfCreateContract
         Size.Width = 624.000000000000000000
         Size.Height = 35.000000000000000000
         Size.PlatformDefault = False
+        TabOrder = 2
+      end
+      object lPaymentStatus: TLabel
+        Align = Top
+        StyledSettings = [Family, FontColor]
+        Margins.Top = 10.000000000000000000
+        Position.X = 20.000000000000000000
+        Position.Y = 341.000000000000000000
+        Size.Width = 624.000000000000000000
+        Size.Height = 20.000000000000000000
+        Size.PlatformDefault = False
+        TextSettings.Font.Size = 14.000000000000000000
+        TextSettings.Font.StyleExt = {00060000000000000004000000}
+        Text = 'Payment Status'
+        TabOrder = 0
+      end
+      object cbPaymentStatus: TComboBox
+        Align = Top
+        Items.Strings = (
+          'Initially Paid'
+          'Fully Paid')
+        ItemIndex = 0
+        Margins.Top = 5.000000000000000000
+        Position.X = 20.000000000000000000
+        Position.Y = 366.000000000000000000
+        Size.Width = 624.000000000000000000
+        Size.Height = 35.000000000000000000
+        Size.PlatformDefault = False
+        TabOrder = 7
+      end
+    end
+    object Layout1: TLayout
+      Align = Top
+      Padding.Top = 15.000000000000000000
+      Padding.Bottom = 15.000000000000000000
+      Margins.Top = 10.000000000000000000
+      Position.X = 20.000000000000000000
+      Position.Y = 770.000000000000000000
+      Size.Width = 664.000000000000000000
+      Size.Height = 70.000000000000000000
+      Size.PlatformDefault = False
+      TabOrder = 3
+      object btnCancel: TCornerButton
+        Align = Right
+        StyledSettings = []
+        Margins.Right = 15.000000000000000000
+        Position.X = 449.000000000000000000
+        Position.Y = 15.000000000000000000
+        Sides = [Top, Left, Bottom, Right]
+        Size.Width = 90.000000000000000000
+        Size.Height = 40.000000000000000000
+        Size.PlatformDefault = False
         TabOrder = 1
+        Text = 'Cancel'
+        TextSettings.Font.Size = 14.000000000000000000
+        TextSettings.Font.StyleExt = {00060000000000000004000000}
+        TextSettings.Trimming = None
+        XRadius = 5.000000000000000000
+        YRadius = 5.000000000000000000
+      end
+      object btnSaveContract: TCornerButton
+        Align = Right
+        StyledSettings = []
+        Position.X = 554.000000000000000000
+        Position.Y = 15.000000000000000000
+        Sides = [Top, Left, Bottom, Right]
+        Size.Width = 110.000000000000000000
+        Size.Height = 40.000000000000000000
+        Size.PlatformDefault = False
+        TabOrder = 0
+        Text = 'Save Contract'
+        TextSettings.Font.Size = 14.000000000000000000
+        TextSettings.Font.StyleExt = {00060000000000000004000000}
+        TextSettings.Trimming = None
+        XRadius = 5.000000000000000000
+        YRadius = 5.000000000000000000
+        OnClick = btnSaveContractClick
+      end
+    end
+    object lTitleC: TLayout
+      Align = Top
+      Position.X = 20.000000000000000000
+      Position.Y = 10.000000000000000000
+      Size.Width = 664.000000000000000000
+      Size.Height = 50.000000000000000000
+      Size.PlatformDefault = False
+      TabOrder = 0
+      object lTitle: TLabel
+        Align = Client
+        StyledSettings = []
+        Size.Width = 664.000000000000000000
+        Size.Height = 50.000000000000000000
+        Size.PlatformDefault = False
+        TextSettings.Font.Family = 'Arial Rounded MT'
+        TextSettings.Font.Size = 28.000000000000000000
+        TextSettings.Font.StyleExt = {00070000000000000004000000}
+        TextSettings.VertAlign = Leading
+        Text = 'Create Contract'
+        TabOrder = 0
       end
     end
   end

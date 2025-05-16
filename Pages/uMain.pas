@@ -195,7 +195,6 @@ begin
   // Full Name validation
   if eFullname.Text = '' then
   begin
-    rModalAdd.Tag := 1;
     AdjustLayoutHeight(lytFullnameC, 95);
     lFullnameR.Visible := True;
     lFullname.TextSettings.FontColor := TAlphaColors.Red;
@@ -213,7 +212,6 @@ begin
   // Address validation
   if eAddress.Text = '' then
   begin
-    rModalAdd.Tag := 1;
     AdjustLayoutHeight(lytAddressC, 95);
     lAddressR.Visible := True;
     lAddress.TextSettings.FontColor := TAlphaColors.Red;
@@ -231,7 +229,6 @@ begin
   // Contract Price validation
   if eContractPrice.Text = '' then
   begin
-    rModalAdd.Tag := 1;
     AdjustLayoutHeight(lytContractPriceC, 95);
     lContractPriceR.Visible := True;
     lContractPrice.TextSettings.FontColor := TAlphaColors.Red;

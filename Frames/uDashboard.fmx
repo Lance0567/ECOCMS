@@ -35,7 +35,7 @@ object fDashboard: TfDashboard
       Size.Width = 524.000000000000000000
       Size.Height = 452.000000000000000000
       Size.PlatformDefault = False
-      Stroke.Color = xFFE2EEF0
+      Stroke.Color = xFFDBD9D9
       XRadius = 10.000000000000000000
       YRadius = 10.000000000000000000
       object Layout2: TLayout
@@ -127,7 +127,7 @@ object fDashboard: TfDashboard
         Size.Width = 260.000000000000000000
         Size.Height = 140.000000000000000000
         Size.PlatformDefault = False
-        Stroke.Color = xFFE2EEF0
+        Stroke.Color = xFFDBD9D9
         XRadius = 10.000000000000000000
         YRadius = 10.000000000000000000
         object lytCardD1: TLayout
@@ -186,7 +186,7 @@ object fDashboard: TfDashboard
         Size.Width = 260.000000000000000000
         Size.Height = 140.000000000000000000
         Size.PlatformDefault = False
-        Stroke.Color = xFFE2EEF0
+        Stroke.Color = xFFDBD9D9
         XRadius = 10.000000000000000000
         YRadius = 10.000000000000000000
         object lytCardD2: TLayout
@@ -245,7 +245,7 @@ object fDashboard: TfDashboard
         Size.Width = 260.000000000000000000
         Size.Height = 140.000000000000000000
         Size.PlatformDefault = False
-        Stroke.Color = xFFE2EEF0
+        Stroke.Color = xFFDBD9D9
         XRadius = 10.000000000000000000
         YRadius = 10.000000000000000000
         object lytCardD3: TLayout
@@ -304,7 +304,7 @@ object fDashboard: TfDashboard
         Size.Width = 260.000000000000000000
         Size.Height = 140.000000000000000000
         Size.PlatformDefault = False
-        Stroke.Color = xFFE2EEF0
+        Stroke.Color = xFFDBD9D9
         XRadius = 10.000000000000000000
         YRadius = 10.000000000000000000
         object lytCardD4: TLayout

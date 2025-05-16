@@ -33,7 +33,7 @@ object frmMain: TfrmMain
         Size.Width = 617.000000000000000000
         Size.Height = 505.000000000000000000
         Size.PlatformDefault = False
-        TabIndex = 0
+        TabIndex = 3
         TabOrder = 0
         TabPosition = None
         OnChange = tcControllerChange
@@ -51,7 +51,7 @@ object frmMain: TfrmMain
             item
             end>
           TextSettings.Trimming = None
-          IsSelected = True
+          IsSelected = False
           Size.Width = 12.000000000000000000
           Size.Height = 12.000000000000000000
           Size.PlatformDefault = False
@@ -123,7 +123,7 @@ object frmMain: TfrmMain
                   inherited lbActiveClientsC: TLabel
                     Size.Width = 240.000000000000000000
                     TextSettings.Font.StyleExt = {00070000000000000004000000}
-                    Text = '4'
+                    Text = ''
                   end
                 end
                 inherited rCard3: TRectangle
@@ -168,7 +168,9 @@ object frmMain: TfrmMain
                   TextSettings.Font.StyleExt = {00070000000000000004000000}
                 end
                 inherited btnTrigger: TCornerButton
+                  StyledSettings = [Size, Style, FontColor]
                   Position.X = 407.000000000000000000
+                  TextSettings.Font.Family = 'Arial'
                 end
               end
             end
@@ -197,15 +199,20 @@ object frmMain: TfrmMain
             inherited lytHeader: TLayout
               Size.Width = 617.000000000000000000
               inherited lbTitle: TLabel
+                StyledSettings = []
                 Size.Width = 432.000000000000000000
+                TextSettings.Font.Family = 'Arial Rounded MT'
                 TextSettings.Font.StyleExt = {00070000000000000004000000}
+                TextSettings.FontColor = claGreen
               end
               inherited btnTrigger: TCornerButton
+                StyledSettings = [Size, Style, FontColor]
                 Images = dm.ImageList1
                 ImageIndex = 7
                 Margins.Right = 30.000000000000000000
                 Position.X = 452.000000000000000000
                 StyleLookup = 'Framescornerbuttonstyle'
+                TextSettings.Font.Family = 'Arial'
                 OnClick = fClients1btnTriggerClick
               end
             end
@@ -215,6 +222,7 @@ object frmMain: TfrmMain
               Viewport.Width = 606.000000000000000000
               Viewport.Height = 440.000000000000000000
               inherited rContainer: TRectangle
+                Fill.Color = claWhite
                 Size.Width = 566.000000000000000000
                 inherited Layout2: TLayout
                   Size.Width = 526.000000000000000000
@@ -232,7 +240,6 @@ object frmMain: TfrmMain
                   inherited gTableRecord: TGrid
                     PopupMenu = fClients1.PopupMenu1
                     Size.Width = 526.000000000000000000
-                    RowCount = 4
                     Options = [Editing, ColumnResize, ColumnMove, ColLines, RowLines, RowSelect, Tabs, Header, HeaderClick, AutoDisplacement]
                     Viewport.Width = 526.000000000000000000
                     Viewport.Height = 352.000000000000000000
@@ -271,15 +278,20 @@ object frmMain: TfrmMain
             inherited lytHeader: TLayout
               Size.Width = 617.000000000000000000
               inherited lbTitle: TLabel
+                StyledSettings = []
                 Size.Width = 392.000000000000000000
+                TextSettings.Font.Family = 'Arial Rounded MT'
                 TextSettings.Font.StyleExt = {00070000000000000004000000}
+                TextSettings.FontColor = claGreen
               end
               inherited btnTrigger: TCornerButton
+                StyledSettings = [Size, Style, FontColor]
                 Images = dm.ImageList1
                 ImageIndex = 7
                 Position.X = 412.000000000000000000
                 Size.Width = 170.000000000000000000
                 StyleLookup = 'Framescornerbuttonstyle'
+                TextSettings.Font.Family = 'Arial'
                 OnClick = fContracts1btnTriggerClick
               end
             end
@@ -293,6 +305,7 @@ object frmMain: TfrmMain
               Viewport.Width = 606.000000000000000000
               Viewport.Height = 440.000000000000000000
               inherited rContainer: TRectangle
+                Fill.Color = claWhite
                 Size.Width = 566.000000000000000000
                 inherited Layout2: TLayout
                   Size.Width = 526.000000000000000000
@@ -313,7 +326,6 @@ object frmMain: TfrmMain
                   Viewport.Height = 372.000000000000000000
                   inherited gTableRecord: TGrid
                     Size.Width = 526.000000000000000000
-                    RowCount = 1
                     Viewport.Width = 526.000000000000000000
                     Viewport.Height = 352.000000000000000000
                   end
@@ -330,7 +342,7 @@ object frmMain: TfrmMain
             item
             end>
           TextSettings.Trimming = None
-          IsSelected = False
+          IsSelected = True
           Size.Width = 12.000000000000000000
           Size.Height = 12.000000000000000000
           Size.PlatformDefault = False
@@ -344,20 +356,14 @@ object frmMain: TfrmMain
             Size.Width = 617.000000000000000000
             Size.Height = 505.000000000000000000
             Size.PlatformDefault = False
-            inherited lTitleC: TLayout
-              Size.Width = 617.000000000000000000
-              inherited lTitle: TLabel
-                Size.Width = 577.000000000000000000
-                TextSettings.Font.StyleExt = {00070000000000000004000000}
-                TextSettings.FontColor = claWhite
-              end
-            end
             inherited ScrollBox1: TScrollBox
               Size.Width = 617.000000000000000000
-              Size.Height = 448.000000000000000000
+              Size.Height = 505.000000000000000000
               Viewport.Width = 606.000000000000000000
-              Viewport.Height = 448.000000000000000000
+              Viewport.Height = 505.000000000000000000
               inherited rClientSelection: TRectangle
+                Fill.Color = claWhite
+                Position.Y = 85.000000000000000000
                 Size.Width = 571.000000000000000000
                 inherited lClientSelection: TLabel
                   StyledSettings = [Family]
@@ -368,33 +374,26 @@ object frmMain: TfrmMain
                   Size.Width = 531.000000000000000000
                   TextSettings.FontColor = claDarkslategray
                 end
-                inherited ceClientSelection: TComboEdit
-                  Size.Width = 531.000000000000000000
-                  Size.Height = 32.000000000000000000
-                end
                 inherited rClientData: TRectangle
                   Fill.Color = xFFE6EDF2
-                  Padding.Left = 15.000000000000000000
-                  Padding.Top = 15.000000000000000000
-                  Position.Y = 136.000000000000000000
                   Size.Width = 531.000000000000000000
-                  XRadius = 8.000000000000000000
-                  YRadius = 8.000000000000000000
+                  Stroke.Kind = None
                   inherited lName: TLabel
-                    Position.X = 15.000000000000000000
-                    Position.Y = 15.000000000000000000
                     Size.Width = 501.000000000000000000
                     TextSettings.Font.StyleExt = {00070000000000000004000000}
                   end
                   inherited lAddress: TLabel
-                    Position.X = 15.000000000000000000
-                    Position.Y = 40.000000000000000000
                     Size.Width = 501.000000000000000000
                     TextSettings.Font.StyleExt = {00070000000000000004000000}
                   end
                 end
+                inherited cbClientSelection: TComboBox
+                  Size.Width = 531.000000000000000000
+                end
               end
               inherited rContractDetails: TRectangle
+                Fill.Color = claWhite
+                Position.Y = 340.000000000000000000
                 Size.Width = 571.000000000000000000
                 inherited lbContractDetails: TLabel
                   StyledSettings = [Family]
@@ -423,6 +422,44 @@ object frmMain: TfrmMain
                 inherited dDate: TDateEdit
                   Size.Width = 531.000000000000000000
                   Size.Height = 32.000000000000000000
+                end
+                inherited lPaymentStatus: TLabel
+                  Position.Y = 338.000000000000000000
+                  Size.Width = 531.000000000000000000
+                  TextSettings.Font.StyleExt = {00060000000000000004000000}
+                end
+                inherited cbPaymentStatus: TComboBox
+                  Position.Y = 363.000000000000000000
+                  Size.Width = 531.000000000000000000
+                  Size.Height = 32.000000000000000000
+                end
+              end
+              inherited Layout1: TLayout
+                Position.Y = 780.000000000000000000
+                Size.Width = 571.000000000000000000
+                inherited btnCancel: TCornerButton
+                  Position.X = 341.000000000000000000
+                  StyleLookup = 'btnCancelStyle1'
+                  TextSettings.Font.Size = 15.000000000000000000
+                  TextSettings.Font.StyleExt = {00060000000000000004000000}
+                end
+                inherited btnSaveContract: TCornerButton
+                  Position.X = 446.000000000000000000
+                  Size.Width = 125.000000000000000000
+                  StyleLookup = 'btnSaveContract'
+                  TextSettings.Font.Size = 15.000000000000000000
+                  TextSettings.Font.StyleExt = {00060000000000000004000000}
+                  TextSettings.FontColor = claWhite
+                end
+              end
+              inherited lTitleC: TLayout
+                Margins.Top = 10.000000000000000000
+                Position.Y = 20.000000000000000000
+                Size.Width = 571.000000000000000000
+                inherited lTitle: TLabel
+                  Size.Width = 571.000000000000000000
+                  TextSettings.Font.StyleExt = {00070000000000000004000000}
+                  TextSettings.FontColor = claGreen
                 end
               end
             end
@@ -455,7 +492,7 @@ object frmMain: TfrmMain
           GroupName = 'Navigations'
           StyledSettings = [Family, Size]
           Images = dm.ImageList1
-          ImageIndex = 11
+          ImageIndex = 14
           Position.Y = 455.000000000000000000
           Size.Width = 200.000000000000000000
           Size.Height = 50.000000000000000000
@@ -463,6 +500,7 @@ object frmMain: TfrmMain
           StyleLookup = 'settingstoolbuttonmultiview'
           Text = 'Settings'
           TextSettings.Font.StyleExt = {00060000000000000004000000}
+          TextSettings.FontColorForState.Normal = claWhite
           TextSettings.FontColorForState.Pressed = claBlack
           TextSettings.FontColorForState.Focused = claBlack
           TextSettings.HorzAlign = Leading
@@ -472,7 +510,7 @@ object frmMain: TfrmMain
           Align = Top
           StyledSettings = [Style]
           Images = dm.ImageList1
-          ImageIndex = 12
+          ImageIndex = 13
           Size.Width = 200.000000000000000000
           Size.Height = 70.000000000000000000
           Size.PlatformDefault = False
@@ -480,7 +518,7 @@ object frmMain: TfrmMain
           Text = 'ECO PRO'
           TextSettings.Font.Family = 'Dubai'
           TextSettings.Font.Size = 20.000000000000000000
-          TextSettings.FontColor = claGreen
+          TextSettings.FontColor = claWhite
           TextSettings.HorzAlign = Leading
           TextSettings.Trimming = None
         end
@@ -490,16 +528,16 @@ object frmMain: TfrmMain
           GroupName = 'Navigations'
           StyledSettings = [Family, Size]
           Images = dm.ImageList1
-          ImageIndex = 9
-          Position.Y = 175.000000000000000000
+          ImageIndex = 1
+          Position.Y = 180.000000000000000000
           Size.Width = 200.000000000000000000
           Size.Height = 50.000000000000000000
           Size.PlatformDefault = False
           StyleLookup = 'sidebarButton'
           Text = 'Contracts'
           TextSettings.Font.StyleExt = {00060000000000000004000000}
-          TextSettings.FontColorForState.Normal = claBlack
-          TextSettings.FontColorForState.Hot = claBlack
+          TextSettings.FontColorForState.Normal = claWhite
+          TextSettings.FontColorForState.Hot = claWhite
           TextSettings.FontColorForState.Pressed = claBlack
           TextSettings.FontColorForState.Focused = claBlack
           TextSettings.HorzAlign = Leading
@@ -512,16 +550,17 @@ object frmMain: TfrmMain
           GroupName = 'Navigations'
           StyledSettings = [Family, Size]
           Images = dm.ImageList1
-          ImageIndex = 8
-          Position.Y = 75.000000000000000000
+          ImageIndex = 0
+          Margins.Top = 10.000000000000000000
+          Position.Y = 80.000000000000000000
           Size.Width = 200.000000000000000000
           Size.Height = 50.000000000000000000
           Size.PlatformDefault = False
           StyleLookup = 'sidebarButton'
           Text = 'Dashboard'
           TextSettings.Font.StyleExt = {00060000000000000004000000}
-          TextSettings.FontColorForState.Normal = claBlack
-          TextSettings.FontColorForState.Hot = claBlack
+          TextSettings.FontColorForState.Normal = claWhite
+          TextSettings.FontColorForState.Hot = claWhite
           TextSettings.FontColorForState.Pressed = claBlack
           TextSettings.FontColorForState.Focused = claBlack
           TextSettings.HorzAlign = Leading
@@ -534,16 +573,16 @@ object frmMain: TfrmMain
           GroupName = 'Navigations'
           StyledSettings = [Family, Size]
           Images = dm.ImageList1
-          ImageIndex = 10
-          Position.Y = 125.000000000000000000
+          ImageIndex = 2
+          Position.Y = 130.000000000000000000
           Size.Width = 200.000000000000000000
           Size.Height = 50.000000000000000000
           Size.PlatformDefault = False
           StyleLookup = 'sidebarButton'
           Text = 'Clients'
           TextSettings.Font.StyleExt = {00060000000000000004000000}
-          TextSettings.FontColorForState.Normal = claBlack
-          TextSettings.FontColorForState.Hot = claBlack
+          TextSettings.FontColorForState.Normal = claWhite
+          TextSettings.FontColorForState.Hot = claWhite
           TextSettings.FontColorForState.Pressed = claBlack
           TextSettings.FontColorForState.Focused = claBlack
           TextSettings.HorzAlign = Leading
@@ -553,11 +592,12 @@ object frmMain: TfrmMain
         object Line1: TLine
           Align = Top
           LineType = Bottom
-          Position.Y = 70.000000000000000000
+          Margins.Top = -5.000000000000000000
+          Position.Y = 65.000000000000000000
           Size.Width = 200.000000000000000000
           Size.Height = 5.000000000000000000
           Size.PlatformDefault = False
-          Stroke.Color = xFFDDDBDB
+          Stroke.Color = xFF134E5E
         end
       end
     end
@@ -799,7 +839,7 @@ object frmMain: TfrmMain
             TextSettings.Font.Size = 17.000000000000000000
             TextSettings.FontColor = claRed
             Text = '*'
-            TabOrder = 4
+            TabOrder = 3
           end
         end
         object lFullnameR: TLabel
@@ -853,7 +893,7 @@ object frmMain: TfrmMain
             TextSettings.Font.Size = 17.000000000000000000
             TextSettings.FontColor = claRed
             Text = '*'
-            TabOrder = 4
+            TabOrder = 3
           end
         end
         object lAddressR: TLabel
@@ -914,7 +954,7 @@ object frmMain: TfrmMain
             TextSettings.Font.Size = 17.000000000000000000
             TextSettings.FontColor = claRed
             Text = '*'
-            TabOrder = 4
+            TabOrder = 3
           end
         end
         object lContractPriceR: TLabel
