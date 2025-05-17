@@ -1,4 +1,5 @@
 object dm: Tdm
+  OnCreate = DataModuleCreate
   Height = 480
   Width = 640
   object StyleBook1: TStyleBook
@@ -53876,7 +53877,7 @@ object dm: Tdm
     Left = 272
     Top = 144
   end
-  object qClientsSelection: TFDQuery
+  object qClientSelection: TFDQuery
     Active = True
     Connection = cData
     SQL.Strings = (

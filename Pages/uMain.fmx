@@ -15,6 +15,7 @@ object frmMain: TfrmMain
   OnCreate = FormCreate
   OnClose = FormClose
   OnResize = FormResize
+  OnShow = FormShow
   DesignerMasterStyle = 0
   object lytContainer: TLayout
     Align = Client
@@ -33,7 +34,7 @@ object frmMain: TfrmMain
         Size.Width = 617.000000000000000000
         Size.Height = 505.000000000000000000
         Size.PlatformDefault = False
-        TabIndex = 0
+        TabIndex = 2
         TabOrder = 0
         TabPosition = None
         OnChange = tcControllerChange
@@ -51,7 +52,7 @@ object frmMain: TfrmMain
             item
             end>
           TextSettings.Trimming = None
-          IsSelected = True
+          IsSelected = False
           Size.Width = 12.000000000000000000
           Size.Height = 12.000000000000000000
           Size.PlatformDefault = False
@@ -262,7 +263,7 @@ object frmMain: TfrmMain
             item
             end>
           TextSettings.Trimming = None
-          IsSelected = False
+          IsSelected = True
           Size.Width = 12.000000000000000000
           Size.Height = 12.000000000000000000
           Size.PlatformDefault = False
@@ -370,6 +371,9 @@ object frmMain: TfrmMain
                   StyledSettings = [Family]
                   Size.Width = 531.000000000000000000
                   TextSettings.Font.StyleExt = {00060000000000000004000000}
+                  inherited Label2: TLabel
+                    TabOrder = 4
+                  end
                 end
                 inherited lDescription1: TLabel
                   Size.Width = 531.000000000000000000
@@ -377,7 +381,7 @@ object frmMain: TfrmMain
                 end
                 inherited rClientData: TRectangle
                   Fill.Color = xFFE6EDF2
-                  Position.Y = 126.000000000000000000
+                  Position.Y = 153.000000000000000000
                   Size.Width = 531.000000000000000000
                   Stroke.Kind = None
                   inherited lName: TLabel
@@ -393,10 +397,16 @@ object frmMain: TfrmMain
                   Size.Width = 531.000000000000000000
                   Size.Height = 32.000000000000000000
                 end
+                inherited lClientSelectionR: TLabel
+                  Margins.Left = 4.000000000000000000
+                  Position.X = 24.000000000000000000
+                  Position.Y = 121.000000000000000000
+                  Size.Width = 527.000000000000000000
+                end
               end
               inherited rContractDetails: TRectangle
                 Fill.Color = claWhite
-                Position.Y = 340.000000000000000000
+                Position.Y = 355.000000000000000000
                 Size.Width = 571.000000000000000000
                 inherited lbContractDetails: TLabel
                   StyledSettings = [Family]
@@ -412,10 +422,10 @@ object frmMain: TfrmMain
                   Size.Width = 531.000000000000000000
                   TextSettings.Font.StyleExt = {00060000000000000004000000}
                 end
-                inherited mServiceDescription: TMemo
+                inherited mTreatmentInclusion: TMemo
                   Size.Width = 531.000000000000000000
-                  Viewport.Width = 523.000000000000000000
-                  Viewport.Height = 132.000000000000000000
+                  Viewport.Width = 531.000000000000000000
+                  Viewport.Height = 140.000000000000000000
                 end
                 inherited lDate: TLabel
                   StyledSettings = [Family]
@@ -432,13 +442,14 @@ object frmMain: TfrmMain
                   TextSettings.Font.StyleExt = {00060000000000000004000000}
                 end
                 inherited cbPaymentStatus: TComboBox
+                  ItemIndex = 1
                   Position.Y = 363.000000000000000000
                   Size.Width = 531.000000000000000000
                   Size.Height = 32.000000000000000000
                 end
               end
               inherited Layout1: TLayout
-                Position.Y = 780.000000000000000000
+                Position.Y = 795.000000000000000000
                 Size.Width = 571.000000000000000000
                 inherited btnCancel: TCornerButton
                   Position.X = 341.000000000000000000
@@ -454,6 +465,7 @@ object frmMain: TfrmMain
                   TextSettings.Font.Size = 15.000000000000000000
                   TextSettings.Font.StyleExt = {00060000000000000004000000}
                   TextSettings.FontColor = claWhite
+                  OnClick = fCreateContract1btnSaveContractClick
                 end
               end
               inherited lTitleC: TLayout
@@ -851,7 +863,7 @@ object frmMain: TfrmMain
             TextSettings.Font.Size = 17.000000000000000000
             TextSettings.FontColor = claRed
             Text = '*'
-            TabOrder = 4
+            TabOrder = 3
           end
         end
         object lFullnameR: TLabel
@@ -905,7 +917,7 @@ object frmMain: TfrmMain
             TextSettings.Font.Size = 17.000000000000000000
             TextSettings.FontColor = claRed
             Text = '*'
-            TabOrder = 4
+            TabOrder = 3
           end
         end
         object lAddressR: TLabel
@@ -966,7 +978,7 @@ object frmMain: TfrmMain
             TextSettings.Font.Size = 17.000000000000000000
             TextSettings.FontColor = claRed
             Text = '*'
-            TabOrder = 4
+            TabOrder = 3
           end
         end
         object lContractPriceR: TLabel

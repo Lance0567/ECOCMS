@@ -27,8 +27,9 @@ type
     qClientssecond_treatment: TDateField;
     qClientsthird_treatment: TDateField;
     qContracts: TFDQuery;
-    qClientsSelection: TFDQuery;
+    qClientSelection: TFDQuery;
     qTemp: TFDQuery;
+    procedure DataModuleCreate(Sender: TObject);
   private
     { Private declarations }
   public
@@ -45,5 +46,26 @@ implementation
 {$R *.dfm}
 
 // TODO -oLance -cImportant: Create a procedure for relative path of DBbtnTrigger
+procedure Tdm.DataModuleCreate(Sender: TObject);
+var
+  DBPath: String;
+begin
+  cData.Connected := False;
+  cData.Params.Values['Database'] := '';
+
+  // Get the directory of the executable relative path
+  DBPath := ExtractFilePath(ParamStr(0)) + 'database\ecopro.db';
+  cData.Params.Values['DriverID'] := 'SQLite';
+  cData.Params.Values['Database'] := DBPath;
+
+  // Deactivate queries
+  qActiveClients.Close;
+  qClients.Close;
+  qContracts.Close;
+  qClientSelection.Close;
+
+  // activate connection
+  cData.Connected := True;
+end;
 
 end.

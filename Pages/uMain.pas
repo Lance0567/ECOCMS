@@ -93,6 +93,8 @@ type
     procedure lytSidebarResized(Sender: TObject);
     procedure FormResize(Sender: TObject);
     procedure fCreateContract1btnCancelClick(Sender: TObject);
+    procedure fCreateContract1btnSaveContractClick(Sender: TObject);
+    procedure FormShow(Sender: TObject);
   private
     procedure HideFrames;
     { Private declarations }
@@ -235,7 +237,7 @@ begin
   end;
 
   // Stop if any error is found
-  if HasError then
+  if HasError = True then
   begin
     ScrollBox1.ViewportPosition := PointF(0, FirstInvalidPos - 50);
     Exit;
@@ -275,19 +277,16 @@ end;
 { Form Create }
 procedure TfrmMain.FormCreate(Sender: TObject);
 begin
-  fClients1.Tag := 0;
-  fContracts1.Tag := 0;
-
   // Components to hide
   HideComponents;
+
+  // default Show sidebar
+  mvSidebar.ShowMaster;
 
   // Add modal layout adjustments
   AdjustLayoutHeight(lytFullnameC, 75);
   AdjustLayoutHeight(lytAddressC, 75);
   AdjustLayoutHeight(lytContractPriceC, 75);
-
-  // default Show sidebar
-  mvSidebar.ShowMaster;
 
   // default hide the visibility of Add client modal
   rBackground.Visible := False;
@@ -308,6 +307,11 @@ begin
     1:fClients1.GridContentsResponsive;
     2:fContracts1.GridContentsResponsive;
   end;
+end;
+
+procedure TfrmMain.FormShow(Sender: TObject);
+begin
+
 end;
 
 { Sidebar Resize }
@@ -421,8 +425,10 @@ begin
   // Populate cbClientSelection (ComboBox)
   fCreateContract1.cbClientSelection.Items.Clear;
   fCreateContract1.cbClientSelection.Items.Add('Select a client');
+  fCreateContract1.cbClientSelection.ItemIndex := 0;
   fCreateContract1.rClientSelection.Height := 135;
-  fCreateContract1.rClientData.Visible := false;
+  fCreateContract1.lClientSelectionR.Visible := False;
+  fCreateContract1.rClientData.Visible := False;
 end;
 
 { Cancel button from Create Contract }
@@ -434,7 +440,22 @@ begin
   // Switch tab index
   tcController.TabIndex := 2;
   fContracts1.Visible := True;
-  fCreateContract1.ScrollBox1.ViewportPosition := PointF(0, 0); // reset scroll bar
+  fContracts1.ScrollBox1.ViewportPosition := PointF(0, 0); // reset scroll bar
+
+  fContracts1.GridContentsResponsive;
+end;
+
+procedure TfrmMain.fCreateContract1btnSaveContractClick(Sender: TObject);
+begin
+  fCreateContract1.btnSaveContractClick(Sender);
+
+  // hide other components
+  HideFrames;
+
+  // Switch tab index
+  tcController.TabIndex := 2;
+  fContracts1.Visible := True;
+  fContracts1.ScrollBox1.ViewportPosition := PointF(0, 0); // reset scroll bar
 
   fContracts1.GridContentsResponsive;
 end;

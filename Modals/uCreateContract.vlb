@@ -1,91 +1,102 @@
 ﻿[btnSaveContract]
-Coordinates=345,439,96,33
+Coordinates=473,439,96,33
 
 [rClientData]
-Coordinates=81,439,69,33
+Coordinates=168,439,69,33
+Visible=True
 
 [lAddress]
-Coordinates=152,362,58,51
+Coordinates=10,362,58,51
 
 [lDescription1]
-Coordinates=494,267,79,51
+Coordinates=672,267,79,51
 
 [rClientSelection]
-Coordinates=561,439,92,33
+Coordinates=595,439,92,33
 
 [lTreatmentInclusion]
-Coordinates=356,267,112,51
+Coordinates=495,362,112,51
 
 [lClientSelection]
-Coordinates=239,267,91,51
+Coordinates=94,362,91,51
 
 [dDate]
-Coordinates=615,362,115,51
+Coordinates=283,362,115,51
 
 [lDescription]
-Coordinates=140,267,73,51
+Coordinates=573,267,73,51
 
 [rContractDetails]
-Coordinates=10,498,94,33
+Coordinates=263,439,94,33
 Visible=True
 
 [lTitle]
-Coordinates=599,267,40,51
-
-[mServiceDescription]
-Coordinates=10,362,116,51
+Coordinates=10,439,40,51
 
 [lName]
-Coordinates=419,362,45,51
+Coordinates=424,362,45,51
 Visible=True
 
 [lDate]
-Coordinates=236,362,40,51
+Coordinates=265,267,40,51
 
 [lTitleC]
-Coordinates=10,439,45,33
+Coordinates=10,516,45,33
 
 [lbContractDetails]
-Coordinates=490,362,99,51
+Coordinates=331,267,99,51
 
 [btnCancel]
-Coordinates=176,439,64,33
+Coordinates=383,439,64,33
 
 [ScrollBox1]
-Coordinates=467,439,68,33
+Coordinates=81,516,68,33
+Visible=True
 
 [Layout1]
-Coordinates=266,439,53,33
+Coordinates=713,439,53,33
 
 [dm.qContracts]
-Coordinates=433,10,95,177
+Coordinates=427,10,95,177
 
 [lPaymentStatus]
-Coordinates=302,362,91,51
+Coordinates=456,267,91,51
 
 [cbClientSelection]
-Coordinates=193,64,100,123
+Coordinates=10,64,100,123
 Visible=True
 
 [dm.qActiveClients]
 Coordinates=10,267,104,69
 
 [dm.qClients]
-Coordinates=319,10,88,195
+Coordinates=313,10,88,195
 
 [cbPaymentStatus]
-Coordinates=554,10,100,123
+Coordinates=548,10,100,123
 
 []
 Coordinates=33,206,82,33
 
-[dm.qClientsSelection]
-Coordinates=10,10,119,33
-Visible=False
-
 [BindSourceDB1]
-Coordinates=10,10,103,231
+Coordinates=190,10,97,231
 
 [BindingsList1]
 Coordinates=480,152,82,33
+
+[mTreatmentInclusion]
+Coordinates=633,362,118,51
+
+[dm.qClientSelection]
+Coordinates=10,10,113,33
+Visible=False
+
+[dm.qTemp]
+Coordinates=76,439,66,51
+
+[lClientSelectionR]
+Coordinates=140,267,99,51
+
+[Label2]
+Coordinates=211,362,46,51
 

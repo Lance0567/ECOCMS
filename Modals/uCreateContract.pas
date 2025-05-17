@@ -8,7 +8,8 @@ uses
   FMX.Controls.Presentation, FMX.Layouts, FMX.Objects, FMX.Edit, FMX.ComboEdit,
   FMX.Memo.Types, FMX.ScrollBox, FMX.Memo, FMX.DateTimeCtrls, FMX.ListBox,
   System.Rtti, System.Bindings.Outputs, Fmx.Bind.Editors, Data.Bind.EngExt,
-  Fmx.Bind.DBEngExt, Data.Bind.Components, Data.Bind.DBScope, uContracts;
+  Fmx.Bind.DBEngExt, Data.Bind.Components, Data.Bind.DBScope, uContracts,
+  uCompile, Data.DB;
 
 type
   TfCreateContract = class(TFrame)
@@ -22,7 +23,7 @@ type
     lbContractDetails: TLabel;
     lDescription: TLabel;
     lTreatmentInclusion: TLabel;
-    mServiceDescription: TMemo;
+    mTreatmentInclusion: TMemo;
     lDate: TLabel;
     dDate: TDateEdit;
     rClientData: TRectangle;
@@ -37,10 +38,13 @@ type
     BindSourceDB1: TBindSourceDB;
     BindingsList1: TBindingsList;
     LinkListControlToField1: TLinkListControlToField;
+    lClientSelectionR: TLabel;
+    Label2: TLabel;
     procedure btnSaveContractClick(Sender: TObject);
     procedure cbClientSelectionClosePopup(Sender: TObject);
-    procedure cbClientSelectionClick(Sender: TObject);
+    procedure cbClientSelectionEnter(Sender: TObject);
   private
+    procedure ClearItems;
     { Private declarations }
   public
     { Public declarations }
@@ -56,6 +60,16 @@ var
   qName: String;
   qAddress: String;
 
+procedure TfCreateContract.ClearItems;
+begin
+  cbClientSelection.ItemIndex := -1;
+  lName.Text := 'Name: ';
+  lAddress.Text := 'Address: ';
+  mTreatmentInclusion.Lines.Clear;
+  dDate.Date := now;
+  cbPaymentStatus.ItemIndex := 0;
+end;
+
 procedure TfCreateContract.btnSaveContractClick(Sender: TObject);
 var
   HasError: Boolean;
@@ -67,14 +81,41 @@ begin
   // Client name selection
   if cbClientSelection.Text = '' then
   begin
-
+    rClientSelection.Height := 160;
+    lClientSelectionR.Visible := True;
+    lClientSelection.TextSettings.FontColor := TAlphaColorRec.Red;
+    if FirstInvalidPOS = -1 then
+      FirstInvalidPOS := cbClientSelection.Position.Y;
+    HasError := True;
+  end
+  else
+  begin
+    rClientSelection.Height := 135;
+    lClientSelection.TextSettings.FontColor := TAlphaColorRec.Black;
   end;
-end;
 
-procedure TfCreateContract.cbClientSelectionClick(Sender: TObject);
-begin
-  cbClientSelection.Items.Clear;
-  dm.qClientsSelection.Active := true;
+  // Stop if any error is found
+  if HasError = True then
+  begin
+    ScrollBox1.ViewportPosition := PointF(0, FirstInvalidPOS - 50);
+    Exit;
+  end;
+
+  // Open query
+  dm.qContracts.Open;
+
+  // Proceed to save
+  dm.qContracts.Append;
+  dm.qContracts.FieldByName('client_name').AsString := qName;
+  dm.qContracts.FieldByName('address').AsString := qAddress;
+  dm.qContracts.FieldByName('treatment_inclusion').AsString := mTreatmentInclusion.Text;
+  dm.qContracts.FieldByName('date').AsDateTime := dDate.Date;
+  dm.qContracts.FieldByName('status').AsString := cbPaymentStatus.Text;
+  dm.qContracts.Post;
+
+  dm.qContracts.Refresh;
+  dm.qContracts.Close;
+  ClearItems;
 end;
 
 procedure TfCreateContract.cbClientSelectionClosePopup(Sender: TObject);
@@ -82,7 +123,7 @@ begin
   // Safety check
   if rClientData.Visible = False then
   begin
-    rClientSelection.Height := 240;  // extend
+    rClientSelection.Height := 230;  // extend
     rClientData.Visible := true;  // show
   end;
 
@@ -90,6 +131,7 @@ begin
   dm.qTemp.Close;
   dm.qTemp.SQL.Text := 'SELECT name, address FROM clients WHERE name = ' +
   QuotedStr(cbClientSelection.Text);
+  dm.qTemp.Open;
 
   // Populate variables from extracted query
   if not dm.qTemp.IsEmpty then
@@ -102,6 +144,21 @@ begin
     qName := '';
     qAddress := '';
   end;
+
+  // Close query
+  dm.qTemp.Close;
+
+  lName.Text := 'Name: ' + qName;
+  lAddress.Text := 'Address: ' + qAddress;
+end;
+
+procedure TfCreateContract.cbClientSelectionEnter(Sender: TObject);
+begin
+  // Ensure dataset is refreshed before LiveBindings display
+  if dm.qClientSelection.Active then
+    dm.qClientSelection.Refresh
+  else
+    dm.qClientSelection.Active := True;
 end;
 
 end.
