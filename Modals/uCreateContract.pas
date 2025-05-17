@@ -35,8 +35,8 @@ type
     lPaymentStatus: TLabel;
     cbPaymentStatus: TComboBox;
     cbClientSelection: TComboBox;
-    BindSourceDB1: TBindSourceDB;
-    BindingsList1: TBindingsList;
+    BindSourceDBClientSel: TBindSourceDB;
+    BindingsListClientSel: TBindingsList;
     LinkListControlToField1: TLinkListControlToField;
     lClientSelectionR: TLabel;
     Label2: TLabel;
@@ -79,7 +79,7 @@ begin
   FirstInvalidPOS := -1;
 
   // Client name selection
-  if cbClientSelection.Text = '' then
+  if (cbClientSelection.Text = '') OR (cbClientSelection.Text = 'Select a client') then
   begin
     rClientSelection.Height := 160;
     lClientSelectionR.Visible := True;
@@ -97,7 +97,7 @@ begin
   // Stop if any error is found
   if HasError = True then
   begin
-    ScrollBox1.ViewportPosition := PointF(0, FirstInvalidPOS - 50);
+    ScrollBox1.ViewportPosition := PointF(0, FirstInvalidPOS - 100);
     Exit;
   end;
 
@@ -120,6 +120,14 @@ end;
 
 procedure TfCreateContract.cbClientSelectionClosePopup(Sender: TObject);
 begin
+  // Disable required warning and return to normal
+  if lClientSelectionR.Visible = True then
+  begin
+    lClientSelectionR.Visible := False;
+    rClientSelection.Height := 135;
+    lClientSelection.TextSettings.FontColor := TAlphaColorRec.Black;
+  end;
+
   // Safety check
   if rClientData.Visible = False then
   begin
@@ -148,6 +156,7 @@ begin
   // Close query
   dm.qTemp.Close;
 
+  // Display the values
   lName.Text := 'Name: ' + qName;
   lAddress.Text := 'Address: ' + qAddress;
 end;

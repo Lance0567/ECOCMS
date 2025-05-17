@@ -6,14 +6,16 @@ uses
   System.SysUtils, System.Types, System.UITypes, System.Classes, System.Variants,
   FMX.Types, FMX.Graphics, FMX.Controls, FMX.Forms, FMX.Dialogs, FMX.StdCtrls,
   System.Skia, System.Rtti, FMX.Grid.Style, FMX.ScrollBox, FMX.Grid, FMX.Skia,
-  FMX.Objects, FMX.Layouts, FMX.Menus, FMX.Controls.Presentation, FMX.Edit;
+  FMX.Objects, FMX.Layouts, FMX.Menus, FMX.Controls.Presentation, FMX.Edit, uDm,
+  Data.Bind.EngExt, Fmx.Bind.DBEngExt, Fmx.Bind.Grid, System.Bindings.Outputs,
+  Fmx.Bind.Editors, Data.Bind.Components, Data.Bind.Grid, Data.Bind.DBScope;
 
 type
   TfContracts = class(TFrame)
     lytHeader: TLayout;
     lbTitle: TLabel;
     btnTrigger: TCornerButton;
-    PopupMenu1: TPopupMenu;
+    PopupMenuContracts: TPopupMenu;
     Edit: TMenuItem;
     Delete: TMenuItem;
     Preview: TMenuItem;
@@ -25,6 +27,9 @@ type
     gTableRecord: TGrid;
     Layout1: TLayout;
     eSearch: TEdit;
+    BindSourceDBContracts: TBindSourceDB;
+    BindingsListContracts: TBindingsList;
+    LinkGridToContracts: TLinkGridToDataSource;
     procedure gTableRecordResized(Sender: TObject);
   private
     { Private declarations }

@@ -30,9 +30,6 @@ type
     tiContracts: TTabItem;
     fDashboard1: TfDashboard;
     fClients1: TfClients;
-    BindSourceDB1: TBindSourceDB;
-    BindingsList1: TBindingsList;
-    LinkGridToDSBDBClient: TLinkGridToDataSource;
     rBackground: TRectangle;
     lytContainer: TLayout;
     rModalAdd: TRectangle;
@@ -58,8 +55,6 @@ type
     dThirdTD: TDateEdit;
     btnCancel: TCornerButton;
     btnSave: TCornerButton;
-    BindSourceDB2: TBindSourceDB;
-    LinkPropertyToFieldText: TLinkPropertyToField;
     lFullnameR: TLabel;
     lytFullnameC: TLayout;
     lytAddressC: TLayout;
@@ -70,8 +65,6 @@ type
     Label3: TLabel;
     Label4: TLabel;
     fContracts1: TfContracts;
-    BindSourceDB3: TBindSourceDB;
-    LinkGridToDSBDBContracts: TLinkGridToDataSource;
     tiCreateContract: TTabItem;
     fCreateContract1: TfCreateContract;
     Line1: TLine;
@@ -277,16 +270,19 @@ end;
 { Form Create }
 procedure TfrmMain.FormCreate(Sender: TObject);
 begin
+  fClients1.Tag := 0;
+  fContracts1.Tag := 0;
+
   // Components to hide
   HideComponents;
-
-  // default Show sidebar
-  mvSidebar.ShowMaster;
 
   // Add modal layout adjustments
   AdjustLayoutHeight(lytFullnameC, 75);
   AdjustLayoutHeight(lytAddressC, 75);
   AdjustLayoutHeight(lytContractPriceC, 75);
+
+  // default Show sidebar
+  mvSidebar.ShowMaster;
 
   // default hide the visibility of Add client modal
   rBackground.Visible := False;
@@ -426,6 +422,7 @@ begin
   fCreateContract1.cbClientSelection.Items.Clear;
   fCreateContract1.cbClientSelection.Items.Add('Select a client');
   fCreateContract1.cbClientSelection.ItemIndex := 0;
+  fCreateContract1.cbPaymentStatus.ItemIndex := 0;
   fCreateContract1.rClientSelection.Height := 135;
   fCreateContract1.lClientSelectionR.Visible := False;
   fCreateContract1.rClientData.Visible := False;
@@ -445,19 +442,23 @@ begin
   fContracts1.GridContentsResponsive;
 end;
 
+{ Save button from Create contract }
 procedure TfrmMain.fCreateContract1btnSaveContractClick(Sender: TObject);
 begin
   fCreateContract1.btnSaveContractClick(Sender);
 
-  // hide other components
-  HideFrames;
+  if not fCreateContract1.lClientSelectionR.Visible = True then
+  begin
+    // hide other components
+    HideFrames;
 
-  // Switch tab index
-  tcController.TabIndex := 2;
-  fContracts1.Visible := True;
-  fContracts1.ScrollBox1.ViewportPosition := PointF(0, 0); // reset scroll bar
+    // Switch tab index
+    tcController.TabIndex := 2;
+    fContracts1.Visible := True;
+    fContracts1.ScrollBox1.ViewportPosition := PointF(0, 0); // reset scroll bar
 
-  fContracts1.GridContentsResponsive;
+    fContracts1.GridContentsResponsive;
+  end;
 end;
 
 end.

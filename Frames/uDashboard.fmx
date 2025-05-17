@@ -227,7 +227,7 @@ object fDashboard: TfDashboard
           Size.PlatformDefault = False
           TextSettings.Font.Size = 24.000000000000000000
           TextSettings.Font.StyleExt = {00070000000000000004000000}
-          Text = '0'
+          Text = '7'
           TabOrder = 1
         end
       end
@@ -389,6 +389,25 @@ object fDashboard: TfDashboard
         XRadius = 8.000000000000000000
         YRadius = 8.000000000000000000
       end
+    end
+  end
+  object BindSourceDBActiveCli: TBindSourceDB
+    DataSet = dm.qActiveClients
+    ScopeMappings = <>
+    Left = 296
+    Top = 173
+  end
+  object BindingsListActiveCli: TBindingsList
+    Methods = <>
+    OutputConverters = <>
+    Left = 156
+    Top = 173
+    object LinkPropertyToFieldText: TLinkPropertyToField
+      Category = 'Quick Bindings'
+      DataSource = BindSourceDBActiveCli
+      FieldName = 'Active Clients'
+      Component = lbActiveClientsC
+      ComponentProperty = 'Text'
     end
   end
 end

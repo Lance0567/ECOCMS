@@ -40,9 +40,9 @@ object fContracts: TfContracts
       YRadius = 8.000000000000000000
     end
   end
-  object PopupMenu1: TPopupMenu
-    Left = 292
-    Top = 212
+  object PopupMenuContracts: TPopupMenu
+    Left = 268
+    Top = 68
     object Edit: TMenuItem
       Text = 'Edit'
     end
@@ -128,10 +128,10 @@ object fContracts: TfContracts
           Size.Height = 352.000000000000000000
           Size.PlatformDefault = False
           TabOrder = 1
-          RowCount = 0
+          RowCount = 1
           OnResized = gTableRecordResized
-          Viewport.Width = 615.000000000000000000
-          Viewport.Height = 327.000000000000000000
+          Viewport.Width = 619.000000000000000000
+          Viewport.Height = 352.000000000000000000
         end
       end
     end
@@ -143,6 +143,43 @@ object fContracts: TfContracts
       Size.Height = 50.000000000000000000
       Size.PlatformDefault = False
       TabOrder = 1
+    end
+  end
+  object BindSourceDBContracts: TBindSourceDB
+    DataSet = dm.qContracts
+    ScopeMappings = <>
+    Left = 400
+    Top = 68
+  end
+  object BindingsListContracts: TBindingsList
+    Methods = <>
+    OutputConverters = <>
+    Left = 540
+    Top = 68
+    object LinkGridToContracts: TLinkGridToDataSource
+      Category = 'Quick Bindings'
+      DataSource = BindSourceDBContracts
+      GridControl = gTableRecord
+      Columns = <
+        item
+          MemberName = 'client_name'
+          Header = 'Client Name'
+          Width = 150
+        end
+        item
+          MemberName = 'address'
+          Header = 'Address'
+          Width = 150
+        end
+        item
+          MemberName = 'date'
+          Header = 'Date'
+          Width = 120
+        end
+        item
+          MemberName = 'status'
+          Header = 'Status'
+        end>
     end
   end
 end

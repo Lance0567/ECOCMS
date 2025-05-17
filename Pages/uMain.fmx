@@ -124,7 +124,6 @@ object frmMain: TfrmMain
                   inherited lbActiveClientsC: TLabel
                     Size.Width = 240.000000000000000000
                     TextSettings.Font.StyleExt = {00070000000000000004000000}
-                    Text = '7'
                   end
                 end
                 inherited rCard3: TRectangle
@@ -175,6 +174,14 @@ object frmMain: TfrmMain
                 end
               end
             end
+            inherited BindSourceDBActiveCli: TBindSourceDB
+              Left = 464
+              Top = 317
+            end
+            inherited BindingsListActiveCli: TBindingsList
+              Left = 332
+              Top = 317
+            end
           end
         end
         object tiClients: TTabItem
@@ -193,7 +200,7 @@ object frmMain: TfrmMain
           ExplicitSize.cy = 12.000000000000000000
           inline fClients1: TfClients
             Align = Client
-            PopupMenu = fClients1.PopupMenu1
+            PopupMenu = fClients1.PopupMenuClients
             Size.Width = 617.000000000000000000
             Size.Height = 505.000000000000000000
             Size.PlatformDefault = False
@@ -239,9 +246,8 @@ object frmMain: TfrmMain
                   Viewport.Width = 526.000000000000000000
                   Viewport.Height = 372.000000000000000000
                   inherited gTableRecord: TGrid
-                    PopupMenu = fClients1.PopupMenu1
+                    PopupMenu = fClients1.PopupMenuClients
                     Size.Width = 526.000000000000000000
-                    RowCount = 7
                     Options = [Editing, ColumnResize, ColumnMove, ColLines, RowLines, RowSelect, Tabs, Header, HeaderClick, AutoDisplacement]
                     Viewport.Width = 526.000000000000000000
                     Viewport.Height = 352.000000000000000000
@@ -252,9 +258,17 @@ object frmMain: TfrmMain
                 Size.Width = 606.000000000000000000
               end
             end
-            inherited PopupMenu1: TPopupMenu
-              Left = 160
-              Top = 237
+            inherited PopupMenuClients: TPopupMenu
+              Left = 48
+              Top = 397
+            end
+            inherited BindSourceDBClients: TBindSourceDB
+              Left = 328
+              Top = 192
+            end
+            inherited BindingsListClients: TBindingsList
+              Left = 476
+              Top = 189
             end
           end
         end
@@ -297,8 +311,8 @@ object frmMain: TfrmMain
                 OnClick = fContracts1btnTriggerClick
               end
             end
-            inherited PopupMenu1: TPopupMenu
-              Left = 164
+            inherited PopupMenuContracts: TPopupMenu
+              Left = 196
               Top = 396
             end
             inherited ScrollBox1: TScrollBox
@@ -328,14 +342,22 @@ object frmMain: TfrmMain
                   Viewport.Height = 372.000000000000000000
                   inherited gTableRecord: TGrid
                     Size.Width = 526.000000000000000000
-                    Viewport.Width = 526.000000000000000000
-                    Viewport.Height = 352.000000000000000000
+                    Viewport.Width = 522.000000000000000000
+                    Viewport.Height = 316.000000000000000000
                   end
                 end
               end
               inherited Layout1: TLayout
                 Size.Width = 606.000000000000000000
               end
+            end
+            inherited BindSourceDBContracts: TBindSourceDB
+              Left = 465
+              Top = 244
+            end
+            inherited BindingsListContracts: TBindingsList
+              Left = 325
+              Top = 244
             end
           end
         end
@@ -366,100 +388,100 @@ object frmMain: TfrmMain
               inherited rClientSelection: TRectangle
                 Fill.Color = claWhite
                 Position.Y = 85.000000000000000000
-                Size.Width = 571.000000000000000000
+                Size.Width = 556.000000000000000000
                 inherited lClientSelection: TLabel
                   StyledSettings = [Family]
-                  Size.Width = 531.000000000000000000
+                  Size.Width = 516.000000000000000000
                   TextSettings.Font.StyleExt = {00060000000000000004000000}
                   inherited Label2: TLabel
                     TabOrder = 4
                   end
                 end
                 inherited lDescription1: TLabel
-                  Size.Width = 531.000000000000000000
+                  Size.Width = 516.000000000000000000
                   TextSettings.FontColor = claDarkslategray
                 end
                 inherited rClientData: TRectangle
                   Fill.Color = xFFE6EDF2
                   Position.Y = 153.000000000000000000
-                  Size.Width = 531.000000000000000000
+                  Size.Width = 516.000000000000000000
                   Stroke.Kind = None
                   inherited lName: TLabel
-                    Size.Width = 501.000000000000000000
+                    Size.Width = 486.000000000000000000
                     TextSettings.Font.StyleExt = {00070000000000000004000000}
                   end
                   inherited lAddress: TLabel
-                    Size.Width = 501.000000000000000000
+                    Size.Width = 486.000000000000000000
                     TextSettings.Font.StyleExt = {00070000000000000004000000}
                   end
                 end
                 inherited cbClientSelection: TComboBox
-                  Size.Width = 531.000000000000000000
+                  Size.Width = 516.000000000000000000
                   Size.Height = 32.000000000000000000
                 end
                 inherited lClientSelectionR: TLabel
                   Margins.Left = 4.000000000000000000
                   Position.X = 24.000000000000000000
                   Position.Y = 121.000000000000000000
-                  Size.Width = 527.000000000000000000
+                  Size.Width = 512.000000000000000000
                 end
               end
               inherited rContractDetails: TRectangle
                 Fill.Color = claWhite
                 Position.Y = 355.000000000000000000
-                Size.Width = 571.000000000000000000
+                Size.Width = 556.000000000000000000
                 inherited lbContractDetails: TLabel
                   StyledSettings = [Family]
-                  Size.Width = 531.000000000000000000
+                  Size.Width = 516.000000000000000000
                   TextSettings.Font.StyleExt = {00060000000000000004000000}
                 end
                 inherited lDescription: TLabel
-                  Size.Width = 531.000000000000000000
+                  Size.Width = 516.000000000000000000
                   TextSettings.FontColor = claDarkslategray
                 end
                 inherited lTreatmentInclusion: TLabel
                   StyledSettings = [Family]
-                  Size.Width = 531.000000000000000000
+                  Size.Width = 516.000000000000000000
                   TextSettings.Font.StyleExt = {00060000000000000004000000}
                 end
                 inherited mTreatmentInclusion: TMemo
-                  Size.Width = 531.000000000000000000
-                  Viewport.Width = 531.000000000000000000
-                  Viewport.Height = 140.000000000000000000
+                  Size.Width = 516.000000000000000000
+                  Viewport.Width = 508.000000000000000000
+                  Viewport.Height = 132.000000000000000000
                 end
                 inherited lDate: TLabel
                   StyledSettings = [Family]
-                  Size.Width = 531.000000000000000000
+                  Size.Width = 516.000000000000000000
                   TextSettings.Font.StyleExt = {00060000000000000004000000}
                 end
                 inherited dDate: TDateEdit
-                  Size.Width = 531.000000000000000000
+                  Size.Width = 516.000000000000000000
                   Size.Height = 32.000000000000000000
                 end
                 inherited lPaymentStatus: TLabel
                   Position.Y = 338.000000000000000000
-                  Size.Width = 531.000000000000000000
+                  Size.Width = 516.000000000000000000
                   TextSettings.Font.StyleExt = {00060000000000000004000000}
                 end
                 inherited cbPaymentStatus: TComboBox
                   ItemIndex = 1
                   Position.Y = 363.000000000000000000
-                  Size.Width = 531.000000000000000000
+                  Size.Width = 516.000000000000000000
                   Size.Height = 32.000000000000000000
                 end
               end
               inherited Layout1: TLayout
                 Position.Y = 795.000000000000000000
-                Size.Width = 571.000000000000000000
+                Size.Width = 556.000000000000000000
                 inherited btnCancel: TCornerButton
-                  Position.X = 341.000000000000000000
+                  Position.X = 326.000000000000000000
                   StyleLookup = 'btnCancelStyle1'
                   TextSettings.Font.Size = 15.000000000000000000
                   TextSettings.Font.StyleExt = {00060000000000000004000000}
                   OnClick = fCreateContract1btnCancelClick
                 end
                 inherited btnSaveContract: TCornerButton
-                  Position.X = 446.000000000000000000
+                  Position.X = 431.000000000000000000
                   Size.Width = 125.000000000000000000
                   StyleLookup = 'btnSaveContract'
                   TextSettings.Font.Size = 15.000000000000000000
@@ -471,21 +493,21 @@ object frmMain: TfrmMain
               inherited lTitleC: TLayout
                 Margins.Top = 10.000000000000000000
                 Position.Y = 20.000000000000000000
-                Size.Width = 571.000000000000000000
+                Size.Width = 556.000000000000000000
                 inherited lTitle: TLabel
-                  Size.Width = 571.000000000000000000
+                  Size.Width = 556.000000000000000000
                   TextSettings.Font.StyleExt = {00070000000000000004000000}
                   TextSettings.FontColor = claGreen
                 end
               end
             end
-            inherited BindSourceDB1: TBindSourceDB
-              Left = 256
-              Top = 301
+            inherited BindSourceDBClientSel: TBindSourceDB
+              Left = 464
+              Top = 397
             end
-            inherited BindingsList1: TBindingsList
-              Left = 252
-              Top = 237
+            inherited BindingsListClientSel: TBindingsList
+              Left = 324
+              Top = 397
             end
           end
         end
@@ -863,7 +885,7 @@ object frmMain: TfrmMain
             TextSettings.Font.Size = 17.000000000000000000
             TextSettings.FontColor = claRed
             Text = '*'
-            TabOrder = 3
+            TabOrder = 4
           end
         end
         object lFullnameR: TLabel
@@ -917,7 +939,7 @@ object frmMain: TfrmMain
             TextSettings.Font.Size = 17.000000000000000000
             TextSettings.FontColor = claRed
             Text = '*'
-            TabOrder = 3
+            TabOrder = 4
           end
         end
         object lAddressR: TLabel
@@ -978,7 +1000,7 @@ object frmMain: TfrmMain
             TextSettings.Font.Size = 17.000000000000000000
             TextSettings.FontColor = claRed
             Text = '*'
-            TabOrder = 3
+            TabOrder = 4
           end
         end
         object lContractPriceR: TLabel
@@ -996,95 +1018,5 @@ object frmMain: TfrmMain
         end
       end
     end
-  end
-  object BindSourceDB1: TBindSourceDB
-    DataSet = dm.qClients
-    ScopeMappings = <>
-    Left = 64
-    Top = 304
-  end
-  object BindingsList1: TBindingsList
-    Methods = <>
-    OutputConverters = <>
-    Left = 68
-    Top = 237
-    object LinkGridToDSBDBClient: TLinkGridToDataSource
-      Category = 'Quick Bindings'
-      DataSource = BindSourceDB1
-      GridControl = fClients1.gTableRecord
-      Columns = <
-        item
-          MemberName = 'name'
-          Header = 'Client Name'
-          Width = 150
-        end
-        item
-          MemberName = 'address'
-          Header = 'Address'
-          Width = 150
-        end
-        item
-          MemberName = 'contract_price'
-          Header = 'Contract Price'
-          Width = 150
-          ShowThousandSeparator = True
-          Alignment = taLeftJustify
-        end
-        item
-          MemberName = 'contract_date'
-          Header = 'Contract Date'
-          Width = 180
-        end>
-    end
-    object LinkPropertyToFieldText: TLinkPropertyToField
-      Category = 'Quick Bindings'
-      DataSource = BindSourceDB2
-      FieldName = 'Active Clients'
-      Component = fDashboard1.lbActiveClientsC
-      ComponentProperty = 'Text'
-    end
-    object LinkGridToDSBDBContracts: TLinkGridToDataSource
-      Category = 'Quick Bindings'
-      DataSource = BindSourceDB3
-      GridControl = fContracts1.gTableRecord
-      Columns = <
-        item
-          MemberName = 'client_name'
-          Header = 'Client Name'
-          Width = 170
-        end
-        item
-          MemberName = 'type_of_treatment'
-          Header = 'Type of Treatment'
-          Width = 170
-        end
-        item
-          MemberName = 'start_date'
-          Header = 'Start Date'
-          Width = 150
-        end
-        item
-          MemberName = 'end_date'
-          Header = 'End Date'
-          Width = 150
-        end
-        item
-          MemberName = 'status'
-          Header = 'Payment Status'
-          Width = 150
-        end>
-    end
-  end
-  object BindSourceDB2: TBindSourceDB
-    DataSet = dm.qActiveClients
-    ScopeMappings = <>
-    Left = 161
-    Top = 305
-  end
-  object BindSourceDB3: TBindSourceDB
-    DataSet = dm.qContracts
-    ScopeMappings = <>
-    Left = 62
-    Top = 397
   end
 end

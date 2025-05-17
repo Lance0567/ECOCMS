@@ -23,11 +23,14 @@ type
     ScrollBox1: TScrollBox;
     Layout1: TLayout;
     ScrollBox2: TScrollBox;
-    PopupMenu1: TPopupMenu;
+    PopupMenuClients: TPopupMenu;
     Edit: TMenuItem;
     Delete: TMenuItem;
     Preview: TMenuItem;
     eSearch: TEdit;
+    BindSourceDBClients: TBindSourceDB;
+    BindingsListClients: TBindingsList;
+    LinkGridToClients: TLinkGridToDataSource;
     procedure btnTriggerClick(Sender: TObject);
     procedure gTableRecordResized(Sender: TObject);
   private

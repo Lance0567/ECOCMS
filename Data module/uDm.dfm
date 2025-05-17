@@ -53806,7 +53806,7 @@ object dm: Tdm
       'LockingMode=Normal'
       
         'Database=C:\Users\lance\Documents\Embarcadero\Studio\Projects\EC' +
-        'OCMS\Data module\database\ecopro.db'
+        'OCMS\Win64\Debug\database\ecopro.db'
       'DriverID=SQLite')
     Connected = True
     LoginPrompt = False

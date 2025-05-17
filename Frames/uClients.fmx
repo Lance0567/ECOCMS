@@ -1,5 +1,5 @@
 object fClients: TfClients
-  PopupMenu = PopupMenu1
+  PopupMenu = PopupMenuClients
   Size.Width = 715.000000000000000000
   Size.Height = 480.000000000000000000
   Size.PlatformDefault = False
@@ -120,10 +120,10 @@ object fClients: TfClients
           Size.Height = 352.000000000000000000
           Size.PlatformDefault = False
           TabOrder = 1
-          RowCount = 0
+          RowCount = 7
           OnResized = gTableRecordResized
-          Viewport.Width = 619.000000000000000000
-          Viewport.Height = 352.000000000000000000
+          Viewport.Width = 615.000000000000000000
+          Viewport.Height = 311.000000000000000000
         end
       end
     end
@@ -137,9 +137,9 @@ object fClients: TfClients
       TabOrder = 1
     end
   end
-  object PopupMenu1: TPopupMenu
-    Left = 344
-    Top = 224
+  object PopupMenuClients: TPopupMenu
+    Left = 240
+    Top = 160
     object Edit: TMenuItem
       Text = 'Edit'
     end
@@ -148,6 +148,45 @@ object fClients: TfClients
     end
     object Preview: TMenuItem
       Text = 'Preview'
+    end
+  end
+  object BindSourceDBClients: TBindSourceDB
+    DataSet = dm.qClients
+    ScopeMappings = <>
+    Left = 280
+    Top = 224
+  end
+  object BindingsListClients: TBindingsList
+    Methods = <>
+    OutputConverters = <>
+    Left = 428
+    Top = 221
+    object LinkGridToClients: TLinkGridToDataSource
+      Category = 'Quick Bindings'
+      DataSource = BindSourceDBClients
+      GridControl = gTableRecord
+      Columns = <
+        item
+          MemberName = 'name'
+          Header = 'Name'
+          Width = 150
+        end
+        item
+          MemberName = 'address'
+          Header = 'Address'
+          Width = 200
+        end
+        item
+          MemberName = 'contract_price'
+          Header = 'Contract Price'
+          Width = 150
+          Alignment = taLeftJustify
+        end
+        item
+          MemberName = 'contract_date'
+          Header = 'Contract Date'
+          Width = 150
+        end>
     end
   end
 end

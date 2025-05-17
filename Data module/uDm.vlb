@@ -5,7 +5,7 @@ Coordinates=212,10,85,69
 Coordinates=220,1,130,33
 
 [qContracts]
-Coordinates=10,10,94,231
+Coordinates=10,10,95,177
 
 [cData]
 Coordinates=239,53,42,33
@@ -41,5 +41,8 @@ Coordinates=71,321,94,33
 Coordinates=401,1,127,33
 
 [qClientSelection]
-Coordinates=307,10,100,51
+Coordinates=307,10,95,213
+
+[qTemp]
+Coordinates=55,206,48,51
 

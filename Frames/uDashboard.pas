@@ -7,7 +7,9 @@ uses
   FMX.Types, FMX.Graphics, FMX.Controls, FMX.Forms, FMX.Dialogs, FMX.StdCtrls,
   System.Skia, FMX.ListView.Types, FMX.ListView.Appearances,
   FMX.ListView.Adapters.Base, FMX.ListView, FMX.Skia, FMX.Layouts, FMX.Objects,
-  FMX.Controls.Presentation, FMX.ImgList, Math;
+  FMX.Controls.Presentation, FMX.ImgList, Math, Data.Bind.EngExt,
+  Fmx.Bind.DBEngExt, System.Rtti, System.Bindings.Outputs, Fmx.Bind.Editors,
+  Data.Bind.Components, Data.Bind.DBScope;
 
 type
   TfDashboard = class(TFrame)
@@ -42,6 +44,9 @@ type
     lytHeader: TLayout;
     lbTitle: TLabel;
     btnTrigger: TCornerButton;
+    BindSourceDBActiveCli: TBindSourceDB;
+    BindingsListActiveCli: TBindingsList;
+    LinkPropertyToFieldText: TLinkPropertyToField;
     procedure FrameResize(Sender: TObject);
     procedure glytCardsResize(Sender: TObject);
     procedure GridResponsive;
