@@ -1,17 +1,17 @@
 ﻿[qActiveClients]
-Coordinates=212,10,85,69
+Coordinates=86,233,85,69
 
 [qClientsthird_treatment]
 Coordinates=220,1,130,33
 
 [qContracts]
-Coordinates=10,10,95,177
+Coordinates=213,10,95,177
 
 [cData]
 Coordinates=239,53,42,33
 
 [qClients]
-Coordinates=114,10,88,195
+Coordinates=115,10,88,195
 
 [ImageList1]
 Coordinates=239,105,68,33
@@ -41,8 +41,20 @@ Coordinates=71,321,94,33
 Coordinates=401,1,127,33
 
 [qClientSelection]
-Coordinates=307,10,95,213
+Coordinates=10,10,95,213
 
 [qTemp]
-Coordinates=55,206,48,51
+Coordinates=181,233,48,51
+
+[qFullyPaid]
+Coordinates=10,233,66,69
+
+[]
+Coordinates=346,1,112,33
+
+[qPartiallyPaid]
+Coordinates=318,10,82,69
+
+[qTotalContracts]
+Coordinates=267,206,93,69
 

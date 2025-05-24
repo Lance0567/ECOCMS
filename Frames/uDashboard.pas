@@ -47,6 +47,12 @@ type
     BindSourceDBActiveCli: TBindSourceDB;
     BindingsListActiveCli: TBindingsList;
     LinkPropertyToFieldText: TLinkPropertyToField;
+    BindSourceDB1: TBindSourceDB;
+    LinkPropertyToFieldText2: TLinkPropertyToField;
+    BindSourceDB2: TBindSourceDB;
+    LinkPropertyToFieldText3: TLinkPropertyToField;
+    BindSourceDB3: TBindSourceDB;
+    LinkPropertyToFieldText4: TLinkPropertyToField;
     procedure FrameResize(Sender: TObject);
     procedure glytCardsResize(Sender: TObject);
     procedure GridResponsive;

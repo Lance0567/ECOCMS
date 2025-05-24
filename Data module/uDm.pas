@@ -12,6 +12,13 @@ uses
   FireDAC.Stan.ExprFuncs, FireDAC.Phys.SQLiteWrapper.Stat;
 
 type
+  // Dashboard details
+  TDashboard = class(TObject)
+    totalContracts: integer;
+    fullyPaid: integer;
+    partiallyPaid: integer;
+  end;
+
   Tdm = class(TDataModule)
     StyleBook1: TStyleBook;
     ImageList1: TImageList;
@@ -29,11 +36,17 @@ type
     qContracts: TFDQuery;
     qClientSelection: TFDQuery;
     qTemp: TFDQuery;
+    qFullyPaid: TFDQuery;
+    qPartiallyPaid: TFDQuery;
+    qTotalContracts: TFDQuery;
     procedure DataModuleCreate(Sender: TObject);
+    procedure DataModuleDestroy(Sender: TObject);
   private
     { Private declarations }
+    FDashboard: TDashboard;
   public
     { Public declarations }
+    property Dashboard: TDashboard read FDashboard write FDashboard;
   end;
 
 var
@@ -50,6 +63,10 @@ procedure Tdm.DataModuleCreate(Sender: TObject);
 var
   DBPath: String;
 begin
+  // Class
+  FDashboard := TDashboard.Create;
+
+  // Connection clearing
   cData.Connected := False;
   cData.Params.Values['Database'] := '';
 
@@ -60,12 +77,20 @@ begin
 
   // Deactivate queries
   qActiveClients.Close;
+  qTotalContracts.Close;
+  qFullyPaid.Close;
+  qPartiallyPaid.Close;
   qClients.Close;
   qContracts.Close;
   qClientSelection.Close;
 
   // activate connection
   cData.Connected := True;
+end;
+
+procedure Tdm.DataModuleDestroy(Sender: TObject);
+begin
+  FDashboard.Free;
 end;
 
 end.

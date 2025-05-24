@@ -15,7 +15,6 @@ object frmMain: TfrmMain
   OnCreate = FormCreate
   OnClose = FormClose
   OnResize = FormResize
-  OnShow = FormShow
   DesignerMasterStyle = 0
   object lytContainer: TLayout
     Align = Client
@@ -34,7 +33,7 @@ object frmMain: TfrmMain
         Size.Width = 617.000000000000000000
         Size.Height = 505.000000000000000000
         Size.PlatformDefault = False
-        TabIndex = 2
+        TabIndex = 1
         TabOrder = 0
         TabPosition = None
         OnChange = tcControllerChange
@@ -189,7 +188,7 @@ object frmMain: TfrmMain
             item
             end>
           TextSettings.Trimming = None
-          IsSelected = False
+          IsSelected = True
           Size.Width = 12.000000000000000000
           Size.Height = 12.000000000000000000
           Size.PlatformDefault = False
@@ -248,7 +247,7 @@ object frmMain: TfrmMain
                   inherited gTableRecord: TGrid
                     PopupMenu = fClients1.PopupMenuClients
                     Size.Width = 526.000000000000000000
-                    Options = [Editing, ColumnResize, ColumnMove, ColLines, RowLines, RowSelect, Tabs, Header, HeaderClick, AutoDisplacement]
+                    Options = [ColumnResize, ColumnMove, ColLines, RowLines, RowSelect, Tabs, Header, HeaderClick, AutoDisplacement]
                     Viewport.Width = 526.000000000000000000
                     Viewport.Height = 352.000000000000000000
                   end
@@ -277,7 +276,7 @@ object frmMain: TfrmMain
             item
             end>
           TextSettings.Trimming = None
-          IsSelected = True
+          IsSelected = False
           Size.Width = 12.000000000000000000
           Size.Height = 12.000000000000000000
           Size.PlatformDefault = False
@@ -342,8 +341,8 @@ object frmMain: TfrmMain
                   Viewport.Height = 372.000000000000000000
                   inherited gTableRecord: TGrid
                     Size.Width = 526.000000000000000000
-                    Viewport.Width = 522.000000000000000000
-                    Viewport.Height = 316.000000000000000000
+                    Viewport.Width = 526.000000000000000000
+                    Viewport.Height = 352.000000000000000000
                   end
                 end
               end
@@ -393,9 +392,6 @@ object frmMain: TfrmMain
                   StyledSettings = [Family]
                   Size.Width = 516.000000000000000000
                   TextSettings.Font.StyleExt = {00060000000000000004000000}
-                  inherited Label2: TLabel
-                    TabOrder = 4
-                  end
                 end
                 inherited lDescription1: TLabel
                   Size.Width = 516.000000000000000000
@@ -446,8 +442,8 @@ object frmMain: TfrmMain
                 end
                 inherited mTreatmentInclusion: TMemo
                   Size.Width = 516.000000000000000000
-                  Viewport.Width = 508.000000000000000000
-                  Viewport.Height = 132.000000000000000000
+                  Viewport.Width = 516.000000000000000000
+                  Viewport.Height = 140.000000000000000000
                 end
                 inherited lDate: TLabel
                   StyledSettings = [Family]
@@ -464,7 +460,6 @@ object frmMain: TfrmMain
                   TextSettings.Font.StyleExt = {00060000000000000004000000}
                 end
                 inherited cbPaymentStatus: TComboBox
-                  ItemIndex = 1
                   Position.Y = 363.000000000000000000
                   Size.Width = 516.000000000000000000
                   Size.Height = 32.000000000000000000
@@ -523,6 +518,7 @@ object frmMain: TfrmMain
       object mvSidebar: TMultiView
         BorderOptions.Color = xFFE7E5E5
         MasterButton = sbMenu
+        NavigationPaneOptions.CollapsedWidth = 200.000000000000000000
         ShadowOptions.Color = xFFE2DFDF
         ShadowOptions.Opacity = 0.400000005960464500
         Size.Width = 200.000000000000000000
@@ -885,7 +881,7 @@ object frmMain: TfrmMain
             TextSettings.Font.Size = 17.000000000000000000
             TextSettings.FontColor = claRed
             Text = '*'
-            TabOrder = 4
+            TabOrder = 3
           end
         end
         object lFullnameR: TLabel
@@ -939,7 +935,7 @@ object frmMain: TfrmMain
             TextSettings.Font.Size = 17.000000000000000000
             TextSettings.FontColor = claRed
             Text = '*'
-            TabOrder = 4
+            TabOrder = 3
           end
         end
         object lAddressR: TLabel
@@ -1000,7 +996,7 @@ object frmMain: TfrmMain
             TextSettings.Font.Size = 17.000000000000000000
             TextSettings.FontColor = claRed
             Text = '*'
-            TabOrder = 4
+            TabOrder = 3
           end
         end
         object lContractPriceR: TLabel

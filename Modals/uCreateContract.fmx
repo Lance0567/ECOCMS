@@ -49,7 +49,7 @@ object fCreateContract: TfCreateContract
           TextSettings.Font.Size = 17.000000000000000000
           TextSettings.FontColor = claRed
           Text = '*'
-          TabOrder = 4
+          TabOrder = 3
         end
       end
       object lDescription1: TLabel
@@ -212,8 +212,8 @@ object fCreateContract: TfCreateContract
         Size.Height = 140.000000000000000000
         Size.PlatformDefault = False
         TabOrder = 6
-        Viewport.Width = 605.000000000000000000
-        Viewport.Height = 136.000000000000000000
+        Viewport.Width = 609.000000000000000000
+        Viewport.Height = 140.000000000000000000
       end
       object lDate: TLabel
         Align = Top

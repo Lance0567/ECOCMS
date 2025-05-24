@@ -1,5 +1,6 @@
 object dm: Tdm
   OnCreate = DataModuleCreate
+  OnDestroy = DataModuleDestroy
   Height = 480
   Width = 640
   object StyleBook1: TStyleBook
@@ -53891,5 +53892,34 @@ object dm: Tdm
     Connection = cData
     Left = 72
     Top = 144
+  end
+  object qFullyPaid: TFDQuery
+    Active = True
+    Connection = cData
+    SQL.Strings = (
+      'SELECT COUNT(status) as '#39'Fully Paid'#39
+      'FROM contracts'
+      'WHERE status = '#39'Fully Paid'#39';')
+    Left = 371
+    Top = 56
+  end
+  object qPartiallyPaid: TFDQuery
+    Active = True
+    Connection = cData
+    SQL.Strings = (
+      'SELECT COUNT(status) as '#39'Partially Paid'#39
+      'FROM contracts'
+      'WHERE status = '#39'Partially Paid'#39';')
+    Left = 371
+    Top = 144
+  end
+  object qTotalContracts: TFDQuery
+    Active = True
+    Connection = cData
+    SQL.Strings = (
+      'SELECT COUNT(id) as '#39'Total Contracts'#39
+      'FROM contracts;')
+    Left = 75
+    Top = 224
   end
 end

@@ -87,7 +87,6 @@ type
     procedure FormResize(Sender: TObject);
     procedure fCreateContract1btnCancelClick(Sender: TObject);
     procedure fCreateContract1btnSaveContractClick(Sender: TObject);
-    procedure FormShow(Sender: TObject);
   private
     procedure HideFrames;
     { Private declarations }
@@ -109,6 +108,9 @@ uses uDm;
 procedure TfrmMain.QueryHandler;
 begin
   dm.qActiveClients.Active := false;
+  dm.qFullyPaid.Active := false;
+  dm.qPartiallyPaid.Active := false;
+  dm.qTotalContracts.Active := false;
   dm.qClients.Active := false;
   dm.qContracts.Active := false;
 end;
@@ -256,6 +258,7 @@ begin
   ClearItems;
 end;
 
+{ Add client }
 procedure TfrmMain.fClients1btnTriggerClick(Sender: TObject);
 begin
   fClients1.btnTriggerClick(Sender);
@@ -283,6 +286,7 @@ begin
 
   // default Show sidebar
   mvSidebar.ShowMaster;
+  mvSidebar.NavigationPaneOptions.CollapsedWidth := 50;
 
   // default hide the visibility of Add client modal
   rBackground.Visible := False;
@@ -297,17 +301,13 @@ begin
   fContracts1.Visible := False;
 end;
 
+{ Form Resize }
 procedure TfrmMain.FormResize(Sender: TObject);
 begin
   case tcController.TabIndex of
     1:fClients1.GridContentsResponsive;
     2:fContracts1.GridContentsResponsive;
   end;
-end;
-
-procedure TfrmMain.FormShow(Sender: TObject);
-begin
-
 end;
 
 { Sidebar Resize }
@@ -351,6 +351,15 @@ begin
   end;
 end;
 
+// dashboard query active handler
+procedure dashboard;
+begin
+  dm.qTotalContracts.Active := true;
+  dm.qActiveClients.Active := true;
+  dm.qFullyPaid.Active := true;
+  dm.qPartiallyPaid.Active := true;
+end;
+
 { Open query based on the tab }
 procedure TfrmMain.tcControllerChange(Sender: TObject);
 begin
@@ -358,7 +367,7 @@ begin
   QueryHandler;
 
   case tcController.TabIndex of
-    0: dm.qActiveClients.Active := true;
+    0: dashboard;
     1: dm.qClients.Active := true;
     2: dm.qContracts.Active := true;
   end;
