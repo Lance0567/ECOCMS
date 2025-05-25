@@ -80,6 +80,7 @@
         <Icon_MainIcon>$(BDS)\bin\delphi_PROJECTICON.ico</Icon_MainIcon>
         <Icns_MainIcns>$(BDS)\bin\delphi_PROJECTICNS.icns</Icns_MainIcns>
         <SanitizedProjectName>ECOCMS</SanitizedProjectName>
+        <DCC_Define>SKIA;$(DCC_Define)</DCC_Define>
     </PropertyGroup>
     <PropertyGroup Condition="'$(Base_OSX64)'!=''">
         <DCC_UsePackage>fmx;DbxCommonDriver;bindengine;IndyIPCommon;FireDACCommonODBC;FireDACCommonDriver;IndyProtocols;IndyIPClient;dbxcds;FmxTeeUI;bindcompfmx;inetdb;FireDACSqliteDriver;DbxClientDriver;soapmidas;fmxFireDAC;dbexpress;DBXMySQLDriver;inet;fmxase;dbrtl;fmxdae;CustomIPTransport;DBXInterBaseDriver;IndySystem;bindcomp;FireDACCommon;IndyCore;RESTBackendComponents;bindcompdbx;rtl;FireDACMySQLDriver;RESTComponents;DBXSqliteDriver;IndyIPServer;dsnapxml;FireDACPgDriver;FireDAC;inetdbxpress;xmlrtl;tethering;dsnap;CloudService;fmxobj;FMXTee;soaprtl;soapserver;FireDACIBDriver;$(DCC_UsePackage)</DCC_UsePackage>
@@ -180,6 +181,15 @@
             <DesignClass>TFrame</DesignClass>
         </DCCReference>
         <DCCReference Include="Globals\uCompile.pas"/>
+        <DCCReference Include="Modals\uPDFCreation.pas">
+            <Form>fPDFCreation</Form>
+            <FormType>fmx</FormType>
+            <DesignClass>TFrame</DesignClass>
+        </DCCReference>
+        <DCCReference Include="Pages\uPDFViewer.pas">
+            <Form>frmPDFViewer</Form>
+            <FormType>fmx</FormType>
+        </DCCReference>
         <BuildConfiguration Include="Base">
             <Key>Base</Key>
         </BuildConfiguration>

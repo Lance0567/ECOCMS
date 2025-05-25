@@ -87,12 +87,17 @@ type
     procedure FormResize(Sender: TObject);
     procedure fCreateContract1btnCancelClick(Sender: TObject);
     procedure fCreateContract1btnSaveContractClick(Sender: TObject);
+    procedure fDashboard1cbtnViewAllContractsClick(Sender: TObject);
+    procedure fDashboard1btnTriggerClick(Sender: TObject);
+    procedure fClients1eSearchChangeTracking(Sender: TObject);
+    procedure fContracts1eSearchChangeTracking(Sender: TObject);
   private
     procedure HideFrames;
     { Private declarations }
   public
     { Public declarations }
     procedure QueryHandler;
+    procedure dashboard;
   end;
 
 var
@@ -102,7 +107,7 @@ implementation
 
 {$R *.fmx}
 
-uses uDm;
+uses uDm, FireDAC.Stan.Param;
 
 { Query Management }
 procedure TfrmMain.QueryHandler;
@@ -264,6 +269,34 @@ begin
   fClients1.btnTriggerClick(Sender);
 end;
 
+// Client Search Procedure
+procedure TfrmMain.fClients1eSearchChangeTracking(Sender: TObject);
+var
+  SearchText: string;
+begin
+  dm.qClients.DisableControls;
+  try
+    dm.qClients.Close;
+
+    if Trim(fClients1.eSearch.Text) = '' then
+    begin
+      // No search: load all records
+      dm.qClients.SQL.Text := 'SELECT * FROM clients';
+    end
+    else
+    begin
+      // Search with parameter
+      dm.qClients.SQL.Text := 'SELECT * FROM clients WHERE name LIKE :search';
+      SearchText := '%' + fClients1.eSearch.Text + '%';
+      dm.qClients.ParamByName('search').AsString := SearchText;
+    end;
+
+    dm.qClients.Open;
+  finally
+    dm.qClients.EnableControls;
+  end;
+end;
+
 { Form Close }
 procedure TfrmMain.FormClose(Sender: TObject; var Action: TCloseAction);
 begin
@@ -352,12 +385,14 @@ begin
 end;
 
 // dashboard query active handler
-procedure dashboard;
+procedure TfrmMain.dashboard;
 begin
+//  fDashboard1.ListView1.Items[1].Data['Text2'] := 'Created:';
   dm.qTotalContracts.Active := true;
   dm.qActiveClients.Active := true;
   dm.qFullyPaid.Active := true;
   dm.qPartiallyPaid.Active := true;
+  dm.qRecentContracts.Open;
 end;
 
 { Open query based on the tab }
@@ -437,6 +472,34 @@ begin
   fCreateContract1.rClientData.Visible := False;
 end;
 
+// Contract Search Procedure
+procedure TfrmMain.fContracts1eSearchChangeTracking(Sender: TObject);
+var
+  SearchText: string;
+begin
+  dm.qContracts.DisableControls;
+  try
+    dm.qContracts.Close;
+
+    if Trim(fContracts1.eSearch.Text) = '' then
+    begin
+      // No search: load all records
+      dm.qContracts.SQL.Text := 'SELECT * FROM contracts';
+    end
+    else
+    begin
+      // Search with parameter
+      dm.qContracts.SQL.Text := 'SELECT * FROM clients WHERE client_name LIKE :search';
+      SearchText := '%' + fContracts1.eSearch.Text + '%';
+      dm.qContracts.ParamByName('search').AsString := SearchText;
+    end;
+
+    dm.qContracts.Open;
+  finally
+    dm.qContracts.EnableControls;
+  end;
+end;
+
 { Cancel button from Create Contract }
 procedure TfrmMain.fCreateContract1btnCancelClick(Sender: TObject);
 begin
@@ -468,6 +531,20 @@ begin
 
     fContracts1.GridContentsResponsive;
   end;
+end;
+
+// Create New Contract
+procedure TfrmMain.fDashboard1btnTriggerClick(Sender: TObject);
+begin
+  tcController.TabIndex := 3;
+  fCreateContract1.Visible := True;
+end;
+
+// View all contract
+procedure TfrmMain.fDashboard1cbtnViewAllContractsClick(Sender: TObject);
+begin
+  tcController.TabIndex := 2;
+  fContracts1.Visible := True;
 end;
 
 end.

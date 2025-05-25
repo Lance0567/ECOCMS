@@ -9,7 +9,7 @@ uses
   FMX.Memo.Types, FMX.ScrollBox, FMX.Memo, FMX.DateTimeCtrls, FMX.ListBox,
   System.Rtti, System.Bindings.Outputs, Fmx.Bind.Editors, Data.Bind.EngExt,
   Fmx.Bind.DBEngExt, Data.Bind.Components, Data.Bind.DBScope, uContracts,
-  uCompile, Data.DB;
+  uCompile, Data.DB, uPDFCreation;
 
 type
   TfCreateContract = class(TFrame)
@@ -29,7 +29,7 @@ type
     rClientData: TRectangle;
     lName: TLabel;
     lAddress: TLabel;
-    Layout1: TLayout;
+    lytButtonH: TLayout;
     btnCancel: TCornerButton;
     btnSaveContract: TCornerButton;
     lPaymentStatus: TLabel;
@@ -40,9 +40,18 @@ type
     LinkListControlToField1: TLinkListControlToField;
     lClientSelectionR: TLabel;
     Label2: TLabel;
+    rButtonH: TRectangle;
+    lytContractDetails: TLayout;
+    fPDFCreation1: TfPDFCreation;
+    GridPanelLayout1: TGridPanelLayout;
+    sbPreview: TCornerButton;
+    sbContractDetails: TCornerButton;
     procedure btnSaveContractClick(Sender: TObject);
     procedure cbClientSelectionClosePopup(Sender: TObject);
     procedure cbClientSelectionEnter(Sender: TObject);
+    procedure sbContractDetailsClick(Sender: TObject);
+    procedure FrameEnter(Sender: TObject);
+    procedure sbPreviewClick(Sender: TObject);
   private
     procedure ClearItems;
     { Private declarations }
@@ -68,6 +77,29 @@ begin
   mTreatmentInclusion.Lines.Clear;
   dDate.Date := now;
   cbPaymentStatus.ItemIndex := 0;
+end;
+
+procedure TfCreateContract.FrameEnter(Sender: TObject);
+begin
+  lytContractDetails.Visible := True;
+  fPDFCreation1.Visible := False;
+end;
+
+procedure TfCreateContract.sbContractDetailsClick(Sender: TObject);
+begin
+  lytContractDetails.Visible := True;
+  fPDFCreation1.Visible := False;
+end;
+
+procedure TfCreateContract.sbPreviewClick(Sender: TObject);
+begin
+  lytContractDetails.Visible := False;
+  fPDFCreation1.Visible := True;
+
+  fPDFCreation1.slClientName.Words.Items[1].Text := qName;
+  fPDFCreation1.slAddressH.Words.Items[1].Text := qAddress;
+  fPDFCreation1.slDateH.Text := dDate.Text;
+  fPDFCreation1.slClientNameSig.Words.Items[0].Text := qName;
 end;
 
 procedure TfCreateContract.btnSaveContractClick(Sender: TObject);

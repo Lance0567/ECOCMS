@@ -53,6 +53,8 @@ type
     LinkPropertyToFieldText3: TLinkPropertyToField;
     BindSourceDB3: TBindSourceDB;
     LinkPropertyToFieldText4: TLinkPropertyToField;
+    LinkListControlToField1: TLinkListControlToField;
+    BindSourceDB4: TBindSourceDB;
     procedure FrameResize(Sender: TObject);
     procedure glytCardsResize(Sender: TObject);
     procedure GridResponsive;

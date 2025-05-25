@@ -53922,4 +53922,12 @@ object dm: Tdm
     Left = 75
     Top = 224
   end
+  object qRecentContracts: TFDQuery
+    Active = True
+    Connection = cData
+    SQL.Strings = (
+      'SELECT * FROM contracts LIMIT 3;')
+    Left = 272
+    Top = 232
+  end
 end

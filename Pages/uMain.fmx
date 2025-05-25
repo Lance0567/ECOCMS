@@ -33,7 +33,7 @@ object frmMain: TfrmMain
         Size.Width = 617.000000000000000000
         Size.Height = 505.000000000000000000
         Size.PlatformDefault = False
-        TabIndex = 1
+        TabIndex = 2
         TabOrder = 0
         TabPosition = None
         OnChange = tcControllerChange
@@ -86,6 +86,7 @@ object frmMain: TfrmMain
                 end
                 inherited cbtnViewAllContracts: TCornerButton
                   Size.Width = 526.000000000000000000
+                  OnClick = fDashboard1cbtnViewAllContractsClick
                 end
               end
               inherited glytCards: TGridLayout
@@ -170,6 +171,7 @@ object frmMain: TfrmMain
                   StyledSettings = [Size, Style, FontColor]
                   Position.X = 407.000000000000000000
                   TextSettings.Font.Family = 'Arial'
+                  OnClick = fDashboard1btnTriggerClick
                 end
               end
             end
@@ -181,6 +183,22 @@ object frmMain: TfrmMain
               Left = 332
               Top = 317
             end
+            inherited BindSourceDB1: TBindSourceDB
+              Left = 168
+              Top = 248
+            end
+            inherited BindSourceDB2: TBindSourceDB
+              Left = 640
+              Top = 240
+            end
+            inherited BindSourceDB3: TBindSourceDB
+              Left = 640
+              Top = 312
+            end
+            inherited BindSourceDB4: TBindSourceDB
+              Left = 632
+              Top = 392
+            end
           end
         end
         object tiClients: TTabItem
@@ -188,7 +206,7 @@ object frmMain: TfrmMain
             item
             end>
           TextSettings.Trimming = None
-          IsSelected = True
+          IsSelected = False
           Size.Width = 12.000000000000000000
           Size.Height = 12.000000000000000000
           Size.PlatformDefault = False
@@ -238,6 +256,7 @@ object frmMain: TfrmMain
                     Position.X = 307.000000000000000000
                     Position.Y = 4.000000000000000000
                     Size.Height = 32.000000000000000000
+                    OnChangeTracking = fClients1eSearchChangeTracking
                   end
                 end
                 inherited ScrollBox2: TScrollBox
@@ -276,7 +295,7 @@ object frmMain: TfrmMain
             item
             end>
           TextSettings.Trimming = None
-          IsSelected = False
+          IsSelected = True
           Size.Width = 12.000000000000000000
           Size.Height = 12.000000000000000000
           Size.PlatformDefault = False
@@ -333,6 +352,7 @@ object frmMain: TfrmMain
                     Position.Y = 4.000000000000000000
                     Size.Height = 32.000000000000000000
                     TextPrompt = 'Search contracts...'
+                    OnChangeTracking = fContracts1eSearchChangeTracking
                   end
                 end
                 inherited ScrollBox2: TScrollBox
@@ -384,107 +404,6 @@ object frmMain: TfrmMain
               Size.Height = 505.000000000000000000
               Viewport.Width = 606.000000000000000000
               Viewport.Height = 505.000000000000000000
-              inherited rClientSelection: TRectangle
-                Fill.Color = claWhite
-                Position.Y = 85.000000000000000000
-                Size.Width = 556.000000000000000000
-                inherited lClientSelection: TLabel
-                  StyledSettings = [Family]
-                  Size.Width = 516.000000000000000000
-                  TextSettings.Font.StyleExt = {00060000000000000004000000}
-                end
-                inherited lDescription1: TLabel
-                  Size.Width = 516.000000000000000000
-                  TextSettings.FontColor = claDarkslategray
-                end
-                inherited rClientData: TRectangle
-                  Fill.Color = xFFE6EDF2
-                  Position.Y = 153.000000000000000000
-                  Size.Width = 516.000000000000000000
-                  Stroke.Kind = None
-                  inherited lName: TLabel
-                    Size.Width = 486.000000000000000000
-                    TextSettings.Font.StyleExt = {00070000000000000004000000}
-                  end
-                  inherited lAddress: TLabel
-                    Size.Width = 486.000000000000000000
-                    TextSettings.Font.StyleExt = {00070000000000000004000000}
-                  end
-                end
-                inherited cbClientSelection: TComboBox
-                  Size.Width = 516.000000000000000000
-                  Size.Height = 32.000000000000000000
-                end
-                inherited lClientSelectionR: TLabel
-                  Margins.Left = 4.000000000000000000
-                  Position.X = 24.000000000000000000
-                  Position.Y = 121.000000000000000000
-                  Size.Width = 512.000000000000000000
-                end
-              end
-              inherited rContractDetails: TRectangle
-                Fill.Color = claWhite
-                Position.Y = 355.000000000000000000
-                Size.Width = 556.000000000000000000
-                inherited lbContractDetails: TLabel
-                  StyledSettings = [Family]
-                  Size.Width = 516.000000000000000000
-                  TextSettings.Font.StyleExt = {00060000000000000004000000}
-                end
-                inherited lDescription: TLabel
-                  Size.Width = 516.000000000000000000
-                  TextSettings.FontColor = claDarkslategray
-                end
-                inherited lTreatmentInclusion: TLabel
-                  StyledSettings = [Family]
-                  Size.Width = 516.000000000000000000
-                  TextSettings.Font.StyleExt = {00060000000000000004000000}
-                end
-                inherited mTreatmentInclusion: TMemo
-                  Size.Width = 516.000000000000000000
-                  Viewport.Width = 516.000000000000000000
-                  Viewport.Height = 140.000000000000000000
-                end
-                inherited lDate: TLabel
-                  StyledSettings = [Family]
-                  Size.Width = 516.000000000000000000
-                  TextSettings.Font.StyleExt = {00060000000000000004000000}
-                end
-                inherited dDate: TDateEdit
-                  Size.Width = 516.000000000000000000
-                  Size.Height = 32.000000000000000000
-                end
-                inherited lPaymentStatus: TLabel
-                  Position.Y = 338.000000000000000000
-                  Size.Width = 516.000000000000000000
-                  TextSettings.Font.StyleExt = {00060000000000000004000000}
-                end
-                inherited cbPaymentStatus: TComboBox
-                  Position.Y = 363.000000000000000000
-                  Size.Width = 516.000000000000000000
-                  Size.Height = 32.000000000000000000
-                end
-              end
-              inherited Layout1: TLayout
-                Position.Y = 795.000000000000000000
-                Size.Width = 556.000000000000000000
-                inherited btnCancel: TCornerButton
-                  Position.X = 326.000000000000000000
-                  StyleLookup = 'btnCancelStyle1'
-                  TextSettings.Font.Size = 15.000000000000000000
-                  TextSettings.Font.StyleExt = {00060000000000000004000000}
-                  OnClick = fCreateContract1btnCancelClick
-                end
-                inherited btnSaveContract: TCornerButton
-                  Position.X = 431.000000000000000000
-                  Size.Width = 125.000000000000000000
-                  StyleLookup = 'btnSaveContract'
-                  TextSettings.Font.Size = 15.000000000000000000
-                  TextSettings.Font.StyleExt = {00060000000000000004000000}
-                  TextSettings.FontColor = claWhite
-                  OnClick = fCreateContract1btnSaveContractClick
-                end
-              end
               inherited lTitleC: TLayout
                 Margins.Top = 10.000000000000000000
                 Position.Y = 20.000000000000000000
@@ -493,6 +412,274 @@ object frmMain: TfrmMain
                   Size.Width = 556.000000000000000000
                   TextSettings.Font.StyleExt = {00070000000000000004000000}
                   TextSettings.FontColor = claGreen
+                end
+              end
+              inherited rButtonH: TRectangle
+                Position.Y = 80.000000000000000000
+                Size.Width = 556.000000000000000000
+                inherited GridPanelLayout1: TGridPanelLayout
+                  Size.Width = 540.000000000000000000
+                  ControlCollection = <
+                    item
+                      Column = -1
+                      Row = 0
+                    end
+                    item
+                      Column = 1
+                      Control = fCreateContract1.sbPreview
+                      Row = 0
+                    end
+                    item
+                      Column = 0
+                      Control = fCreateContract1.sbContractDetails
+                      Row = 0
+                    end>
+                  inherited sbPreview: TCornerButton
+                    Size.Width = 265.000000000000000000
+                  end
+                  inherited sbContractDetails: TCornerButton
+                    Size.Width = 265.000000000000000000
+                  end
+                end
+              end
+              inherited lytContractDetails: TLayout
+                Position.Y = 120.000000000000000000
+                Size.Width = 556.000000000000000000
+                inherited rClientSelection: TRectangle
+                  Size.Width = 556.000000000000000000
+                  inherited lClientSelection: TLabel
+                    Size.Width = 516.000000000000000000
+                    TextSettings.Font.StyleExt = {00060000000000000004000000}
+                  end
+                  inherited lDescription1: TLabel
+                    Size.Width = 516.000000000000000000
+                  end
+                  inherited rClientData: TRectangle
+                    Position.Y = 153.000000000000000000
+                    Size.Width = 516.000000000000000000
+                    inherited lName: TLabel
+                      Size.Width = 486.000000000000000000
+                      TextSettings.Font.StyleExt = {00070000000000000004000000}
+                    end
+                    inherited lAddress: TLabel
+                      Size.Width = 486.000000000000000000
+                      TextSettings.Font.StyleExt = {00070000000000000004000000}
+                    end
+                  end
+                  inherited cbClientSelection: TComboBox
+                    Size.Width = 516.000000000000000000
+                    Size.Height = 32.000000000000000000
+                  end
+                  inherited lClientSelectionR: TLabel
+                    Position.Y = 121.000000000000000000
+                    Size.Width = 516.000000000000000000
+                  end
+                end
+                inherited rContractDetails: TRectangle
+                  Size.Width = 556.000000000000000000
+                  inherited lbContractDetails: TLabel
+                    StyledSettings = [Family]
+                    Size.Width = 516.000000000000000000
+                    TextSettings.Font.StyleExt = {00060000000000000004000000}
+                  end
+                  inherited lDescription: TLabel
+                    Size.Width = 516.000000000000000000
+                  end
+                  inherited lTreatmentInclusion: TLabel
+                    StyledSettings = [Family]
+                    Size.Width = 516.000000000000000000
+                    TextSettings.Font.StyleExt = {00060000000000000004000000}
+                  end
+                  inherited mTreatmentInclusion: TMemo
+                    Size.Width = 516.000000000000000000
+                    Viewport.Width = 516.000000000000000000
+                    Viewport.Height = 140.000000000000000000
+                  end
+                  inherited lDate: TLabel
+                    StyledSettings = [Family]
+                    Size.Width = 516.000000000000000000
+                    TextSettings.Font.StyleExt = {00060000000000000004000000}
+                  end
+                  inherited dDate: TDateEdit
+                    Size.Width = 516.000000000000000000
+                    Size.Height = 32.000000000000000000
+                  end
+                  inherited lPaymentStatus: TLabel
+                    StyledSettings = [Family]
+                    Position.Y = 338.000000000000000000
+                    Size.Width = 516.000000000000000000
+                    TextSettings.Font.StyleExt = {00060000000000000004000000}
+                  end
+                  inherited cbPaymentStatus: TComboBox
+                    Position.Y = 363.000000000000000000
+                    Size.Width = 516.000000000000000000
+                    Size.Height = 32.000000000000000000
+                  end
+                end
+                inherited lytButtonH: TLayout
+                  Size.Width = 556.000000000000000000
+                  inherited btnCancel: TCornerButton
+                    Position.X = 341.000000000000000000
+                    StyleLookup = 'btnCancelStyle1'
+                    TextSettings.Font.StyleExt = {00060000000000000004000000}
+                  end
+                  inherited btnSaveContract: TCornerButton
+                    Position.X = 446.000000000000000000
+                    StyleLookup = 'btnSaveContract'
+                    TextSettings.Font.StyleExt = {00060000000000000004000000}
+                    TextSettings.FontColor = claWhite
+                  end
+                end
+              end
+              inherited fPDFCreation1: TfPDFCreation
+                Position.Y = 910.000000000000000000
+                Size.Width = 556.000000000000000000
+                Visible = False
+                inherited rButtonH: TRectangle
+                  Size.Width = 556.000000000000000000
+                  inherited Rectangle3: TRectangle
+                    Size.Width = 516.000000000000000000
+                    inherited SkLabel4: TSkLabel
+                      Size.Width = 516.000000000000000000
+                    end
+                    inherited btnGeneratePDF: TSpeedButton
+                      Size.Width = 516.000000000000000000
+                    end
+                  end
+                end
+                inherited rctHeader: TRectangle
+                  Size.Width = 556.000000000000000000
+                  inherited btnExport: TCornerButton
+                    Position.X = 432.000000000000000000
+                  end
+                end
+                inherited rctPage: TRectangle
+                  Position.X = -22.000000000000000000
+                  inherited ScrollBox1: TScrollBox
+                    Viewport.Width = 589.000000000000000000
+                    Viewport.Height = 570.000000000000000000
+                    inherited rPage1: TRectangle
+                      Size.Width = 589.000000000000000000
+                      inherited lytPage1: TLayout
+                        Size.Width = 589.000000000000000000
+                        inherited lytContent1: TLayout
+                          Size.Width = 589.000000000000000000
+                          inherited rHeader: TRectangle
+                            Size.Width = 505.000000000000000000
+                            inherited imgLogo: TImage
+                              MultiResBitmap.Height = 750
+                              MultiResBitmap.Width = 750
+                            end
+                            inherited slHeader: TSkLabel
+                              Size.Width = 411.000000000000000000
+                            end
+                          end
+                          inherited rDate: TRectangle
+                            Size.Width = 505.000000000000000000
+                            inherited slDateH: TSkLabel
+                              Position.X = 400.669982910156300000
+                            end
+                            inherited lSplitter2: TLine
+                              Position.X = 393.669982910156300000
+                            end
+                            inherited slDate: TSkLabel
+                              Position.X = 359.679992675781300000
+                            end
+                          end
+                          inherited rClientName: TRectangle
+                            Size.Width = 505.000000000000000000
+                          end
+                          inherited rClientDetails: TRectangle
+                            Size.Width = 505.000000000000000000
+                          end
+                          inherited rAddress: TRectangle
+                            Size.Width = 505.000000000000000000
+                          end
+                          inherited lytPage1Content: TLayout
+                            Size.Width = 489.000000000000000000
+                            inherited SkLabel11: TSkLabel
+                              Size.Width = 489.000000000000000000
+                            end
+                            inherited SkLabel12: TSkLabel
+                              Size.Width = 489.000000000000000000
+                            end
+                            inherited SkLabel13: TSkLabel
+                              Size.Width = 489.000000000000000000
+                            end
+                            inherited SkLabel6: TSkLabel
+                              Size.Width = 479.000000000000000000
+                            end
+                          end
+                        end
+                        inherited rBlackH: TRectangle
+                          Size.Width = 509.000000000000000000
+                          inherited slTitle: TSkLabel
+                            Size.Width = 499.000000000000000000
+                          end
+                        end
+                      end
+                    end
+                    inherited rPage3: TRectangle
+                      Size.Width = 589.000000000000000000
+                      inherited lytPage3: TLayout
+                        Size.Width = 589.000000000000000000
+                        inherited lytPageContent3: TLayout
+                          Size.Width = 489.000000000000000000
+                          inherited SkLabel2: TSkLabel
+                            Size.Width = 479.000000000000000000
+                          end
+                          inherited SkLabel3: TSkLabel
+                            Size.Width = 459.000000000000000000
+                          end
+                          inherited SkLabel5: TSkLabel
+                            Size.Width = 479.000000000000000000
+                          end
+                          inherited lytSignatureDetails: TLayout
+                            Size.Width = 479.000000000000000000
+                            inherited GridPanelLayout1: TGridPanelLayout
+                              Size.Width = 479.000000000000000000
+                              ControlCollection = <
+                                item
+                                  Column = 0
+                                  Control = fCreateContract1.fPDFCreation1.SkLabel7
+                                  Row = 0
+                                end
+                                item
+                                  Column = 1
+                                  Control = fCreateContract1.fPDFCreation1.SkLabel8
+                                  Row = 0
+                                end
+                                item
+                                  Column = 0
+                                  Control = fCreateContract1.fPDFCreation1.slOwnerName
+                                  Row = 1
+                                end
+                                item
+                                  Column = 1
+                                  Control = fCreateContract1.fPDFCreation1.slClientNameSig
+                                  Row = 1
+                                end>
+                              inherited SkLabel8: TSkLabel
+                                Position.X = 239.500000000000000000
+                              end
+                            end
+                          end
+                        end
+                      end
+                    end
+                    inherited rPage2: TRectangle
+                      Size.Width = 589.000000000000000000
+                      inherited lytPage2: TLayout
+                        Size.Width = 589.000000000000000000
+                        inherited lytPage2Content: TLayout
+                          Size.Width = 489.000000000000000000
+                          inherited SkLabel10: TSkLabel
+                            Size.Width = 479.000000000000000000
+                          end
+                        end
+                      end
+                    end
+                  end
                 end
               end
             end
@@ -881,7 +1068,7 @@ object frmMain: TfrmMain
             TextSettings.Font.Size = 17.000000000000000000
             TextSettings.FontColor = claRed
             Text = '*'
-            TabOrder = 3
+            TabOrder = 4
           end
         end
         object lFullnameR: TLabel
@@ -935,7 +1122,7 @@ object frmMain: TfrmMain
             TextSettings.Font.Size = 17.000000000000000000
             TextSettings.FontColor = claRed
             Text = '*'
-            TabOrder = 3
+            TabOrder = 4
           end
         end
         object lAddressR: TLabel
@@ -996,7 +1183,7 @@ object frmMain: TfrmMain
             TextSettings.Font.Size = 17.000000000000000000
             TextSettings.FontColor = claRed
             Text = '*'
-            TabOrder = 3
+            TabOrder = 4
           end
         end
         object lContractPriceR: TLabel

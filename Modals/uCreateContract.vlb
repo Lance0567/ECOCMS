@@ -54,9 +54,6 @@ Coordinates=89,516,64,33
 Coordinates=390,439,68,33
 Visible=True
 
-[Layout1]
-Coordinates=10,516,53,33
-
 [dm.qContracts]
 Coordinates=427,10,95,177
 
@@ -100,4 +97,7 @@ Coordinates=480,152,82,33
 
 [BindSourceDBClientSel]
 Coordinates=190,10,97,231
+
+[lytButtonH]
+Coordinates=10,516,53,33
 

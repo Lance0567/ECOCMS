@@ -71,10 +71,11 @@ object fDashboard: TfDashboard
         end
       end
       object ListView1: TListView
-        ItemAppearanceClassName = 'TListItemAppearance'
-        ItemEditAppearanceClassName = 'TListItemShowCheckAppearance'
+        ItemAppearanceClassName = 'TDynamicAppearance'
+        ItemEditAppearanceClassName = 'TDynamicAppearance'
         HeaderAppearanceClassName = 'TListHeaderObjects'
         FooterAppearanceClassName = 'TListHeaderObjects'
+        ItemIndex = 0
         Align = Top
         Position.X = 20.000000000000000000
         Position.Y = 90.000000000000000000
@@ -82,6 +83,52 @@ object fDashboard: TfDashboard
         Size.Height = 300.000000000000000000
         Size.PlatformDefault = False
         TabOrder = 1
+        ItemAppearance.ItemHeight = 65
+        ItemAppearanceObjects.ItemObjects.ObjectsCollection = <
+          item
+            AppearanceObjectName = 'Text1'
+            AppearanceClassName = 'TTextObjectAppearance'
+            Appearance.Font.Size = 15.000000000000000000
+            Appearance.TextAlign = Leading
+            Appearance.TextColor = claGray
+            Appearance.Width = 353.000000000000000000
+            Appearance.Height = 25.000000000000000000
+            Appearance.PlaceOffset.X = 7.000000000000000000
+            Appearance.PlaceOffset.Y = 3.000000000000000000
+          end
+          item
+            AppearanceObjectName = 'Text3'
+            AppearanceClassName = 'TTextObjectAppearance'
+            Appearance.TextAlign = Leading
+            Appearance.TextColor = claGray
+            Appearance.Width = 73.000000000000000000
+            Appearance.Height = 20.000000000000000000
+            Appearance.PlaceOffset.X = 7.000000000000000000
+            Appearance.PlaceOffset.Y = 30.000000000000000000
+          end
+          item
+            AppearanceObjectName = 'Accessory5'
+            AppearanceClassName = 'TAccessoryObjectAppearance'
+            Appearance.Width = 40.000000000000000000
+            Appearance.Height = 40.000000000000000000
+            Appearance.PlaceOffset.X = 424.000000000000000000
+            Appearance.PlaceOffset.Y = 8.000000000000000000
+          end
+          item
+            AppearanceObjectName = 'TextButton6'
+            AppearanceClassName = 'TTextButtonObjectAppearance'
+            Appearance.Enabled = False
+            Appearance.TextColor = claWhite
+            Appearance.Width = 105.000000000000000000
+            Appearance.Height = 25.000000000000000000
+            Appearance.PlaceOffset.X = 91.000000000000000000
+            Appearance.PlaceOffset.Y = 27.000000000000000000
+          end>
+        ItemAppearanceObjects.ItemEditObjects.ObjectsCollection = <
+          item
+            AppearanceObjectName = 'Text1'
+            AppearanceClassName = 'TTextObjectAppearance'
+          end>
       end
       object cbtnViewAllContracts: TCornerButton
         Align = Top
@@ -430,6 +477,26 @@ object fDashboard: TfDashboard
       Component = lbPartiallyPaidC
       ComponentProperty = 'Text'
     end
+    object LinkListControlToField1: TLinkListControlToField
+      Category = 'Quick Bindings'
+      DataSource = BindSourceDB4
+      Control = ListView1
+      FillExpressions = <
+        item
+          SourceMemberName = 'client_name'
+          ControlMemberName = 'Text1'
+        end
+        item
+          SourceMemberName = 'date'
+          ControlMemberName = 'Text3'
+        end
+        item
+          SourceMemberName = 'status'
+          ControlMemberName = 'TextButton6'
+        end>
+      FillHeaderExpressions = <>
+      FillBreakGroups = <>
+    end
   end
   object BindSourceDB1: TBindSourceDB
     DataSet = dm.qTotalContracts
@@ -448,5 +515,11 @@ object fDashboard: TfDashboard
     ScopeMappings = <>
     Left = 240
     Top = 152
+  end
+  object BindSourceDB4: TBindSourceDB
+    DataSet = dm.qRecentContracts
+    ScopeMappings = <>
+    Left = 280
+    Top = 192
   end
 end
