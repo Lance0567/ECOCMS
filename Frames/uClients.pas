@@ -26,7 +26,6 @@ type
     PopupMenuClients: TPopupMenu;
     Edit: TMenuItem;
     Delete: TMenuItem;
-    Preview: TMenuItem;
     eSearch: TEdit;
     BindSourceDBClients: TBindSourceDB;
     BindingsListClients: TBindingsList;
@@ -48,6 +47,9 @@ uses uDm, uMain;
 
 procedure TfClients.btnTriggerClick(Sender: TObject);
 begin
+  // Reset tag
+  frmMain.Tag := 0;
+
   // visibility show of Add client modal
   frmMain.rBackground.Visible := True;
   frmMain.rModalAdd.Visible := True;

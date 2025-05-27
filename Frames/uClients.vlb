@@ -23,7 +23,8 @@ Coordinates=268,233,59,33
 Visible=False
 
 []
-Coordinates=89,224,82,33
+Coordinates=420,10,53,33
+Visible=False
 
 [dm.qClients]
 Coordinates=10,10,73,33
@@ -70,10 +71,6 @@ Visible=False
 
 [dm.qTemp]
 Coordinates=251,10,66,33
-Visible=False
-
-[Preview]
-Coordinates=420,10,53,33
 Visible=False
 
 [PopupMenuClients]

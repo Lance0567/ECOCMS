@@ -33,7 +33,7 @@ object frmMain: TfrmMain
         Size.Width = 617.000000000000000000
         Size.Height = 505.000000000000000000
         Size.PlatformDefault = False
-        TabIndex = 2
+        TabIndex = 1
         TabOrder = 0
         TabPosition = None
         OnChange = tcControllerChange
@@ -171,7 +171,7 @@ object frmMain: TfrmMain
                   StyledSettings = [Size, Style, FontColor]
                   Position.X = 407.000000000000000000
                   TextSettings.Font.Family = 'Arial'
-                  OnClick = fDashboard1btnTriggerClick
+                  OnClick = fContracts1btnTriggerClick
                 end
               end
             end
@@ -206,7 +206,7 @@ object frmMain: TfrmMain
             item
             end>
           TextSettings.Trimming = None
-          IsSelected = False
+          IsSelected = True
           Size.Width = 12.000000000000000000
           Size.Height = 12.000000000000000000
           Size.PlatformDefault = False
@@ -279,6 +279,12 @@ object frmMain: TfrmMain
             inherited PopupMenuClients: TPopupMenu
               Left = 48
               Top = 397
+              inherited Edit: TMenuItem
+                OnClick = fClients1EditClick
+              end
+              inherited Delete: TMenuItem
+                OnClick = fClients1DeleteClick
+              end
             end
             inherited BindSourceDBClients: TBindSourceDB
               Left = 328
@@ -295,7 +301,7 @@ object frmMain: TfrmMain
             item
             end>
           TextSettings.Trimming = None
-          IsSelected = True
+          IsSelected = False
           Size.Width = 12.000000000000000000
           Size.Height = 12.000000000000000000
           Size.PlatformDefault = False
@@ -435,10 +441,10 @@ object frmMain: TfrmMain
                       Row = 0
                     end>
                   inherited sbPreview: TCornerButton
-                    Size.Width = 265.000000000000000000
+                    Size.Width = 267.000000000000000000
                   end
                   inherited sbContractDetails: TCornerButton
-                    Size.Width = 265.000000000000000000
+                    Size.Width = 267.000000000000000000
                   end
                 end
               end
@@ -450,6 +456,9 @@ object frmMain: TfrmMain
                   inherited lClientSelection: TLabel
                     Size.Width = 516.000000000000000000
                     TextSettings.Font.StyleExt = {00060000000000000004000000}
+                    inherited Label2: TLabel
+                      TabOrder = 4
+                    end
                   end
                   inherited lDescription1: TLabel
                     Size.Width = 516.000000000000000000
@@ -834,7 +843,7 @@ object frmMain: TfrmMain
       Align = Contents
       Fill.Color = claBlack
       Opacity = 0.699999988079071000
-      Size.Width = 782.000000000000000000
+      Size.Width = 817.000000000000000000
       Size.Height = 505.000000000000000000
       Size.PlatformDefault = False
       Visible = False

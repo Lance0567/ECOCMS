@@ -147,9 +147,6 @@ object fClients: TfClients
     object Delete: TMenuItem
       Text = 'Delete'
     end
-    object Preview: TMenuItem
-      Text = 'Preview'
-    end
   end
   object BindSourceDBClients: TBindSourceDB
     DataSet = dm.qClients

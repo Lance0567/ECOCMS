@@ -11,6 +11,7 @@ object fPDFCreation: TfPDFCreation
     Size.Height = 60.000000000000000000
     Size.PlatformDefault = False
     Stroke.Kind = None
+    Visible = False
     XRadius = 15.000000000000000000
     YRadius = 15.000000000000000000
     object Rectangle3: TRectangle
@@ -61,21 +62,19 @@ object fPDFCreation: TfPDFCreation
   object rctHeader: TRectangle
     Align = Top
     Fill.Color = claNull
-    Padding.Top = 10.000000000000000000
     Padding.Right = 15.000000000000000000
     Padding.Bottom = 5.000000000000000000
     Sides = [Bottom]
     Size.Width = 612.000000000000000000
     Size.Height = 48.000000000000000000
     Size.PlatformDefault = False
-    Stroke.Color = xFFEBEEF1
+    Stroke.Kind = None
     object btnExport: TCornerButton
       Align = Right
       Position.X = 488.000000000000000000
-      Position.Y = 10.000000000000000000
       Sides = [Top, Left, Bottom, Right]
       Size.Width = 109.000000000000000000
-      Size.Height = 33.000000000000000000
+      Size.Height = 43.000000000000000000
       Size.PlatformDefault = False
       TabOrder = 0
       Text = 'Export as PDF'
@@ -89,13 +88,13 @@ object fPDFCreation: TfPDFCreation
     Align = HorzCenter
     Fill.Color = claNull
     Margins.Left = 6.000000000000000000
-    Margins.Top = 20.000000000000000000
+    Margins.Top = 10.000000000000000000
     Margins.Right = 6.000000000000000000
     Margins.Bottom = 6.000000000000000000
     Position.X = 6.000000000000000000
-    Position.Y = 68.000000000000000000
+    Position.Y = 58.000000000000000000
     Size.Width = 600.000000000000000000
-    Size.Height = 466.000000000000000000
+    Size.Height = 536.000000000000000000
     Size.PlatformDefault = False
     Stroke.Kind = None
     object ShadowEffect1: TShadowEffect
@@ -108,11 +107,11 @@ object fPDFCreation: TfPDFCreation
     object ScrollBox1: TScrollBox
       Align = Client
       Size.Width = 600.000000000000000000
-      Size.Height = 466.000000000000000000
+      Size.Height = 536.000000000000000000
       Size.PlatformDefault = False
       TabOrder = 2
       Viewport.Width = 584.000000000000000000
-      Viewport.Height = 466.000000000000000000
+      Viewport.Height = 536.000000000000000000
       object rPage1: TRectangle
         Align = Top
         Fill.Color = claWhite

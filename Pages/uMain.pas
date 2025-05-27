@@ -12,7 +12,8 @@ uses
   Data.Bind.EngExt, Fmx.Bind.DBEngExt, Fmx.Bind.Grid, System.Rtti,
   System.Bindings.Outputs, Fmx.Bind.Editors, Data.Bind.Components,
   Data.Bind.Grid, Data.Bind.DBScope, FMX.Edit, FMX.DateTimeCtrls, uContracts,
-  FMX.Memo.Types, FMX.ScrollBox, FMX.Memo, uCreateContract, uCompile;
+  FMX.Memo.Types, FMX.DialogService, FMX.ScrollBox, FMX.Memo, uCreateContract,
+  uCompile;
 
 type
   TfrmMain = class(TForm)
@@ -88,11 +89,14 @@ type
     procedure fCreateContract1btnCancelClick(Sender: TObject);
     procedure fCreateContract1btnSaveContractClick(Sender: TObject);
     procedure fDashboard1cbtnViewAllContractsClick(Sender: TObject);
-    procedure fDashboard1btnTriggerClick(Sender: TObject);
     procedure fClients1eSearchChangeTracking(Sender: TObject);
     procedure fContracts1eSearchChangeTracking(Sender: TObject);
+    procedure fClients1EditClick(Sender: TObject);
+    procedure fClients1DeleteClick(Sender: TObject);
   private
     procedure HideFrames;
+    procedure ShowConfirmationDialog(const TheMessage: string);
+    procedure ShowMessageDialog(const TheMessage: string);
     { Private declarations }
   public
     { Public declarations }
@@ -243,8 +247,16 @@ begin
     Exit;
   end;
 
+  if frmMain.Tag = 0 then
+  begin
+    dm.qClients.Append;
+  end
+  else if frmMain.Tag = 1 then
+  begin
+    dm.qClients.Edit;
+  end;
+
   // Proceed to save
-  dm.qClients.Append;
   dm.qClients.FieldByName('name').AsString := eFullname.Text;
   dm.qClients.FieldByName('address').AsString := eAddress.Text;
   dm.qClients.FieldByName('contract_price').AsFloat := StrToFloat(eContractPrice.Text);
@@ -267,6 +279,73 @@ end;
 procedure TfrmMain.fClients1btnTriggerClick(Sender: TObject);
 begin
   fClients1.btnTriggerClick(Sender);
+end;
+
+{ Delete client }
+procedure TfrmMain.fClients1DeleteClick(Sender: TObject);
+begin
+  ShowConfirmationDialog('You wish to delete the selected entry?');
+end;
+
+procedure TfrmMain.ShowConfirmationDialog(const TheMessage: string);
+begin
+  TDialogService.MessageDialog(TheMessage, TMsgDlgType.mtConfirmation,
+    [TMsgDlgBtn.mbYes, TMsgDlgBtn.mbNo], TMsgDlgBtn.mbYes, 0,
+    procedure(const AResult: TModalResult)
+    begin
+      if AResult = mrYES then
+      begin
+        TDialogService.MessageDialog('Are you sure? This will permanently delete the data!',
+          TMsgDlgType.mtWarning, [TMsgDlgBtn.mbYes, TMsgDlgBtn.mbNo],
+          TMsgDlgBtn.mbYes, 0,
+          procedure(const AResult: TModalResult)
+          begin
+            if AResult = mrYES then
+            begin
+              // Delete input data from the database
+              try
+                dm.qClients.Delete;
+
+              except
+                ShowMessageDialog('Cannot be deleted unless the saved datas inside are deleted');
+              end;
+            end
+            else
+              ShowMessageDialog('Deletion canceled');
+          end);
+      end
+      else if AResult = mrNo then
+        ShowMessageDialog('You chose No');
+    end);
+end;
+
+{ Alert Show Dialog message }
+procedure TfrmMain.ShowMessageDialog(const TheMessage: string);
+begin
+  TDialogService.MessageDialog(TheMessage, TMsgDlgType.mtInformation,
+    [TMsgDlgBtn.mbOk], TMsgDlgBtn.mbOk, 0, nil);
+end;
+
+{ Edit client }
+procedure TfrmMain.fClients1EditClick(Sender: TObject);
+begin
+  // Populate the form
+  eFullname.Text := dm.qClients.FieldByName('name').AsString;;
+  eAddress.Text := dm.qClients.FieldByName('address').AsString;;
+  dContractDate.DateTime := dm.qClients.FieldByName('contract_date').AsDateTime;
+  eContractPrice.Text := dm.qClients.FieldByName('contract_price').AsString;
+  dFirstTD.DateTime := dm.qClients.FieldByName('first_treatment').AsDateTime;
+  dSecondTD.DateTime := dm.qClients.FieldByName('second_treatment').AsDateTime;
+  dThirdTD.DateTime := dm.qClients.FieldByName('third_treatment').AsDateTime;
+
+  // visibility show of Add client modal
+  frmMain.rBackground.Visible := True;
+  frmMain.rModalAdd.Visible := True;
+
+  ScrollBox1.ViewportPosition := PointF(0,0);
+  HideComponents;
+
+  frmMain.Tag := 1;
 end;
 
 // Client Search Procedure
@@ -489,7 +568,7 @@ begin
     else
     begin
       // Search with parameter
-      dm.qContracts.SQL.Text := 'SELECT * FROM clients WHERE client_name LIKE :search';
+      dm.qContracts.SQL.Text := 'SELECT * FROM contract WHERE client_name LIKE :search';
       SearchText := '%' + fContracts1.eSearch.Text + '%';
       dm.qContracts.ParamByName('search').AsString := SearchText;
     end;
@@ -531,13 +610,6 @@ begin
 
     fContracts1.GridContentsResponsive;
   end;
-end;
-
-// Create New Contract
-procedure TfrmMain.fDashboard1btnTriggerClick(Sender: TObject);
-begin
-  tcController.TabIndex := 3;
-  fCreateContract1.Visible := True;
 end;
 
 // View all contract

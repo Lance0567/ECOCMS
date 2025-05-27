@@ -82,9 +82,9 @@ object fCreateContract: TfCreateContract
           end>
         object sbPreview: TCornerButton
           Align = Client
-          Margins.Left = 5.000000000000000000
+          Margins.Left = 3.000000000000000000
           Sides = [Top, Left, Bottom, Right]
-          Size.Width = 311.500000000000000000
+          Size.Width = 313.500000000000000000
           Size.Height = 30.000000000000000000
           Size.PlatformDefault = False
           TabOrder = 0
@@ -96,9 +96,9 @@ object fCreateContract: TfCreateContract
         end
         object sbContractDetails: TCornerButton
           Align = Client
-          Margins.Right = 5.000000000000000000
+          Margins.Right = 3.000000000000000000
           Sides = [Top, Left, Bottom, Right]
-          Size.Width = 311.500000000000000000
+          Size.Width = 313.500000000000000000
           Size.Height = 30.000000000000000000
           Size.PlatformDefault = False
           TabOrder = 1
@@ -152,7 +152,7 @@ object fCreateContract: TfCreateContract
             TextSettings.Font.Size = 17.000000000000000000
             TextSettings.FontColor = claRed
             Text = '*'
-            TabOrder = 4
+            TabOrder = 3
           end
         end
         object lDescription1: TLabel
@@ -333,6 +333,7 @@ object fCreateContract: TfCreateContract
         end
         object dDate: TDateEdit
           Date = 45790.000000000000000000
+          DateFormatKind = Long
           Align = Top
           Margins.Top = 5.000000000000000000
           Position.X = 20.000000000000000000
@@ -425,10 +426,10 @@ object fCreateContract: TfCreateContract
       Position.X = 20.000000000000000000
       Position.Y = 900.000000000000000000
       Size.Width = 649.000000000000000000
-      Size.Height = 700.000000000000000000
+      Size.Height = 630.000000000000000000
       Size.PlatformDefault = False
       inherited rButtonH: TRectangle
-        Position.Y = 640.000000000000000000
+        Position.Y = 570.000000000000000000
         Size.Width = 649.000000000000000000
         inherited Rectangle3: TRectangle
           Size.Width = 609.000000000000000000
@@ -441,20 +442,23 @@ object fCreateContract: TfCreateContract
         end
       end
       inherited rctHeader: TRectangle
+        Padding.Top = 10.000000000000000000
         Position.Y = 10.000000000000000000
         Size.Width = 649.000000000000000000
         inherited btnExport: TCornerButton
           Position.X = 525.000000000000000000
+          Position.Y = 10.000000000000000000
+          Size.Height = 33.000000000000000000
         end
       end
       inherited rctPage: TRectangle
         Position.X = 24.000000000000000000
-        Position.Y = 78.000000000000000000
+        Position.Y = 68.000000000000000000
         Size.Height = 556.000000000000000000
         inherited ScrollBox1: TScrollBox
           Size.Height = 556.000000000000000000
           Viewport.Width = 584.000000000000000000
-          Viewport.Height = 570.000000000000000000
+          Viewport.Height = 496.000000000000000000
           inherited rPage1: TRectangle
             inherited lytPage1: TLayout
               inherited lytContent1: TLayout
