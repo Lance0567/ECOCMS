@@ -7,7 +7,9 @@ uses
   FMX.Types, FMX.Graphics, FMX.Controls, FMX.Forms, FMX.Dialogs, FMX.StdCtrls,
   System.Skia, FMX.ListView.Types, FMX.ListView.Appearances,
   FMX.ListView.Adapters.Base, FMX.ListView, FMX.Skia, FMX.Layouts, FMX.Objects,
-  FMX.Controls.Presentation, FMX.ImgList, Math;
+  FMX.Controls.Presentation, FMX.ImgList, Math, Data.Bind.EngExt,
+  Fmx.Bind.DBEngExt, System.Rtti, System.Bindings.Outputs, Fmx.Bind.Editors,
+  Data.Bind.Components, Data.Bind.DBScope;
 
 type
   TfDashboard = class(TFrame)
@@ -32,8 +34,8 @@ type
     lbFullyPaidC: TLabel;
     rCard4: TRectangle;
     lytCardD4: TLayout;
-    lbNotYetPaid: TLabel;
-    lbNotYetPaidC: TLabel;
+    lbPartiallyPaid: TLabel;
+    lbPartiallyPaidC: TLabel;
     cbtnViewAllContracts: TCornerButton;
     Glyph1: TGlyph;
     Glyph2: TGlyph;
@@ -42,6 +44,17 @@ type
     lytHeader: TLayout;
     lbTitle: TLabel;
     btnTrigger: TCornerButton;
+    BindSourceDBActiveCli: TBindSourceDB;
+    BindingsListActiveCli: TBindingsList;
+    LinkPropertyToFieldText: TLinkPropertyToField;
+    BindSourceDB1: TBindSourceDB;
+    LinkPropertyToFieldText2: TLinkPropertyToField;
+    BindSourceDB2: TBindSourceDB;
+    LinkPropertyToFieldText3: TLinkPropertyToField;
+    BindSourceDB3: TBindSourceDB;
+    LinkPropertyToFieldText4: TLinkPropertyToField;
+    LinkListControlToField1: TLinkListControlToField;
+    BindSourceDB4: TBindSourceDB;
     procedure FrameResize(Sender: TObject);
     procedure glytCardsResize(Sender: TObject);
     procedure GridResponsive;
@@ -90,7 +103,7 @@ var
 begin
   AvailableWidth := Trunc(glytCards.Width);
   ItemsPerRow := Max(1, AvailableWidth div 285);
-  glytCards.ItemWidth := Trunc((AvailableWidth - (ItemsPerRow + 1) * 5) / ItemsPerRow);
+  glytCards.ItemWidth := Trunc((AvailableWidth - (ItemsPerRow + 1) * 4) / ItemsPerRow);
 end;
 
 end.

@@ -23,17 +23,20 @@ type
     ScrollBox1: TScrollBox;
     Layout1: TLayout;
     ScrollBox2: TScrollBox;
-    PopupMenu1: TPopupMenu;
+    PopupMenuClients: TPopupMenu;
     Edit: TMenuItem;
     Delete: TMenuItem;
-    Preview: TMenuItem;
     eSearch: TEdit;
-    procedure gTableRecordResized(Sender: TObject);
+    BindSourceDBClients: TBindSourceDB;
+    BindingsListClients: TBindingsList;
+    LinkGridToClients: TLinkGridToDataSource;
     procedure btnTriggerClick(Sender: TObject);
+    procedure gTableRecordResized(Sender: TObject);
   private
     { Private declarations }
   public
     { Public declarations }
+    procedure GridContentsResponsive;
   end;
 
 implementation
@@ -44,6 +47,9 @@ uses uDm, uMain;
 
 procedure TfClients.btnTriggerClick(Sender: TObject);
 begin
+  // Reset tag
+  frmMain.Tag := 0;
+
   // visibility show of Add client modal
   frmMain.rBackground.Visible := True;
   frmMain.rModalAdd.Visible := True;
@@ -59,26 +65,24 @@ begin
   frmMain.ClearItems;
 end;
 
-// Responsive grid
-procedure TfClients.gTableRecordResized(Sender: TObject);
+{ Responsive grid procedure }
+procedure TfClients.GridContentsResponsive;
 var
-  i, ColCount: Integer;
-  TotalWidth, ColumnWidth: Single;
+  i: Integer;
+  NewWidth: Single;
 begin
-  ColCount := gTableRecord.ColumnCount;
+  NewWidth := gTableRecord.Width / gTableRecord.ColumnCount;
+  for i := 0 to gTableRecord.ColumnCount - 1 do
+    gTableRecord.Columns[i].Width := NewWidth;
+end;
 
-  if ColCount = 0 then
-    Exit;
-
-  // Adjust for internal padding or scrollbar
-  TotalWidth := gTableRecord.Width; // Use ClientWidth instead of Width
-
-  // Subtract 1 pixel to prevent overflow and scrollbar
-  ColumnWidth := (TotalWidth - 10) / ColCount;
-
-  // Set all columns to equal width
-  for i := 0 to ColCount - 1 do
-    gTableRecord.Columns[i].Width := ColumnWidth;
+procedure TfClients.gTableRecordResized(Sender: TObject);
+begin
+  if Self.Tag = 0 then
+  begin
+    GridContentsResponsive;
+    Self.Tag := 1;
+  end;
 end;
 
 end.

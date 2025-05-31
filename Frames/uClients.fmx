@@ -1,5 +1,5 @@
 object fClients: TfClients
-  PopupMenu = PopupMenu1
+  PopupMenu = PopupMenuClients
   Size.Width = 715.000000000000000000
   Size.Height = 480.000000000000000000
   Size.PlatformDefault = False
@@ -13,12 +13,13 @@ object fClients: TfClients
     TabOrder = 1
     object lbTitle: TLabel
       Align = Client
-      StyledSettings = [Family, Style, FontColor]
-      Margins.Left = 30.000000000000000000
-      Size.Width = 515.000000000000000000
+      StyledSettings = [Family, FontColor]
+      Margins.Left = 20.000000000000000000
+      Size.Width = 525.000000000000000000
       Size.Height = 55.000000000000000000
       Size.PlatformDefault = False
-      TextSettings.Font.Size = 25.000000000000000000
+      TextSettings.Font.Size = 28.000000000000000000
+      TextSettings.Font.StyleExt = {00070000000000000004000000}
       Text = 'Clients'
       TabOrder = 0
     end
@@ -33,6 +34,7 @@ object fClients: TfClients
       Size.Width = 135.000000000000000000
       Size.Height = 39.000000000000000000
       Size.PlatformDefault = False
+      StyleLookup = 'cornerbuttonstyle'
       TabOrder = 1
       Text = 'Add Client'
       TextSettings.Trimming = None
@@ -63,7 +65,7 @@ object fClients: TfClients
       Size.Width = 659.000000000000000000
       Size.Height = 452.000000000000000000
       Size.PlatformDefault = False
-      Stroke.Kind = None
+      Stroke.Color = xFFDBD9D9
       XRadius = 10.000000000000000000
       YRadius = 10.000000000000000000
       object Layout2: TLayout
@@ -79,6 +81,8 @@ object fClients: TfClients
           Size.Width = 106.489997863769500000
           Size.Height = 40.000000000000000000
           Size.PlatformDefault = False
+          StyledSettings = [Family, Size, FontColor]
+          TextSettings.Font.Weight = Semibold
           Words = <
             item
               Font.Size = 24.000000000000000000
@@ -116,10 +120,11 @@ object fClients: TfClients
           Size.Height = 352.000000000000000000
           Size.PlatformDefault = False
           TabOrder = 1
-          RowCount = 0
+          RowCount = 7
+          Options = [ColumnResize, ColumnMove, ColLines, RowLines, Tabs, Header, HeaderClick, AutoDisplacement]
           OnResized = gTableRecordResized
           Viewport.Width = 615.000000000000000000
-          Viewport.Height = 327.000000000000000000
+          Viewport.Height = 311.000000000000000000
         end
       end
     end
@@ -133,17 +138,53 @@ object fClients: TfClients
       TabOrder = 1
     end
   end
-  object PopupMenu1: TPopupMenu
-    Left = 344
-    Top = 224
+  object PopupMenuClients: TPopupMenu
+    Left = 240
+    Top = 160
     object Edit: TMenuItem
       Text = 'Edit'
     end
     object Delete: TMenuItem
       Text = 'Delete'
     end
-    object Preview: TMenuItem
-      Text = 'Preview'
+  end
+  object BindSourceDBClients: TBindSourceDB
+    DataSet = dm.qClients
+    ScopeMappings = <>
+    Left = 280
+    Top = 224
+  end
+  object BindingsListClients: TBindingsList
+    Methods = <>
+    OutputConverters = <>
+    Left = 428
+    Top = 221
+    object LinkGridToClients: TLinkGridToDataSource
+      Category = 'Quick Bindings'
+      DataSource = BindSourceDBClients
+      GridControl = gTableRecord
+      Columns = <
+        item
+          MemberName = 'name'
+          Header = 'Name'
+          Width = 150
+        end
+        item
+          MemberName = 'address'
+          Header = 'Address'
+          Width = 200
+        end
+        item
+          MemberName = 'contract_price'
+          Header = 'Contract Price'
+          Width = 150
+          Alignment = taLeftJustify
+        end
+        item
+          MemberName = 'contract_date'
+          Header = 'Contract Date'
+          Width = 150
+        end>
     end
   end
 end

@@ -1,0 +1,647 @@
+object fCreateContract: TfCreateContract
+  Size.Width = 715.000000000000000000
+  Size.Height = 480.000000000000000000
+  Size.PlatformDefault = False
+  OnEnter = FrameEnter
+  object ScrollBox1: TScrollBox
+    Align = Client
+    Padding.Left = 20.000000000000000000
+    Padding.Top = 10.000000000000000000
+    Padding.Right = 30.000000000000000000
+    Padding.Bottom = 20.000000000000000000
+    Size.Width = 715.000000000000000000
+    Size.Height = 480.000000000000000000
+    Size.PlatformDefault = False
+    TabOrder = 0
+    Viewport.Width = 699.000000000000000000
+    Viewport.Height = 480.000000000000000000
+    object lTitleC: TLayout
+      Align = Top
+      Position.X = 20.000000000000000000
+      Position.Y = 10.000000000000000000
+      Size.Width = 649.000000000000000000
+      Size.Height = 50.000000000000000000
+      Size.PlatformDefault = False
+      TabOrder = 0
+      object lTitle: TLabel
+        Align = Client
+        StyledSettings = []
+        Size.Width = 649.000000000000000000
+        Size.Height = 50.000000000000000000
+        Size.PlatformDefault = False
+        TextSettings.Font.Family = 'Arial Rounded MT'
+        TextSettings.Font.Size = 28.000000000000000000
+        TextSettings.Font.StyleExt = {00070000000000000004000000}
+        TextSettings.VertAlign = Leading
+        Text = 'Create Contract'
+        TabOrder = 0
+      end
+    end
+    object rButtonH: TRectangle
+      Align = Top
+      Padding.Left = 8.000000000000000000
+      Padding.Top = 5.000000000000000000
+      Padding.Right = 8.000000000000000000
+      Padding.Bottom = 5.000000000000000000
+      Margins.Top = 10.000000000000000000
+      Position.X = 20.000000000000000000
+      Position.Y = 70.000000000000000000
+      Size.Width = 649.000000000000000000
+      Size.Height = 40.000000000000000000
+      Size.PlatformDefault = False
+      Stroke.Kind = None
+      XRadius = 13.000000000000000000
+      YRadius = 13.000000000000000000
+      object GridPanelLayout1: TGridPanelLayout
+        Align = Client
+        Size.Width = 633.000000000000000000
+        Size.Height = 30.000000000000000000
+        Size.PlatformDefault = False
+        TabOrder = 0
+        ColumnCollection = <
+          item
+            Value = 50.000000000000000000
+          end
+          item
+            Value = 50.000000000000000000
+          end>
+        ControlCollection = <
+          item
+            Column = 1
+            Control = sbPreview
+            Row = 0
+          end
+          item
+            Column = 0
+            Control = sbContractDetails
+            Row = 0
+          end>
+        RowCollection = <
+          item
+            Value = 100.000000000000000000
+          end>
+        object sbPreview: TCornerButton
+          Align = Client
+          Margins.Left = 3.000000000000000000
+          Sides = [Top, Left, Bottom, Right]
+          Size.Width = 313.500000000000000000
+          Size.Height = 30.000000000000000000
+          Size.PlatformDefault = False
+          TabOrder = 0
+          Text = 'Preview'
+          TextSettings.Trimming = None
+          XRadius = 3.000000000000000000
+          YRadius = 3.000000000000000000
+          OnClick = sbPreviewClick
+        end
+        object sbContractDetails: TCornerButton
+          Align = Client
+          Margins.Right = 3.000000000000000000
+          Sides = [Top, Left, Bottom, Right]
+          Size.Width = 313.500000000000000000
+          Size.Height = 30.000000000000000000
+          Size.PlatformDefault = False
+          TabOrder = 1
+          Text = 'Contract Details'
+          TextSettings.Trimming = None
+          XRadius = 3.000000000000000000
+          YRadius = 3.000000000000000000
+          OnClick = sbContractDetailsClick
+        end
+      end
+    end
+    object lytContractDetails: TLayout
+      Align = Top
+      Position.X = 20.000000000000000000
+      Position.Y = 110.000000000000000000
+      Size.Width = 649.000000000000000000
+      Size.Height = 790.000000000000000000
+      Size.PlatformDefault = False
+      TabOrder = 2
+      object rClientSelection: TRectangle
+        Align = Top
+        Padding.Left = 20.000000000000000000
+        Padding.Top = 15.000000000000000000
+        Padding.Right = 20.000000000000000000
+        Padding.Bottom = 15.000000000000000000
+        Margins.Top = 15.000000000000000000
+        Position.Y = 15.000000000000000000
+        Size.Width = 649.000000000000000000
+        Size.Height = 255.000000000000000000
+        Size.PlatformDefault = False
+        Stroke.Color = xFFDBD9D9
+        XRadius = 10.000000000000000000
+        YRadius = 10.000000000000000000
+        object lClientSelection: TLabel
+          Align = Top
+          StyledSettings = [Family]
+          Position.X = 20.000000000000000000
+          Position.Y = 15.000000000000000000
+          Size.Width = 609.000000000000000000
+          Size.Height = 37.000000000000000000
+          Size.PlatformDefault = False
+          TextSettings.Font.Size = 24.000000000000000000
+          TextSettings.Font.StyleExt = {00060000000000000004000000}
+          TextSettings.VertAlign = Leading
+          Text = 'Client Selection'
+          TabOrder = 0
+          object Label2: TLabel
+            StyledSettings = [Family, Style]
+            Position.X = 176.000000000000000000
+            Position.Y = 11.000000000000000000
+            TextSettings.Font.Size = 17.000000000000000000
+            TextSettings.FontColor = claRed
+            Text = '*'
+            TabOrder = 3
+          end
+        end
+        object lDescription1: TLabel
+          Align = Top
+          StyledSettings = [Family, Style]
+          Position.X = 20.000000000000000000
+          Position.Y = 52.000000000000000000
+          Size.Width = 609.000000000000000000
+          Size.Height = 17.000000000000000000
+          Size.PlatformDefault = False
+          TextSettings.Font.Size = 14.000000000000000000
+          TextSettings.FontColor = claDimgray
+          Text = 'Select a client for this contract'
+          TabOrder = 1
+        end
+        object rClientData: TRectangle
+          Align = Top
+          Padding.Left = 15.000000000000000000
+          Padding.Top = 10.000000000000000000
+          Padding.Right = 15.000000000000000000
+          Padding.Bottom = 10.000000000000000000
+          Margins.Top = 15.000000000000000000
+          Position.X = 20.000000000000000000
+          Position.Y = 156.000000000000000000
+          Size.Width = 609.000000000000000000
+          Size.Height = 75.000000000000000000
+          Size.PlatformDefault = False
+          Stroke.Color = xFFDBD9D9
+          XRadius = 8.000000000000000000
+          YRadius = 8.000000000000000000
+          object lName: TLabel
+            Align = Top
+            StyledSettings = [Family]
+            Position.X = 15.000000000000000000
+            Position.Y = 10.000000000000000000
+            Size.Width = 579.000000000000000000
+            Size.Height = 25.000000000000000000
+            Size.PlatformDefault = False
+            TextSettings.Font.Size = 16.000000000000000000
+            TextSettings.Font.StyleExt = {00070000000000000004000000}
+            TextSettings.VertAlign = Trailing
+            Text = 'Name:'
+            TabOrder = 1
+          end
+          object lAddress: TLabel
+            Align = Top
+            StyledSettings = [Family]
+            Position.X = 15.000000000000000000
+            Position.Y = 35.000000000000000000
+            Size.Width = 579.000000000000000000
+            Size.Height = 25.000000000000000000
+            Size.PlatformDefault = False
+            TextSettings.Font.Size = 16.000000000000000000
+            TextSettings.Font.StyleExt = {00070000000000000004000000}
+            TextSettings.VertAlign = Leading
+            Text = 'Address:'
+            TabOrder = 0
+          end
+        end
+        object cbClientSelection: TComboBox
+          Align = Top
+          Items.Strings = (
+            'Lance'
+            'Lara'
+            'Kia'
+            'Nic'
+            ''
+            '')
+          ItemIndex = 0
+          Margins.Top = 10.000000000000000000
+          Position.X = 20.000000000000000000
+          Position.Y = 79.000000000000000000
+          Size.Width = 609.000000000000000000
+          Size.Height = 35.000000000000000000
+          Size.PlatformDefault = False
+          TabOrder = 2
+          OnClosePopup = cbClientSelectionClosePopup
+          OnEnter = cbClientSelectionEnter
+        end
+        object lClientSelectionR: TLabel
+          Align = Top
+          StyledSettings = [Family, Style]
+          Margins.Top = 10.000000000000000000
+          Position.X = 20.000000000000000000
+          Position.Y = 124.000000000000000000
+          Size.Width = 609.000000000000000000
+          Size.Height = 17.000000000000000000
+          Size.PlatformDefault = False
+          TextSettings.Font.Size = 15.000000000000000000
+          TextSettings.FontColor = claRed
+          Text = 'Client Selection is required'
+          TabOrder = 3
+        end
+      end
+      object rContractDetails: TRectangle
+        Align = Top
+        Padding.Left = 20.000000000000000000
+        Padding.Top = 15.000000000000000000
+        Padding.Right = 20.000000000000000000
+        Padding.Bottom = 15.000000000000000000
+        Margins.Top = 15.000000000000000000
+        Position.Y = 285.000000000000000000
+        Size.Width = 649.000000000000000000
+        Size.Height = 430.000000000000000000
+        Size.PlatformDefault = False
+        Stroke.Color = xFFDBD9D9
+        XRadius = 10.000000000000000000
+        YRadius = 10.000000000000000000
+        object lbContractDetails: TLabel
+          Align = Top
+          StyledSettings = [Family, FontColor]
+          Position.X = 20.000000000000000000
+          Position.Y = 15.000000000000000000
+          Size.Width = 609.000000000000000000
+          Size.Height = 37.000000000000000000
+          Size.PlatformDefault = False
+          TextSettings.Font.Size = 24.000000000000000000
+          TextSettings.Font.StyleExt = {00060000000000000004000000}
+          TextSettings.VertAlign = Leading
+          Text = 'Contract Details'
+          TabOrder = 3
+        end
+        object lDescription: TLabel
+          Align = Top
+          StyledSettings = [Family, Style]
+          Position.X = 20.000000000000000000
+          Position.Y = 52.000000000000000000
+          Size.Width = 609.000000000000000000
+          Size.Height = 17.000000000000000000
+          Size.PlatformDefault = False
+          TextSettings.Font.Size = 14.000000000000000000
+          TextSettings.FontColor = claDimgray
+          Text = 'Define the terms of your contract'
+          TabOrder = 4
+        end
+        object lTreatmentInclusion: TLabel
+          Align = Top
+          StyledSettings = [Family, FontColor]
+          Margins.Top = 25.000000000000000000
+          Position.X = 20.000000000000000000
+          Position.Y = 94.000000000000000000
+          Size.Width = 609.000000000000000000
+          Size.Height = 17.000000000000000000
+          Size.PlatformDefault = False
+          TextSettings.Font.Size = 14.000000000000000000
+          TextSettings.Font.StyleExt = {00060000000000000004000000}
+          Text = 'Treatment Inclusion'
+          TabOrder = 5
+        end
+        object mTreatmentInclusion: TMemo
+          Touch.InteractiveGestures = [Pan, LongTap, DoubleTap]
+          DataDetectorTypes = []
+          Align = Top
+          Margins.Top = 10.000000000000000000
+          Position.X = 20.000000000000000000
+          Position.Y = 121.000000000000000000
+          Size.Width = 609.000000000000000000
+          Size.Height = 140.000000000000000000
+          Size.PlatformDefault = False
+          TabOrder = 6
+          Viewport.Width = 609.000000000000000000
+          Viewport.Height = 140.000000000000000000
+        end
+        object lDate: TLabel
+          Align = Top
+          StyledSettings = [Family, FontColor]
+          Margins.Top = 10.000000000000000000
+          Position.X = 20.000000000000000000
+          Position.Y = 271.000000000000000000
+          Size.Width = 609.000000000000000000
+          Size.Height = 20.000000000000000000
+          Size.PlatformDefault = False
+          TextSettings.Font.Size = 14.000000000000000000
+          TextSettings.Font.StyleExt = {00060000000000000004000000}
+          Text = 'Date'
+          TabOrder = 1
+        end
+        object dDate: TDateEdit
+          Date = 45790.000000000000000000
+          DateFormatKind = Long
+          Align = Top
+          Margins.Top = 5.000000000000000000
+          Position.X = 20.000000000000000000
+          Position.Y = 296.000000000000000000
+          Size.Width = 609.000000000000000000
+          Size.Height = 35.000000000000000000
+          Size.PlatformDefault = False
+          TabOrder = 2
+        end
+        object lPaymentStatus: TLabel
+          Align = Top
+          StyledSettings = [Family, FontColor]
+          Margins.Top = 10.000000000000000000
+          Position.X = 20.000000000000000000
+          Position.Y = 341.000000000000000000
+          Size.Width = 609.000000000000000000
+          Size.Height = 20.000000000000000000
+          Size.PlatformDefault = False
+          TextSettings.Font.Size = 14.000000000000000000
+          TextSettings.Font.StyleExt = {00060000000000000004000000}
+          Text = 'Payment Status'
+          TabOrder = 0
+        end
+        object cbPaymentStatus: TComboBox
+          Align = Top
+          Items.Strings = (
+            'Initially Paid'
+            'Fully Paid')
+          ItemIndex = 1
+          Margins.Top = 5.000000000000000000
+          Position.X = 20.000000000000000000
+          Position.Y = 406.000000000000000000
+          Size.Width = 609.000000000000000000
+          Size.Height = 35.000000000000000000
+          Size.PlatformDefault = False
+          TabOrder = 7
+        end
+        object ePaymentStatus: TEdit
+          Touch.InteractiveGestures = [LongTap, DoubleTap]
+          Align = Top
+          TabOrder = 8
+          Position.X = 20.000000000000000000
+          Position.Y = 366.000000000000000000
+          Margins.Top = 5.000000000000000000
+          Size.Width = 609.000000000000000000
+          Size.Height = 35.000000000000000000
+          Size.PlatformDefault = False
+        end
+      end
+      object lytButtonH: TLayout
+        Align = Top
+        Padding.Top = 15.000000000000000000
+        Padding.Bottom = 15.000000000000000000
+        Margins.Top = 10.000000000000000000
+        Position.Y = 725.000000000000000000
+        Size.Width = 649.000000000000000000
+        Size.Height = 70.000000000000000000
+        Size.PlatformDefault = False
+        TabOrder = 3
+        object btnCancel: TCornerButton
+          Align = Right
+          StyledSettings = []
+          Margins.Right = 15.000000000000000000
+          Position.X = 434.000000000000000000
+          Position.Y = 15.000000000000000000
+          Sides = [Top, Left, Bottom, Right]
+          Size.Width = 90.000000000000000000
+          Size.Height = 40.000000000000000000
+          Size.PlatformDefault = False
+          TabOrder = 1
+          Text = 'Cancel'
+          TextSettings.Font.Size = 14.000000000000000000
+          TextSettings.Font.StyleExt = {00060000000000000004000000}
+          TextSettings.Trimming = None
+          XRadius = 5.000000000000000000
+          YRadius = 5.000000000000000000
+        end
+        object btnSaveContract: TCornerButton
+          Align = Right
+          StyledSettings = []
+          Position.X = 539.000000000000000000
+          Position.Y = 15.000000000000000000
+          Sides = [Top, Left, Bottom, Right]
+          Size.Width = 110.000000000000000000
+          Size.Height = 40.000000000000000000
+          Size.PlatformDefault = False
+          TabOrder = 0
+          Text = 'Save Contract'
+          TextSettings.Font.Size = 14.000000000000000000
+          TextSettings.Font.StyleExt = {00060000000000000004000000}
+          TextSettings.Trimming = None
+          XRadius = 5.000000000000000000
+          YRadius = 5.000000000000000000
+          OnClick = btnSaveContractClick
+        end
+      end
+    end
+    inline fPDFCreation1: TfPDFCreation
+      Align = Top
+      Padding.Top = 10.000000000000000000
+      Position.X = 20.000000000000000000
+      Position.Y = 900.000000000000000000
+      Size.Width = 649.000000000000000000
+      Size.Height = 630.000000000000000000
+      Size.PlatformDefault = False
+      inherited rButtonH: TRectangle
+        Position.Y = 570.000000000000000000
+        Size.Width = 649.000000000000000000
+        inherited Rectangle3: TRectangle
+          Size.Width = 609.000000000000000000
+          inherited SkLabel4: TSkLabel
+            Size.Width = 609.000000000000000000
+          end
+          inherited btnGeneratePDF: TSpeedButton
+            Size.Width = 609.000000000000000000
+          end
+        end
+      end
+      inherited rctHeader: TRectangle
+        Padding.Top = 10.000000000000000000
+        Position.Y = 10.000000000000000000
+        Size.Width = 649.000000000000000000
+        inherited btnExport: TCornerButton
+          Position.X = 525.000000000000000000
+          Position.Y = 10.000000000000000000
+          Size.Height = 33.000000000000000000
+        end
+      end
+      inherited rctPage: TRectangle
+        Position.X = 24.000000000000000000
+        Position.Y = 68.000000000000000000
+        Size.Height = 556.000000000000000000
+        inherited ScrollBox1: TScrollBox
+          Size.Height = 556.000000000000000000
+          Viewport.Width = 584.000000000000000000
+          Viewport.Height = 556.000000000000000000
+          inherited rPage1: TRectangle
+            inherited lytPage1: TLayout
+              inherited lytContent1: TLayout
+                inherited rHeader: TRectangle
+                  inherited imgLogo: TImage
+                    MultiResBitmap.Height = 750
+                    MultiResBitmap.Width = 750
+                  end
+                  inherited slHeader: TSkLabel
+                    Words = <
+                      item
+                        Font.Families = 'Cambria'
+                        Font.Size = 11.000000000000000000
+                        Font.Weight = Bold
+                        Name = 'Item 0'
+                        StyledSettings = [FontColor]
+                        Text = 'ECO PRO DISINFECTING AND PEST MANAGEMENT SERVICES'
+                      end
+                      item
+                        Font.Families = 'Cambria'
+                        Name = 'Item 1'
+                        StyledSettings = [Size, Style, FontColor]
+                        Text = #13#10'Office Address: 059 San Roque, Daraga Albay'
+                      end
+                      item
+                        Font.Families = 'Cambria'
+                        Name = 'Item 2'
+                        StyledSettings = [Size, Style, FontColor]
+                        Text = #13#10'Corporate Number: '
+                      end
+                      item
+                        Font.Families = 'Palatino Linotype'
+                        Name = 'Item 3'
+                        StyledSettings = [Size, Style, FontColor]
+                        Text = '+ 63 926 014 2069'
+                      end
+                      item
+                        Font.Families = 'Cambria'
+                        Name = 'Item 4'
+                        StyledSettings = [Size, Style, FontColor]
+                        Text = #13#10'Email: '
+                      end
+                      item
+                        Font.Families = 'Cambria'
+                        Font.Size = 11.000000000000000000
+                        FontColor = claBlue
+                        Name = 'Item 5'
+                        StyledSettings = [Style]
+                        Text = 'ecoprodisinfections@gmail.com'
+                      end
+                      item
+                        Font.Families = 'Palatino Linotype'
+                        Font.Size = 11.000000000000000000
+                        Name = 'Item 6'
+                        StyledSettings = [Style, FontColor]
+                        Text = #13#10'https://eco-proservices.com'
+                      end>
+                  end
+                end
+                inherited lytPage1Content: TLayout
+                  inherited SkLabel11: TSkLabel
+                    Words = <
+                      item
+                        Font.Families = 'Times new roman'
+                        Font.Size = 11.000000000000000000
+                        Font.Stretch = UltraExpanded
+                        Font.Weight = Medium
+                        Name = 'Item 0'
+                        StyledSettings = [FontColor]
+                        Text = 'PROPERTY(S) TO BE TREATED: PRIMARY RESIDENCE'
+                      end
+                      item
+                        Font.Families = 'times new roman'
+                        Font.Size = 11.000000000000000000
+                        Font.Stretch = UltraExpanded
+                        Font.Weight = Bold
+                        Name = 'Item 1'
+                        StyledSettings = [FontColor]
+                        Text = #13#10'General Conditions:'
+                      end
+                      item
+                        Font.Families = 'Cambria'
+                        Font.Size = 11.000000000000000000
+                        Font.Stretch = UltraExpanded
+                        Font.Weight = Medium
+                        Name = 'Item 2'
+                        StyledSettings = [FontColor]
+                        Text = 
+                          #13#10'This contract between Eco Pro Disinfecting and Pest Management' +
+                          ' Services and Client covers only the primary structure listed ab' +
+                          'ove. The structure will be treated on all areas for Asian Subter' +
+                          'ranean Termites '
+                      end
+                      item
+                        Font.Families = 'times new roman'
+                        Font.Size = 11.000000000000000000
+                        Font.Slant = Italic
+                        Font.Stretch = UltraExpanded
+                        Font.Weight = Medium
+                        Name = 'Item 3'
+                        StyledSettings = [FontColor]
+                        Text = '(Coptotermes Gestrol)'
+                      end
+                      item
+                        Font.Size = 11.000000000000000000
+                        Font.Stretch = UltraExpanded
+                        Font.Weight = Medium
+                        Name = 'Item 4'
+                        StyledSettings = [Family, FontColor]
+                        Text = 
+                          #13#10'Note: All reference to termites does apply only to subterranea' +
+                          'n termites. This contact does not provide protection from any ot' +
+                          'her wood destroying organism.'
+                      end>
+                  end
+                end
+              end
+            end
+          end
+          inherited rPage3: TRectangle
+            inherited lytPage3: TLayout
+              inherited lytPageContent3: TLayout
+                inherited lytSignatureDetails: TLayout
+                  inherited GridPanelLayout1: TGridPanelLayout
+                    ControlCollection = <
+                      item
+                        Column = 0
+                        Control = fPDFCreation1.SkLabel7
+                        Row = 0
+                      end
+                      item
+                        Column = 1
+                        Control = fPDFCreation1.SkLabel8
+                        Row = 0
+                      end
+                      item
+                        Column = 0
+                        Control = fPDFCreation1.slOwnerName
+                        Row = 1
+                      end
+                      item
+                        Column = 1
+                        Control = fPDFCreation1.slClientNameSig
+                        Row = 1
+                      end>
+                  end
+                end
+              end
+            end
+          end
+        end
+      end
+    end
+  end
+  object BindSourceDBClientSel: TBindSourceDB
+    DataSet = dm.qClientSelection
+    ScopeMappings = <>
+    Left = 456
+    Top = 13
+  end
+  object BindingsListClientSel: TBindingsList
+    Methods = <>
+    OutputConverters = <>
+    Left = 316
+    Top = 13
+    object LinkListControlToField1: TLinkListControlToField
+      Category = 'Quick Bindings'
+      DataSource = BindSourceDBClientSel
+      FieldName = 'name'
+      Control = cbClientSelection
+      FillExpressions = <>
+      FillHeaderExpressions = <>
+      FillBreakGroups = <>
+    end
+  end
+end

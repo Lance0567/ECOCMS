@@ -12,6 +12,13 @@ uses
   FireDAC.Stan.ExprFuncs, FireDAC.Phys.SQLiteWrapper.Stat;
 
 type
+  // Dashboard details
+  TDashboard = class(TObject)
+    totalContracts: integer;
+    fullyPaid: integer;
+    partiallyPaid: integer;
+  end;
+
   Tdm = class(TDataModule)
     StyleBook1: TStyleBook;
     ImageList1: TImageList;
@@ -26,10 +33,21 @@ type
     qClientsfirst_treatment: TDateField;
     qClientssecond_treatment: TDateField;
     qClientsthird_treatment: TDateField;
+    qContracts: TFDQuery;
+    qClientSelection: TFDQuery;
+    qTemp: TFDQuery;
+    qFullyPaid: TFDQuery;
+    qPartiallyPaid: TFDQuery;
+    qTotalContracts: TFDQuery;
+    qRecentContracts: TFDQuery;
+    procedure DataModuleCreate(Sender: TObject);
+    procedure DataModuleDestroy(Sender: TObject);
   private
     { Private declarations }
+    FDashboard: TDashboard;
   public
     { Public declarations }
+    property Dashboard: TDashboard read FDashboard write FDashboard;
   end;
 
 var
@@ -40,5 +58,41 @@ implementation
 {%CLASSGROUP 'FMX.Controls.TControl'}
 
 {$R *.dfm}
+
+// TODO -oLance -cImportant: Create a procedure for relative path of DBbtnTrigger
+procedure Tdm.DataModuleCreate(Sender: TObject);
+var
+  DBPath: String;
+begin
+  // Class
+  FDashboard := TDashboard.Create;
+
+  // Connection clearing
+  cData.Connected := False;
+  cData.Params.Values['Database'] := '';
+
+  // Get the directory of the executable relative path
+  DBPath := ExtractFilePath(ParamStr(0)) + 'database\ecopro.db';
+  cData.Params.Values['DriverID'] := 'SQLite';
+  cData.Params.Values['Database'] := DBPath;
+
+  // Deactivate queries
+  qActiveClients.Close;
+  qTotalContracts.Close;
+  qFullyPaid.Close;
+  qPartiallyPaid.Close;
+  qRecentContracts.Close;
+  qClients.Close;
+  qContracts.Close;
+  qClientSelection.Close;
+
+  // activate connection
+  cData.Connected := True;
+end;
+
+procedure Tdm.DataModuleDestroy(Sender: TObject);
+begin
+  FDashboard.Free;
+end;
 
 end.

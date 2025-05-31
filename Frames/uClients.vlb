@@ -1,42 +1,89 @@
 ﻿[Layout2]
-Coordinates=10,215,53,33
-Visible=True
+Coordinates=337,233,53,33
+Visible=False
 
 [btnTrigger]
-Coordinates=365,10,65,33
+Coordinates=193,233,65,33
+Visible=False
 
 [lytHeader]
-Coordinates=142,215,61,33
+Coordinates=400,233,61,33
+Visible=False
 
 [lbTitle]
-Coordinates=108,10,44,51
+Coordinates=197,10,44,33
+Visible=False
 
 [gTableRecord]
-Coordinates=162,10,83,51
+Coordinates=211,55,83,123
 Visible=True
 
 [SkLabel1]
-Coordinates=73,215,59,33
+Coordinates=268,233,59,33
+Visible=False
 
 []
-Coordinates=219,80,82,33
+Coordinates=420,10,53,33
+Visible=False
 
 [dm.qClients]
-Coordinates=490,40,88,195
+Coordinates=10,10,73,33
 Visible=False
 
 [Layout1]
-Coordinates=0,0,53,33
+Coordinates=164,276,53,33
+Visible=False
 
 [ScrollBox1]
-Coordinates=22,52,68,33
+Coordinates=10,276,68,33
+Visible=False
 
 [dm.]
 Coordinates=129,130,95,33
 
 [rContainer]
-Coordinates=255,10,100,33
+Coordinates=88,276,66,33
+Visible=False
 
 [dm.qActiveClients]
 Visible=False
+Coordinates=359,1,104,33
+
+[dm.qContracts]
+Visible=False
+Coordinates=204,150,87,33
+
+[ScrollBox2]
+Coordinates=115,233,68,33
+Visible=False
+
+[Delete]
+Coordinates=60,233,45,33
+Visible=False
+
+[eSearch]
+Coordinates=133,10,54,33
+Visible=False
+
+[Edit]
+Coordinates=10,233,40,33
+Visible=False
+
+[dm.qTemp]
+Coordinates=251,10,66,33
+Visible=False
+
+[PopupMenuClients]
+Coordinates=359,193,107,33
+Visible=False
+
+[dm.qClientSelection]
+Coordinates=10,10,113,33
+Visible=False
+
+[BindingsListClients]
+Coordinates=121,1,111,33
+
+[BindSourceDBClients]
+Coordinates=10,10,121,213
 

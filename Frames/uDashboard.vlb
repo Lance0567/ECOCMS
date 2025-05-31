@@ -1,100 +1,184 @@
 ﻿[SkLabel1]
-Coordinates=540,319,59,33
-
-[lbNotYetPaid]
-Coordinates=340,10,78,51
+Coordinates=10,337,59,33
+Visible=False
 
 [lytBottom]
-Coordinates=468,319,62,33
+Coordinates=593,337,62,33
+Visible=False
 
 [rCard1]
-Coordinates=411,319,47,33
+Coordinates=479,233,47,33
+Visible=False
 
 [lbActiveClients]
-Coordinates=229,215,88,51
+Coordinates=315,398,88,51
+Visible=True
 
 [glytCards]
-Coordinates=340,319,61,33
+Coordinates=105,511,61,33
+Visible=True
 
 [rCard2]
-Coordinates=283,319,47,33
+Coordinates=468,511,47,33
+Visible=True
 
 [lytCardD2]
-Coordinates=211,319,62,33
+Coordinates=471,294,62,33
+Visible=False
 
 [lytCardD4]
-Coordinates=139,319,62,33
+Coordinates=79,337,62,33
+Visible=False
 
 [lytCardD1]
-Coordinates=67,319,62,33
+Coordinates=281,337,62,33
+Visible=False
 
 [rCard4]
-Coordinates=10,319,47,33
+Coordinates=85,294,47,33
+Visible=False
 
 [lbTotalContractsC]
-Coordinates=10,215,103,51
+Coordinates=10,416,103,51
+Visible=True
 
 [rCard3]
-Coordinates=581,276,47,33
+Coordinates=536,233,47,33
+Visible=False
 
 [lbFullyPaidC]
-Coordinates=327,215,76,51
+Coordinates=300,303,76,51
+Visible=True
 
 [rRecentContracts]
-Coordinates=471,276,100,33
+Coordinates=412,337,100,33
+Visible=False
 
 [lbTotalContracts]
-Coordinates=123,215,96,51
+Coordinates=499,398,96,51
+Visible=True
 
 [Layout2]
-Coordinates=408,276,53,33
+Coordinates=277,294,53,33
+Visible=False
 
 [lbActiveClientsC]
-Coordinates=523,10,96,51
+Coordinates=431,28,96,51
+Visible=True
 
 [lbFullyPaid]
-Coordinates=261,10,69,51
+Coordinates=10,511,69,51
+Visible=True
 
 [ScrollBox1]
-Coordinates=330,276,68,33
+Coordinates=142,294,68,33
+Visible=False
 
 [ListView1]
-Coordinates=108,10,89,141
-
-[lbNotYetPaidC]
-Coordinates=428,10,85,51
+Coordinates=10,10,89,249
+Visible=True
 
 [lytCardD3]
-Coordinates=258,276,62,33
+Coordinates=399,294,62,33
+Visible=False
 
 [Glyph4]
-Coordinates=199,276,49,33
+Coordinates=614,294,49,33
+Visible=False
 
 [Glyph2]
-Coordinates=140,276,49,33
+Coordinates=593,233,49,33
+Visible=False
 
 [lytHeader]
-Coordinates=69,276,61,33
+Coordinates=543,294,61,33
+Visible=False
 
 [lbTitle]
-Coordinates=207,10,44,51
+Coordinates=429,398,44,51
+Visible=True
 
 [Glyph3]
-Coordinates=10,276,49,33
+Coordinates=340,294,49,33
+Visible=False
 
 [dm.qClients]
-Coordinates=10,10,88,195
+Coordinates=10,10,73,33
 Visible=False
 
 [cbtnViewAllContracts]
-Coordinates=547,215,120,33
+Coordinates=151,337,120,33
+Visible=False
 
 [btnTrigger]
-Coordinates=472,215,65,33
+Coordinates=10,294,65,33
+Visible=False
 
 [Glyph1]
-Coordinates=413,215,49,33
+Coordinates=353,337,49,33
+Visible=False
 
 [dm.]
 Coordinates=245,427,95,33
+
+[lbPartiallyPaid]
+Coordinates=10,233,85,33
+Visible=False
+
+[lbPartiallyPaidC]
+Coordinates=10,303,92,51
+Visible=True
+
+[dm.qActiveClients]
+Visible=True
+Coordinates=338,511,104,33
+
+[dm.qContracts]
+Coordinates=310,10,95,177
+
+[dm.qClientSelection]
+Coordinates=10,10,113,33
+Visible=False
+
+[dm.qTemp]
+Coordinates=403,233,66,33
+Visible=False
+
+[]
+Coordinates=179,37,95,195
+
+[BindingsListActiveCli]
+Coordinates=192,511,120,33
+Visible=True
+
+[BindSourceDBActiveCli]
+Coordinates=607,10,131,87
+
+[dm.qFullyPaid]
+Coordinates=343,10,84,33
+Visible=False
+
+[dm.qPartiallyPaid]
+Coordinates=315,123,100,33
+Visible=False
+
+[dm.qTotalContracts]
+Coordinates=10,123,111,33
+Visible=False
+
+[BindSourceDB1]
+Coordinates=193,398,96,87
+
+[BindSourceDB2]
+Coordinates=456,285,92,87
+
+[BindSourceDB3]
+Coordinates=182,285,92,87
+
+[dm.qRecentContracts]
+Coordinates=246,10,121,33
+Visible=False
+
+[BindSourceDB4]
+Coordinates=179,37,105,195
 

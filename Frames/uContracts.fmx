@@ -12,12 +12,13 @@ object fContracts: TfContracts
     TabOrder = 1
     object lbTitle: TLabel
       Align = Client
-      StyledSettings = [Family, Style, FontColor]
-      Margins.Left = 30.000000000000000000
-      Size.Width = 515.000000000000000000
+      StyledSettings = [Family, FontColor]
+      Margins.Left = 20.000000000000000000
+      Size.Width = 525.000000000000000000
       Size.Height = 55.000000000000000000
       Size.PlatformDefault = False
-      TextSettings.Font.Size = 25.000000000000000000
+      TextSettings.Font.Size = 28.000000000000000000
+      TextSettings.Font.StyleExt = {00070000000000000004000000}
       Text = 'Contracts'
       TabOrder = 0
     end
@@ -39,17 +40,14 @@ object fContracts: TfContracts
       YRadius = 8.000000000000000000
     end
   end
-  object PopupMenu1: TPopupMenu
-    Left = 292
-    Top = 212
+  object PopupMenuContracts: TPopupMenu
+    Left = 268
+    Top = 68
     object Edit: TMenuItem
       Text = 'Edit'
     end
     object Delete: TMenuItem
       Text = 'Delete'
-    end
-    object Preview: TMenuItem
-      Text = 'Preview'
     end
   end
   object ScrollBox1: TScrollBox
@@ -74,7 +72,7 @@ object fContracts: TfContracts
       Size.Width = 659.000000000000000000
       Size.Height = 452.000000000000000000
       Size.PlatformDefault = False
-      Stroke.Kind = None
+      Stroke.Color = xFFDBD9D9
       XRadius = 10.000000000000000000
       YRadius = 10.000000000000000000
       object Layout2: TLayout
@@ -82,13 +80,13 @@ object fContracts: TfContracts
         Position.X = 20.000000000000000000
         Position.Y = 20.000000000000000000
         Size.Width = 619.000000000000000000
-        Size.Height = 60.000000000000000000
+        Size.Height = 40.000000000000000000
         Size.PlatformDefault = False
         TabOrder = 1
         object SkLabel1: TSkLabel
-          Align = Top
-          Size.Width = 619.000000000000000000
-          Size.Height = 32.000000000000000000
+          Align = Client
+          Size.Width = 400.000000000000000000
+          Size.Height = 40.000000000000000000
           Size.PlatformDefault = False
           Words = <
             item
@@ -98,26 +96,41 @@ object fContracts: TfContracts
               Text = 'Contract List'
             end>
         end
+        object eSearch: TEdit
+          Touch.InteractiveGestures = [LongTap, DoubleTap]
+          Align = Right
+          StyleLookup = 'eSearchStyle1'
+          TabOrder = 0
+          Position.X = 400.000000000000000000
+          Size.Width = 219.000000000000000000
+          Size.Height = 40.000000000000000000
+          Size.PlatformDefault = False
+          TextPrompt = 'Search clients...'
+        end
       end
       object ScrollBox2: TScrollBox
         Align = Client
         Size.Width = 619.000000000000000000
-        Size.Height = 352.000000000000000000
+        Size.Height = 372.000000000000000000
         Size.PlatformDefault = False
         TabOrder = 2
         Viewport.Width = 619.000000000000000000
-        Viewport.Height = 352.000000000000000000
+        Viewport.Height = 372.000000000000000000
         object gTableRecord: TGrid
           Align = Client
           CanFocus = True
           ClipChildren = True
+          Margins.Top = 20.000000000000000000
+          PopupMenu = PopupMenuContracts
           Size.Width = 619.000000000000000000
           Size.Height = 352.000000000000000000
           Size.PlatformDefault = False
           TabOrder = 1
-          RowCount = 0
+          RowCount = 2
+          Options = [ColumnResize, ColumnMove, ColLines, RowLines, RowSelect, Tabs, Header, HeaderClick, AutoDisplacement]
+          OnResized = gTableRecordResized
           Viewport.Width = 615.000000000000000000
-          Viewport.Height = 327.000000000000000000
+          Viewport.Height = 311.000000000000000000
         end
       end
     end
@@ -129,6 +142,43 @@ object fContracts: TfContracts
       Size.Height = 50.000000000000000000
       Size.PlatformDefault = False
       TabOrder = 1
+    end
+  end
+  object BindSourceDBContracts: TBindSourceDB
+    DataSet = dm.qContracts
+    ScopeMappings = <>
+    Left = 400
+    Top = 68
+  end
+  object BindingsListContracts: TBindingsList
+    Methods = <>
+    OutputConverters = <>
+    Left = 540
+    Top = 68
+    object LinkGridToContracts: TLinkGridToDataSource
+      Category = 'Quick Bindings'
+      DataSource = BindSourceDBContracts
+      GridControl = gTableRecord
+      Columns = <
+        item
+          MemberName = 'client_name'
+          Header = 'Client Name'
+          Width = 150
+        end
+        item
+          MemberName = 'address'
+          Header = 'Address'
+          Width = 150
+        end
+        item
+          MemberName = 'date'
+          Header = 'Date'
+          Width = 120
+        end
+        item
+          MemberName = 'status'
+          Header = 'Status'
+        end>
     end
   end
 end

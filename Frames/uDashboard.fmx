@@ -22,6 +22,7 @@ object fDashboard: TfDashboard
     end
     object rRecentContracts: TRectangle
       Align = Top
+      Fill.Color = claWhite
       Padding.Left = 20.000000000000000000
       Padding.Top = 20.000000000000000000
       Padding.Right = 20.000000000000000000
@@ -34,7 +35,7 @@ object fDashboard: TfDashboard
       Size.Width = 524.000000000000000000
       Size.Height = 452.000000000000000000
       Size.PlatformDefault = False
-      Stroke.Kind = None
+      Stroke.Color = xFFDBD9D9
       XRadius = 10.000000000000000000
       YRadius = 10.000000000000000000
       object Layout2: TLayout
@@ -70,10 +71,11 @@ object fDashboard: TfDashboard
         end
       end
       object ListView1: TListView
-        ItemAppearanceClassName = 'TListItemAppearance'
-        ItemEditAppearanceClassName = 'TListItemShowCheckAppearance'
+        ItemAppearanceClassName = 'TDynamicAppearance'
+        ItemEditAppearanceClassName = 'TDynamicAppearance'
         HeaderAppearanceClassName = 'TListHeaderObjects'
         FooterAppearanceClassName = 'TListHeaderObjects'
+        ItemIndex = 0
         Align = Top
         Position.X = 20.000000000000000000
         Position.Y = 90.000000000000000000
@@ -81,6 +83,52 @@ object fDashboard: TfDashboard
         Size.Height = 300.000000000000000000
         Size.PlatformDefault = False
         TabOrder = 1
+        ItemAppearance.ItemHeight = 65
+        ItemAppearanceObjects.ItemObjects.ObjectsCollection = <
+          item
+            AppearanceObjectName = 'Text1'
+            AppearanceClassName = 'TTextObjectAppearance'
+            Appearance.Font.Size = 15.000000000000000000
+            Appearance.TextAlign = Leading
+            Appearance.TextColor = claGray
+            Appearance.Width = 353.000000000000000000
+            Appearance.Height = 25.000000000000000000
+            Appearance.PlaceOffset.X = 7.000000000000000000
+            Appearance.PlaceOffset.Y = 3.000000000000000000
+          end
+          item
+            AppearanceObjectName = 'Text3'
+            AppearanceClassName = 'TTextObjectAppearance'
+            Appearance.TextAlign = Leading
+            Appearance.TextColor = claGray
+            Appearance.Width = 73.000000000000000000
+            Appearance.Height = 20.000000000000000000
+            Appearance.PlaceOffset.X = 7.000000000000000000
+            Appearance.PlaceOffset.Y = 30.000000000000000000
+          end
+          item
+            AppearanceObjectName = 'Accessory5'
+            AppearanceClassName = 'TAccessoryObjectAppearance'
+            Appearance.Width = 40.000000000000000000
+            Appearance.Height = 40.000000000000000000
+            Appearance.PlaceOffset.X = 424.000000000000000000
+            Appearance.PlaceOffset.Y = 8.000000000000000000
+          end
+          item
+            AppearanceObjectName = 'TextButton6'
+            AppearanceClassName = 'TTextButtonObjectAppearance'
+            Appearance.Enabled = False
+            Appearance.TextColor = claWhite
+            Appearance.Width = 105.000000000000000000
+            Appearance.Height = 25.000000000000000000
+            Appearance.PlaceOffset.X = 91.000000000000000000
+            Appearance.PlaceOffset.Y = 27.000000000000000000
+          end>
+        ItemAppearanceObjects.ItemEditObjects.ObjectsCollection = <
+          item
+            AppearanceObjectName = 'Text1'
+            AppearanceClassName = 'TTextObjectAppearance'
+          end>
       end
       object cbtnViewAllContracts: TCornerButton
         Align = Top
@@ -126,6 +174,7 @@ object fDashboard: TfDashboard
         Size.Width = 260.000000000000000000
         Size.Height = 140.000000000000000000
         Size.PlatformDefault = False
+        Stroke.Color = xFFDBD9D9
         XRadius = 10.000000000000000000
         YRadius = 10.000000000000000000
         object lytCardD1: TLayout
@@ -166,7 +215,7 @@ object fDashboard: TfDashboard
           Size.PlatformDefault = False
           TextSettings.Font.Size = 24.000000000000000000
           TextSettings.Font.StyleExt = {00070000000000000004000000}
-          Text = '0'
+          Text = '2'
           TabOrder = 1
         end
       end
@@ -184,6 +233,7 @@ object fDashboard: TfDashboard
         Size.Width = 260.000000000000000000
         Size.Height = 140.000000000000000000
         Size.PlatformDefault = False
+        Stroke.Color = xFFDBD9D9
         XRadius = 10.000000000000000000
         YRadius = 10.000000000000000000
         object lytCardD2: TLayout
@@ -224,7 +274,7 @@ object fDashboard: TfDashboard
           Size.PlatformDefault = False
           TextSettings.Font.Size = 24.000000000000000000
           TextSettings.Font.StyleExt = {00070000000000000004000000}
-          Text = '0'
+          Text = '7'
           TabOrder = 1
         end
       end
@@ -242,6 +292,7 @@ object fDashboard: TfDashboard
         Size.Width = 260.000000000000000000
         Size.Height = 140.000000000000000000
         Size.PlatformDefault = False
+        Stroke.Color = xFFDBD9D9
         XRadius = 10.000000000000000000
         YRadius = 10.000000000000000000
         object lytCardD3: TLayout
@@ -282,7 +333,7 @@ object fDashboard: TfDashboard
           Size.PlatformDefault = False
           TextSettings.Font.Size = 24.000000000000000000
           TextSettings.Font.StyleExt = {00070000000000000004000000}
-          Text = '0'
+          Text = '2'
           TabOrder = 1
         end
       end
@@ -300,6 +351,7 @@ object fDashboard: TfDashboard
         Size.Width = 260.000000000000000000
         Size.Height = 140.000000000000000000
         Size.PlatformDefault = False
+        Stroke.Color = xFFDBD9D9
         XRadius = 10.000000000000000000
         YRadius = 10.000000000000000000
         object lytCardD4: TLayout
@@ -310,7 +362,7 @@ object fDashboard: TfDashboard
           Size.Height = 25.000000000000000000
           Size.PlatformDefault = False
           TabOrder = 0
-          object lbNotYetPaid: TLabel
+          object lbPartiallyPaid: TLabel
             Align = Client
             StyledSettings = []
             Size.Width = 220.000000000000000000
@@ -319,7 +371,7 @@ object fDashboard: TfDashboard
             TextSettings.Font.Family = 'Inter Variable Text'
             TextSettings.Font.Size = 15.000000000000000000
             TextSettings.Font.StyleExt = {00070000000000000004000000}
-            Text = 'Not Yet Paid'
+            Text = 'Partially Paid'
             TabOrder = 0
             object Glyph4: TGlyph
               Align = Right
@@ -332,7 +384,7 @@ object fDashboard: TfDashboard
             end
           end
         end
-        object lbNotYetPaidC: TLabel
+        object lbPartiallyPaidC: TLabel
           Align = Client
           StyledSettings = [Family]
           Size.Width = 220.000000000000000000
@@ -355,12 +407,15 @@ object fDashboard: TfDashboard
       TabOrder = 1
       object lbTitle: TLabel
         Align = Client
-        StyledSettings = [Family, Style, FontColor]
-        Margins.Left = 30.000000000000000000
-        Size.Width = 335.000000000000000000
+        StyledSettings = []
+        Margins.Left = 20.000000000000000000
+        Size.Width = 345.000000000000000000
         Size.Height = 55.000000000000000000
         Size.PlatformDefault = False
-        TextSettings.Font.Size = 25.000000000000000000
+        TextSettings.Font.Family = 'Arial Rounded MT'
+        TextSettings.Font.Size = 28.000000000000000000
+        TextSettings.Font.StyleExt = {00070000000000000004000000}
+        TextSettings.FontColor = claGreen
         Text = 'Dashboard'
         TabOrder = 0
       end
@@ -382,5 +437,89 @@ object fDashboard: TfDashboard
         YRadius = 8.000000000000000000
       end
     end
+  end
+  object BindSourceDBActiveCli: TBindSourceDB
+    DataSet = dm.qActiveClients
+    ScopeMappings = <>
+    Left = 384
+    Top = 237
+  end
+  object BindingsListActiveCli: TBindingsList
+    Methods = <>
+    OutputConverters = <>
+    Left = 156
+    Top = 173
+    object LinkPropertyToFieldText: TLinkPropertyToField
+      Category = 'Quick Bindings'
+      DataSource = BindSourceDBActiveCli
+      FieldName = 'Active Clients'
+      Component = lbActiveClientsC
+      ComponentProperty = 'Text'
+    end
+    object LinkPropertyToFieldText2: TLinkPropertyToField
+      Category = 'Quick Bindings'
+      DataSource = BindSourceDB1
+      FieldName = 'Total Contracts'
+      Component = lbTotalContractsC
+      ComponentProperty = 'Text'
+    end
+    object LinkPropertyToFieldText3: TLinkPropertyToField
+      Category = 'Quick Bindings'
+      DataSource = BindSourceDB2
+      FieldName = 'Fully Paid'
+      Component = lbFullyPaidC
+      ComponentProperty = 'Text'
+    end
+    object LinkPropertyToFieldText4: TLinkPropertyToField
+      Category = 'Quick Bindings'
+      DataSource = BindSourceDB3
+      FieldName = 'Partially Paid'
+      Component = lbPartiallyPaidC
+      ComponentProperty = 'Text'
+    end
+    object LinkListControlToField1: TLinkListControlToField
+      Category = 'Quick Bindings'
+      DataSource = BindSourceDB4
+      Control = ListView1
+      FillExpressions = <
+        item
+          SourceMemberName = 'client_name'
+          ControlMemberName = 'Text1'
+        end
+        item
+          SourceMemberName = 'date'
+          ControlMemberName = 'Text3'
+        end
+        item
+          SourceMemberName = 'status'
+          ControlMemberName = 'TextButton6'
+        end>
+      FillHeaderExpressions = <>
+      FillBreakGroups = <>
+    end
+  end
+  object BindSourceDB1: TBindSourceDB
+    DataSet = dm.qTotalContracts
+    ScopeMappings = <>
+    Left = 232
+    Top = 232
+  end
+  object BindSourceDB2: TBindSourceDB
+    DataSet = dm.qFullyPaid
+    ScopeMappings = <>
+    Left = 384
+    Top = 152
+  end
+  object BindSourceDB3: TBindSourceDB
+    DataSet = dm.qPartiallyPaid
+    ScopeMappings = <>
+    Left = 240
+    Top = 152
+  end
+  object BindSourceDB4: TBindSourceDB
+    DataSet = dm.qRecentContracts
+    ScopeMappings = <>
+    Left = 280
+    Top = 192
   end
 end
