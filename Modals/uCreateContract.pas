@@ -46,6 +46,7 @@ type
     GridPanelLayout1: TGridPanelLayout;
     sbPreview: TCornerButton;
     sbContractDetails: TCornerButton;
+    ePaymentStatus: TEdit;
     procedure btnSaveContractClick(Sender: TObject);
     procedure cbClientSelectionClosePopup(Sender: TObject);
     procedure cbClientSelectionEnter(Sender: TObject);
@@ -63,7 +64,7 @@ implementation
 
 {$R *.fmx}
 
-uses uDm;
+uses uDm, uMain;
 
 var
   qName: String;
@@ -137,7 +138,15 @@ begin
   dm.qContracts.Open;
 
   // Proceed to save
-  dm.qContracts.Append;
+  if Self.Tag = 0 then
+  begin
+    dm.qContracts.Append;
+  end
+  else if Self.Tag = 1 then
+  begin
+    dm.qContracts.Edit;
+  end;
+
   dm.qContracts.FieldByName('client_name').AsString := qName;
   dm.qContracts.FieldByName('address').AsString := qAddress;
   dm.qContracts.FieldByName('treatment_inclusion').AsString := mTreatmentInclusion.Text;

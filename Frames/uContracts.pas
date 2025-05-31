@@ -18,7 +18,6 @@ type
     PopupMenuContracts: TPopupMenu;
     Edit: TMenuItem;
     Delete: TMenuItem;
-    Preview: TMenuItem;
     ScrollBox1: TScrollBox;
     rContainer: TRectangle;
     Layout2: TLayout;

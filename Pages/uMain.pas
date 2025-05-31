@@ -93,6 +93,8 @@ type
     procedure fContracts1eSearchChangeTracking(Sender: TObject);
     procedure fClients1EditClick(Sender: TObject);
     procedure fClients1DeleteClick(Sender: TObject);
+    procedure fContracts1DeleteClick(Sender: TObject);
+    procedure fContracts1EditClick(Sender: TObject);
   private
     procedure HideFrames;
     procedure ShowConfirmationDialog(const TheMessage: string);
@@ -106,6 +108,7 @@ type
 
 var
   frmMain: TfrmMain;
+  setDelete: String;
 
 implementation
 
@@ -267,7 +270,6 @@ begin
   dm.qClients.Post;
 
   dm.qClients.Refresh;
-  dm.qActiveClients.Refresh;
 
   rBackground.Visible := False;
   rModalAdd.Visible := False;
@@ -284,9 +286,18 @@ end;
 { Delete client }
 procedure TfrmMain.fClients1DeleteClick(Sender: TObject);
 begin
-  ShowConfirmationDialog('You wish to delete the selected entry?');
+  setDelete := 'client';
+  ShowConfirmationDialog('You wish to delete the selected client?');
 end;
 
+{ Delete contract }
+procedure TfrmMain.fContracts1DeleteClick(Sender: TObject);
+begin
+  setDelete := 'contract';
+  ShowConfirmationDialog('You wish to delete the selected contract?');
+end;
+
+{ Show Confirmation dialog for client & contract }
 procedure TfrmMain.ShowConfirmationDialog(const TheMessage: string);
 begin
   TDialogService.MessageDialog(TheMessage, TMsgDlgType.mtConfirmation,
@@ -304,8 +315,16 @@ begin
             begin
               // Delete input data from the database
               try
-                dm.qClients.Delete;
-
+                if setDelete = 'client' then
+                begin
+                  dm.qClients.Delete;
+                  setDelete := '';
+                end
+                else if setDelete = 'contract' then
+                begin
+                  dm.qContracts.Delete;
+                  setDelete := '';
+                end;
               except
                 ShowMessageDialog('Cannot be deleted unless the saved datas inside are deleted');
               end;
@@ -348,7 +367,41 @@ begin
   frmMain.Tag := 1;
 end;
 
-// Client Search Procedure
+{ Edit contract }
+procedure TfrmMain.fContracts1EditClick(Sender: TObject);
+var
+  clientName: String;
+  clientAddress: String;
+begin
+  // Hide other components
+  HideFrames;
+  fCreateContract1.cbClientSelection.Visible := false;
+  fCreateContract1.lClientSelectionR.Visible := false;
+  fCreateContract1.cbPaymentStatus.Visible := false;
+
+  // adjust height
+  fCreateContract1.rClientSelection.Height := 200;
+
+  // Show component
+  fCreateContract1.ePaymentStatus.Visible := true;
+
+  // Populate fields
+  clientName := 'Name: ' + dm.qContracts.FieldByName('client_name').AsString;
+  clientAddress := 'Address: ' + dm.qContracts.FieldByName('address').AsString;
+  fCreateContract1.lName.Text := clientName;
+  fCreateContract1.lAddress.Text := clientAddress;
+  fCreateContract1.mTreatmentInclusion.Text := dm.qContracts.FieldByName('treatment_inclusion').AsString;
+  fCreateContract1.dDate.DateTime := dm.qContracts.FieldByName('date').AsDateTime;
+  fCreateContract1.ePaymentStatus.Text := dm.qContracts.FieldByName('status').AsString;
+
+  // Switch tab index
+  tcController.TabIndex := 3;
+  fCreateContract1.Visible := True;
+  fCreateContract1.ScrollBox1.ViewportPosition := PointF(0,0); // reset scroll bar
+  fCreateContract1.Tag := 1;
+end;
+
+{ Client Search Procedure }
 procedure TfrmMain.fClients1eSearchChangeTracking(Sender: TObject);
 var
   SearchText: string;
@@ -484,6 +537,7 @@ begin
     0: dashboard;
     1: dm.qClients.Active := true;
     2: dm.qContracts.Active := true;
+    3: dm.qContracts.Active := true;
   end;
 end;
 
@@ -535,6 +589,15 @@ procedure TfrmMain.fContracts1btnTriggerClick(Sender: TObject);
 begin
   // hide other components
   HideFrames;
+  fCreateContract1.cbClientSelection.Visible := true;
+  fCreateContract1.lClientSelectionR.Visible := true;
+  fCreateContract1.cbPaymentStatus.Visible := true;
+
+   // Show component
+  fCreateContract1.ePaymentStatus.Visible := true;
+
+  // adjust height
+  fCreateContract1.rClientSelection.Height := 255;
 
   // Switch tab index
   tcController.TabIndex := 3;
@@ -549,6 +612,7 @@ begin
   fCreateContract1.rClientSelection.Height := 135;
   fCreateContract1.lClientSelectionR.Visible := False;
   fCreateContract1.rClientData.Visible := False;
+  fCreateContract1.Tag := 0;
 end;
 
 // Contract Search Procedure

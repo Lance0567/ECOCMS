@@ -338,6 +338,12 @@ object frmMain: TfrmMain
             inherited PopupMenuContracts: TPopupMenu
               Left = 196
               Top = 396
+              inherited Edit: TMenuItem
+                OnClick = fContracts1EditClick
+              end
+              inherited Delete: TMenuItem
+                OnClick = fContracts1DeleteClick
+              end
             end
             inherited ScrollBox1: TScrollBox
               Size.Width = 617.000000000000000000
@@ -456,9 +462,6 @@ object frmMain: TfrmMain
                   inherited lClientSelection: TLabel
                     Size.Width = 516.000000000000000000
                     TextSettings.Font.StyleExt = {00060000000000000004000000}
-                    inherited Label2: TLabel
-                      TabOrder = 4
-                    end
                   end
                   inherited lDescription1: TLabel
                     Size.Width = 516.000000000000000000
@@ -520,6 +523,11 @@ object frmMain: TfrmMain
                     TextSettings.Font.StyleExt = {00060000000000000004000000}
                   end
                   inherited cbPaymentStatus: TComboBox
+                    Position.Y = 400.000000000000000000
+                    Size.Width = 516.000000000000000000
+                    Size.Height = 32.000000000000000000
+                  end
+                  inherited ePaymentStatus: TEdit
                     Position.Y = 363.000000000000000000
                     Size.Width = 516.000000000000000000
                     Size.Height = 32.000000000000000000
@@ -531,12 +539,14 @@ object frmMain: TfrmMain
                     Position.X = 341.000000000000000000
                     StyleLookup = 'btnCancelStyle1'
                     TextSettings.Font.StyleExt = {00060000000000000004000000}
+                    OnClick = fCreateContract1btnCancelClick
                   end
                   inherited btnSaveContract: TCornerButton
                     Position.X = 446.000000000000000000
                     StyleLookup = 'btnSaveContract'
                     TextSettings.Font.StyleExt = {00060000000000000004000000}
                     TextSettings.FontColor = claWhite
+                    OnClick = fCreateContract1btnSaveContractClick
                   end
                 end
               end

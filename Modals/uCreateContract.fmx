@@ -220,7 +220,6 @@ object fCreateContract: TfCreateContract
             'Kia'
             'Nic'
             ''
-            ''
             '')
           ItemIndex = 0
           Margins.Top = 10.000000000000000000
@@ -362,14 +361,25 @@ object fCreateContract: TfCreateContract
           Items.Strings = (
             'Initially Paid'
             'Fully Paid')
-          ItemIndex = 0
+          ItemIndex = 1
           Margins.Top = 5.000000000000000000
           Position.X = 20.000000000000000000
-          Position.Y = 366.000000000000000000
+          Position.Y = 406.000000000000000000
           Size.Width = 609.000000000000000000
           Size.Height = 35.000000000000000000
           Size.PlatformDefault = False
           TabOrder = 7
+        end
+        object ePaymentStatus: TEdit
+          Touch.InteractiveGestures = [LongTap, DoubleTap]
+          Align = Top
+          TabOrder = 8
+          Position.X = 20.000000000000000000
+          Position.Y = 366.000000000000000000
+          Margins.Top = 5.000000000000000000
+          Size.Width = 609.000000000000000000
+          Size.Height = 35.000000000000000000
+          Size.PlatformDefault = False
         end
       end
       object lytButtonH: TLayout
@@ -458,7 +468,7 @@ object fCreateContract: TfCreateContract
         inherited ScrollBox1: TScrollBox
           Size.Height = 556.000000000000000000
           Viewport.Width = 584.000000000000000000
-          Viewport.Height = 496.000000000000000000
+          Viewport.Height = 556.000000000000000000
           inherited rPage1: TRectangle
             inherited lytPage1: TLayout
               inherited lytContent1: TLayout

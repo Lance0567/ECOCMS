@@ -1,7 +1,4 @@
-﻿[Preview]
-Coordinates=10,529,53,33
-
-[ScrollBox1]
+﻿[ScrollBox1]
 Coordinates=89,470,68,33
 
 [lytHeader]
@@ -42,7 +39,7 @@ Coordinates=496,249,66,33
 Coordinates=10,470,53,33
 
 []
-Coordinates=382,159,82,33
+Coordinates=10,529,53,33
 
 [dm.qClients]
 Coordinates=10,249,88,195
