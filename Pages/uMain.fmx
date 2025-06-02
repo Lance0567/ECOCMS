@@ -21,7 +21,7 @@ object frmMain: TfrmMain
     Size.Width = 817.000000000000000000
     Size.Height = 505.000000000000000000
     Size.PlatformDefault = False
-    TabOrder = 2
+    TabOrder = 3
     object lytContent: TLayout
       Align = Client
       Size.Width = 617.000000000000000000
@@ -184,8 +184,8 @@ object frmMain: TfrmMain
               Top = 317
             end
             inherited BindSourceDB1: TBindSourceDB
-              Left = 168
-              Top = 248
+              Left = 248
+              Top = 304
             end
             inherited BindSourceDB2: TBindSourceDB
               Left = 640
@@ -267,8 +267,8 @@ object frmMain: TfrmMain
                     PopupMenu = fClients1.PopupMenuClients
                     Size.Width = 526.000000000000000000
                     Options = [ColumnResize, ColumnMove, ColLines, RowLines, RowSelect, Tabs, Header, HeaderClick, AutoDisplacement]
-                    Viewport.Width = 526.000000000000000000
-                    Viewport.Height = 352.000000000000000000
+                    Viewport.Width = 511.000000000000000000
+                    Viewport.Height = 316.000000000000000000
                   end
                 end
               end
@@ -1217,6 +1217,68 @@ object frmMain: TfrmMain
           TextSettings.FontColor = claRed
           Text = 'Contract Price is required'
           TabOrder = 4
+        end
+      end
+    end
+  end
+  object lytPopUpBottom: TLayout
+    Align = Contents
+    ClipParent = True
+    Padding.Left = 550.000000000000000000
+    Size.Width = 817.000000000000000000
+    Size.Height = 505.000000000000000000
+    Size.PlatformDefault = False
+    Visible = False
+    TabOrder = 2
+    object lytPopUpMessage: TLayout
+      Align = Bottom
+      Position.X = 550.000000000000000000
+      Position.Y = 455.000000000000000000
+      Size.Width = 267.000000000000000000
+      Size.Height = 50.000000000000000000
+      Size.PlatformDefault = False
+      TabOrder = 0
+      object rPopUp: TRectangle
+        Align = Right
+        ClipChildren = True
+        Fill.Color = claGreen
+        Position.X = -133.000000000000000000
+        Size.Width = 400.000000000000000000
+        Size.Height = 50.000000000000000000
+        Size.PlatformDefault = False
+        Stroke.Kind = None
+        XRadius = 8.000000000000000000
+        YRadius = 8.000000000000000000
+        object lbPopUp: TLabel
+          Align = Client
+          StyledSettings = [Family, Style, FontColor]
+          Margins.Left = 15.000000000000000000
+          Size.Width = 337.000000000000000000
+          Size.Height = 50.000000000000000000
+          Size.PlatformDefault = False
+          TextSettings.Font.Size = 17.000000000000000000
+          TextSettings.Trimming = None
+          Text = 'Client has been added'
+          TabOrder = 1
+        end
+        object FloatAnimation1: TFloatAnimation
+          Duration = 0.200000002980232200
+          PropertyName = 'Height'
+          StartValue = 0.000000000000000000
+          StopValue = 40.000000000000000000
+        end
+        object gPopUp: TGlyph
+          Margins.Top = 5.000000000000000000
+          Margins.Right = 5.000000000000000000
+          Margins.Bottom = 5.000000000000000000
+          Align = Right
+          Position.X = 352.000000000000000000
+          Position.Y = 5.000000000000000000
+          Size.Width = 43.000000000000000000
+          Size.Height = 40.000000000000000000
+          Size.PlatformDefault = False
+          ImageIndex = 15
+          Images = dm.ImageList1
         end
       end
     end

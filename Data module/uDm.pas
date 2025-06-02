@@ -23,16 +23,7 @@ type
     StyleBook1: TStyleBook;
     ImageList1: TImageList;
     cData: TFDConnection;
-    qClients: TFDQuery;
     qActiveClients: TFDQuery;
-    qClientsid: TFDAutoIncField;
-    qClientsname: TStringField;
-    qClientsaddress: TStringField;
-    qClientscontract_price: TBCDField;
-    qClientscontract_date: TDateField;
-    qClientsfirst_treatment: TDateField;
-    qClientssecond_treatment: TDateField;
-    qClientsthird_treatment: TDateField;
     qContracts: TFDQuery;
     qClientSelection: TFDQuery;
     qTemp: TFDQuery;
@@ -40,6 +31,7 @@ type
     qPartiallyPaid: TFDQuery;
     qTotalContracts: TFDQuery;
     qRecentContracts: TFDQuery;
+    qClients: TFDQuery;
     procedure DataModuleCreate(Sender: TObject);
     procedure DataModuleDestroy(Sender: TObject);
   private

@@ -15,7 +15,7 @@ Coordinates=197,10,44,33
 Visible=False
 
 [gTableRecord]
-Coordinates=211,55,83,123
+Coordinates=211,64,83,123
 Visible=True
 
 [SkLabel1]
@@ -85,5 +85,17 @@ Visible=False
 Coordinates=121,1,111,33
 
 [BindSourceDBClients]
-Coordinates=10,10,121,213
+Coordinates=10,10,121,231
+
+[dm.qPartiallyPaid]
+Coordinates=10,470,100,69
+
+[dm.qRecentContracts]
+Coordinates=10,267,121,177
+
+[dm.qFullyPaid]
+Coordinates=294,267,84,69
+
+[dm.qTotalContracts]
+Coordinates=157,267,111,69
 

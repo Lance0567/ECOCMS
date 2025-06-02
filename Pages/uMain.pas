@@ -13,7 +13,7 @@ uses
   System.Bindings.Outputs, Fmx.Bind.Editors, Data.Bind.Components,
   Data.Bind.Grid, Data.Bind.DBScope, FMX.Edit, FMX.DateTimeCtrls, uContracts,
   FMX.Memo.Types, FMX.DialogService, FMX.ScrollBox, FMX.Memo, uCreateContract,
-  uCompile;
+  uCompile, FMX.Ani;
 
 type
   TfrmMain = class(TForm)
@@ -69,6 +69,12 @@ type
     tiCreateContract: TTabItem;
     fCreateContract1: TfCreateContract;
     Line1: TLine;
+    lytPopUpBottom: TLayout;
+    lytPopUpMessage: TLayout;
+    rPopUp: TRectangle;
+    lbPopUp: TLabel;
+    FloatAnimation1: TFloatAnimation;
+    gPopUp: TGlyph;
     procedure mvSidebarResize(Sender: TObject);
     procedure FormCreate(Sender: TObject);
     procedure sbDashboardClick(Sender: TObject);
@@ -250,14 +256,7 @@ begin
     Exit;
   end;
 
-  if frmMain.Tag = 0 then
-  begin
-    dm.qClients.Append;
-  end
-  else if frmMain.Tag = 1 then
-  begin
-    dm.qClients.Edit;
-  end;
+  dm.qClients.Edit;
 
   // Proceed to save
   dm.qClients.FieldByName('name').AsString := eFullname.Text;
@@ -268,7 +267,6 @@ begin
   dm.qClients.FieldByName('second_treatment').AsDateTime := dSecondTD.Date;
   dm.qClients.FieldByName('third_treatment').AsDateTime := dThirdTD.Date;
   dm.qClients.Post;
-
   dm.qClients.Refresh;
 
   rBackground.Visible := False;
@@ -535,9 +533,9 @@ begin
 
   case tcController.TabIndex of
     0: dashboard;
-    1: dm.qClients.Active := true;
-    2: dm.qContracts.Active := true;
-    3: dm.qContracts.Active := true;
+    1: dm.qClients.Open;
+    2: dm.qContracts.Open;
+    3: dm.qContracts.Open;
   end;
 end;
 
