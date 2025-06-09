@@ -75,6 +75,7 @@ type
     lbPopUp: TLabel;
     FloatAnimation1: TFloatAnimation;
     gPopUp: TGlyph;
+    ColorAnimation1: TColorAnimation;
     procedure mvSidebarResize(Sender: TObject);
     procedure FormCreate(Sender: TObject);
     procedure sbDashboardClick(Sender: TObject);
@@ -101,6 +102,8 @@ type
     procedure fClients1DeleteClick(Sender: TObject);
     procedure fContracts1DeleteClick(Sender: TObject);
     procedure fContracts1EditClick(Sender: TObject);
+    procedure SpinEditButton1UpClick(Sender: TObject);
+    procedure SpinEditButton1DownClick(Sender: TObject);
   private
     procedure HideFrames;
     procedure ShowConfirmationDialog(const TheMessage: string);
@@ -187,6 +190,7 @@ begin
   // visibility hide of Add client modal
   rBackground.Visible := False;
   rModalAdd.Visible := False;
+  dm.qClients.Cancel;
 end;
 
 { Save button }
@@ -343,6 +347,30 @@ begin
     [TMsgDlgBtn.mbOk], TMsgDlgBtn.mbOk, 0, nil);
 end;
 
+{ Spin down }
+procedure TfrmMain.SpinEditButton1DownClick(Sender: TObject);
+var
+  Value: Double;
+begin
+  if TryStrToFloat(eContractPrice.Text, Value) then
+    Value := Value - 0.1
+  else
+    Value := 0;
+  eContractPrice.Text := FormatFloat('0.0', Value);
+end;
+
+{ Spin up }
+procedure TfrmMain.SpinEditButton1UpClick(Sender: TObject);
+var
+  Value: Double;
+begin
+  if TryStrToFloat(eContractPrice.Text, Value) then
+    Value := Value + 0.1
+  else
+    Value := 0;
+  eContractPrice.Text := FormatFloat('0.0', Value);  // Format as 1 decimal place
+end;
+
 { Edit client }
 procedure TfrmMain.fClients1EditClick(Sender: TObject);
 begin
@@ -477,9 +505,10 @@ end;
 procedure TfrmMain.mvSidebarResize(Sender: TObject);
 begin
   lytSidebar.Width := mvSidebar.Width;
-  Self.Caption := 'Main Form' + ' Height: '
-  + Self.Height.ToString + ' Width: ' + Self.Width.ToString
-  + ' Multiview collapsed width: ' + FloatToStr(mvSidebar.Width);
+//  Self.Caption := 'Main Form' + ' Height: '
+//  + Self.Height.ToString + ' Width: ' + Self.Width.ToString
+//  + ' Multiview collapsed width: ' + FloatToStr(mvSidebar.Width);
+  Self.Caption := 'Eco Pro Disinfecting and Pest Management Services';
 end;
 
 procedure TfrmMain.lytSidebarResized(Sender: TObject);
@@ -630,7 +659,7 @@ begin
     else
     begin
       // Search with parameter
-      dm.qContracts.SQL.Text := 'SELECT * FROM contract WHERE client_name LIKE :search';
+      dm.qContracts.SQL.Text := 'SELECT * FROM contracts WHERE client_name LIKE :search';
       SearchText := '%' + fContracts1.eSearch.Text + '%';
       dm.qContracts.ParamByName('search').AsString := SearchText;
     end;

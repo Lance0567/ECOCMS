@@ -33,7 +33,7 @@ object frmMain: TfrmMain
         Size.Width = 617.000000000000000000
         Size.Height = 505.000000000000000000
         Size.PlatformDefault = False
-        TabIndex = 1
+        TabIndex = 2
         TabOrder = 0
         TabPosition = None
         OnChange = tcControllerChange
@@ -83,6 +83,34 @@ object frmMain: TfrmMain
                 end
                 inherited ListView1: TListView
                   Size.Width = 526.000000000000000000
+                  ItemAppearanceObjects.ItemObjects.ObjectsCollection = <
+                    item
+                      AppearanceObjectName = 'Text1'
+                      AppearanceClassName = 'TTextObjectAppearance'
+                      Appearance.Font.Size = 15.000000000000000000
+                      Appearance.TextAlign = Leading
+                      Appearance.TextColor = claGray
+                      Appearance.Width = 353.000000000000000000
+                      Appearance.Height = 25.000000000000000000
+                      Appearance.PlaceOffset.X = 7.000000000000000000
+                      Appearance.PlaceOffset.Y = 3.000000000000000000
+                    end
+                    item
+                      AppearanceObjectName = 'Text3'
+                      AppearanceClassName = 'TTextObjectAppearance'
+                      Appearance.TextAlign = Leading
+                      Appearance.TextColor = claGray
+                      Appearance.Width = 73.000000000000000000
+                      Appearance.Height = 20.000000000000000000
+                      Appearance.PlaceOffset.X = 7.000000000000000000
+                      Appearance.PlaceOffset.Y = 30.000000000000000000
+                    end
+                    item
+                      AppearanceObjectName = 'Accessory5'
+                      AppearanceClassName = 'TAccessoryObjectAppearance'
+                      Appearance.Width = 40.000000000000000000
+                      Appearance.Height = 40.000000000000000000
+                    end>
                 end
                 inherited cbtnViewAllContracts: TCornerButton
                   Size.Width = 526.000000000000000000
@@ -206,7 +234,7 @@ object frmMain: TfrmMain
             item
             end>
           TextSettings.Trimming = None
-          IsSelected = True
+          IsSelected = False
           Size.Width = 12.000000000000000000
           Size.Height = 12.000000000000000000
           Size.PlatformDefault = False
@@ -256,6 +284,7 @@ object frmMain: TfrmMain
                     Position.X = 307.000000000000000000
                     Position.Y = 4.000000000000000000
                     Size.Height = 32.000000000000000000
+                    StyledSettings = [Family, Size, Style]
                     OnChangeTracking = fClients1eSearchChangeTracking
                   end
                 end
@@ -266,9 +295,11 @@ object frmMain: TfrmMain
                   inherited gTableRecord: TGrid
                     PopupMenu = fClients1.PopupMenuClients
                     Size.Width = 526.000000000000000000
+                    StyleLookup = 'gridstyleOriginal'
+                    StyledSettings = [Family, Size, Style]
                     Options = [ColumnResize, ColumnMove, ColLines, RowLines, RowSelect, Tabs, Header, HeaderClick, AutoDisplacement]
-                    Viewport.Width = 511.000000000000000000
-                    Viewport.Height = 316.000000000000000000
+                    Viewport.Width = 526.000000000000000000
+                    Viewport.Height = 352.000000000000000000
                   end
                 end
               end
@@ -301,7 +332,7 @@ object frmMain: TfrmMain
             item
             end>
           TextSettings.Trimming = None
-          IsSelected = False
+          IsSelected = True
           Size.Width = 12.000000000000000000
           Size.Height = 12.000000000000000000
           Size.PlatformDefault = False
@@ -364,6 +395,7 @@ object frmMain: TfrmMain
                     Position.Y = 4.000000000000000000
                     Size.Height = 32.000000000000000000
                     TextPrompt = 'Search contracts...'
+                    StyledSettings = [Family, Size, Style]
                     OnChangeTracking = fContracts1eSearchChangeTracking
                   end
                 end
@@ -373,6 +405,9 @@ object frmMain: TfrmMain
                   Viewport.Height = 372.000000000000000000
                   inherited gTableRecord: TGrid
                     Size.Width = 526.000000000000000000
+                    StyleLookup = 'gridstyleOriginal'
+                    TextSettings.Font.Family = '(Default)'
+                    StyledSettings = [Size, Style]
                     Viewport.Width = 526.000000000000000000
                     Viewport.Height = 352.000000000000000000
                   end
@@ -481,6 +516,7 @@ object frmMain: TfrmMain
                   inherited cbClientSelection: TComboBox
                     Size.Width = 516.000000000000000000
                     Size.Height = 32.000000000000000000
+                    StyleLookup = 'cbClientSelectionStyle1'
                   end
                   inherited lClientSelectionR: TLabel
                     Position.Y = 121.000000000000000000
@@ -515,6 +551,7 @@ object frmMain: TfrmMain
                   inherited dDate: TDateEdit
                     Size.Width = 516.000000000000000000
                     Size.Height = 32.000000000000000000
+                    StyledSettings = [Family, Style]
                   end
                   inherited lPaymentStatus: TLabel
                     StyledSettings = [Family]
@@ -523,14 +560,22 @@ object frmMain: TfrmMain
                     TextSettings.Font.StyleExt = {00060000000000000004000000}
                   end
                   inherited cbPaymentStatus: TComboBox
-                    Position.Y = 400.000000000000000000
+                    ItemIndex = 0
+                    Position.Y = 405.000000000000000000
                     Size.Width = 516.000000000000000000
                     Size.Height = 32.000000000000000000
+                    object ColorAnimation1: TColorAnimation
+                      Duration = 0.200000002980232200
+                      StartValue = claWhite
+                      StopValue = claWhite
+                    end
                   end
                   inherited ePaymentStatus: TEdit
-                    Position.Y = 363.000000000000000000
+                    Position.Y = 368.000000000000000000
                     Size.Width = 516.000000000000000000
                     Size.Height = 32.000000000000000000
+                    TextPrompt = 'Please input the amount'
+                    StyledSettings = [Family, Size, Style]
                   end
                 end
                 inherited lytButtonH: TLayout
@@ -913,25 +958,31 @@ object frmMain: TfrmMain
       end
       object dFirstTD: TDateEdit
         Date = 45787.000000000000000000
+        DateFormatKind = Long
         Align = Top
         Position.X = 20.000000000000000000
         Position.Y = 483.000000000000000000
         Size.Width = 369.000000000000000000
         Size.Height = 32.000000000000000000
         Size.PlatformDefault = False
-        StyleLookup = 'Customdateeditstyle'
+        StyleLookup = 'dateeditstyle'
+        StyledSettings = [Family, Style]
         TabOrder = 9
+        TextSettings.Font.Size = 14.000000000000000000
       end
       object dContractDate: TDateEdit
         Date = 45787.000000000000000000
+        DateFormatKind = Long
         Align = Top
         Position.X = 20.000000000000000000
         Position.Y = 298.000000000000000000
         Size.Width = 369.000000000000000000
         Size.Height = 32.000000000000000000
         Size.PlatformDefault = False
-        StyleLookup = 'Customdateeditstyle'
+        StyleLookup = 'dateeditstyle'
+        StyledSettings = [Family, Style]
         TabOrder = 12
+        TextSettings.Font.Size = 14.000000000000000000
       end
       object lContractDate: TLabel
         Align = Top
@@ -1000,14 +1051,17 @@ object frmMain: TfrmMain
         TabOrder = 13
         object btnCancel: TCornerButton
           Align = Right
+          StyledSettings = [Size]
           Margins.Right = 8.000000000000000000
           Position.X = 221.000000000000000000
           Sides = [Top, Left, Bottom, Right]
           Size.Width = 75.000000000000000000
           Size.Height = 40.000000000000000000
           Size.PlatformDefault = False
+          StyleLookup = 'btnCancelStyle1'
           TabOrder = 1
           Text = 'Cancel'
+          TextSettings.Font.StyleExt = {00060000000000000004000000}
           TextSettings.Trimming = None
           XRadius = 5.000000000000000000
           YRadius = 5.000000000000000000
@@ -1015,14 +1069,16 @@ object frmMain: TfrmMain
         end
         object btnSave: TCornerButton
           Align = Right
+          StyledSettings = [Family, Size, FontColor]
           Position.X = 304.000000000000000000
           Sides = [Top, Left, Bottom, Right]
           Size.Width = 65.000000000000000000
           Size.Height = 40.000000000000000000
           Size.PlatformDefault = False
-          StyleLookup = 'btnSaveStyle1'
+          StyleLookup = 'btnSaveContract'
           TabOrder = 0
           Text = 'Save'
+          TextSettings.Font.StyleExt = {00060000000000000004000000}
           TextSettings.Trimming = None
           XRadius = 5.000000000000000000
           YRadius = 5.000000000000000000
@@ -1031,6 +1087,7 @@ object frmMain: TfrmMain
       end
       object dSecondTD: TDateEdit
         Date = 45787.000000000000000000
+        DateFormatKind = Long
         Align = Top
         Position.X = 20.000000000000000000
         Position.Y = 565.000000000000000000
@@ -1038,10 +1095,13 @@ object frmMain: TfrmMain
         Size.Height = 32.000000000000000000
         Size.PlatformDefault = False
         StyleLookup = 'Customdateeditstyle'
+        StyledSettings = [Family, Style]
         TabOrder = 11
+        TextSettings.Font.Size = 14.000000000000000000
       end
       object dThirdTD: TDateEdit
         Date = 45787.000000000000000000
+        DateFormatKind = Long
         Align = Top
         Position.X = 20.000000000000000000
         Position.Y = 647.000000000000000000
@@ -1049,7 +1109,9 @@ object frmMain: TfrmMain
         Size.Height = 32.000000000000000000
         Size.PlatformDefault = False
         StyleLookup = 'Customdateeditstyle'
+        StyledSettings = [Family, Style]
         TabOrder = 10
+        TextSettings.Font.Size = 14.000000000000000000
       end
       object lytFullnameC: TLayout
         Align = Top
@@ -1062,13 +1124,14 @@ object frmMain: TfrmMain
         object eFullname: TEdit
           Touch.InteractiveGestures = [LongTap, DoubleTap]
           Align = Top
-          StyleLookup = 'Modaleditstyle'
+          StyleLookup = 'editstyle'
           TabOrder = 18
           Position.Y = 42.000000000000000000
           Size.Width = 369.000000000000000000
           Size.Height = 32.000000000000000000
           Size.PlatformDefault = False
-          TextPrompt = 'Francis'
+          TextPrompt = 'Please input the client'#39's name'
+          StyledSettings = [Family, Size]
         end
         object lFullname: TLabel
           Align = Top
@@ -1116,13 +1179,14 @@ object frmMain: TfrmMain
         object eAddress: TEdit
           Touch.InteractiveGestures = [LongTap, DoubleTap]
           Align = Top
-          StyleLookup = 'Modaleditstyle'
+          StyleLookup = 'editstyle'
           TabOrder = 7
           Position.Y = 42.000000000000000000
           Size.Width = 369.000000000000000000
           Size.Height = 32.000000000000000000
           Size.PlatformDefault = False
-          TextPrompt = '123 Main St, City, State, Zip'
+          TextPrompt = 'eg. 123 Main St, City, State, Zip'
+          StyledSettings = [Family, Size, Style]
         end
         object lAddress: TLabel
           Align = Top
@@ -1177,12 +1241,15 @@ object frmMain: TfrmMain
           Size.Height = 32.000000000000000000
           Size.PlatformDefault = False
           TextPrompt = '0.00'
+          StyledSettings = [Family, Size, Style]
           object SpinEditButton1: TSpinEditButton
             AutoTranslate = False
             CanFocus = False
             Cursor = crArrow
             StyleLookup = 'SpinEditButton1Style1'
             TabOrder = 0
+            OnDownClick = SpinEditButton1DownClick
+            OnUpClick = SpinEditButton1UpClick
           end
         end
         object lContractPrice: TLabel

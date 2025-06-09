@@ -53,6 +53,7 @@ type
     procedure sbContractDetailsClick(Sender: TObject);
     procedure FrameEnter(Sender: TObject);
     procedure sbPreviewClick(Sender: TObject);
+    procedure cbPaymentStatusChange(Sender: TObject);
   private
     procedure ClearItems;
     { Private declarations }
@@ -209,6 +210,18 @@ begin
     dm.qClientSelection.Refresh
   else
     dm.qClientSelection.Active := True;
+end;
+
+procedure TfCreateContract.cbPaymentStatusChange(Sender: TObject);
+begin
+  if cbPaymentStatus.Text = 'Fully Paid' then
+  begin
+    ePaymentStatus.Visible := True;
+  end
+  else
+  begin
+    ePaymentStatus.Visible := False;
+  end;
 end;
 
 end.
