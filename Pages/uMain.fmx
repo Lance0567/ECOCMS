@@ -299,7 +299,7 @@ object frmMain: TfrmMain
                     StyledSettings = [Family, Size, Style]
                     Options = [ColumnResize, ColumnMove, ColLines, RowLines, RowSelect, Tabs, Header, HeaderClick, AutoDisplacement]
                     Viewport.Width = 526.000000000000000000
-                    Viewport.Height = 352.000000000000000000
+                    Viewport.Height = 430.000000000000000000
                   end
                 end
               end
@@ -402,14 +402,14 @@ object frmMain: TfrmMain
                 inherited ScrollBox2: TScrollBox
                   Size.Width = 526.000000000000000000
                   Viewport.Width = 526.000000000000000000
-                  Viewport.Height = 372.000000000000000000
+                  Viewport.Height = 450.000000000000000000
                   inherited gTableRecord: TGrid
                     Size.Width = 526.000000000000000000
                     StyleLookup = 'gridstyleOriginal'
                     TextSettings.Font.Family = '(Default)'
                     StyledSettings = [Size, Style]
                     Viewport.Width = 526.000000000000000000
-                    Viewport.Height = 352.000000000000000000
+                    Viewport.Height = 430.000000000000000000
                   end
                 end
               end
@@ -911,7 +911,6 @@ object frmMain: TfrmMain
     Size.Width = 420.000000000000000000
     Size.Height = 450.000000000000000000
     Size.PlatformDefault = False
-    Visible = False
     XRadius = 8.000000000000000000
     YRadius = 8.000000000000000000
     object ScrollBox1: TScrollBox
@@ -1150,7 +1149,7 @@ object frmMain: TfrmMain
             TextSettings.Font.Size = 17.000000000000000000
             TextSettings.FontColor = claRed
             Text = '*'
-            TabOrder = 4
+            TabOrder = 3
           end
         end
         object lFullnameR: TLabel
@@ -1205,7 +1204,7 @@ object frmMain: TfrmMain
             TextSettings.Font.Size = 17.000000000000000000
             TextSettings.FontColor = claRed
             Text = '*'
-            TabOrder = 4
+            TabOrder = 3
           end
         end
         object lAddressR: TLabel

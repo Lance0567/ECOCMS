@@ -9,7 +9,7 @@ uses
   FMX.Grid.Style, FMX.ScrollBox, FMX.Grid, FMX.Skia, FMX.Objects,
   Data.Bind.EngExt, Fmx.Bind.DBEngExt, Fmx.Bind.Grid, System.Bindings.Outputs,
   Fmx.Bind.Editors, Data.Bind.Components, Data.Bind.Grid, Data.Bind.DBScope,
-  FMX.Menus, FMX.Edit;
+  FMX.Menus, FMX.Edit, DateUtils;
 
 type
   TfClients = class(TFrame)
@@ -54,12 +54,6 @@ begin
   // visibility show of Add client modal
   frmMain.rBackground.Visible := True;
   frmMain.rModalAdd.Visible := True;
-
-  // Set Date component to the current date
-  frmMain.dContractDate.Date := now;
-  frmMain.dFirstTD.Date := now;
-  frmMain.dSecondTD.Date := now;
-  frmMain.dThirdTD.Date := now;
 
   frmMain.ScrollBox1.ViewportPosition := PointF(0,0);
   frmMain.HideComponents;

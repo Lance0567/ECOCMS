@@ -41420,6 +41420,7 @@ object TStyleContainer
   object TLayout
     StyleName = 'gridstyleOriginal'
     Align = Center
+    Visible = False
     TabOrder = 78
     object TBrushObject
       StyleName = 'AlternatingRowBackground'
@@ -41782,7 +41783,9 @@ object TStyleContainer
       Size.Width = 42.000000000000000000
       Size.Height = 46.000000000000000000
       Size.PlatformDefault = False
+      Text = 'Text'
       TextSettings.Font.Size = 16.000000000000000000
+      TextSettings.Font.StyleExt = {00070000000000000004000000}
       TextSettings.FontColor = claWhite
       TextSettings.Trimming = Character
       TextSettings.WordWrap = False
@@ -68901,7 +68904,7 @@ object TStyleContainer
       Margins.Top = 2.000000000000000000
       Margins.Right = 2.000000000000000000
       Margins.Bottom = 2.000000000000000000
-      Position.X = 156.000000000000000000
+      Position.X = 196.000000000000000000
       Position.Y = 2.000000000000000000
       Size.Width = 20.000000000000000000
       Size.Height = 46.000000000000000000
@@ -68933,9 +68936,10 @@ object TStyleContainer
       Margins.Bottom = 2.000000000000000000
       Position.X = 2.000000000000000000
       Position.Y = 2.000000000000000000
-      Size.Width = 150.000000000000000000
+      Size.Width = 190.000000000000000000
       Size.Height = 46.000000000000000000
       Size.PlatformDefault = False
+      Text = 'Text'
       TextSettings.FontColor = claWhite
       ShadowVisible = False
       ActiveTrigger = Focused

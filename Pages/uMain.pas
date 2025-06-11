@@ -283,6 +283,12 @@ end;
 procedure TfrmMain.fClients1btnTriggerClick(Sender: TObject);
 begin
   fClients1.btnTriggerClick(Sender);
+
+  // Set Date components
+  dContractDate.Date := Now;
+  dFirstTD.Date := Now;
+  dSecondTD.Date := IncMonth(Now, 1); // Add 1 month to today
+  dThirdTD.Date := IncMonth(Now, 2);
 end;
 
 { Delete client }
