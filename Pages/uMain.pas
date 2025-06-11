@@ -76,6 +76,7 @@ type
     FloatAnimation1: TFloatAnimation;
     gPopUp: TGlyph;
     ColorAnimation1: TColorAnimation;
+    Timer1: TTimer;
     procedure mvSidebarResize(Sender: TObject);
     procedure FormCreate(Sender: TObject);
     procedure sbDashboardClick(Sender: TObject);
@@ -104,6 +105,8 @@ type
     procedure fContracts1EditClick(Sender: TObject);
     procedure SpinEditButton1UpClick(Sender: TObject);
     procedure SpinEditButton1DownClick(Sender: TObject);
+    procedure Timer1Timer(Sender: TObject);
+    procedure FloatAnimation1Finish(Sender: TObject);
   private
     procedure HideFrames;
     procedure ShowConfirmationDialog(const TheMessage: string);
@@ -277,6 +280,42 @@ begin
   rModalAdd.Visible := False;
 
   ClearItems;
+
+  // pop up function
+  rPopUp.Height := 0;
+  lytPopUpBottom.Visible := True;
+  FloatAnimation1.Enabled := True;
+  Timer1.Enabled := True; // Start the 5-second countdown
+
+  // Message of the pop up and color setting
+  if Self.Tag = 0 then
+  begin
+    lbPopUp.Text := 'Successfully added the client!';
+    rPopUp.Fill.Color := TAlphaColorRec.Green;
+  end
+  else if Self.Tag = 1 then
+  begin
+    lbPopUp.Text := 'Successfully updated the client!';
+    rPopUp.Fill.Color := TAlphaColorRec.Yellow;
+  end
+  else
+  begin
+    lbPopUp.Text := 'Successfully deleted the client!';
+    rPopUp.Fill.Color := TAlphaColorRec.Red;
+  end;
+end;
+
+{ Timer }
+procedure TfrmMain.Timer1Timer(Sender: TObject);
+begin
+  Timer1.Enabled := False; // Stop the timer
+  lytPopUpBottom.Visible := False; // Hide the snackbar
+end;
+
+{ Float animation }
+procedure TfrmMain.FloatAnimation1Finish(Sender: TObject);
+begin
+  FloatAnimation1.Enabled := False;
 end;
 
 { Add client }
@@ -296,6 +335,8 @@ procedure TfrmMain.fClients1DeleteClick(Sender: TObject);
 begin
   setDelete := 'client';
   ShowConfirmationDialog('You wish to delete the selected client?');
+
+  frmMain.Tag := 2;
 end;
 
 { Delete contract }
