@@ -126,11 +126,11 @@ object fContracts: TfContracts
           Size.Height = 430.000000000000000000
           Size.PlatformDefault = False
           TabOrder = 1
-          RowCount = 3
+          RowCount = 0
           Options = [ColumnResize, ColumnMove, ColLines, RowLines, RowSelect, Tabs, Header, HeaderClick, AutoDisplacement]
           OnResized = gTableRecordResized
           Viewport.Width = 615.000000000000000000
-          Viewport.Height = 389.000000000000000000
+          Viewport.Height = 405.000000000000000000
         end
       end
     end

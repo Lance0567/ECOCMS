@@ -115,7 +115,7 @@ object fCreateContract: TfCreateContract
       Position.X = 20.000000000000000000
       Position.Y = 110.000000000000000000
       Size.Width = 649.000000000000000000
-      Size.Height = 790.000000000000000000
+      Size.Height = 844.000000000000000000
       Size.PlatformDefault = False
       TabOrder = 2
       object rClientSelection: TRectangle
@@ -215,51 +215,7 @@ object fCreateContract: TfCreateContract
         object cbClientSelection: TComboBox
           Align = Top
           Items.Strings = (
-            'Lance'
-            'Lara'
-            'Kia'
-            'Nic'
-            ''
-            ''
-            ''
-            'qewq'
-            ''
-            'da'
-            ''
-            '1231'
-            'asdasd'
-            ''
-            ''
-            ''
-            'sss'
-            'asdasd'
-            'sdsad'
-            'asdas'
-            ''
-            ''
-            ''
-            ''
-            ''
-            ''
-            ''
-            ''
-            ''
-            ''
-            ''
-            ''
-            ''
-            ''
-            ''
-            ''
-            ''
-            ''
-            ''
-            ''
-            ''
-            ''
-            ''
-            ''
-            '')
+            'Francis')
           ItemIndex = 0
           Margins.Top = 10.000000000000000000
           Position.X = 20.000000000000000000
@@ -352,8 +308,8 @@ object fCreateContract: TfCreateContract
           Size.Height = 140.000000000000000000
           Size.PlatformDefault = False
           TabOrder = 6
-          Viewport.Width = 605.000000000000000000
-          Viewport.Height = 136.000000000000000000
+          Viewport.Width = 609.000000000000000000
+          Viewport.Height = 140.000000000000000000
         end
         object lDate: TLabel
           Align = Top
@@ -397,31 +353,38 @@ object fCreateContract: TfCreateContract
           Text = 'Payment Status'
           TabOrder = 0
         end
-        object cbPaymentStatus: TComboBox
+        object Layout1: TLayout
           Align = Top
-          Items.Strings = (
-            'Initially Paid'
-            'Fully Paid')
-          ItemIndex = 1
-          Margins.Top = 5.000000000000000000
           Position.X = 20.000000000000000000
-          Position.Y = 366.000000000000000000
+          Position.Y = 361.000000000000000000
           Size.Width = 609.000000000000000000
-          Size.Height = 35.000000000000000000
+          Size.Height = 90.000000000000000000
           Size.PlatformDefault = False
           TabOrder = 7
-          OnChange = cbPaymentStatusChange
-        end
-        object ePaymentStatus: TEdit
-          Touch.InteractiveGestures = [LongTap, DoubleTap]
-          Align = Top
-          TabOrder = 8
-          Position.X = 20.000000000000000000
-          Position.Y = 411.000000000000000000
-          Margins.Top = 10.000000000000000000
-          Size.Width = 609.000000000000000000
-          Size.Height = 35.000000000000000000
-          Size.PlatformDefault = False
+          object cbPaymentStatus: TComboBox
+            Align = MostTop
+            Items.Strings = (
+              'Initially Paid'
+              'Fully Paid')
+            ItemIndex = 0
+            Margins.Top = 5.000000000000000000
+            Position.Y = 5.000000000000000000
+            Size.Width = 609.000000000000000000
+            Size.Height = 35.000000000000000000
+            Size.PlatformDefault = False
+            TabOrder = 8
+            OnChange = cbPaymentStatusChange
+          end
+          object ePartialAmount: TEdit
+            Touch.InteractiveGestures = [LongTap, DoubleTap]
+            Align = Top
+            TabOrder = 7
+            Position.Y = 50.000000000000000000
+            Margins.Top = 10.000000000000000000
+            Size.Width = 609.000000000000000000
+            Size.Height = 35.000000000000000000
+            Size.PlatformDefault = False
+          end
         end
       end
       object lytButtonH: TLayout
@@ -476,7 +439,7 @@ object fCreateContract: TfCreateContract
       Align = Top
       Padding.Top = 10.000000000000000000
       Position.X = 20.000000000000000000
-      Position.Y = 900.000000000000000000
+      Position.Y = 954.000000000000000000
       Size.Width = 649.000000000000000000
       Size.Height = 630.000000000000000000
       Size.PlatformDefault = False

@@ -32814,6 +32814,7 @@ object TStyleContainer
   end
   object TLayout
     StyleName = 'listboxitemstyle'
+    Align = Center
     Visible = False
     TabOrder = 41
     object TActiveStyleObject
@@ -32916,13 +32917,13 @@ object TStyleContainer
       Size.Width = 44.000000000000000000
       Size.Height = 48.000000000000000000
       Size.PlatformDefault = False
+      Text = 'Text'
       TextSettings.Font.Size = 16.000000000000000000
-      TextSettings.FontColor = claWhite
       TextSettings.WordWrap = False
       TextSettings.HorzAlign = Leading
       ShadowVisible = False
       ActiveTrigger = Selected
-      ActiveColor = claWhite
+      ActiveColor = claBlack
     end
     object TCheckBox
       StyleName = 'check'
@@ -33369,6 +33370,7 @@ object TStyleContainer
   end
   object TLayout
     StyleName = 'listboxitemlabel'
+    Align = Center
     Visible = False
     TabOrder = 44
     object TActiveStyleTextObject

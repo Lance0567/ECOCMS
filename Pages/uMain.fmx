@@ -298,8 +298,8 @@ object frmMain: TfrmMain
                     StyleLookup = 'gridstyleOriginal'
                     StyledSettings = [Family, Size, Style]
                     Options = [ColumnResize, ColumnMove, ColLines, RowLines, RowSelect, Tabs, Header, HeaderClick, AutoDisplacement]
-                    Viewport.Width = 526.000000000000000000
-                    Viewport.Height = 430.000000000000000000
+                    Viewport.Width = 522.000000000000000000
+                    Viewport.Height = 385.000000000000000000
                   end
                 end
               end
@@ -559,23 +559,15 @@ object frmMain: TfrmMain
                     Size.Width = 516.000000000000000000
                     TextSettings.Font.StyleExt = {00060000000000000004000000}
                   end
-                  inherited cbPaymentStatus: TComboBox
-                    ItemIndex = 0
-                    Position.Y = 405.000000000000000000
+                  inherited Layout1: TLayout
+                    Position.Y = 358.000000000000000000
                     Size.Width = 516.000000000000000000
-                    Size.Height = 32.000000000000000000
-                    object ColorAnimation1: TColorAnimation
-                      Duration = 0.200000002980232200
-                      StartValue = claWhite
-                      StopValue = claWhite
+                    inherited cbPaymentStatus: TComboBox
+                      Size.Width = 516.000000000000000000
                     end
-                  end
-                  inherited ePaymentStatus: TEdit
-                    Position.Y = 368.000000000000000000
-                    Size.Width = 516.000000000000000000
-                    Size.Height = 32.000000000000000000
-                    TextPrompt = 'Please input the amount'
-                    StyledSettings = [Family, Size, Style]
+                    inherited ePartialAmount: TEdit
+                      Size.Width = 516.000000000000000000
+                    end
                   end
                 end
                 inherited lytButtonH: TLayout
@@ -596,112 +588,27 @@ object frmMain: TfrmMain
                 end
               end
               inherited fPDFCreation1: TfPDFCreation
-                Position.Y = 910.000000000000000000
-                Size.Width = 556.000000000000000000
-                Visible = False
-                inherited rButtonH: TRectangle
-                  Size.Width = 556.000000000000000000
-                  inherited Rectangle3: TRectangle
-                    Size.Width = 516.000000000000000000
-                    inherited SkLabel4: TSkLabel
-                      Size.Width = 516.000000000000000000
-                    end
-                    inherited btnGeneratePDF: TSpeedButton
-                      Size.Width = 516.000000000000000000
-                    end
-                  end
-                end
-                inherited rctHeader: TRectangle
-                  Size.Width = 556.000000000000000000
-                  inherited btnExport: TCornerButton
-                    Position.X = 432.000000000000000000
-                  end
-                end
                 inherited rctPage: TRectangle
-                  Position.X = -22.000000000000000000
                   inherited ScrollBox1: TScrollBox
-                    Viewport.Width = 589.000000000000000000
-                    Viewport.Height = 570.000000000000000000
+                    Viewport.Width = 584.000000000000000000
+                    Viewport.Height = 556.000000000000000000
                     inherited rPage1: TRectangle
-                      Size.Width = 589.000000000000000000
                       inherited lytPage1: TLayout
-                        Size.Width = 589.000000000000000000
                         inherited lytContent1: TLayout
-                          Size.Width = 589.000000000000000000
                           inherited rHeader: TRectangle
-                            Size.Width = 505.000000000000000000
                             inherited imgLogo: TImage
                               MultiResBitmap.Height = 750
                               MultiResBitmap.Width = 750
                             end
-                            inherited slHeader: TSkLabel
-                              Size.Width = 411.000000000000000000
-                            end
-                          end
-                          inherited rDate: TRectangle
-                            Size.Width = 505.000000000000000000
-                            inherited slDateH: TSkLabel
-                              Position.X = 400.669982910156300000
-                            end
-                            inherited lSplitter2: TLine
-                              Position.X = 393.669982910156300000
-                            end
-                            inherited slDate: TSkLabel
-                              Position.X = 359.679992675781300000
-                            end
-                          end
-                          inherited rClientName: TRectangle
-                            Size.Width = 505.000000000000000000
-                          end
-                          inherited rClientDetails: TRectangle
-                            Size.Width = 505.000000000000000000
-                          end
-                          inherited rAddress: TRectangle
-                            Size.Width = 505.000000000000000000
-                          end
-                          inherited lytPage1Content: TLayout
-                            Size.Width = 489.000000000000000000
-                            inherited SkLabel11: TSkLabel
-                              Size.Width = 489.000000000000000000
-                            end
-                            inherited SkLabel12: TSkLabel
-                              Size.Width = 489.000000000000000000
-                            end
-                            inherited SkLabel13: TSkLabel
-                              Size.Width = 489.000000000000000000
-                            end
-                            inherited SkLabel6: TSkLabel
-                              Size.Width = 479.000000000000000000
-                            end
-                          end
-                        end
-                        inherited rBlackH: TRectangle
-                          Size.Width = 509.000000000000000000
-                          inherited slTitle: TSkLabel
-                            Size.Width = 499.000000000000000000
                           end
                         end
                       end
                     end
                     inherited rPage3: TRectangle
-                      Size.Width = 589.000000000000000000
                       inherited lytPage3: TLayout
-                        Size.Width = 589.000000000000000000
                         inherited lytPageContent3: TLayout
-                          Size.Width = 489.000000000000000000
-                          inherited SkLabel2: TSkLabel
-                            Size.Width = 479.000000000000000000
-                          end
-                          inherited SkLabel3: TSkLabel
-                            Size.Width = 459.000000000000000000
-                          end
-                          inherited SkLabel5: TSkLabel
-                            Size.Width = 479.000000000000000000
-                          end
                           inherited lytSignatureDetails: TLayout
-                            Size.Width = 479.000000000000000000
                             inherited GridPanelLayout1: TGridPanelLayout
-                              Size.Width = 479.000000000000000000
                               ControlCollection = <
                                 item
                                   Column = 0
@@ -723,22 +630,7 @@ object frmMain: TfrmMain
                                   Control = fCreateContract1.fPDFCreation1.slClientNameSig
                                   Row = 1
                                 end>
-                              inherited SkLabel8: TSkLabel
-                                Position.X = 239.500000000000000000
-                              end
                             end
-                          end
-                        end
-                      end
-                    end
-                    inherited rPage2: TRectangle
-                      Size.Width = 589.000000000000000000
-                      inherited lytPage2: TLayout
-                        Size.Width = 589.000000000000000000
-                        inherited lytPage2Content: TLayout
-                          Size.Width = 489.000000000000000000
-                          inherited SkLabel10: TSkLabel
-                            Size.Width = 479.000000000000000000
                           end
                         end
                       end
@@ -911,6 +803,7 @@ object frmMain: TfrmMain
     Size.Width = 420.000000000000000000
     Size.Height = 450.000000000000000000
     Size.PlatformDefault = False
+    Visible = False
     XRadius = 8.000000000000000000
     YRadius = 8.000000000000000000
     object ScrollBox1: TScrollBox
@@ -1149,7 +1042,7 @@ object frmMain: TfrmMain
             TextSettings.Font.Size = 17.000000000000000000
             TextSettings.FontColor = claRed
             Text = '*'
-            TabOrder = 3
+            TabOrder = 4
           end
         end
         object lFullnameR: TLabel
@@ -1204,7 +1097,7 @@ object frmMain: TfrmMain
             TextSettings.Font.Size = 17.000000000000000000
             TextSettings.FontColor = claRed
             Text = '*'
-            TabOrder = 3
+            TabOrder = 4
           end
         end
         object lAddressR: TLabel

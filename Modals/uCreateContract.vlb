@@ -70,11 +70,8 @@ Coordinates=10,267,104,69
 [dm.qClients]
 Coordinates=313,10,88,195
 
-[cbPaymentStatus]
-Coordinates=548,10,100,123
-
 []
-Coordinates=33,206,82,33
+Coordinates=548,10,100,123
 
 [mTreatmentInclusion]
 Coordinates=160,362,118,51

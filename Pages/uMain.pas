@@ -75,7 +75,6 @@ type
     lbPopUp: TLabel;
     FloatAnimation1: TFloatAnimation;
     gPopUp: TGlyph;
-    ColorAnimation1: TColorAnimation;
     Timer1: TTimer;
     procedure mvSidebarResize(Sender: TObject);
     procedure FormCreate(Sender: TObject);
@@ -269,10 +268,10 @@ begin
   dm.qClients.FieldByName('name').AsString := eFullname.Text;
   dm.qClients.FieldByName('address').AsString := eAddress.Text;
   dm.qClients.FieldByName('contract_price').AsFloat := StrToFloat(eContractPrice.Text);
-  dm.qClients.FieldByName('contract_date').AsDateTime := dContractDate.Date;
-  dm.qClients.FieldByName('first_treatment').AsDateTime := dFirstTD.Date;
-  dm.qClients.FieldByName('second_treatment').AsDateTime := dSecondTD.Date;
-  dm.qClients.FieldByName('third_treatment').AsDateTime := dThirdTD.Date;
+  dm.qClients.FieldByName('contract_date').AsString := dContractDate.Text;
+  dm.qClients.FieldByName('first_treatment').AsString := dFirstTD.Text;
+  dm.qClients.FieldByName('second_treatment').AsString := dSecondTD.Text;
+  dm.qClients.FieldByName('third_treatment').AsString := dThirdTD.Text;
   dm.qClients.Post;
   dm.qClients.Refresh;
 
@@ -456,7 +455,7 @@ begin
   fCreateContract1.rClientSelection.Height := 200;
 
   // Show component
-  fCreateContract1.ePaymentStatus.Visible := true;
+  fCreateContract1.ePartialAmount.Visible := true;
 
   // Populate fields
   clientName := 'Name: ' + dm.qContracts.FieldByName('client_name').AsString;
@@ -465,7 +464,7 @@ begin
   fCreateContract1.lAddress.Text := clientAddress;
   fCreateContract1.mTreatmentInclusion.Text := dm.qContracts.FieldByName('treatment_inclusion').AsString;
   fCreateContract1.dDate.DateTime := dm.qContracts.FieldByName('date').AsDateTime;
-  fCreateContract1.ePaymentStatus.Text := dm.qContracts.FieldByName('status').AsString;
+  fCreateContract1.ePartialAmount.Text := dm.qContracts.FieldByName('status').AsString;
 
   // Switch tab index
   tcController.TabIndex := 3;
@@ -658,7 +657,7 @@ begin
   fContracts1.GridContentsResponsive;
 end;
 
-{ Show Tab for contracts }
+{ Create contract }
 procedure TfrmMain.fContracts1btnTriggerClick(Sender: TObject);
 begin
   // hide other components
@@ -668,7 +667,7 @@ begin
   fCreateContract1.cbPaymentStatus.Visible := true;
 
    // Show component
-  fCreateContract1.ePaymentStatus.Visible := true;
+  fCreateContract1.ePartialAmount.Visible := true;
 
   // adjust height
   fCreateContract1.rClientSelection.Height := 255;
@@ -687,6 +686,9 @@ begin
   fCreateContract1.lClientSelectionR.Visible := False;
   fCreateContract1.rClientData.Visible := False;
   fCreateContract1.Tag := 0;
+
+  // Empty the Partial payment input
+  fCreateContract1.ePartialAmount.Text := '';
 end;
 
 // Contract Search Procedure

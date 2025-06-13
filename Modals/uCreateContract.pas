@@ -33,7 +33,6 @@ type
     btnCancel: TCornerButton;
     btnSaveContract: TCornerButton;
     lPaymentStatus: TLabel;
-    cbPaymentStatus: TComboBox;
     cbClientSelection: TComboBox;
     BindSourceDBClientSel: TBindSourceDB;
     BindingsListClientSel: TBindingsList;
@@ -46,7 +45,9 @@ type
     GridPanelLayout1: TGridPanelLayout;
     sbPreview: TCornerButton;
     sbContractDetails: TCornerButton;
-    ePaymentStatus: TEdit;
+    Layout1: TLayout;
+    cbPaymentStatus: TComboBox;
+    ePartialAmount: TEdit;
     procedure btnSaveContractClick(Sender: TObject);
     procedure cbClientSelectionClosePopup(Sender: TObject);
     procedure cbClientSelectionEnter(Sender: TObject);
@@ -153,6 +154,7 @@ begin
   dm.qContracts.FieldByName('treatment_inclusion').AsString := mTreatmentInclusion.Text;
   dm.qContracts.FieldByName('date').AsDateTime := dDate.Date;
   dm.qContracts.FieldByName('status').AsString := cbPaymentStatus.Text;
+  dm.qContracts.FieldByName('partial_amount').AsString := ePartialAmount.Text;
   dm.qContracts.Post;
 
   dm.qContracts.Refresh;
@@ -214,13 +216,15 @@ end;
 
 procedure TfCreateContract.cbPaymentStatusChange(Sender: TObject);
 begin
-  if cbPaymentStatus.Text = 'Fully Paid' then
+  if cbPaymentStatus.Text = 'Initially Paid' then
   begin
-    ePaymentStatus.Visible := True;
+    ePartialAmount.Visible := True;
+    rContractDetails.Height := 470;
   end
   else
   begin
-    ePaymentStatus.Visible := False;
+    ePartialAmount.Visible := False;
+    rContractDetails.Height := 420;
   end;
 end;
 
