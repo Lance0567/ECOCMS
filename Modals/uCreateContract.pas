@@ -306,7 +306,8 @@ begin
   dm.qContracts.Close;
   ClearItems;
 
-
+  // Record Message
+  frmMain.RecordMessage('contract');
 end;
 
 { Client Selection on Close }

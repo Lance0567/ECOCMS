@@ -110,12 +110,12 @@ type
     procedure HideFrames;
     procedure ShowConfirmationDialog(const TheMessage: string);
     procedure ShowMessageDialog(const TheMessage: string);
-    procedure RecordMessage;
     { Private declarations }
   public
     { Public declarations }
     procedure QueryHandler;
     procedure dashboard;
+    procedure RecordMessage(const AEntity: string);
   end;
 
 var
@@ -200,7 +200,7 @@ begin
 end;
 
 { Pop up Message }
-procedure TfrmMain.RecordMessage;
+procedure TfrmMain.RecordMessage(const AEntity: string);
 begin
   // pop up function
   rPopUp.Height := 0;
@@ -209,22 +209,25 @@ begin
   Timer1.Enabled := True; // Start the 5-second countdown
 
   // Message of the pop up and color setting
-  if Self.Tag = 0 then
-  begin
-    lbPopUp.Text := 'Successfully added the client!';
-    rPopUp.Fill.Color := TAlphaColorRec.Green;
-  end
-  else if Self.Tag = 1 then
-  begin
-    lbPopUp.Text := 'Successfully updated the client!';
-    rPopUp.Fill.Color := TAlphaColorRec.Yellow;
-  end
-  else if Self.Tag = 2 then
-  begin
-    lbPopUp.Text := 'Successfully deleted the client!';
-    rPopUp.Fill.Color := TAlphaColorRec.Red;
+  case Self.Tag of
+    0:
+      begin
+        lbPopUp.Text := 'Successfully added the ' + AEntity + '!';
+        rPopUp.Fill.Color := TAlphaColorRec.Green;
+      end;
+    1:
+      begin
+        lbPopUp.Text := 'Successfully updated the ' + AEntity + '!';
+        rPopUp.Fill.Color := TAlphaColorRec.Yellow;
+      end;
+    2:
+      begin
+        lbPopUp.Text := 'Successfully deleted the ' + AEntity + '!';
+        rPopUp.Fill.Color := TAlphaColorRec.Red;
+      end;
   end;
 end;
+
 
 { Save button }
 procedure TfrmMain.btnSaveClick(Sender: TObject);
@@ -320,7 +323,7 @@ begin
   end;
 
   // Record Message
-  RecordMessage;
+  RecordMessage('client');
 end;
 
 { Timer }
@@ -356,7 +359,7 @@ begin
   ShowConfirmationDialog('You wish to delete the selected client?');
 
   frmMain.Tag := 2; // Record Message
-  RecordMessage;
+  RecordMessage('client');
 end;
 
 { Delete contract }
@@ -366,7 +369,7 @@ begin
   ShowConfirmationDialog('You wish to delete the selected contract?');
 
   frmMain.Tag := 2; // Record Message
-  RecordMessage;
+  RecordMessage('contract');
 end;
 
 { Show Confirmation dialog for client & contract }
