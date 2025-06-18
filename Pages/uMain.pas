@@ -120,6 +120,7 @@ type
 var
   frmMain: TfrmMain;
   setDelete: String;
+  recordStatus: String;
 
 implementation
 
@@ -182,18 +183,18 @@ end;
 procedure TfrmMain.btnCancelClick(Sender: TObject);
 begin
   // hide the visibility of Add client modal
+  dm.qClients.Cancel;
   rBackground.Visible := False;
   rModalAdd.Visible := False;
-  dm.qClients.Cancel;
 end;
 
 { Close modal button }
 procedure TfrmMain.btnCloseClick(Sender: TObject);
 begin
   // visibility hide of Add client modal
+  dm.qClients.Cancel;
   rBackground.Visible := False;
   rModalAdd.Visible := False;
-  dm.qClients.Cancel;
 end;
 
 { Save button }
@@ -321,6 +322,7 @@ end;
 { Add client }
 procedure TfrmMain.fClients1btnTriggerClick(Sender: TObject);
 begin
+  recordStatus := 'create';
   fClients1.btnTriggerClick(Sender);
 
   // Set Date components
@@ -421,6 +423,9 @@ end;
 { Edit client }
 procedure TfrmMain.fClients1EditClick(Sender: TObject);
 begin
+  // Set Record status
+  recordStatus := 'edit';
+
   // Populate the form
   eFullname.Text := dm.qClients.FieldByName('name').AsString;;
   eAddress.Text := dm.qClients.FieldByName('address').AsString;;
@@ -546,6 +551,12 @@ end;
 { Form Resize }
 procedure TfrmMain.FormResize(Sender: TObject);
 begin
+  // Lock width
+  if Self.Width <= 817 then
+  begin
+    Self.Width := 817;
+  end;
+
   case tcController.TabIndex of
     1:fClients1.GridContentsResponsive;
     2:fContracts1.GridContentsResponsive;
@@ -704,6 +715,9 @@ begin
   fCreateContract1.cbFirstTreatment.Margins.Top := 30;
   fCreateContract1.gbTreatmentPhases.Height := 115;
   fCreateContract1.rContractDetails.Height := 635;
+
+  // Checkbox set to check
+  fCreateContract1.cbFirstTreatment.IsChecked := True;
 end;
 
 // Contract Search Procedure

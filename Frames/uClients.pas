@@ -32,6 +32,9 @@ type
     LinkGridToClients: TLinkGridToDataSource;
     procedure btnTriggerClick(Sender: TObject);
     procedure gTableRecordResized(Sender: TObject);
+    procedure eSearchChange(Sender: TObject);
+    procedure rContainerClick(Sender: TObject);
+    procedure FrameClick(Sender: TObject);
   private
     { Private declarations }
   public
@@ -49,7 +52,7 @@ procedure TfClients.btnTriggerClick(Sender: TObject);
 begin
   // Reset tag
   frmMain.Tag := 0;
-  dm.qClients.Append;
+  dm.qClients.Insert;
 
   // visibility show of Add client modal
   frmMain.rBackground.Visible := True;
@@ -61,6 +64,16 @@ begin
 end;
 
 { Responsive grid procedure }
+procedure TfClients.eSearchChange(Sender: TObject);
+begin
+  GridContentsResponsive;
+end;
+
+procedure TfClients.FrameClick(Sender: TObject);
+begin
+  GridContentsResponsive;
+end;
+
 procedure TfClients.GridContentsResponsive;
 var
   i: Integer;
@@ -78,6 +91,11 @@ begin
     GridContentsResponsive;
     Self.Tag := 1;
   end;
+end;
+
+procedure TfClients.rContainerClick(Sender: TObject);
+begin
+  GridContentsResponsive;
 end;
 
 end.
