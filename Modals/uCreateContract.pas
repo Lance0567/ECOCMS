@@ -292,6 +292,8 @@ begin
   dm.qContracts.Refresh;
   dm.qContracts.Close;
   ClearItems;
+
+
 end;
 
 { Client Selection on Close }

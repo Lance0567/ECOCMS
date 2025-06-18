@@ -110,6 +110,7 @@ type
     procedure HideFrames;
     procedure ShowConfirmationDialog(const TheMessage: string);
     procedure ShowMessageDialog(const TheMessage: string);
+    procedure RecordMessage;
     { Private declarations }
   public
     { Public declarations }
@@ -121,6 +122,7 @@ var
   frmMain: TfrmMain;
   setDelete: String;
   recordStatus: String;
+  dbStatus: String;
 
 implementation
 
@@ -195,6 +197,33 @@ begin
   dm.qClients.Cancel;
   rBackground.Visible := False;
   rModalAdd.Visible := False;
+end;
+
+{ Pop up Message }
+procedure TfrmMain.RecordMessage;
+begin
+  // pop up function
+  rPopUp.Height := 0;
+  lytPopUpBottom.Visible := True;
+  FloatAnimation1.Enabled := True;
+  Timer1.Enabled := True; // Start the 5-second countdown
+
+  // Message of the pop up and color setting
+  if Self.Tag = 0 then
+  begin
+    lbPopUp.Text := 'Successfully added the client!';
+    rPopUp.Fill.Color := TAlphaColorRec.Green;
+  end
+  else if Self.Tag = 1 then
+  begin
+    lbPopUp.Text := 'Successfully updated the client!';
+    rPopUp.Fill.Color := TAlphaColorRec.Yellow;
+  end
+  else if Self.Tag = 2 then
+  begin
+    lbPopUp.Text := 'Successfully deleted the client!';
+    rPopUp.Fill.Color := TAlphaColorRec.Red;
+  end;
 end;
 
 { Save button }
@@ -279,31 +308,19 @@ begin
 
   rBackground.Visible := False;
   rModalAdd.Visible := False;
-
   ClearItems;
 
-  // pop up function
-  rPopUp.Height := 0;
-  lytPopUpBottom.Visible := True;
-  FloatAnimation1.Enabled := True;
-  Timer1.Enabled := True; // Start the 5-second countdown
-
-  // Message of the pop up and color setting
-  if Self.Tag = 0 then
+  if recordStatus = 'create' then
   begin
-    lbPopUp.Text := 'Successfully added the client!';
-    rPopUp.Fill.Color := TAlphaColorRec.Green;
-  end
-  else if Self.Tag = 1 then
-  begin
-    lbPopUp.Text := 'Successfully updated the client!';
-    rPopUp.Fill.Color := TAlphaColorRec.Yellow;
+    Self.Tag := 0;
   end
   else
   begin
-    lbPopUp.Text := 'Successfully deleted the client!';
-    rPopUp.Fill.Color := TAlphaColorRec.Red;
+    Self.Tag := 1;
   end;
+
+  // Record Message
+  RecordMessage;
 end;
 
 { Timer }
@@ -338,7 +355,8 @@ begin
   setDelete := 'client';
   ShowConfirmationDialog('You wish to delete the selected client?');
 
-  frmMain.Tag := 2;
+  frmMain.Tag := 2; // Record Message
+  RecordMessage;
 end;
 
 { Delete contract }
@@ -346,6 +364,9 @@ procedure TfrmMain.fContracts1DeleteClick(Sender: TObject);
 begin
   setDelete := 'contract';
   ShowConfirmationDialog('You wish to delete the selected contract?');
+
+  frmMain.Tag := 2; // Record Message
+  RecordMessage;
 end;
 
 { Show Confirmation dialog for client & contract }
