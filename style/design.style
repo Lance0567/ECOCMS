@@ -32670,7 +32670,7 @@ object TStyleContainer
   end
   object TLayout
     StyleName = 'listboxstyle'
-    Align = Contents
+    Align = Center
     Size.Width = 449.000000000000000000
     Size.Height = 532.000000000000000000
     Size.PlatformDefault = False
@@ -32815,7 +32815,6 @@ object TStyleContainer
   object TLayout
     StyleName = 'listboxitemstyle'
     Align = Center
-    Visible = False
     TabOrder = 41
     object TActiveStyleObject
       Align = Contents
@@ -32923,7 +32922,7 @@ object TStyleContainer
       TextSettings.HorzAlign = Leading
       ShadowVisible = False
       ActiveTrigger = Selected
-      ActiveColor = claBlack
+      ActiveColor = claWhite
     end
     object TCheckBox
       StyleName = 'check'
@@ -33355,6 +33354,7 @@ object TStyleContainer
   end
   object TLayout
     StyleName = 'listboxitemdetaillabel'
+    Align = Center
     Visible = False
     TabOrder = 43
     object TActiveStyleTextObject
@@ -33386,6 +33386,7 @@ object TStyleContainer
   end
   object TLayout
     StyleName = 'listboxitemnodetail'
+    Align = Center
     Visible = False
     TabOrder = 45
     object TActiveStyleObject
@@ -34325,961 +34326,10 @@ object TStyleContainer
     end
   end
   object TLayout
-    StyleName = 'listboxitembottomdetail'
+    StyleName = 'listboxitemrightdetail'
+    Align = Center
     Visible = False
     TabOrder = 46
-    object TActiveStyleObject
-      StyleName = 'background_separatorbottom'
-      Align = Contents
-      SourceLookup = 'Windows 10 Modern SlateGraystyle.png'
-      ActiveTrigger = Selected
-      ActiveLink = <
-        item
-          CapInsets.Left = 2.000000000000000000
-          CapInsets.Top = 2.000000000000000000
-          CapInsets.Right = 2.000000000000000000
-          CapInsets.Bottom = 2.000000000000000000
-          SourceRect.Left = 97.000000000000000000
-          SourceRect.Top = 47.000000000000000000
-          SourceRect.Right = 126.000000000000000000
-          SourceRect.Bottom = 92.000000000000000000
-        end
-        item
-          CapInsets.Left = 3.000000000000000000
-          CapInsets.Top = 3.000000000000000000
-          CapInsets.Right = 3.000000000000000000
-          CapInsets.Bottom = 3.000000000000000000
-          Scale = 1.500000000000000000
-          SourceRect.Left = 145.000000000000000000
-          SourceRect.Top = 70.000000000000000000
-          SourceRect.Right = 189.000000000000000000
-          SourceRect.Bottom = 138.000000000000000000
-        end
-        item
-          CapInsets.Left = 4.000000000000000000
-          CapInsets.Top = 4.000000000000000000
-          CapInsets.Right = 4.000000000000000000
-          CapInsets.Bottom = 4.000000000000000000
-          Scale = 2.000000000000000000
-          SourceRect.Left = 194.000000000000000000
-          SourceRect.Top = 94.000000000000000000
-          SourceRect.Right = 252.000000000000000000
-          SourceRect.Bottom = 184.000000000000000000
-        end
-        item
-          CapInsets.Left = 6.000000000000000000
-          CapInsets.Top = 6.000000000000000000
-          CapInsets.Right = 6.000000000000000000
-          CapInsets.Bottom = 6.000000000000000000
-          Scale = 3.000000000000000000
-          SourceRect.Left = 291.000000000000000000
-          SourceRect.Top = 141.000000000000000000
-          SourceRect.Right = 378.000000000000000000
-          SourceRect.Bottom = 276.000000000000000000
-        end>
-      SourceLink = <
-        item
-          CapInsets.Left = 2.000000000000000000
-          CapInsets.Top = 2.000000000000000000
-          CapInsets.Right = 2.000000000000000000
-          CapInsets.Bottom = 2.000000000000000000
-        end
-        item
-          CapInsets.Left = 3.000000000000000000
-          CapInsets.Top = 3.000000000000000000
-          CapInsets.Right = 3.000000000000000000
-          CapInsets.Bottom = 3.000000000000000000
-          Scale = 1.500000000000000000
-        end
-        item
-          CapInsets.Left = 4.000000000000000000
-          CapInsets.Top = 4.000000000000000000
-          CapInsets.Right = 4.000000000000000000
-          CapInsets.Bottom = 4.000000000000000000
-          Scale = 2.000000000000000000
-        end
-        item
-          CapInsets.Left = 6.000000000000000000
-          CapInsets.Top = 6.000000000000000000
-          CapInsets.Right = 6.000000000000000000
-          CapInsets.Bottom = 6.000000000000000000
-          Scale = 3.000000000000000000
-        end>
-      TouchAnimation.Link = <>
-      Opaque = True
-      object TActiveStyleObject
-        Align = Bottom
-        SourceLookup = 'Windows 10 Modern SlateGraystyle.png'
-        Position.Y = 48.000000000000000000
-        Size.Width = 50.000000000000000000
-        Size.Height = 2.000000000000000000
-        Size.PlatformDefault = False
-        ActiveTrigger = Selected
-        ActiveLink = <
-          item
-            CapInsets.Left = 2.000000000000000000
-            CapInsets.Right = 2.000000000000000000
-          end
-          item
-            CapInsets.Left = 3.000000000000000000
-            CapInsets.Right = 3.000000000000000000
-            Scale = 1.500000000000000000
-          end
-          item
-            CapInsets.Left = 4.000000000000000000
-            CapInsets.Right = 4.000000000000000000
-            Scale = 2.000000000000000000
-          end
-          item
-            CapInsets.Left = 6.000000000000000000
-            CapInsets.Right = 6.000000000000000000
-            Scale = 3.000000000000000000
-          end>
-        SourceLink = <
-          item
-            CapInsets.Left = 2.000000000000000000
-            CapInsets.Right = 2.000000000000000000
-            SourceRect.Left = 130.000000000000000000
-            SourceRect.Top = 90.000000000000000000
-            SourceRect.Right = 159.000000000000000000
-            SourceRect.Bottom = 92.000000000000000000
-          end
-          item
-            CapInsets.Left = 3.000000000000000000
-            CapInsets.Right = 3.000000000000000000
-            Scale = 1.500000000000000000
-            SourceRect.Left = 195.000000000000000000
-            SourceRect.Top = 135.000000000000000000
-            SourceRect.Right = 239.000000000000000000
-            SourceRect.Bottom = 138.000000000000000000
-          end
-          item
-            CapInsets.Left = 4.000000000000000000
-            CapInsets.Right = 4.000000000000000000
-            Scale = 2.000000000000000000
-            SourceRect.Left = 260.000000000000000000
-            SourceRect.Top = 180.000000000000000000
-            SourceRect.Right = 318.000000000000000000
-            SourceRect.Bottom = 184.000000000000000000
-          end
-          item
-            CapInsets.Left = 6.000000000000000000
-            CapInsets.Right = 6.000000000000000000
-            Scale = 3.000000000000000000
-            SourceRect.Left = 390.000000000000000000
-            SourceRect.Top = 270.000000000000000000
-            SourceRect.Right = 477.000000000000000000
-            SourceRect.Bottom = 276.000000000000000000
-          end>
-        TouchAnimation.Link = <>
-      end
-    end
-    object TActiveStyleObject
-      StyleName = 'background_sharp'
-      Align = Contents
-      SourceLookup = 'Windows 10 Modern SlateGraystyle.png'
-      Visible = False
-      ActiveTrigger = Selected
-      ActiveLink = <
-        item
-          CapInsets.Left = 2.000000000000000000
-          CapInsets.Top = 2.000000000000000000
-          CapInsets.Right = 2.000000000000000000
-          CapInsets.Bottom = 2.000000000000000000
-          SourceRect.Left = 97.000000000000000000
-          SourceRect.Top = 47.000000000000000000
-          SourceRect.Right = 117.000000000000000000
-          SourceRect.Bottom = 91.000000000000000000
-        end
-        item
-          CapInsets.Left = 3.000000000000000000
-          CapInsets.Top = 3.000000000000000000
-          CapInsets.Right = 3.000000000000000000
-          CapInsets.Bottom = 3.000000000000000000
-          Scale = 1.500000000000000000
-          SourceRect.Left = 146.000000000000000000
-          SourceRect.Top = 70.000000000000000000
-          SourceRect.Right = 176.000000000000000000
-          SourceRect.Bottom = 136.000000000000000000
-        end
-        item
-          CapInsets.Left = 4.000000000000000000
-          CapInsets.Top = 4.000000000000000000
-          CapInsets.Right = 4.000000000000000000
-          CapInsets.Bottom = 4.000000000000000000
-          Scale = 2.000000000000000000
-          SourceRect.Left = 194.000000000000000000
-          SourceRect.Top = 94.000000000000000000
-          SourceRect.Right = 234.000000000000000000
-          SourceRect.Bottom = 182.000000000000000000
-        end
-        item
-          CapInsets.Left = 6.000000000000000000
-          CapInsets.Top = 6.000000000000000000
-          CapInsets.Right = 6.000000000000000000
-          CapInsets.Bottom = 6.000000000000000000
-          Scale = 3.000000000000000000
-          SourceRect.Left = 291.000000000000000000
-          SourceRect.Top = 141.000000000000000000
-          SourceRect.Right = 351.000000000000000000
-          SourceRect.Bottom = 273.000000000000000000
-        end>
-      SourceLink = <
-        item
-          CapInsets.Left = 2.000000000000000000
-          CapInsets.Top = 2.000000000000000000
-          CapInsets.Right = 2.000000000000000000
-          CapInsets.Bottom = 2.000000000000000000
-          SourceRect.Left = 3.000000000000000000
-          SourceRect.Top = 94.000000000000000000
-          SourceRect.Right = 23.000000000000000000
-          SourceRect.Bottom = 138.000000000000000000
-        end
-        item
-          CapInsets.Left = 3.000000000000000000
-          CapInsets.Top = 3.000000000000000000
-          CapInsets.Right = 3.000000000000000000
-          CapInsets.Bottom = 3.000000000000000000
-          Scale = 1.500000000000000000
-          SourceRect.Left = 4.000000000000000000
-          SourceRect.Top = 141.000000000000000000
-          SourceRect.Right = 34.000000000000000000
-          SourceRect.Bottom = 207.000000000000000000
-        end
-        item
-          CapInsets.Left = 4.000000000000000000
-          CapInsets.Top = 4.000000000000000000
-          CapInsets.Right = 4.000000000000000000
-          CapInsets.Bottom = 4.000000000000000000
-          Scale = 2.000000000000000000
-          SourceRect.Left = 6.000000000000000000
-          SourceRect.Top = 188.000000000000000000
-          SourceRect.Right = 46.000000000000000000
-          SourceRect.Bottom = 276.000000000000000000
-        end
-        item
-          CapInsets.Left = 6.000000000000000000
-          CapInsets.Top = 6.000000000000000000
-          CapInsets.Right = 6.000000000000000000
-          CapInsets.Bottom = 6.000000000000000000
-          Scale = 3.000000000000000000
-          SourceRect.Left = 9.000000000000000000
-          SourceRect.Top = 282.000000000000000000
-          SourceRect.Right = 69.000000000000000000
-          SourceRect.Bottom = 414.000000000000000000
-        end>
-      TouchAnimation.Link = <>
-      Opaque = True
-      object TActiveStyleObject
-        Align = Bottom
-        Margins.Left = 10.000000000000000000
-        SourceLookup = 'Windows 10 Modern SlateGraystyle.png'
-        Position.X = 10.000000000000000000
-        Position.Y = 48.000000000000000000
-        Size.Width = 40.000000000000000000
-        Size.Height = 2.000000000000000000
-        Size.PlatformDefault = False
-        ActiveTrigger = Selected
-        ActiveLink = <
-          item
-            CapInsets.Left = 2.000000000000000000
-            CapInsets.Right = 2.000000000000000000
-          end
-          item
-            CapInsets.Left = 3.000000000000000000
-            CapInsets.Right = 3.000000000000000000
-            Scale = 1.500000000000000000
-          end
-          item
-            CapInsets.Left = 4.000000000000000000
-            CapInsets.Right = 4.000000000000000000
-            Scale = 2.000000000000000000
-          end
-          item
-            CapInsets.Left = 6.000000000000000000
-            CapInsets.Right = 6.000000000000000000
-            Scale = 3.000000000000000000
-          end>
-        SourceLink = <
-          item
-            CapInsets.Left = 2.000000000000000000
-            CapInsets.Right = 2.000000000000000000
-            SourceRect.Left = 130.000000000000000000
-            SourceRect.Top = 90.000000000000000000
-            SourceRect.Right = 159.000000000000000000
-            SourceRect.Bottom = 92.000000000000000000
-          end
-          item
-            CapInsets.Left = 3.000000000000000000
-            CapInsets.Right = 3.000000000000000000
-            Scale = 1.500000000000000000
-            SourceRect.Left = 195.000000000000000000
-            SourceRect.Top = 135.000000000000000000
-            SourceRect.Right = 239.000000000000000000
-            SourceRect.Bottom = 138.000000000000000000
-          end
-          item
-            CapInsets.Left = 4.000000000000000000
-            CapInsets.Right = 4.000000000000000000
-            Scale = 2.000000000000000000
-            SourceRect.Left = 260.000000000000000000
-            SourceRect.Top = 180.000000000000000000
-            SourceRect.Right = 318.000000000000000000
-            SourceRect.Bottom = 184.000000000000000000
-          end
-          item
-            CapInsets.Left = 6.000000000000000000
-            CapInsets.Right = 6.000000000000000000
-            Scale = 3.000000000000000000
-            SourceRect.Left = 390.000000000000000000
-            SourceRect.Top = 270.000000000000000000
-            SourceRect.Right = 477.000000000000000000
-            SourceRect.Bottom = 276.000000000000000000
-          end>
-        TouchAnimation.Link = <>
-      end
-    end
-    object TActiveStyleObject
-      StyleName = 'background_roundbottom'
-      Align = Contents
-      SourceLookup = 'Windows 10 Modern SlateGraystyle.png'
-      Visible = False
-      ActiveTrigger = Selected
-      ActiveLink = <
-        item
-          CapInsets.Left = 2.000000000000000000
-          CapInsets.Top = 2.000000000000000000
-          CapInsets.Right = 2.000000000000000000
-          CapInsets.Bottom = 2.000000000000000000
-          SourceRect.Left = 47.000000000000000000
-          SourceRect.Top = 95.000000000000000000
-          SourceRect.Right = 67.000000000000000000
-          SourceRect.Bottom = 139.000000000000000000
-        end
-        item
-          CapInsets.Left = 3.000000000000000000
-          CapInsets.Top = 3.000000000000000000
-          CapInsets.Right = 3.000000000000000000
-          CapInsets.Bottom = 3.000000000000000000
-          Scale = 1.500000000000000000
-          SourceRect.Left = 70.000000000000000000
-          SourceRect.Top = 142.000000000000000000
-          SourceRect.Right = 100.000000000000000000
-          SourceRect.Bottom = 208.000000000000000000
-        end
-        item
-          CapInsets.Left = 4.000000000000000000
-          CapInsets.Top = 4.000000000000000000
-          CapInsets.Right = 4.000000000000000000
-          CapInsets.Bottom = 4.000000000000000000
-          Scale = 2.000000000000000000
-          SourceRect.Left = 94.000000000000000000
-          SourceRect.Top = 190.000000000000000000
-          SourceRect.Right = 134.000000000000000000
-          SourceRect.Bottom = 278.000000000000000000
-        end
-        item
-          CapInsets.Left = 6.000000000000000000
-          CapInsets.Top = 6.000000000000000000
-          CapInsets.Right = 6.000000000000000000
-          CapInsets.Bottom = 6.000000000000000000
-          Scale = 3.000000000000000000
-          SourceRect.Left = 141.000000000000000000
-          SourceRect.Top = 285.000000000000000000
-          SourceRect.Right = 201.000000000000000000
-          SourceRect.Bottom = 417.000000000000000000
-        end>
-      SourceLink = <
-        item
-          CapInsets.Left = 2.000000000000000000
-          CapInsets.Top = 2.000000000000000000
-          CapInsets.Right = 2.000000000000000000
-          CapInsets.Bottom = 2.000000000000000000
-          SourceRect.Left = 3.000000000000000000
-          SourceRect.Top = 95.000000000000000000
-          SourceRect.Right = 23.000000000000000000
-          SourceRect.Bottom = 139.000000000000000000
-        end
-        item
-          CapInsets.Left = 3.000000000000000000
-          CapInsets.Top = 3.000000000000000000
-          CapInsets.Right = 3.000000000000000000
-          CapInsets.Bottom = 3.000000000000000000
-          Scale = 1.500000000000000000
-          SourceRect.Left = 4.000000000000000000
-          SourceRect.Top = 142.000000000000000000
-          SourceRect.Right = 34.000000000000000000
-          SourceRect.Bottom = 208.000000000000000000
-        end
-        item
-          CapInsets.Left = 4.000000000000000000
-          CapInsets.Top = 4.000000000000000000
-          CapInsets.Right = 4.000000000000000000
-          CapInsets.Bottom = 4.000000000000000000
-          Scale = 2.000000000000000000
-          SourceRect.Left = 6.000000000000000000
-          SourceRect.Top = 190.000000000000000000
-          SourceRect.Right = 46.000000000000000000
-          SourceRect.Bottom = 278.000000000000000000
-        end
-        item
-          CapInsets.Left = 6.000000000000000000
-          CapInsets.Top = 6.000000000000000000
-          CapInsets.Right = 6.000000000000000000
-          CapInsets.Bottom = 6.000000000000000000
-          Scale = 3.000000000000000000
-          SourceRect.Left = 9.000000000000000000
-          SourceRect.Top = 285.000000000000000000
-          SourceRect.Right = 69.000000000000000000
-          SourceRect.Bottom = 417.000000000000000000
-        end>
-      TouchAnimation.Link = <>
-      Opaque = True
-    end
-    object TActiveStyleObject
-      StyleName = 'background_roundtop'
-      Align = Contents
-      SourceLookup = 'Windows 10 Modern SlateGraystyle.png'
-      Visible = False
-      ActiveTrigger = Selected
-      ActiveLink = <
-        item
-          CapInsets.Left = 2.000000000000000000
-          CapInsets.Top = 2.000000000000000000
-          CapInsets.Right = 2.000000000000000000
-          CapInsets.Bottom = 2.000000000000000000
-          SourceRect.Left = 47.000000000000000000
-          SourceRect.Top = 94.000000000000000000
-          SourceRect.Right = 67.000000000000000000
-          SourceRect.Bottom = 138.000000000000000000
-        end
-        item
-          CapInsets.Left = 3.000000000000000000
-          CapInsets.Top = 3.000000000000000000
-          CapInsets.Right = 3.000000000000000000
-          CapInsets.Bottom = 3.000000000000000000
-          Scale = 1.500000000000000000
-          SourceRect.Left = 70.000000000000000000
-          SourceRect.Top = 141.000000000000000000
-          SourceRect.Right = 100.000000000000000000
-          SourceRect.Bottom = 207.000000000000000000
-        end
-        item
-          CapInsets.Left = 4.000000000000000000
-          CapInsets.Top = 4.000000000000000000
-          CapInsets.Right = 4.000000000000000000
-          CapInsets.Bottom = 4.000000000000000000
-          Scale = 2.000000000000000000
-          SourceRect.Left = 94.000000000000000000
-          SourceRect.Top = 188.000000000000000000
-          SourceRect.Right = 134.000000000000000000
-          SourceRect.Bottom = 276.000000000000000000
-        end
-        item
-          CapInsets.Left = 6.000000000000000000
-          CapInsets.Top = 6.000000000000000000
-          CapInsets.Right = 6.000000000000000000
-          CapInsets.Bottom = 6.000000000000000000
-          Scale = 3.000000000000000000
-          SourceRect.Left = 141.000000000000000000
-          SourceRect.Top = 282.000000000000000000
-          SourceRect.Right = 201.000000000000000000
-          SourceRect.Bottom = 414.000000000000000000
-        end>
-      SourceLink = <
-        item
-          CapInsets.Left = 2.000000000000000000
-          CapInsets.Top = 2.000000000000000000
-          CapInsets.Right = 2.000000000000000000
-          CapInsets.Bottom = 2.000000000000000000
-          SourceRect.Left = 3.000000000000000000
-          SourceRect.Top = 93.000000000000000000
-          SourceRect.Right = 23.000000000000000000
-          SourceRect.Bottom = 138.000000000000000000
-        end
-        item
-          CapInsets.Left = 3.000000000000000000
-          CapInsets.Top = 3.000000000000000000
-          CapInsets.Right = 3.000000000000000000
-          CapInsets.Bottom = 3.000000000000000000
-          Scale = 1.500000000000000000
-          SourceRect.Left = 4.000000000000000000
-          SourceRect.Top = 140.000000000000000000
-          SourceRect.Right = 34.000000000000000000
-          SourceRect.Bottom = 208.000000000000000000
-        end
-        item
-          CapInsets.Left = 4.000000000000000000
-          CapInsets.Top = 4.000000000000000000
-          CapInsets.Right = 4.000000000000000000
-          CapInsets.Bottom = 4.000000000000000000
-          Scale = 2.000000000000000000
-          SourceRect.Left = 6.000000000000000000
-          SourceRect.Top = 186.000000000000000000
-          SourceRect.Right = 46.000000000000000000
-          SourceRect.Bottom = 276.000000000000000000
-        end
-        item
-          CapInsets.Left = 6.000000000000000000
-          CapInsets.Top = 6.000000000000000000
-          CapInsets.Right = 6.000000000000000000
-          CapInsets.Bottom = 6.000000000000000000
-          Scale = 3.000000000000000000
-          SourceRect.Left = 9.000000000000000000
-          SourceRect.Top = 279.000000000000000000
-          SourceRect.Right = 69.000000000000000000
-          SourceRect.Bottom = 414.000000000000000000
-        end>
-      TouchAnimation.Link = <>
-      Opaque = True
-      object TActiveStyleObject
-        Align = Bottom
-        Margins.Left = 10.000000000000000000
-        SourceLookup = 'Windows 10 Modern SlateGraystyle.png'
-        Position.X = 10.000000000000000000
-        Position.Y = 48.000000000000000000
-        Size.Width = 40.000000000000000000
-        Size.Height = 2.000000000000000000
-        Size.PlatformDefault = False
-        ActiveTrigger = Selected
-        ActiveLink = <
-          item
-            CapInsets.Left = 2.000000000000000000
-            CapInsets.Right = 2.000000000000000000
-          end
-          item
-            CapInsets.Left = 3.000000000000000000
-            CapInsets.Right = 3.000000000000000000
-            Scale = 1.500000000000000000
-          end
-          item
-            CapInsets.Left = 4.000000000000000000
-            CapInsets.Right = 4.000000000000000000
-            Scale = 2.000000000000000000
-          end
-          item
-            CapInsets.Left = 6.000000000000000000
-            CapInsets.Right = 6.000000000000000000
-            Scale = 3.000000000000000000
-          end>
-        SourceLink = <
-          item
-            CapInsets.Left = 2.000000000000000000
-            CapInsets.Right = 2.000000000000000000
-            SourceRect.Left = 130.000000000000000000
-            SourceRect.Top = 90.000000000000000000
-            SourceRect.Right = 159.000000000000000000
-            SourceRect.Bottom = 92.000000000000000000
-          end
-          item
-            CapInsets.Left = 3.000000000000000000
-            CapInsets.Right = 3.000000000000000000
-            Scale = 1.500000000000000000
-            SourceRect.Left = 195.000000000000000000
-            SourceRect.Top = 135.000000000000000000
-            SourceRect.Right = 239.000000000000000000
-            SourceRect.Bottom = 138.000000000000000000
-          end
-          item
-            CapInsets.Left = 4.000000000000000000
-            CapInsets.Right = 4.000000000000000000
-            Scale = 2.000000000000000000
-            SourceRect.Left = 260.000000000000000000
-            SourceRect.Top = 180.000000000000000000
-            SourceRect.Right = 318.000000000000000000
-            SourceRect.Bottom = 184.000000000000000000
-          end
-          item
-            CapInsets.Left = 6.000000000000000000
-            CapInsets.Right = 6.000000000000000000
-            Scale = 3.000000000000000000
-            SourceRect.Left = 390.000000000000000000
-            SourceRect.Top = 270.000000000000000000
-            SourceRect.Right = 477.000000000000000000
-            SourceRect.Bottom = 276.000000000000000000
-          end>
-        TouchAnimation.Link = <>
-      end
-    end
-    object TActiveStyleObject
-      StyleName = 'background_roundall'
-      Align = Contents
-      SourceLookup = 'Windows 10 Modern SlateGraystyle.png'
-      Visible = False
-      ActiveTrigger = Selected
-      ActiveLink = <
-        item
-          CapInsets.Left = 2.000000000000000000
-          CapInsets.Top = 2.000000000000000000
-          CapInsets.Right = 2.000000000000000000
-          CapInsets.Bottom = 2.000000000000000000
-          SourceRect.Left = 69.000000000000000000
-          SourceRect.Top = 95.000000000000000000
-          SourceRect.Right = 89.000000000000000000
-          SourceRect.Bottom = 139.000000000000000000
-        end
-        item
-          CapInsets.Left = 3.000000000000000000
-          CapInsets.Top = 3.000000000000000000
-          CapInsets.Right = 3.000000000000000000
-          CapInsets.Bottom = 3.000000000000000000
-          Scale = 1.500000000000000000
-          SourceRect.Left = 104.000000000000000000
-          SourceRect.Top = 142.000000000000000000
-          SourceRect.Right = 134.000000000000000000
-          SourceRect.Bottom = 208.000000000000000000
-        end
-        item
-          CapInsets.Left = 4.000000000000000000
-          CapInsets.Top = 4.000000000000000000
-          CapInsets.Right = 4.000000000000000000
-          CapInsets.Bottom = 4.000000000000000000
-          Scale = 2.000000000000000000
-          SourceRect.Left = 138.000000000000000000
-          SourceRect.Top = 190.000000000000000000
-          SourceRect.Right = 178.000000000000000000
-          SourceRect.Bottom = 278.000000000000000000
-        end
-        item
-          CapInsets.Left = 6.000000000000000000
-          CapInsets.Top = 6.000000000000000000
-          CapInsets.Right = 6.000000000000000000
-          CapInsets.Bottom = 6.000000000000000000
-          Scale = 3.000000000000000000
-          SourceRect.Left = 207.000000000000000000
-          SourceRect.Top = 285.000000000000000000
-          SourceRect.Right = 267.000000000000000000
-          SourceRect.Bottom = 417.000000000000000000
-        end>
-      SourceLink = <
-        item
-          CapInsets.Left = 2.000000000000000000
-          CapInsets.Top = 2.000000000000000000
-          CapInsets.Right = 2.000000000000000000
-          CapInsets.Bottom = 2.000000000000000000
-          SourceRect.Left = 25.000000000000000000
-          SourceRect.Top = 95.000000000000000000
-          SourceRect.Right = 45.000000000000000000
-          SourceRect.Bottom = 139.000000000000000000
-        end
-        item
-          CapInsets.Left = 3.000000000000000000
-          CapInsets.Top = 3.000000000000000000
-          CapInsets.Right = 3.000000000000000000
-          CapInsets.Bottom = 3.000000000000000000
-          Scale = 1.500000000000000000
-          SourceRect.Left = 37.000000000000000000
-          SourceRect.Top = 142.000000000000000000
-          SourceRect.Right = 67.000000000000000000
-          SourceRect.Bottom = 208.000000000000000000
-        end
-        item
-          CapInsets.Left = 4.000000000000000000
-          CapInsets.Top = 4.000000000000000000
-          CapInsets.Right = 4.000000000000000000
-          CapInsets.Bottom = 4.000000000000000000
-          Scale = 2.000000000000000000
-          SourceRect.Left = 50.000000000000000000
-          SourceRect.Top = 190.000000000000000000
-          SourceRect.Right = 90.000000000000000000
-          SourceRect.Bottom = 278.000000000000000000
-        end
-        item
-          CapInsets.Left = 6.000000000000000000
-          CapInsets.Top = 6.000000000000000000
-          CapInsets.Right = 6.000000000000000000
-          CapInsets.Bottom = 6.000000000000000000
-          Scale = 3.000000000000000000
-          SourceRect.Left = 75.000000000000000000
-          SourceRect.Top = 285.000000000000000000
-          SourceRect.Right = 135.000000000000000000
-          SourceRect.Bottom = 417.000000000000000000
-        end>
-      TouchAnimation.Link = <>
-      Opaque = True
-    end
-    object TActiveStyleObject
-      StyleName = 'accessorymore'
-      Align = MostRight
-      SourceLookup = 'Windows 10 Modern SlateGraystyle.png'
-      Size.Width = 30.000000000000000000
-      Size.Height = 44.000000000000000000
-      Size.PlatformDefault = False
-      WrapMode = Center
-      Visible = False
-      ActiveTrigger = Selected
-      ActiveLink = <
-        item
-          SourceRect.Left = 139.000000000000000000
-          SourceRect.Top = 106.000000000000000000
-          SourceRect.Right = 151.000000000000000000
-          SourceRect.Bottom = 122.000000000000000000
-        end
-        item
-          Scale = 1.500000000000000000
-          SourceRect.Left = 208.000000000000000000
-          SourceRect.Top = 159.000000000000000000
-          SourceRect.Right = 226.000000000000000000
-          SourceRect.Bottom = 183.000000000000000000
-        end
-        item
-          Scale = 2.000000000000000000
-          SourceRect.Left = 278.000000000000000000
-          SourceRect.Top = 212.000000000000000000
-          SourceRect.Right = 302.000000000000000000
-          SourceRect.Bottom = 244.000000000000000000
-        end
-        item
-          Scale = 3.000000000000000000
-          SourceRect.Left = 417.000000000000000000
-          SourceRect.Top = 318.000000000000000000
-          SourceRect.Right = 453.000000000000000000
-          SourceRect.Bottom = 366.000000000000000000
-        end>
-      SourceLink = <
-        item
-          SourceRect.Left = 139.000000000000000000
-          SourceRect.Top = 106.000000000000000000
-          SourceRect.Right = 151.000000000000000000
-          SourceRect.Bottom = 122.000000000000000000
-        end
-        item
-          Scale = 1.500000000000000000
-          SourceRect.Left = 208.000000000000000000
-          SourceRect.Top = 159.000000000000000000
-          SourceRect.Right = 226.000000000000000000
-          SourceRect.Bottom = 183.000000000000000000
-        end
-        item
-          Scale = 2.000000000000000000
-          SourceRect.Left = 278.000000000000000000
-          SourceRect.Top = 212.000000000000000000
-          SourceRect.Right = 302.000000000000000000
-          SourceRect.Bottom = 244.000000000000000000
-        end
-        item
-          Scale = 3.000000000000000000
-          SourceRect.Left = 417.000000000000000000
-          SourceRect.Top = 318.000000000000000000
-          SourceRect.Right = 453.000000000000000000
-          SourceRect.Bottom = 366.000000000000000000
-        end>
-      TouchAnimation.Link = <>
-    end
-    object TActiveStyleObject
-      StyleName = 'accessorycheckmark'
-      Align = MostRight
-      SourceLookup = 'Windows 10 Modern SlateGraystyle.png'
-      Size.Width = 30.000000000000000000
-      Size.Height = 44.000000000000000000
-      Size.PlatformDefault = False
-      WrapMode = Center
-      Visible = False
-      ActiveTrigger = Selected
-      ActiveLink = <
-        item
-          SourceRect.Left = 155.000000000000000000
-          SourceRect.Top = 105.000000000000000000
-          SourceRect.Right = 173.000000000000000000
-          SourceRect.Bottom = 123.000000000000000000
-        end
-        item
-          Scale = 1.500000000000000000
-          SourceRect.Left = 233.000000000000000000
-          SourceRect.Top = 158.000000000000000000
-          SourceRect.Right = 260.000000000000000000
-          SourceRect.Bottom = 185.000000000000000000
-        end
-        item
-          Scale = 2.000000000000000000
-          SourceRect.Left = 310.000000000000000000
-          SourceRect.Top = 210.000000000000000000
-          SourceRect.Right = 346.000000000000000000
-          SourceRect.Bottom = 246.000000000000000000
-        end
-        item
-          Scale = 3.000000000000000000
-          SourceRect.Left = 465.000000000000000000
-          SourceRect.Top = 315.000000000000000000
-          SourceRect.Right = 519.000000000000000000
-          SourceRect.Bottom = 369.000000000000000000
-        end>
-      SourceLink = <
-        item
-          SourceRect.Left = 155.000000000000000000
-          SourceRect.Top = 105.000000000000000000
-          SourceRect.Right = 173.000000000000000000
-          SourceRect.Bottom = 123.000000000000000000
-        end
-        item
-          Scale = 1.500000000000000000
-          SourceRect.Left = 233.000000000000000000
-          SourceRect.Top = 158.000000000000000000
-          SourceRect.Right = 260.000000000000000000
-          SourceRect.Bottom = 185.000000000000000000
-        end
-        item
-          Scale = 2.000000000000000000
-          SourceRect.Left = 310.000000000000000000
-          SourceRect.Top = 210.000000000000000000
-          SourceRect.Right = 346.000000000000000000
-          SourceRect.Bottom = 246.000000000000000000
-        end
-        item
-          Scale = 3.000000000000000000
-          SourceRect.Left = 465.000000000000000000
-          SourceRect.Top = 315.000000000000000000
-          SourceRect.Right = 519.000000000000000000
-          SourceRect.Bottom = 369.000000000000000000
-        end>
-      TouchAnimation.Link = <>
-    end
-    object TActiveStyleObject
-      StyleName = 'accessorydetail'
-      Align = MostRight
-      SourceLookup = 'Windows 10 Modern SlateGraystyle.png'
-      Size.Width = 40.000000000000000000
-      Size.Height = 44.000000000000000000
-      Size.PlatformDefault = False
-      WrapMode = Center
-      Visible = False
-      ActiveTrigger = Selected
-      ActiveLink = <
-        item
-          SourceRect.Left = 271.000000000000000000
-          SourceRect.Top = 106.000000000000000000
-          SourceRect.Right = 287.000000000000000000
-          SourceRect.Bottom = 122.000000000000000000
-        end
-        item
-          Scale = 1.500000000000000000
-          SourceRect.Left = 407.000000000000000000
-          SourceRect.Top = 158.000000000000000000
-          SourceRect.Right = 431.000000000000000000
-          SourceRect.Bottom = 182.000000000000000000
-        end
-        item
-          Scale = 2.000000000000000000
-          SourceRect.Left = 542.000000000000000000
-          SourceRect.Top = 212.000000000000000000
-          SourceRect.Right = 574.000000000000000000
-          SourceRect.Bottom = 244.000000000000000000
-        end
-        item
-          Scale = 3.000000000000000000
-          SourceRect.Left = 813.000000000000000000
-          SourceRect.Top = 318.000000000000000000
-          SourceRect.Right = 861.000000000000000000
-          SourceRect.Bottom = 366.000000000000000000
-        end>
-      SourceLink = <
-        item
-          SourceRect.Left = 271.000000000000000000
-          SourceRect.Top = 106.000000000000000000
-          SourceRect.Right = 287.000000000000000000
-          SourceRect.Bottom = 122.000000000000000000
-        end
-        item
-          Scale = 1.500000000000000000
-          SourceRect.Left = 407.000000000000000000
-          SourceRect.Top = 158.000000000000000000
-          SourceRect.Right = 431.000000000000000000
-          SourceRect.Bottom = 182.000000000000000000
-        end
-        item
-          Scale = 2.000000000000000000
-          SourceRect.Left = 542.000000000000000000
-          SourceRect.Top = 212.000000000000000000
-          SourceRect.Right = 574.000000000000000000
-          SourceRect.Bottom = 244.000000000000000000
-        end
-        item
-          Scale = 3.000000000000000000
-          SourceRect.Left = 813.000000000000000000
-          SourceRect.Top = 318.000000000000000000
-          SourceRect.Right = 861.000000000000000000
-          SourceRect.Bottom = 366.000000000000000000
-        end>
-      TouchAnimation.Link = <>
-    end
-    object TCheckBox
-      StyleName = 'check'
-      Align = MostLeft
-      CanFocus = False
-      DisableFocusEffect = True
-      Margins.Right = 5.000000000000000000
-      Size.Width = 30.000000000000000000
-      Size.Height = 44.000000000000000000
-      Size.PlatformDefault = False
-      Visible = False
-    end
-    object TGlyph
-      StyleName = 'glyphstyle'
-      Margins.Left = 2.000000000000000000
-      Margins.Top = 2.000000000000000000
-      Margins.Right = 2.000000000000000000
-      Margins.Bottom = 2.000000000000000000
-      Align = MostLeft
-      Size.Width = 44.000000000000000000
-      Size.Height = 16.000000000000000000
-      Size.PlatformDefault = False
-    end
-    object TImage
-      StyleName = 'icon'
-      MultiResBitmap = <
-        item
-        end>
-      Align = MostLeft
-      HitTest = False
-      Position.X = 20.000000000000000000
-      Size.Width = 44.000000000000000000
-      Size.Height = 44.000000000000000000
-      Size.PlatformDefault = False
-      Visible = False
-    end
-    object TActiveStyleTextObject
-      StyleName = 'text'
-      Align = Client
-      Margins.Left = 10.000000000000000000
-      Margins.Top = 1.000000000000000000
-      Margins.Right = 10.000000000000000000
-      Size.Width = 30.000000000000000000
-      Size.Height = 28.000000000000000000
-      Size.PlatformDefault = False
-      TextSettings.Font.Size = 16.000000000000000000
-      TextSettings.FontColor = claWhite
-      TextSettings.Trimming = Character
-      TextSettings.WordWrap = False
-      TextSettings.HorzAlign = Leading
-      ShadowVisible = False
-      ActiveTrigger = Selected
-      ActiveColor = claWhite
-    end
-    object TActiveStyleTextObject
-      StyleName = 'detail'
-      Align = Bottom
-      Margins.Left = 10.000000000000000000
-      Margins.Right = 10.000000000000000000
-      Margins.Bottom = 4.000000000000000000
-      Position.X = 10.000000000000000000
-      Position.Y = 29.000000000000000000
-      Size.Width = 30.000000000000000000
-      Size.Height = 17.000000000000000000
-      Size.PlatformDefault = False
-      TextSettings.Font.Size = 16.000000000000000000
-      TextSettings.FontColor = xFFA7B4BA
-      TextSettings.Trimming = Character
-      TextSettings.WordWrap = False
-      TextSettings.HorzAlign = Leading
-      ShadowVisible = False
-      ActiveTrigger = Selected
-      ActiveColor = claWhite
-    end
-  end
-  object TLayout
-    StyleName = 'listboxitemrightdetail'
-    Visible = False
-    TabOrder = 47
     object TActiveStyleObject
       StyleName = 'background_separatorbottom'
       Align = Contents
@@ -36247,10 +35297,9 @@ object TStyleContainer
   end
   object TLayout
     StyleName = 'listboxitemleftdetail'
-    Position.X = 458.000000000000000000
-    Position.Y = 335.000000000000000000
+    Align = Center
     Visible = False
-    TabOrder = 48
+    TabOrder = 47
     object TActiveStyleObject
       StyleName = 'background_separatorbottom'
       Align = Contents
@@ -37218,8 +36267,9 @@ object TStyleContainer
   end
   object TLayout
     StyleName = 'listboxplainheader'
+    Align = Center
     Visible = False
-    TabOrder = 49
+    TabOrder = 48
     FixedHeight = 22
     object TStyleObject
       StyleName = 'background'
@@ -37287,7 +36337,7 @@ object TStyleContainer
     StyleName = 'listboxgroupheader'
     Align = Center
     Visible = False
-    TabOrder = 50
+    TabOrder = 49
     FixedHeight = 46
     object TStyleObject
       StyleName = 'background'
@@ -37352,8 +36402,9 @@ object TStyleContainer
   end
   object TLayout
     StyleName = 'listboxheader'
+    Align = Center
     Visible = False
-    TabOrder = 51
+    TabOrder = 50
     FixedHeight = 46
     object TStyleObject
       StyleName = 'background'
@@ -37402,7 +36453,7 @@ object TStyleContainer
     StyleName = 'listboxfooter'
     Align = Center
     Visible = False
-    TabOrder = 52
+    TabOrder = 51
     FixedHeight = 28
     object TStyleObject
       StyleName = 'background'
@@ -38174,7 +37225,7 @@ object TStyleContainer
     StyleName = 'colorlistboxitemstyle'
     Align = Center
     Visible = False
-    TabOrder = 53
+    TabOrder = 52
     object TActiveStyleObject
       Align = Contents
       SourceLookup = 'Windows 10 Modern SlateGraystyle.png'
@@ -38302,7 +37353,7 @@ object TStyleContainer
   object TLayout
     StyleName = 'treeviewstyle'
     Visible = False
-    TabOrder = 54
+    TabOrder = 53
     object TBrushObject
       StyleName = 'AlternatingRowBackground'
       Brush.Color = xFF586A74
@@ -38473,7 +37524,7 @@ object TStyleContainer
   object TLayout
     StyleName = 'treeviewitemstyle'
     Visible = False
-    TabOrder = 55
+    TabOrder = 54
     object TSpeedButton
       StyleName = 'button'
       Align = Left
@@ -38536,7 +37587,7 @@ object TStyleContainer
     StyleName = 'treeviewexpanderbuttonstyle'
     Margins.Top = 1.000000000000000000
     Visible = False
-    TabOrder = 56
+    TabOrder = 55
     object TPath
       Align = Center
       Data.Path = {
@@ -38584,7 +37635,7 @@ object TStyleContainer
   object TLayout
     StyleName = 'popoverstyle'
     Visible = False
-    TabOrder = 57
+    TabOrder = 56
     object TStyleObject
       StyleName = 'bg'
       Align = Client
@@ -38835,7 +37886,7 @@ object TStyleContainer
   object TLayout
     StyleName = 'tabcontrolstyle'
     Visible = False
-    TabOrder = 63
+    TabOrder = 62
     object TBrushObject
       StyleName = 'scrollbackground'
       Brush.Color = xFF37474F
@@ -38844,7 +37895,7 @@ object TStyleContainer
   object TLayout
     StyleName = 'tabitemstyle'
     Visible = False
-    TabOrder = 64
+    TabOrder = 63
     object TTabStyleObject
       StyleName = 'top'
       Align = Contents
@@ -39359,7 +38410,7 @@ object TStyleContainer
   object TLayout
     StyleName = 'tabitemcustom'
     Visible = False
-    TabOrder = 65
+    TabOrder = 64
     object TTabStyleObject
       StyleName = 'top'
       Align = Contents
@@ -39909,7 +38960,7 @@ object TStyleContainer
   object TLayout
     StyleName = 'progressbarstyle'
     Visible = False
-    TabOrder = 66
+    TabOrder = 65
     object TStyleObject
       StyleName = 'htrack'
       Align = Contents
@@ -40133,7 +39184,7 @@ object TStyleContainer
     StyleName = 'smallscrollbarstyle'
     Align = Center
     Visible = False
-    TabOrder = 67
+    TabOrder = 66
     object TTrack
       StyleName = 'htrack'
       Align = Client
@@ -40158,7 +39209,7 @@ object TStyleContainer
   object TLayout
     StyleName = 'scrollboxstyle'
     Visible = False
-    TabOrder = 68
+    TabOrder = 67
     object TLayout
       StyleName = 'background'
       Align = Contents
@@ -40239,7 +39290,7 @@ object TStyleContainer
     StyleName = 'framedscrollboxstyle'
     Align = Center
     Visible = False
-    TabOrder = 69
+    TabOrder = 68
     object TStyleObject
       StyleName = 'background'
       Align = Contents
@@ -40373,7 +39424,7 @@ object TStyleContainer
     StyleName = 'memostyle'
     Align = Center
     Visible = False
-    TabOrder = 71
+    TabOrder = 70
     object TActiveStyleObject
       StyleName = 'background'
       Align = Contents
@@ -40558,7 +39609,7 @@ object TStyleContainer
     StyleName = 'imagecontrolstyle'
     Align = Center
     Visible = False
-    TabOrder = 72
+    TabOrder = 71
     object TStyleObject
       StyleName = 'background'
       Align = Contents
@@ -40634,7 +39685,7 @@ object TStyleContainer
   object TLayout
     StyleName = 'trackbarstyle'
     Visible = False
-    TabOrder = 73
+    TabOrder = 72
     FixedHeight = 24
     object TStyleTag
       Tag = 8
@@ -41117,7 +40168,7 @@ object TStyleContainer
     StyleName = 'droptargetstyle'
     Align = Center
     Visible = False
-    TabOrder = 76
+    TabOrder = 75
     object TRectangle
       Align = Contents
       Fill.Kind = None
@@ -41179,7 +40230,7 @@ object TStyleContainer
   object TBitmapSwitchObject
     StyleName = 'switchstyle'
     Kind = FadingTracks
-    TabOrder = 77
+    TabOrder = 76
     TrackingThumbScale = 1.000000000000000000
     Visible = False
     Track = <
@@ -41423,7 +40474,7 @@ object TStyleContainer
     StyleName = 'gridstyleOriginal'
     Align = Center
     Visible = False
-    TabOrder = 78
+    TabOrder = 77
     object TBrushObject
       StyleName = 'AlternatingRowBackground'
       Brush.Color = xFF586A74
@@ -41588,7 +40639,7 @@ object TStyleContainer
     StyleName = 'headeritemstyle'
     Align = Center
     Visible = False
-    TabOrder = 79
+    TabOrder = 78
     object TButtonStyleObject
       StyleName = 'background'
       Align = Contents
@@ -41785,7 +40836,6 @@ object TStyleContainer
       Size.Width = 42.000000000000000000
       Size.Height = 46.000000000000000000
       Size.PlatformDefault = False
-      Text = 'Text'
       TextSettings.Font.Size = 16.000000000000000000
       TextSettings.Font.StyleExt = {00070000000000000004000000}
       TextSettings.FontColor = claWhite
@@ -42021,7 +41071,7 @@ object TStyleContainer
     StyleName = 'calendarlabelstyle'
     Align = Center
     Visible = False
-    TabOrder = 81
+    TabOrder = 80
     object TText
       StyleName = 'text'
       Align = Client
@@ -42061,7 +41111,7 @@ object TStyleContainer
     StyleName = 'expanderstyle'
     Align = Center
     Visible = False
-    TabOrder = 83
+    TabOrder = 82
     object TRectangle
       Align = Contents
       Fill.Color = xFF37474F
@@ -42115,7 +41165,7 @@ object TStyleContainer
     StyleName = 'expanderbuttonstyle'
     Align = Center
     Visible = False
-    TabOrder = 84
+    TabOrder = 83
     object TButtonStyleObject
       StyleName = 'background'
       Align = Center
@@ -42382,7 +41432,7 @@ object TStyleContainer
     StyleName = 'dropdowneditbutton'
     Align = Center
     Visible = False
-    TabOrder = 85
+    TabOrder = 84
     object TButtonStyleObject
       StyleName = 'background'
       Align = Contents
@@ -42702,7 +41752,7 @@ object TStyleContainer
     StyleName = 'comboeditstyle'
     Align = Center
     Visible = False
-    TabOrder = 86
+    TabOrder = 85
     FixedHeight = 32
     object TActiveStyleObject
       StyleName = 'background'
@@ -42988,7 +42038,7 @@ object TStyleContainer
     StyleName = 'comboboxstyle'
     Align = Center
     Visible = False
-    TabOrder = 88
+    TabOrder = 87
     FixedHeight = 32
     object TButtonStyleObject
       StyleName = 'background'
@@ -43297,7 +42347,7 @@ object TStyleContainer
   object TLayout
     StyleName = 'transparentlistboxstyle'
     Visible = False
-    TabOrder = 89
+    TabOrder = 88
     object TBrushObject
       StyleName = 'AlternatingRowBackground'
       Brush.Color = xFF586A74
@@ -43458,7 +42508,7 @@ object TStyleContainer
   object TLayout
     StyleName = 'numberboxstyle'
     Visible = False
-    TabOrder = 91
+    TabOrder = 90
     FixedHeight = 32
     object TActiveStyleObject
       StyleName = 'background'
@@ -43583,7 +42633,7 @@ object TStyleContainer
   object TLayout
     StyleName = 'popupboxstyle'
     Visible = False
-    TabOrder = 92
+    TabOrder = 91
     FixedHeight = 32
     object TButtonStyleObject
       StyleName = 'background'
@@ -43891,7 +42941,7 @@ object TStyleContainer
     StyleName = 'arcdialstyle'
     Align = Center
     Visible = False
-    TabOrder = 93
+    TabOrder = 92
     object TEllipse
       StyleName = 'background'
       Align = Fit
@@ -43976,7 +43026,7 @@ object TStyleContainer
     StyleName = 'cornerbuttonstyle'
     Align = Center
     Visible = False
-    TabOrder = 98
+    TabOrder = 97
     object TRectangle
       StyleName = 'background'
       Align = Contents
@@ -44035,7 +43085,7 @@ object TStyleContainer
   object TLayout
     StyleName = 'textcellstyle'
     Visible = False
-    TabOrder = 99
+    TabOrder = 98
     object TLayout
       StyleName = 'content'
       Align = Contents
@@ -44068,7 +43118,7 @@ object TStyleContainer
     StyleName = 'checkcellstyle'
     Align = Center
     Visible = False
-    TabOrder = 100
+    TabOrder = 99
     object TLayout
       Align = Left
       Size.Width = 20.000000000000000000
@@ -44346,7 +43396,7 @@ object TStyleContainer
   object TLayout
     StyleName = 'progresscellstyle'
     Visible = False
-    TabOrder = 101
+    TabOrder = 100
     object TLayout
       StyleName = 'track'
       Align = Contents
@@ -44479,7 +43529,7 @@ object TStyleContainer
   object TLayout
     StyleName = 'popupcellstyle'
     Visible = False
-    TabOrder = 102
+    TabOrder = 101
     object TLayout
       Align = Right
       Position.X = 35.000000000000000000
@@ -44533,7 +43583,7 @@ object TStyleContainer
     StyleName = 'imagecellstyle'
     Align = Center
     Visible = False
-    TabOrder = 103
+    TabOrder = 102
     object TImage
       StyleName = 'image'
       MultiResBitmap = <
@@ -46177,7 +45227,7 @@ object TStyleContainer
   object TLayout
     StyleName = 'tableviewstyle'
     Visible = False
-    TabOrder = 105
+    TabOrder = 104
     object TBrushObject
       StyleName = 'AlternatingRowBackground'
       Brush.Color = xFF586A74
@@ -46299,7 +45349,7 @@ object TStyleContainer
   object TLayout
     StyleName = 'magnifierglassstyle'
     Visible = False
-    TabOrder = 106
+    TabOrder = 105
     FixedWidth = 150
     FixedHeight = 150
     object TCircle
@@ -46360,11 +45410,12 @@ object TStyleContainer
   end
   object TLayout
     StyleName = 'magnifierglassrectanglestyle'
+    Align = Center
     Size.Width = 50.000000000000000000
     Size.Height = 50.000000000000000000
     Size.PlatformDefault = False
     Visible = False
-    TabOrder = 107
+    TabOrder = 106
     object TRectangle
       StyleName = 'content'
       Align = Client
@@ -46435,7 +45486,7 @@ object TStyleContainer
     Size.Height = 50.000000000000000000
     Size.PlatformDefault = False
     Visible = False
-    TabOrder = 108
+    TabOrder = 107
     object TRectangle
       StyleName = 'content'
       Align = Client
@@ -46450,7 +45501,7 @@ object TStyleContainer
     StyleName = 'backtoolbutton'
     Align = Center
     Visible = False
-    TabOrder = 109
+    TabOrder = 108
     FixedWidth = 46
     FixedHeight = 46
     object TButtonStyleObject
@@ -46718,7 +45769,7 @@ object TStyleContainer
     Size.Height = 532.000000000000000000
     Size.PlatformDefault = False
     Visible = False
-    TabOrder = 110
+    TabOrder = 109
     FixedHeight = 50
     object TButtonStyleObject
       StyleName = 'background'
@@ -47030,7 +46081,7 @@ object TStyleContainer
     Size.Height = 532.000000000000000000
     Size.PlatformDefault = False
     Visible = False
-    TabOrder = 111
+    TabOrder = 110
     object TButtonStyleObject
       StyleName = 'background'
       Align = Contents
@@ -47254,7 +46305,7 @@ object TStyleContainer
     Size.Height = 532.000000000000000000
     Size.PlatformDefault = False
     Visible = False
-    TabOrder = 112
+    TabOrder = 111
     object TButtonStyleObject
       StyleName = 'background'
       Align = Contents
@@ -47478,7 +46529,7 @@ object TStyleContainer
     Size.Height = 532.000000000000000000
     Size.PlatformDefault = False
     Visible = False
-    TabOrder = 113
+    TabOrder = 112
     object TButtonStyleObject
       StyleName = 'background'
       Align = Contents
@@ -47702,7 +46753,7 @@ object TStyleContainer
     Size.Height = 532.000000000000000000
     Size.PlatformDefault = False
     Visible = False
-    TabOrder = 114
+    TabOrder = 113
     FixedHeight = 46
     object TButtonStyleObject
       StyleName = 'background'
@@ -47892,7 +46943,7 @@ object TStyleContainer
   object TLayout
     StyleName = 'tooledit'
     Visible = False
-    TabOrder = 115
+    TabOrder = 114
     FixedHeight = 32
     object TActiveStyleObject
       StyleName = 'background'
@@ -48026,7 +47077,7 @@ object TStyleContainer
     StyleName = 'searchedit'
     Align = Center
     Visible = False
-    TabOrder = 116
+    TabOrder = 115
     FixedHeight = 32
     object TActiveStyleObject
       StyleName = 'background'
@@ -48171,7 +47222,7 @@ object TStyleContainer
   object TLayout
     StyleName = 'stepperbuttonleft'
     Visible = False
-    TabOrder = 117
+    TabOrder = 116
     FixedWidth = 47
     FixedHeight = 29
     object TButtonStyleObject
@@ -48427,7 +47478,7 @@ object TStyleContainer
   object TLayout
     StyleName = 'stepperbuttonright'
     Visible = False
-    TabOrder = 118
+    TabOrder = 117
     FixedWidth = 47
     FixedHeight = 29
     object TButtonStyleObject
@@ -48687,7 +47738,7 @@ object TStyleContainer
     Size.Height = 532.000000000000000000
     Size.PlatformDefault = False
     Visible = False
-    TabOrder = 119
+    TabOrder = 118
     FixedHeight = 46
     object TButtonStyleObject
       StyleName = 'background'
@@ -48880,7 +47931,7 @@ object TStyleContainer
     Size.Height = 532.000000000000000000
     Size.PlatformDefault = False
     Visible = False
-    TabOrder = 120
+    TabOrder = 119
     FixedHeight = 46
     object TButtonStyleObject
       StyleName = 'background'
@@ -49073,7 +48124,7 @@ object TStyleContainer
     Size.Height = 532.000000000000000000
     Size.PlatformDefault = False
     Visible = False
-    TabOrder = 121
+    TabOrder = 120
     FixedHeight = 46
     object TButtonStyleObject
       StyleName = 'background'
@@ -49266,7 +48317,7 @@ object TStyleContainer
     Size.Height = 532.000000000000000000
     Size.PlatformDefault = False
     Visible = False
-    TabOrder = 122
+    TabOrder = 121
     FixedHeight = 46
     object TButtonStyleObject
       StyleName = 'background'
@@ -49455,7 +48506,7 @@ object TStyleContainer
   object TLayout
     StyleName = 'refreshtoolbutton'
     Visible = False
-    TabOrder = 123
+    TabOrder = 122
     FixedWidth = 46
     FixedHeight = 46
     object TButtonStyleObject
@@ -49723,7 +48774,7 @@ object TStyleContainer
     Size.Height = 532.000000000000000000
     Size.PlatformDefault = False
     Visible = False
-    TabOrder = 124
+    TabOrder = 123
     FixedHeight = 50
     object TButtonStyleObject
       StyleName = 'background'
@@ -50032,7 +49083,7 @@ object TStyleContainer
     StyleName = 'actiontoolbutton'
     Align = Center
     Visible = False
-    TabOrder = 125
+    TabOrder = 124
     FixedWidth = 46
     FixedHeight = 46
     object TButtonStyleObject
@@ -50300,7 +49351,7 @@ object TStyleContainer
     Size.Height = 532.000000000000000000
     Size.PlatformDefault = False
     Visible = False
-    TabOrder = 127
+    TabOrder = 126
     FixedHeight = 50
     object TButtonStyleObject
       StyleName = 'background'
@@ -50608,7 +49659,7 @@ object TStyleContainer
   object TLayout
     StyleName = 'playtoolbutton'
     Visible = False
-    TabOrder = 128
+    TabOrder = 127
     FixedWidth = 46
     FixedHeight = 46
     object TButtonStyleObject
@@ -50876,7 +49927,7 @@ object TStyleContainer
     Size.Height = 532.000000000000000000
     Size.PlatformDefault = False
     Visible = False
-    TabOrder = 129
+    TabOrder = 128
     FixedHeight = 50
     object TButtonStyleObject
       StyleName = 'background'
@@ -51184,7 +50235,7 @@ object TStyleContainer
   object TLayout
     StyleName = 'rewindtoolbutton'
     Visible = False
-    TabOrder = 130
+    TabOrder = 129
     FixedWidth = 46
     FixedHeight = 46
     object TButtonStyleObject
@@ -51452,7 +50503,7 @@ object TStyleContainer
     Size.Height = 532.000000000000000000
     Size.PlatformDefault = False
     Visible = False
-    TabOrder = 131
+    TabOrder = 130
     FixedHeight = 50
     object TButtonStyleObject
       StyleName = 'background'
@@ -51761,7 +50812,7 @@ object TStyleContainer
     StyleName = 'forwardtoolbutton'
     Align = Center
     Visible = False
-    TabOrder = 132
+    TabOrder = 131
     FixedWidth = 46
     FixedHeight = 46
     object TButtonStyleObject
@@ -52029,7 +51080,7 @@ object TStyleContainer
     Size.Height = 532.000000000000000000
     Size.PlatformDefault = False
     Visible = False
-    TabOrder = 133
+    TabOrder = 132
     FixedHeight = 50
     object TButtonStyleObject
       StyleName = 'background'
@@ -52337,7 +51388,7 @@ object TStyleContainer
   object TLayout
     StyleName = 'pausetoolbutton'
     Visible = False
-    TabOrder = 134
+    TabOrder = 133
     FixedWidth = 46
     FixedHeight = 46
     object TButtonStyleObject
@@ -52605,7 +51656,7 @@ object TStyleContainer
     Size.Height = 532.000000000000000000
     Size.PlatformDefault = False
     Visible = False
-    TabOrder = 135
+    TabOrder = 134
     FixedHeight = 50
     object TButtonStyleObject
       StyleName = 'background'
@@ -52913,7 +51964,7 @@ object TStyleContainer
   object TLayout
     StyleName = 'stoptoolbutton'
     Visible = False
-    TabOrder = 136
+    TabOrder = 135
     FixedWidth = 46
     FixedHeight = 46
     object TButtonStyleObject
@@ -53181,7 +52232,7 @@ object TStyleContainer
     Size.Height = 532.000000000000000000
     Size.PlatformDefault = False
     Visible = False
-    TabOrder = 137
+    TabOrder = 136
     FixedHeight = 50
     object TButtonStyleObject
       StyleName = 'background'
@@ -53490,7 +52541,7 @@ object TStyleContainer
     StyleName = 'addtoolbutton'
     Align = Center
     Visible = False
-    TabOrder = 138
+    TabOrder = 137
     FixedWidth = 46
     FixedHeight = 46
     object TButtonStyleObject
@@ -53758,7 +52809,7 @@ object TStyleContainer
     Size.Height = 532.000000000000000000
     Size.PlatformDefault = False
     Visible = False
-    TabOrder = 139
+    TabOrder = 138
     FixedHeight = 50
     object TButtonStyleObject
       StyleName = 'background'
@@ -54066,7 +53117,7 @@ object TStyleContainer
   object TLayout
     StyleName = 'priortoolbutton'
     Visible = False
-    TabOrder = 140
+    TabOrder = 139
     FixedWidth = 46
     FixedHeight = 46
     object TButtonStyleObject
@@ -54334,7 +53385,7 @@ object TStyleContainer
     Size.Height = 532.000000000000000000
     Size.PlatformDefault = False
     Visible = False
-    TabOrder = 141
+    TabOrder = 140
     FixedHeight = 50
     object TButtonStyleObject
       StyleName = 'background'
@@ -54643,7 +53694,7 @@ object TStyleContainer
     StyleName = 'nexttoolbutton'
     Align = Center
     Visible = False
-    TabOrder = 142
+    TabOrder = 141
     FixedWidth = 46
     FixedHeight = 46
     object TButtonStyleObject
@@ -54911,7 +53962,7 @@ object TStyleContainer
     Size.Height = 532.000000000000000000
     Size.PlatformDefault = False
     Visible = False
-    TabOrder = 143
+    TabOrder = 142
     FixedHeight = 50
     object TButtonStyleObject
       StyleName = 'background'
@@ -55220,7 +54271,7 @@ object TStyleContainer
     StyleName = 'arrowuptoolbutton'
     Align = Center
     Visible = False
-    TabOrder = 144
+    TabOrder = 143
     FixedWidth = 46
     FixedHeight = 46
     object TButtonStyleObject
@@ -55488,7 +54539,7 @@ object TStyleContainer
     Size.Height = 532.000000000000000000
     Size.PlatformDefault = False
     Visible = False
-    TabOrder = 145
+    TabOrder = 144
     FixedHeight = 50
     object TButtonStyleObject
       StyleName = 'background'
@@ -55797,7 +54848,7 @@ object TStyleContainer
     StyleName = 'arrowuptoolbuttonborderedleft'
     Align = Center
     Visible = False
-    TabOrder = 146
+    TabOrder = 145
     FixedHeight = 46
     object TButtonStyleObject
       StyleName = 'background'
@@ -56091,7 +55142,7 @@ object TStyleContainer
     StyleName = 'arrowdowntoolbutton'
     Align = Center
     Visible = False
-    TabOrder = 147
+    TabOrder = 146
     FixedWidth = 46
     FixedHeight = 46
     object TButtonStyleObject
@@ -56359,7 +55410,7 @@ object TStyleContainer
     Size.Height = 532.000000000000000000
     Size.PlatformDefault = False
     Visible = False
-    TabOrder = 148
+    TabOrder = 147
     FixedHeight = 50
     object TButtonStyleObject
       StyleName = 'background'
@@ -56668,7 +55719,7 @@ object TStyleContainer
     StyleName = 'arrowdowntoolbuttonborderedright'
     Align = Center
     Visible = False
-    TabOrder = 149
+    TabOrder = 148
     FixedHeight = 46
     object TButtonStyleObject
       StyleName = 'background'
@@ -56962,7 +56013,7 @@ object TStyleContainer
     StyleName = 'arrowlefttoolbutton'
     Align = Center
     Visible = False
-    TabOrder = 150
+    TabOrder = 149
     FixedWidth = 46
     FixedHeight = 46
     object TButtonStyleObject
@@ -57230,7 +56281,7 @@ object TStyleContainer
     Size.Height = 532.000000000000000000
     Size.PlatformDefault = False
     Visible = False
-    TabOrder = 151
+    TabOrder = 150
     FixedHeight = 50
     object TButtonStyleObject
       StyleName = 'background'
@@ -57539,7 +56590,7 @@ object TStyleContainer
     StyleName = 'arrowrighttoolbutton'
     Align = Center
     Visible = False
-    TabOrder = 152
+    TabOrder = 151
     FixedWidth = 46
     FixedHeight = 46
     object TButtonStyleObject
@@ -57807,7 +56858,7 @@ object TStyleContainer
     Size.Height = 532.000000000000000000
     Size.PlatformDefault = False
     Visible = False
-    TabOrder = 153
+    TabOrder = 152
     FixedHeight = 50
     object TButtonStyleObject
       StyleName = 'background'
@@ -58115,7 +57166,7 @@ object TStyleContainer
   object TLayout
     StyleName = 'replytoolbutton'
     Visible = False
-    TabOrder = 154
+    TabOrder = 153
     FixedWidth = 46
     FixedHeight = 46
     object TButtonStyleObject
@@ -58383,7 +57434,7 @@ object TStyleContainer
     Size.Height = 532.000000000000000000
     Size.PlatformDefault = False
     Visible = False
-    TabOrder = 155
+    TabOrder = 154
     FixedHeight = 50
     object TButtonStyleObject
       StyleName = 'background'
@@ -58691,7 +57742,7 @@ object TStyleContainer
   object TLayout
     StyleName = 'searchtoolbutton'
     Visible = False
-    TabOrder = 156
+    TabOrder = 155
     FixedWidth = 46
     FixedHeight = 46
     object TButtonStyleObject
@@ -58959,7 +58010,7 @@ object TStyleContainer
     Size.Height = 532.000000000000000000
     Size.PlatformDefault = False
     Visible = False
-    TabOrder = 157
+    TabOrder = 156
     FixedHeight = 50
     object TButtonStyleObject
       StyleName = 'background'
@@ -59268,7 +58319,7 @@ object TStyleContainer
     StyleName = 'bookmarkstoolbutton'
     Align = Center
     Visible = False
-    TabOrder = 158
+    TabOrder = 157
     FixedWidth = 46
     FixedHeight = 46
     object TButtonStyleObject
@@ -59536,7 +58587,7 @@ object TStyleContainer
     Size.Height = 532.000000000000000000
     Size.PlatformDefault = False
     Visible = False
-    TabOrder = 159
+    TabOrder = 158
     FixedHeight = 50
     object TButtonStyleObject
       StyleName = 'background'
@@ -59844,7 +58895,7 @@ object TStyleContainer
   object TLayout
     StyleName = 'trashtoolbutton'
     Visible = False
-    TabOrder = 160
+    TabOrder = 159
     FixedWidth = 46
     FixedHeight = 46
     object TButtonStyleObject
@@ -60112,7 +59163,7 @@ object TStyleContainer
     Size.Height = 532.000000000000000000
     Size.PlatformDefault = False
     Visible = False
-    TabOrder = 161
+    TabOrder = 160
     FixedHeight = 50
     object TButtonStyleObject
       StyleName = 'background'
@@ -60421,7 +59472,7 @@ object TStyleContainer
   object TLayout
     StyleName = 'organizetoolbutton'
     Visible = False
-    TabOrder = 162
+    TabOrder = 161
     FixedWidth = 46
     FixedHeight = 46
     object TButtonStyleObject
@@ -60689,7 +59740,7 @@ object TStyleContainer
     Size.Height = 532.000000000000000000
     Size.PlatformDefault = False
     Visible = False
-    TabOrder = 163
+    TabOrder = 162
     FixedHeight = 50
     object TButtonStyleObject
       StyleName = 'background'
@@ -60998,7 +60049,7 @@ object TStyleContainer
     StyleName = 'cameratoolbutton'
     Align = Center
     Visible = False
-    TabOrder = 164
+    TabOrder = 163
     FixedWidth = 46
     FixedHeight = 46
     object TButtonStyleObject
@@ -61266,7 +60317,7 @@ object TStyleContainer
     Size.Height = 532.000000000000000000
     Size.PlatformDefault = False
     Visible = False
-    TabOrder = 165
+    TabOrder = 164
     FixedHeight = 50
     object TButtonStyleObject
       StyleName = 'background'
@@ -61575,7 +60626,7 @@ object TStyleContainer
     StyleName = 'composetoolbutton'
     Align = Center
     Visible = False
-    TabOrder = 166
+    TabOrder = 165
     FixedWidth = 46
     FixedHeight = 46
     object TButtonStyleObject
@@ -61843,7 +60894,7 @@ object TStyleContainer
     Size.Height = 532.000000000000000000
     Size.PlatformDefault = False
     Visible = False
-    TabOrder = 167
+    TabOrder = 166
     FixedHeight = 50
     object TButtonStyleObject
       StyleName = 'background'
@@ -62152,7 +61203,7 @@ object TStyleContainer
     StyleName = 'infotoolbutton'
     Align = Center
     Visible = False
-    TabOrder = 168
+    TabOrder = 167
     FixedWidth = 46
     FixedHeight = 46
     object TButtonStyleObject
@@ -62420,7 +61471,7 @@ object TStyleContainer
     Size.Height = 532.000000000000000000
     Size.PlatformDefault = False
     Visible = False
-    TabOrder = 169
+    TabOrder = 168
     FixedHeight = 50
     object TButtonStyleObject
       StyleName = 'background'
@@ -62728,7 +61779,7 @@ object TStyleContainer
   object TLayout
     StyleName = 'toollabel'
     Visible = False
-    TabOrder = 170
+    TabOrder = 169
     object TText
       StyleName = 'text'
       Align = Client
@@ -62742,7 +61793,7 @@ object TStyleContainer
     StyleName = 'cleareditbutton'
     Align = Center
     Visible = False
-    TabOrder = 171
+    TabOrder = 170
     FixedWidth = 28
     FixedHeight = 28
     object TButtonStyleObject
@@ -62997,8 +62048,9 @@ object TStyleContainer
   end
   object TLayout
     StyleName = 'listboxheaderlabel'
+    Align = Center
     Visible = False
-    TabOrder = 172
+    TabOrder = 171
     object TText
       StyleName = 'text'
       Align = Client
@@ -63006,6 +62058,959 @@ object TStyleContainer
       HitTest = False
       TextSettings.Font.Size = 19.000000000000000000
       TextSettings.FontColor = claWhite
+    end
+    object TLayout
+      StyleName = 'listboxitembottomdetail'
+      Align = Center
+      Visible = False
+      TabOrder = 46
+      object TActiveStyleObject
+        StyleName = 'background_separatorbottom'
+        Align = Contents
+        SourceLookup = 'Windows 10 Modern SlateGraystyle.png'
+        ActiveTrigger = Selected
+        ActiveLink = <
+          item
+            CapInsets.Left = 2.000000000000000000
+            CapInsets.Top = 2.000000000000000000
+            CapInsets.Right = 2.000000000000000000
+            CapInsets.Bottom = 2.000000000000000000
+            SourceRect.Left = 97.000000000000000000
+            SourceRect.Top = 47.000000000000000000
+            SourceRect.Right = 126.000000000000000000
+            SourceRect.Bottom = 92.000000000000000000
+          end
+          item
+            CapInsets.Left = 3.000000000000000000
+            CapInsets.Top = 3.000000000000000000
+            CapInsets.Right = 3.000000000000000000
+            CapInsets.Bottom = 3.000000000000000000
+            Scale = 1.500000000000000000
+            SourceRect.Left = 145.000000000000000000
+            SourceRect.Top = 70.000000000000000000
+            SourceRect.Right = 189.000000000000000000
+            SourceRect.Bottom = 138.000000000000000000
+          end
+          item
+            CapInsets.Left = 4.000000000000000000
+            CapInsets.Top = 4.000000000000000000
+            CapInsets.Right = 4.000000000000000000
+            CapInsets.Bottom = 4.000000000000000000
+            Scale = 2.000000000000000000
+            SourceRect.Left = 194.000000000000000000
+            SourceRect.Top = 94.000000000000000000
+            SourceRect.Right = 252.000000000000000000
+            SourceRect.Bottom = 184.000000000000000000
+          end
+          item
+            CapInsets.Left = 6.000000000000000000
+            CapInsets.Top = 6.000000000000000000
+            CapInsets.Right = 6.000000000000000000
+            CapInsets.Bottom = 6.000000000000000000
+            Scale = 3.000000000000000000
+            SourceRect.Left = 291.000000000000000000
+            SourceRect.Top = 141.000000000000000000
+            SourceRect.Right = 378.000000000000000000
+            SourceRect.Bottom = 276.000000000000000000
+          end>
+        SourceLink = <
+          item
+            CapInsets.Left = 2.000000000000000000
+            CapInsets.Top = 2.000000000000000000
+            CapInsets.Right = 2.000000000000000000
+            CapInsets.Bottom = 2.000000000000000000
+          end
+          item
+            CapInsets.Left = 3.000000000000000000
+            CapInsets.Top = 3.000000000000000000
+            CapInsets.Right = 3.000000000000000000
+            CapInsets.Bottom = 3.000000000000000000
+            Scale = 1.500000000000000000
+          end
+          item
+            CapInsets.Left = 4.000000000000000000
+            CapInsets.Top = 4.000000000000000000
+            CapInsets.Right = 4.000000000000000000
+            CapInsets.Bottom = 4.000000000000000000
+            Scale = 2.000000000000000000
+          end
+          item
+            CapInsets.Left = 6.000000000000000000
+            CapInsets.Top = 6.000000000000000000
+            CapInsets.Right = 6.000000000000000000
+            CapInsets.Bottom = 6.000000000000000000
+            Scale = 3.000000000000000000
+          end>
+        TouchAnimation.Link = <>
+        Opaque = True
+        object TActiveStyleObject
+          Align = Bottom
+          SourceLookup = 'Windows 10 Modern SlateGraystyle.png'
+          Position.Y = 48.000000000000000000
+          Size.Width = 50.000000000000000000
+          Size.Height = 2.000000000000000000
+          Size.PlatformDefault = False
+          ActiveTrigger = Selected
+          ActiveLink = <
+            item
+              CapInsets.Left = 2.000000000000000000
+              CapInsets.Right = 2.000000000000000000
+            end
+            item
+              CapInsets.Left = 3.000000000000000000
+              CapInsets.Right = 3.000000000000000000
+              Scale = 1.500000000000000000
+            end
+            item
+              CapInsets.Left = 4.000000000000000000
+              CapInsets.Right = 4.000000000000000000
+              Scale = 2.000000000000000000
+            end
+            item
+              CapInsets.Left = 6.000000000000000000
+              CapInsets.Right = 6.000000000000000000
+              Scale = 3.000000000000000000
+            end>
+          SourceLink = <
+            item
+              CapInsets.Left = 2.000000000000000000
+              CapInsets.Right = 2.000000000000000000
+              SourceRect.Left = 130.000000000000000000
+              SourceRect.Top = 90.000000000000000000
+              SourceRect.Right = 159.000000000000000000
+              SourceRect.Bottom = 92.000000000000000000
+            end
+            item
+              CapInsets.Left = 3.000000000000000000
+              CapInsets.Right = 3.000000000000000000
+              Scale = 1.500000000000000000
+              SourceRect.Left = 195.000000000000000000
+              SourceRect.Top = 135.000000000000000000
+              SourceRect.Right = 239.000000000000000000
+              SourceRect.Bottom = 138.000000000000000000
+            end
+            item
+              CapInsets.Left = 4.000000000000000000
+              CapInsets.Right = 4.000000000000000000
+              Scale = 2.000000000000000000
+              SourceRect.Left = 260.000000000000000000
+              SourceRect.Top = 180.000000000000000000
+              SourceRect.Right = 318.000000000000000000
+              SourceRect.Bottom = 184.000000000000000000
+            end
+            item
+              CapInsets.Left = 6.000000000000000000
+              CapInsets.Right = 6.000000000000000000
+              Scale = 3.000000000000000000
+              SourceRect.Left = 390.000000000000000000
+              SourceRect.Top = 270.000000000000000000
+              SourceRect.Right = 477.000000000000000000
+              SourceRect.Bottom = 276.000000000000000000
+            end>
+          TouchAnimation.Link = <>
+        end
+      end
+      object TActiveStyleObject
+        StyleName = 'background_sharp'
+        Align = Contents
+        SourceLookup = 'Windows 10 Modern SlateGraystyle.png'
+        Visible = False
+        ActiveTrigger = Selected
+        ActiveLink = <
+          item
+            CapInsets.Left = 2.000000000000000000
+            CapInsets.Top = 2.000000000000000000
+            CapInsets.Right = 2.000000000000000000
+            CapInsets.Bottom = 2.000000000000000000
+            SourceRect.Left = 97.000000000000000000
+            SourceRect.Top = 47.000000000000000000
+            SourceRect.Right = 117.000000000000000000
+            SourceRect.Bottom = 91.000000000000000000
+          end
+          item
+            CapInsets.Left = 3.000000000000000000
+            CapInsets.Top = 3.000000000000000000
+            CapInsets.Right = 3.000000000000000000
+            CapInsets.Bottom = 3.000000000000000000
+            Scale = 1.500000000000000000
+            SourceRect.Left = 146.000000000000000000
+            SourceRect.Top = 70.000000000000000000
+            SourceRect.Right = 176.000000000000000000
+            SourceRect.Bottom = 136.000000000000000000
+          end
+          item
+            CapInsets.Left = 4.000000000000000000
+            CapInsets.Top = 4.000000000000000000
+            CapInsets.Right = 4.000000000000000000
+            CapInsets.Bottom = 4.000000000000000000
+            Scale = 2.000000000000000000
+            SourceRect.Left = 194.000000000000000000
+            SourceRect.Top = 94.000000000000000000
+            SourceRect.Right = 234.000000000000000000
+            SourceRect.Bottom = 182.000000000000000000
+          end
+          item
+            CapInsets.Left = 6.000000000000000000
+            CapInsets.Top = 6.000000000000000000
+            CapInsets.Right = 6.000000000000000000
+            CapInsets.Bottom = 6.000000000000000000
+            Scale = 3.000000000000000000
+            SourceRect.Left = 291.000000000000000000
+            SourceRect.Top = 141.000000000000000000
+            SourceRect.Right = 351.000000000000000000
+            SourceRect.Bottom = 273.000000000000000000
+          end>
+        SourceLink = <
+          item
+            CapInsets.Left = 2.000000000000000000
+            CapInsets.Top = 2.000000000000000000
+            CapInsets.Right = 2.000000000000000000
+            CapInsets.Bottom = 2.000000000000000000
+            SourceRect.Left = 3.000000000000000000
+            SourceRect.Top = 94.000000000000000000
+            SourceRect.Right = 23.000000000000000000
+            SourceRect.Bottom = 138.000000000000000000
+          end
+          item
+            CapInsets.Left = 3.000000000000000000
+            CapInsets.Top = 3.000000000000000000
+            CapInsets.Right = 3.000000000000000000
+            CapInsets.Bottom = 3.000000000000000000
+            Scale = 1.500000000000000000
+            SourceRect.Left = 4.000000000000000000
+            SourceRect.Top = 141.000000000000000000
+            SourceRect.Right = 34.000000000000000000
+            SourceRect.Bottom = 207.000000000000000000
+          end
+          item
+            CapInsets.Left = 4.000000000000000000
+            CapInsets.Top = 4.000000000000000000
+            CapInsets.Right = 4.000000000000000000
+            CapInsets.Bottom = 4.000000000000000000
+            Scale = 2.000000000000000000
+            SourceRect.Left = 6.000000000000000000
+            SourceRect.Top = 188.000000000000000000
+            SourceRect.Right = 46.000000000000000000
+            SourceRect.Bottom = 276.000000000000000000
+          end
+          item
+            CapInsets.Left = 6.000000000000000000
+            CapInsets.Top = 6.000000000000000000
+            CapInsets.Right = 6.000000000000000000
+            CapInsets.Bottom = 6.000000000000000000
+            Scale = 3.000000000000000000
+            SourceRect.Left = 9.000000000000000000
+            SourceRect.Top = 282.000000000000000000
+            SourceRect.Right = 69.000000000000000000
+            SourceRect.Bottom = 414.000000000000000000
+          end>
+        TouchAnimation.Link = <>
+        Opaque = True
+        object TActiveStyleObject
+          Align = Bottom
+          Margins.Left = 10.000000000000000000
+          SourceLookup = 'Windows 10 Modern SlateGraystyle.png'
+          Position.X = 10.000000000000000000
+          Position.Y = 48.000000000000000000
+          Size.Width = 40.000000000000000000
+          Size.Height = 2.000000000000000000
+          Size.PlatformDefault = False
+          ActiveTrigger = Selected
+          ActiveLink = <
+            item
+              CapInsets.Left = 2.000000000000000000
+              CapInsets.Right = 2.000000000000000000
+            end
+            item
+              CapInsets.Left = 3.000000000000000000
+              CapInsets.Right = 3.000000000000000000
+              Scale = 1.500000000000000000
+            end
+            item
+              CapInsets.Left = 4.000000000000000000
+              CapInsets.Right = 4.000000000000000000
+              Scale = 2.000000000000000000
+            end
+            item
+              CapInsets.Left = 6.000000000000000000
+              CapInsets.Right = 6.000000000000000000
+              Scale = 3.000000000000000000
+            end>
+          SourceLink = <
+            item
+              CapInsets.Left = 2.000000000000000000
+              CapInsets.Right = 2.000000000000000000
+              SourceRect.Left = 130.000000000000000000
+              SourceRect.Top = 90.000000000000000000
+              SourceRect.Right = 159.000000000000000000
+              SourceRect.Bottom = 92.000000000000000000
+            end
+            item
+              CapInsets.Left = 3.000000000000000000
+              CapInsets.Right = 3.000000000000000000
+              Scale = 1.500000000000000000
+              SourceRect.Left = 195.000000000000000000
+              SourceRect.Top = 135.000000000000000000
+              SourceRect.Right = 239.000000000000000000
+              SourceRect.Bottom = 138.000000000000000000
+            end
+            item
+              CapInsets.Left = 4.000000000000000000
+              CapInsets.Right = 4.000000000000000000
+              Scale = 2.000000000000000000
+              SourceRect.Left = 260.000000000000000000
+              SourceRect.Top = 180.000000000000000000
+              SourceRect.Right = 318.000000000000000000
+              SourceRect.Bottom = 184.000000000000000000
+            end
+            item
+              CapInsets.Left = 6.000000000000000000
+              CapInsets.Right = 6.000000000000000000
+              Scale = 3.000000000000000000
+              SourceRect.Left = 390.000000000000000000
+              SourceRect.Top = 270.000000000000000000
+              SourceRect.Right = 477.000000000000000000
+              SourceRect.Bottom = 276.000000000000000000
+            end>
+          TouchAnimation.Link = <>
+        end
+      end
+      object TActiveStyleObject
+        StyleName = 'background_roundbottom'
+        Align = Contents
+        SourceLookup = 'Windows 10 Modern SlateGraystyle.png'
+        Visible = False
+        ActiveTrigger = Selected
+        ActiveLink = <
+          item
+            CapInsets.Left = 2.000000000000000000
+            CapInsets.Top = 2.000000000000000000
+            CapInsets.Right = 2.000000000000000000
+            CapInsets.Bottom = 2.000000000000000000
+            SourceRect.Left = 47.000000000000000000
+            SourceRect.Top = 95.000000000000000000
+            SourceRect.Right = 67.000000000000000000
+            SourceRect.Bottom = 139.000000000000000000
+          end
+          item
+            CapInsets.Left = 3.000000000000000000
+            CapInsets.Top = 3.000000000000000000
+            CapInsets.Right = 3.000000000000000000
+            CapInsets.Bottom = 3.000000000000000000
+            Scale = 1.500000000000000000
+            SourceRect.Left = 70.000000000000000000
+            SourceRect.Top = 142.000000000000000000
+            SourceRect.Right = 100.000000000000000000
+            SourceRect.Bottom = 208.000000000000000000
+          end
+          item
+            CapInsets.Left = 4.000000000000000000
+            CapInsets.Top = 4.000000000000000000
+            CapInsets.Right = 4.000000000000000000
+            CapInsets.Bottom = 4.000000000000000000
+            Scale = 2.000000000000000000
+            SourceRect.Left = 94.000000000000000000
+            SourceRect.Top = 190.000000000000000000
+            SourceRect.Right = 134.000000000000000000
+            SourceRect.Bottom = 278.000000000000000000
+          end
+          item
+            CapInsets.Left = 6.000000000000000000
+            CapInsets.Top = 6.000000000000000000
+            CapInsets.Right = 6.000000000000000000
+            CapInsets.Bottom = 6.000000000000000000
+            Scale = 3.000000000000000000
+            SourceRect.Left = 141.000000000000000000
+            SourceRect.Top = 285.000000000000000000
+            SourceRect.Right = 201.000000000000000000
+            SourceRect.Bottom = 417.000000000000000000
+          end>
+        SourceLink = <
+          item
+            CapInsets.Left = 2.000000000000000000
+            CapInsets.Top = 2.000000000000000000
+            CapInsets.Right = 2.000000000000000000
+            CapInsets.Bottom = 2.000000000000000000
+            SourceRect.Left = 3.000000000000000000
+            SourceRect.Top = 95.000000000000000000
+            SourceRect.Right = 23.000000000000000000
+            SourceRect.Bottom = 139.000000000000000000
+          end
+          item
+            CapInsets.Left = 3.000000000000000000
+            CapInsets.Top = 3.000000000000000000
+            CapInsets.Right = 3.000000000000000000
+            CapInsets.Bottom = 3.000000000000000000
+            Scale = 1.500000000000000000
+            SourceRect.Left = 4.000000000000000000
+            SourceRect.Top = 142.000000000000000000
+            SourceRect.Right = 34.000000000000000000
+            SourceRect.Bottom = 208.000000000000000000
+          end
+          item
+            CapInsets.Left = 4.000000000000000000
+            CapInsets.Top = 4.000000000000000000
+            CapInsets.Right = 4.000000000000000000
+            CapInsets.Bottom = 4.000000000000000000
+            Scale = 2.000000000000000000
+            SourceRect.Left = 6.000000000000000000
+            SourceRect.Top = 190.000000000000000000
+            SourceRect.Right = 46.000000000000000000
+            SourceRect.Bottom = 278.000000000000000000
+          end
+          item
+            CapInsets.Left = 6.000000000000000000
+            CapInsets.Top = 6.000000000000000000
+            CapInsets.Right = 6.000000000000000000
+            CapInsets.Bottom = 6.000000000000000000
+            Scale = 3.000000000000000000
+            SourceRect.Left = 9.000000000000000000
+            SourceRect.Top = 285.000000000000000000
+            SourceRect.Right = 69.000000000000000000
+            SourceRect.Bottom = 417.000000000000000000
+          end>
+        TouchAnimation.Link = <>
+        Opaque = True
+      end
+      object TActiveStyleObject
+        StyleName = 'background_roundtop'
+        Align = Contents
+        SourceLookup = 'Windows 10 Modern SlateGraystyle.png'
+        Visible = False
+        ActiveTrigger = Selected
+        ActiveLink = <
+          item
+            CapInsets.Left = 2.000000000000000000
+            CapInsets.Top = 2.000000000000000000
+            CapInsets.Right = 2.000000000000000000
+            CapInsets.Bottom = 2.000000000000000000
+            SourceRect.Left = 47.000000000000000000
+            SourceRect.Top = 94.000000000000000000
+            SourceRect.Right = 67.000000000000000000
+            SourceRect.Bottom = 138.000000000000000000
+          end
+          item
+            CapInsets.Left = 3.000000000000000000
+            CapInsets.Top = 3.000000000000000000
+            CapInsets.Right = 3.000000000000000000
+            CapInsets.Bottom = 3.000000000000000000
+            Scale = 1.500000000000000000
+            SourceRect.Left = 70.000000000000000000
+            SourceRect.Top = 141.000000000000000000
+            SourceRect.Right = 100.000000000000000000
+            SourceRect.Bottom = 207.000000000000000000
+          end
+          item
+            CapInsets.Left = 4.000000000000000000
+            CapInsets.Top = 4.000000000000000000
+            CapInsets.Right = 4.000000000000000000
+            CapInsets.Bottom = 4.000000000000000000
+            Scale = 2.000000000000000000
+            SourceRect.Left = 94.000000000000000000
+            SourceRect.Top = 188.000000000000000000
+            SourceRect.Right = 134.000000000000000000
+            SourceRect.Bottom = 276.000000000000000000
+          end
+          item
+            CapInsets.Left = 6.000000000000000000
+            CapInsets.Top = 6.000000000000000000
+            CapInsets.Right = 6.000000000000000000
+            CapInsets.Bottom = 6.000000000000000000
+            Scale = 3.000000000000000000
+            SourceRect.Left = 141.000000000000000000
+            SourceRect.Top = 282.000000000000000000
+            SourceRect.Right = 201.000000000000000000
+            SourceRect.Bottom = 414.000000000000000000
+          end>
+        SourceLink = <
+          item
+            CapInsets.Left = 2.000000000000000000
+            CapInsets.Top = 2.000000000000000000
+            CapInsets.Right = 2.000000000000000000
+            CapInsets.Bottom = 2.000000000000000000
+            SourceRect.Left = 3.000000000000000000
+            SourceRect.Top = 93.000000000000000000
+            SourceRect.Right = 23.000000000000000000
+            SourceRect.Bottom = 138.000000000000000000
+          end
+          item
+            CapInsets.Left = 3.000000000000000000
+            CapInsets.Top = 3.000000000000000000
+            CapInsets.Right = 3.000000000000000000
+            CapInsets.Bottom = 3.000000000000000000
+            Scale = 1.500000000000000000
+            SourceRect.Left = 4.000000000000000000
+            SourceRect.Top = 140.000000000000000000
+            SourceRect.Right = 34.000000000000000000
+            SourceRect.Bottom = 208.000000000000000000
+          end
+          item
+            CapInsets.Left = 4.000000000000000000
+            CapInsets.Top = 4.000000000000000000
+            CapInsets.Right = 4.000000000000000000
+            CapInsets.Bottom = 4.000000000000000000
+            Scale = 2.000000000000000000
+            SourceRect.Left = 6.000000000000000000
+            SourceRect.Top = 186.000000000000000000
+            SourceRect.Right = 46.000000000000000000
+            SourceRect.Bottom = 276.000000000000000000
+          end
+          item
+            CapInsets.Left = 6.000000000000000000
+            CapInsets.Top = 6.000000000000000000
+            CapInsets.Right = 6.000000000000000000
+            CapInsets.Bottom = 6.000000000000000000
+            Scale = 3.000000000000000000
+            SourceRect.Left = 9.000000000000000000
+            SourceRect.Top = 279.000000000000000000
+            SourceRect.Right = 69.000000000000000000
+            SourceRect.Bottom = 414.000000000000000000
+          end>
+        TouchAnimation.Link = <>
+        Opaque = True
+        object TActiveStyleObject
+          Align = Bottom
+          Margins.Left = 10.000000000000000000
+          SourceLookup = 'Windows 10 Modern SlateGraystyle.png'
+          Position.X = 10.000000000000000000
+          Position.Y = 48.000000000000000000
+          Size.Width = 40.000000000000000000
+          Size.Height = 2.000000000000000000
+          Size.PlatformDefault = False
+          ActiveTrigger = Selected
+          ActiveLink = <
+            item
+              CapInsets.Left = 2.000000000000000000
+              CapInsets.Right = 2.000000000000000000
+            end
+            item
+              CapInsets.Left = 3.000000000000000000
+              CapInsets.Right = 3.000000000000000000
+              Scale = 1.500000000000000000
+            end
+            item
+              CapInsets.Left = 4.000000000000000000
+              CapInsets.Right = 4.000000000000000000
+              Scale = 2.000000000000000000
+            end
+            item
+              CapInsets.Left = 6.000000000000000000
+              CapInsets.Right = 6.000000000000000000
+              Scale = 3.000000000000000000
+            end>
+          SourceLink = <
+            item
+              CapInsets.Left = 2.000000000000000000
+              CapInsets.Right = 2.000000000000000000
+              SourceRect.Left = 130.000000000000000000
+              SourceRect.Top = 90.000000000000000000
+              SourceRect.Right = 159.000000000000000000
+              SourceRect.Bottom = 92.000000000000000000
+            end
+            item
+              CapInsets.Left = 3.000000000000000000
+              CapInsets.Right = 3.000000000000000000
+              Scale = 1.500000000000000000
+              SourceRect.Left = 195.000000000000000000
+              SourceRect.Top = 135.000000000000000000
+              SourceRect.Right = 239.000000000000000000
+              SourceRect.Bottom = 138.000000000000000000
+            end
+            item
+              CapInsets.Left = 4.000000000000000000
+              CapInsets.Right = 4.000000000000000000
+              Scale = 2.000000000000000000
+              SourceRect.Left = 260.000000000000000000
+              SourceRect.Top = 180.000000000000000000
+              SourceRect.Right = 318.000000000000000000
+              SourceRect.Bottom = 184.000000000000000000
+            end
+            item
+              CapInsets.Left = 6.000000000000000000
+              CapInsets.Right = 6.000000000000000000
+              Scale = 3.000000000000000000
+              SourceRect.Left = 390.000000000000000000
+              SourceRect.Top = 270.000000000000000000
+              SourceRect.Right = 477.000000000000000000
+              SourceRect.Bottom = 276.000000000000000000
+            end>
+          TouchAnimation.Link = <>
+        end
+      end
+      object TActiveStyleObject
+        StyleName = 'background_roundall'
+        Align = Contents
+        SourceLookup = 'Windows 10 Modern SlateGraystyle.png'
+        Visible = False
+        ActiveTrigger = Selected
+        ActiveLink = <
+          item
+            CapInsets.Left = 2.000000000000000000
+            CapInsets.Top = 2.000000000000000000
+            CapInsets.Right = 2.000000000000000000
+            CapInsets.Bottom = 2.000000000000000000
+            SourceRect.Left = 69.000000000000000000
+            SourceRect.Top = 95.000000000000000000
+            SourceRect.Right = 89.000000000000000000
+            SourceRect.Bottom = 139.000000000000000000
+          end
+          item
+            CapInsets.Left = 3.000000000000000000
+            CapInsets.Top = 3.000000000000000000
+            CapInsets.Right = 3.000000000000000000
+            CapInsets.Bottom = 3.000000000000000000
+            Scale = 1.500000000000000000
+            SourceRect.Left = 104.000000000000000000
+            SourceRect.Top = 142.000000000000000000
+            SourceRect.Right = 134.000000000000000000
+            SourceRect.Bottom = 208.000000000000000000
+          end
+          item
+            CapInsets.Left = 4.000000000000000000
+            CapInsets.Top = 4.000000000000000000
+            CapInsets.Right = 4.000000000000000000
+            CapInsets.Bottom = 4.000000000000000000
+            Scale = 2.000000000000000000
+            SourceRect.Left = 138.000000000000000000
+            SourceRect.Top = 190.000000000000000000
+            SourceRect.Right = 178.000000000000000000
+            SourceRect.Bottom = 278.000000000000000000
+          end
+          item
+            CapInsets.Left = 6.000000000000000000
+            CapInsets.Top = 6.000000000000000000
+            CapInsets.Right = 6.000000000000000000
+            CapInsets.Bottom = 6.000000000000000000
+            Scale = 3.000000000000000000
+            SourceRect.Left = 207.000000000000000000
+            SourceRect.Top = 285.000000000000000000
+            SourceRect.Right = 267.000000000000000000
+            SourceRect.Bottom = 417.000000000000000000
+          end>
+        SourceLink = <
+          item
+            CapInsets.Left = 2.000000000000000000
+            CapInsets.Top = 2.000000000000000000
+            CapInsets.Right = 2.000000000000000000
+            CapInsets.Bottom = 2.000000000000000000
+            SourceRect.Left = 25.000000000000000000
+            SourceRect.Top = 95.000000000000000000
+            SourceRect.Right = 45.000000000000000000
+            SourceRect.Bottom = 139.000000000000000000
+          end
+          item
+            CapInsets.Left = 3.000000000000000000
+            CapInsets.Top = 3.000000000000000000
+            CapInsets.Right = 3.000000000000000000
+            CapInsets.Bottom = 3.000000000000000000
+            Scale = 1.500000000000000000
+            SourceRect.Left = 37.000000000000000000
+            SourceRect.Top = 142.000000000000000000
+            SourceRect.Right = 67.000000000000000000
+            SourceRect.Bottom = 208.000000000000000000
+          end
+          item
+            CapInsets.Left = 4.000000000000000000
+            CapInsets.Top = 4.000000000000000000
+            CapInsets.Right = 4.000000000000000000
+            CapInsets.Bottom = 4.000000000000000000
+            Scale = 2.000000000000000000
+            SourceRect.Left = 50.000000000000000000
+            SourceRect.Top = 190.000000000000000000
+            SourceRect.Right = 90.000000000000000000
+            SourceRect.Bottom = 278.000000000000000000
+          end
+          item
+            CapInsets.Left = 6.000000000000000000
+            CapInsets.Top = 6.000000000000000000
+            CapInsets.Right = 6.000000000000000000
+            CapInsets.Bottom = 6.000000000000000000
+            Scale = 3.000000000000000000
+            SourceRect.Left = 75.000000000000000000
+            SourceRect.Top = 285.000000000000000000
+            SourceRect.Right = 135.000000000000000000
+            SourceRect.Bottom = 417.000000000000000000
+          end>
+        TouchAnimation.Link = <>
+        Opaque = True
+      end
+      object TActiveStyleObject
+        StyleName = 'accessorymore'
+        Align = MostRight
+        SourceLookup = 'Windows 10 Modern SlateGraystyle.png'
+        Size.Width = 30.000000000000000000
+        Size.Height = 44.000000000000000000
+        Size.PlatformDefault = False
+        WrapMode = Center
+        Visible = False
+        ActiveTrigger = Selected
+        ActiveLink = <
+          item
+            SourceRect.Left = 139.000000000000000000
+            SourceRect.Top = 106.000000000000000000
+            SourceRect.Right = 151.000000000000000000
+            SourceRect.Bottom = 122.000000000000000000
+          end
+          item
+            Scale = 1.500000000000000000
+            SourceRect.Left = 208.000000000000000000
+            SourceRect.Top = 159.000000000000000000
+            SourceRect.Right = 226.000000000000000000
+            SourceRect.Bottom = 183.000000000000000000
+          end
+          item
+            Scale = 2.000000000000000000
+            SourceRect.Left = 278.000000000000000000
+            SourceRect.Top = 212.000000000000000000
+            SourceRect.Right = 302.000000000000000000
+            SourceRect.Bottom = 244.000000000000000000
+          end
+          item
+            Scale = 3.000000000000000000
+            SourceRect.Left = 417.000000000000000000
+            SourceRect.Top = 318.000000000000000000
+            SourceRect.Right = 453.000000000000000000
+            SourceRect.Bottom = 366.000000000000000000
+          end>
+        SourceLink = <
+          item
+            SourceRect.Left = 139.000000000000000000
+            SourceRect.Top = 106.000000000000000000
+            SourceRect.Right = 151.000000000000000000
+            SourceRect.Bottom = 122.000000000000000000
+          end
+          item
+            Scale = 1.500000000000000000
+            SourceRect.Left = 208.000000000000000000
+            SourceRect.Top = 159.000000000000000000
+            SourceRect.Right = 226.000000000000000000
+            SourceRect.Bottom = 183.000000000000000000
+          end
+          item
+            Scale = 2.000000000000000000
+            SourceRect.Left = 278.000000000000000000
+            SourceRect.Top = 212.000000000000000000
+            SourceRect.Right = 302.000000000000000000
+            SourceRect.Bottom = 244.000000000000000000
+          end
+          item
+            Scale = 3.000000000000000000
+            SourceRect.Left = 417.000000000000000000
+            SourceRect.Top = 318.000000000000000000
+            SourceRect.Right = 453.000000000000000000
+            SourceRect.Bottom = 366.000000000000000000
+          end>
+        TouchAnimation.Link = <>
+      end
+      object TActiveStyleObject
+        StyleName = 'accessorycheckmark'
+        Align = MostRight
+        SourceLookup = 'Windows 10 Modern SlateGraystyle.png'
+        Size.Width = 30.000000000000000000
+        Size.Height = 44.000000000000000000
+        Size.PlatformDefault = False
+        WrapMode = Center
+        Visible = False
+        ActiveTrigger = Selected
+        ActiveLink = <
+          item
+            SourceRect.Left = 155.000000000000000000
+            SourceRect.Top = 105.000000000000000000
+            SourceRect.Right = 173.000000000000000000
+            SourceRect.Bottom = 123.000000000000000000
+          end
+          item
+            Scale = 1.500000000000000000
+            SourceRect.Left = 233.000000000000000000
+            SourceRect.Top = 158.000000000000000000
+            SourceRect.Right = 260.000000000000000000
+            SourceRect.Bottom = 185.000000000000000000
+          end
+          item
+            Scale = 2.000000000000000000
+            SourceRect.Left = 310.000000000000000000
+            SourceRect.Top = 210.000000000000000000
+            SourceRect.Right = 346.000000000000000000
+            SourceRect.Bottom = 246.000000000000000000
+          end
+          item
+            Scale = 3.000000000000000000
+            SourceRect.Left = 465.000000000000000000
+            SourceRect.Top = 315.000000000000000000
+            SourceRect.Right = 519.000000000000000000
+            SourceRect.Bottom = 369.000000000000000000
+          end>
+        SourceLink = <
+          item
+            SourceRect.Left = 155.000000000000000000
+            SourceRect.Top = 105.000000000000000000
+            SourceRect.Right = 173.000000000000000000
+            SourceRect.Bottom = 123.000000000000000000
+          end
+          item
+            Scale = 1.500000000000000000
+            SourceRect.Left = 233.000000000000000000
+            SourceRect.Top = 158.000000000000000000
+            SourceRect.Right = 260.000000000000000000
+            SourceRect.Bottom = 185.000000000000000000
+          end
+          item
+            Scale = 2.000000000000000000
+            SourceRect.Left = 310.000000000000000000
+            SourceRect.Top = 210.000000000000000000
+            SourceRect.Right = 346.000000000000000000
+            SourceRect.Bottom = 246.000000000000000000
+          end
+          item
+            Scale = 3.000000000000000000
+            SourceRect.Left = 465.000000000000000000
+            SourceRect.Top = 315.000000000000000000
+            SourceRect.Right = 519.000000000000000000
+            SourceRect.Bottom = 369.000000000000000000
+          end>
+        TouchAnimation.Link = <>
+      end
+      object TActiveStyleObject
+        StyleName = 'accessorydetail'
+        Align = MostRight
+        SourceLookup = 'Windows 10 Modern SlateGraystyle.png'
+        Size.Width = 40.000000000000000000
+        Size.Height = 44.000000000000000000
+        Size.PlatformDefault = False
+        WrapMode = Center
+        Visible = False
+        ActiveTrigger = Selected
+        ActiveLink = <
+          item
+            SourceRect.Left = 271.000000000000000000
+            SourceRect.Top = 106.000000000000000000
+            SourceRect.Right = 287.000000000000000000
+            SourceRect.Bottom = 122.000000000000000000
+          end
+          item
+            Scale = 1.500000000000000000
+            SourceRect.Left = 407.000000000000000000
+            SourceRect.Top = 158.000000000000000000
+            SourceRect.Right = 431.000000000000000000
+            SourceRect.Bottom = 182.000000000000000000
+          end
+          item
+            Scale = 2.000000000000000000
+            SourceRect.Left = 542.000000000000000000
+            SourceRect.Top = 212.000000000000000000
+            SourceRect.Right = 574.000000000000000000
+            SourceRect.Bottom = 244.000000000000000000
+          end
+          item
+            Scale = 3.000000000000000000
+            SourceRect.Left = 813.000000000000000000
+            SourceRect.Top = 318.000000000000000000
+            SourceRect.Right = 861.000000000000000000
+            SourceRect.Bottom = 366.000000000000000000
+          end>
+        SourceLink = <
+          item
+            SourceRect.Left = 271.000000000000000000
+            SourceRect.Top = 106.000000000000000000
+            SourceRect.Right = 287.000000000000000000
+            SourceRect.Bottom = 122.000000000000000000
+          end
+          item
+            Scale = 1.500000000000000000
+            SourceRect.Left = 407.000000000000000000
+            SourceRect.Top = 158.000000000000000000
+            SourceRect.Right = 431.000000000000000000
+            SourceRect.Bottom = 182.000000000000000000
+          end
+          item
+            Scale = 2.000000000000000000
+            SourceRect.Left = 542.000000000000000000
+            SourceRect.Top = 212.000000000000000000
+            SourceRect.Right = 574.000000000000000000
+            SourceRect.Bottom = 244.000000000000000000
+          end
+          item
+            Scale = 3.000000000000000000
+            SourceRect.Left = 813.000000000000000000
+            SourceRect.Top = 318.000000000000000000
+            SourceRect.Right = 861.000000000000000000
+            SourceRect.Bottom = 366.000000000000000000
+          end>
+        TouchAnimation.Link = <>
+      end
+      object TCheckBox
+        StyleName = 'check'
+        Align = MostLeft
+        CanFocus = False
+        DisableFocusEffect = True
+        Margins.Right = 5.000000000000000000
+        Size.Width = 30.000000000000000000
+        Size.Height = 44.000000000000000000
+        Size.PlatformDefault = False
+        Visible = False
+      end
+      object TGlyph
+        StyleName = 'glyphstyle'
+        Margins.Left = 2.000000000000000000
+        Margins.Top = 2.000000000000000000
+        Margins.Right = 2.000000000000000000
+        Margins.Bottom = 2.000000000000000000
+        Align = MostLeft
+        Size.Width = 44.000000000000000000
+        Size.Height = 16.000000000000000000
+        Size.PlatformDefault = False
+      end
+      object TImage
+        StyleName = 'icon'
+        MultiResBitmap = <
+          item
+          end>
+        Align = MostLeft
+        HitTest = False
+        Position.X = 20.000000000000000000
+        Size.Width = 44.000000000000000000
+        Size.Height = 44.000000000000000000
+        Size.PlatformDefault = False
+        Visible = False
+      end
+      object TActiveStyleTextObject
+        StyleName = 'text'
+        Align = Client
+        Margins.Left = 10.000000000000000000
+        Margins.Top = 1.000000000000000000
+        Margins.Right = 10.000000000000000000
+        Size.Width = 30.000000000000000000
+        Size.Height = 28.000000000000000000
+        Size.PlatformDefault = False
+        TextSettings.Font.Size = 16.000000000000000000
+        TextSettings.FontColor = claWhite
+        TextSettings.Trimming = Character
+        TextSettings.WordWrap = False
+        TextSettings.HorzAlign = Leading
+        ShadowVisible = False
+        ActiveTrigger = Selected
+        ActiveColor = claWhite
+      end
+      object TActiveStyleTextObject
+        StyleName = 'detail'
+        Align = Bottom
+        Margins.Left = 10.000000000000000000
+        Margins.Right = 10.000000000000000000
+        Margins.Bottom = 4.000000000000000000
+        Position.X = 10.000000000000000000
+        Position.Y = 29.000000000000000000
+        Size.Width = 30.000000000000000000
+        Size.Height = 17.000000000000000000
+        Size.PlatformDefault = False
+        TextSettings.Font.Size = 16.000000000000000000
+        TextSettings.FontColor = xFFA7B4BA
+        TextSettings.Trimming = Character
+        TextSettings.WordWrap = False
+        TextSettings.HorzAlign = Leading
+        ShadowVisible = False
+        ActiveTrigger = Selected
+        ActiveColor = claWhite
+      end
     end
   end
   object TStyleObject
@@ -63054,7 +63059,7 @@ object TStyleContainer
   object TLayout
     StyleName = 'pagecurltoolbutton'
     Visible = False
-    TabOrder = 174
+    TabOrder = 173
     FixedWidth = 46
     FixedHeight = 46
     object TButtonStyleObject
@@ -63318,7 +63323,7 @@ object TStyleContainer
   object TLayout
     StyleName = 'transparentedit'
     Visible = False
-    TabOrder = 175
+    TabOrder = 174
     FixedHeight = 32
     object TStyleObject
       StyleName = 'background'
@@ -63413,7 +63418,7 @@ object TStyleContainer
     StyleName = 'additembutton'
     Align = Center
     Visible = False
-    TabOrder = 176
+    TabOrder = 175
     FixedWidth = 46
     FixedHeight = 46
     object TButtonStyleObject
@@ -63678,7 +63683,7 @@ object TStyleContainer
     StyleName = 'deleteitembutton'
     Align = Center
     Visible = False
-    TabOrder = 177
+    TabOrder = 176
     FixedWidth = 46
     FixedHeight = 46
     object TButtonStyleObject
@@ -63943,7 +63948,7 @@ object TStyleContainer
     StyleName = 'detailstoolbutton'
     Align = Center
     Visible = False
-    TabOrder = 178
+    TabOrder = 177
     FixedWidth = 46
     FixedHeight = 46
     object TButtonStyleObject
@@ -64211,7 +64216,7 @@ object TStyleContainer
     Size.Height = 532.000000000000000000
     Size.PlatformDefault = False
     Visible = False
-    TabOrder = 179
+    TabOrder = 178
     FixedHeight = 70
     object TButtonStyleObject
       StyleName = 'background'
@@ -64519,12 +64524,12 @@ object TStyleContainer
   end
   object TLayout
     StyleName = 'listitembutton'
-    Align = Contents
+    Align = Center
     Size.Width = 449.000000000000000000
     Size.Height = 532.000000000000000000
     Size.PlatformDefault = False
     Visible = False
-    TabOrder = 180
+    TabOrder = 179
     FixedHeight = 29
     object TButtonStyleObject
       StyleName = 'background'
@@ -64712,12 +64717,12 @@ object TStyleContainer
   end
   object TLayout
     StyleName = 'listitemdeletebutton'
-    Align = Contents
+    Align = Center
     Size.Width = 449.000000000000000000
     Size.Height = 532.000000000000000000
     Size.PlatformDefault = False
     Visible = False
-    TabOrder = 181
+    TabOrder = 180
     FixedHeight = 29
     object TButtonStyleObject
       StyleName = 'background'
@@ -64910,7 +64915,7 @@ object TStyleContainer
     Size.Height = 532.000000000000000000
     Size.PlatformDefault = False
     Visible = False
-    TabOrder = 182
+    TabOrder = 181
     FixedHeight = 46
     object TButtonStyleObject
       StyleName = 'background'
@@ -65099,7 +65104,7 @@ object TStyleContainer
   object TLayout
     StyleName = 'spinleftbutton'
     Visible = False
-    TabOrder = 183
+    TabOrder = 182
     FixedWidth = 28
     FixedHeight = 28
     object TButtonStyleObject
@@ -65355,7 +65360,7 @@ object TStyleContainer
   object TLayout
     StyleName = 'spinrightbutton'
     Visible = False
-    TabOrder = 184
+    TabOrder = 183
     FixedWidth = 28
     FixedHeight = 28
     object TButtonStyleObject
@@ -65612,7 +65617,7 @@ object TStyleContainer
     StyleName = 'ellipseseditbutton'
     Align = Center
     Visible = False
-    TabOrder = 185
+    TabOrder = 184
     FixedWidth = 28
     FixedHeight = 28
     object TButtonStyleObject
@@ -65868,7 +65873,7 @@ object TStyleContainer
   object TLayout
     StyleName = 'passwordeditbutton'
     Visible = False
-    TabOrder = 186
+    TabOrder = 185
     FixedWidth = 28
     FixedHeight = 28
     object TButtonStyleObject
@@ -66124,7 +66129,7 @@ object TStyleContainer
   object TLayout
     StyleName = 'searcheditbutton'
     Visible = False
-    TabOrder = 187
+    TabOrder = 186
     FixedWidth = 28
     FixedHeight = 28
     object TButtonStyleObject
@@ -66380,7 +66385,7 @@ object TStyleContainer
   object TLayout
     StyleName = 'settingstoolbutton'
     Visible = False
-    TabOrder = 188
+    TabOrder = 187
     FixedWidth = 46
     FixedHeight = 46
     object TButtonStyleObject
@@ -66648,7 +66653,7 @@ object TStyleContainer
     Size.Height = 532.000000000000000000
     Size.PlatformDefault = False
     Visible = False
-    TabOrder = 189
+    TabOrder = 188
     FixedHeight = 50
     object TButtonStyleObject
       StyleName = 'background'
@@ -66957,7 +66962,7 @@ object TStyleContainer
     StyleName = 'escapetoolbutton'
     Align = Center
     Visible = False
-    TabOrder = 190
+    TabOrder = 189
     FixedWidth = 46
     FixedHeight = 46
     object TButtonStyleObject
@@ -67225,7 +67230,7 @@ object TStyleContainer
     Size.Height = 532.000000000000000000
     Size.PlatformDefault = False
     Visible = False
-    TabOrder = 191
+    TabOrder = 190
     FixedHeight = 50
     object TButtonStyleObject
       StyleName = 'background'
@@ -67534,7 +67539,7 @@ object TStyleContainer
     StyleName = 'drawertoolbutton'
     Align = Center
     Visible = False
-    TabOrder = 192
+    TabOrder = 191
     FixedWidth = 46
     FixedHeight = 46
     object TButtonStyleObject
@@ -67802,7 +67807,7 @@ object TStyleContainer
     Size.Height = 532.000000000000000000
     Size.PlatformDefault = False
     Visible = False
-    TabOrder = 193
+    TabOrder = 192
     FixedHeight = 50
     object TButtonStyleObject
       StyleName = 'background'
@@ -68115,7 +68120,7 @@ object TStyleContainer
     Size.Height = 532.000000000000000000
     Size.PlatformDefault = False
     Visible = False
-    TabOrder = 126
+    TabOrder = 125
     FixedHeight = 50
     object TButtonStyleObject
       StyleName = 'background'
@@ -68439,7 +68444,7 @@ object TStyleContainer
     Size.Height = 40.000000000000000000
     Size.PlatformDefault = False
     Visible = False
-    TabOrder = 94
+    TabOrder = 93
     object TRectangle
       StyleName = 'background'
       Align = Contents
@@ -68490,7 +68495,7 @@ object TStyleContainer
     StyleName = 'Framescornerbuttonstyle'
     Align = Center
     Visible = False
-    TabOrder = 95
+    TabOrder = 94
     object TRectangle
       StyleName = 'background'
       Align = Contents
@@ -68585,7 +68590,7 @@ object TStyleContainer
     Size.Height = 40.000000000000000000
     Size.PlatformDefault = False
     Visible = False
-    TabOrder = 96
+    TabOrder = 95
     object TRectangle
       StyleName = 'background'
       Align = Contents
@@ -68639,7 +68644,7 @@ object TStyleContainer
     Size.Height = 40.000000000000000000
     Size.PlatformDefault = False
     Visible = False
-    TabOrder = 97
+    TabOrder = 96
     object TRectangle
       StyleName = 'background'
       Align = Contents
@@ -68694,7 +68699,7 @@ object TStyleContainer
     Size.Height = 131.000000000000000000
     Size.PlatformDefault = False
     Visible = False
-    TabOrder = 70
+    TabOrder = 69
     object TBrushObject
       StyleName = 'AlternatingRowBackground'
       Brush.Color = xFFE2E2E2
@@ -68906,7 +68911,7 @@ object TStyleContainer
       Margins.Top = 2.000000000000000000
       Margins.Right = 2.000000000000000000
       Margins.Bottom = 2.000000000000000000
-      Position.X = 196.000000000000000000
+      Position.X = 199.000000000000000000
       Position.Y = 2.000000000000000000
       Size.Width = 20.000000000000000000
       Size.Height = 46.000000000000000000
@@ -68932,11 +68937,11 @@ object TStyleContainer
       StyleName = 'Text'
       Align = MostLeft
       Locked = True
-      Margins.Left = 2.000000000000000000
+      Margins.Left = 5.000000000000000000
       Margins.Top = 2.000000000000000000
       Margins.Right = 2.000000000000000000
       Margins.Bottom = 2.000000000000000000
-      Position.X = 2.000000000000000000
+      Position.X = 5.000000000000000000
       Position.Y = 2.000000000000000000
       Size.Width = 190.000000000000000000
       Size.Height = 46.000000000000000000
@@ -68970,7 +68975,7 @@ object TStyleContainer
     Size.Height = 32.000000000000000000
     Size.PlatformDefault = False
     Visible = False
-    TabOrder = 87
+    TabOrder = 86
     FixedHeight = 32
     object TButtonStyleObject
       StyleName = 'background'
@@ -69269,6 +69274,7 @@ object TStyleContainer
       Size.Width = 494.000000000000000000
       Size.Height = 28.000000000000000000
       Size.PlatformDefault = False
+      TabOrder = 0
     end
     object TFontObject
       StyleName = 'font'
@@ -69276,7 +69282,6 @@ object TStyleContainer
     end
     object TBrushObject
       StyleName = 'foreground'
-      Brush.Color = claBlack
     end
   end
 end

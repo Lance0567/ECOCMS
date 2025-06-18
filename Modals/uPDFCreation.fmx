@@ -10211,7 +10211,7 @@ object fPDFCreation: TfPDFCreation
                     Font.Weight = Bold
                     Name = 'Item 2'
                     StyledSettings = [Size, FontColor]
-                    Text = 'EIGHTHTEEN- THOUSAND PESOS ONLY '
+                    Text = 'EIGHTHTEEN - THOUSAND PESOS ONLY '
                   end
                   item
                     Font.Families = 'times new roman'
@@ -10220,10 +10220,19 @@ object fPDFCreation: TfPDFCreation
                     Font.Weight = Medium
                     Name = 'Item 3'
                     StyledSettings = [FontColor]
+                    Text = '(PHP 18,000)'
+                  end
+                  item
+                    Font.Families = 'Times new roman'
+                    Font.Size = 11.000000000000000000
+                    Font.Stretch = UltraExpanded
+                    Font.Weight = Medium
+                    Name = 'Item 4'
+                    StyledSettings = [FontColor]
                     Text = 
-                      '(PHP 18,000) Eco Pro Disinfecting & Pest Management Services wil' +
-                      'l provide the necessary service to protect the identified struct' +
-                      'ure(s) against infestation of Asian Subterranean Termites.'
+                      ' Eco Pro Disinfecting & Pest Management Services will provide th' +
+                      'e necessary service to protect the identified structure(s) again' +
+                      'st infestation of Asian Subterranean Termites.'
                   end>
               end
               object SkLabel13: TSkLabel

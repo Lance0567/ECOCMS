@@ -215,7 +215,7 @@ object fDashboard: TfDashboard
           Size.PlatformDefault = False
           TextSettings.Font.Size = 24.000000000000000000
           TextSettings.Font.StyleExt = {00070000000000000004000000}
-          Text = '2'
+          Text = '6'
           TabOrder = 1
         end
       end
@@ -274,7 +274,7 @@ object fDashboard: TfDashboard
           Size.PlatformDefault = False
           TextSettings.Font.Size = 24.000000000000000000
           TextSettings.Font.StyleExt = {00070000000000000004000000}
-          Text = '7'
+          Text = '1'
           TabOrder = 1
         end
       end
@@ -333,7 +333,7 @@ object fDashboard: TfDashboard
           Size.PlatformDefault = False
           TextSettings.Font.Size = 24.000000000000000000
           TextSettings.Font.StyleExt = {00070000000000000004000000}
-          Text = '2'
+          Text = '0'
           TabOrder = 1
         end
       end
@@ -485,14 +485,6 @@ object fDashboard: TfDashboard
         item
           SourceMemberName = 'client_name'
           ControlMemberName = 'Text1'
-        end
-        item
-          SourceMemberName = 'date'
-          ControlMemberName = 'Text3'
-        end
-        item
-          SourceMemberName = 'status'
-          ControlMemberName = 'TextButton6'
         end>
       FillHeaderExpressions = <>
       FillBreakGroups = <>

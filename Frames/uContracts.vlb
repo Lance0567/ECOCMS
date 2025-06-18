@@ -1,68 +1,80 @@
 ﻿[ScrollBox1]
-Coordinates=89,470,68,33
+Coordinates=176,619,68,33
 
 [lytHeader]
-Coordinates=89,529,61,33
+Coordinates=10,619,61,33
 
 [Delete]
-Coordinates=277,470,45,33
+Coordinates=344,542,45,33
 
 [Layout2]
-Coordinates=524,470,53,33
+Coordinates=270,619,53,33
 
 [eSearch]
-Coordinates=346,249,54,51
+Coordinates=102,542,54,51
 
 [gTableRecord]
-Coordinates=324,46,83,123
+Coordinates=225,55,83,177
 Visible=True
 
 [Edit]
-Coordinates=176,529,40,33
+Coordinates=600,542,40,33
 
 [btnTrigger]
-Coordinates=433,470,65,33
+Coordinates=509,542,65,33
 
 [SkLabel1]
-Coordinates=348,470,59,33
+Coordinates=666,542,59,33
 
 [lbTitle]
-Coordinates=426,249,44,51
+Coordinates=182,542,44,51
 
 [ScrollBox2]
-Coordinates=183,470,68,33
+Coordinates=415,542,68,33
 
 [rContainer]
-Coordinates=496,249,66,33
+Coordinates=252,542,66,33
 
 [Layout1]
-Coordinates=10,470,53,33
+Coordinates=97,619,53,33
 
 []
 Coordinates=10,529,53,33
 
 [dm.qClients]
-Coordinates=10,249,88,195
+Coordinates=481,10,88,213
 
 [dm.qContracts]
 Coordinates=231,10,87,33
 Visible=False
 
 [dm.qActiveClients]
-Coordinates=124,249,104,69
+Coordinates=286,303,104,69
 
 [dm.qTemp]
-Coordinates=254,249,66,51
+Coordinates=10,542,66,51
 
 [dm.qClientSelection]
-Coordinates=10,10,113,213
+Coordinates=10,303,113,213
 
 [BindSourceDBContracts]
-Coordinates=149,10,95,195
+Coordinates=10,10,135,249
 
 [BindingsListContracts]
-Coordinates=303,285,82,33
+Coordinates=303,285,124,33
 
 [PopupMenuContracts]
-Coordinates=257,1,79,33
+Coordinates=257,1,121,33
+
+[dm.qTotalContracts]
+Coordinates=149,303,111,69
+
+[dm.qPartiallyPaid]
+Coordinates=416,303,100,69
+
+[dm.qFullyPaid]
+Coordinates=542,303,84,69
+
+[dm.qRecentContracts]
+Coordinates=334,10,121,231
 

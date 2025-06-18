@@ -11,15 +11,15 @@ Coordinates=479,233,47,33
 Visible=False
 
 [lbActiveClients]
-Coordinates=315,398,88,51
+Coordinates=507,398,88,51
 Visible=True
 
 [glytCards]
-Coordinates=105,511,61,33
+Coordinates=454,511,61,33
 Visible=True
 
 [rCard2]
-Coordinates=468,511,47,33
+Coordinates=235,511,47,33
 Visible=True
 
 [lytCardD2]
@@ -47,7 +47,7 @@ Coordinates=536,233,47,33
 Visible=False
 
 [lbFullyPaidC]
-Coordinates=300,303,76,51
+Coordinates=10,303,76,51
 Visible=True
 
 [rRecentContracts]
@@ -55,7 +55,7 @@ Coordinates=412,337,100,33
 Visible=False
 
 [lbTotalContracts]
-Coordinates=499,398,96,51
+Coordinates=385,398,96,51
 Visible=True
 
 [Layout2]
@@ -75,7 +75,7 @@ Coordinates=142,294,68,33
 Visible=False
 
 [ListView1]
-Coordinates=10,10,89,249
+Coordinates=195,28,89,213
 Visible=True
 
 [lytCardD3]
@@ -95,7 +95,7 @@ Coordinates=543,294,61,33
 Visible=False
 
 [lbTitle]
-Coordinates=429,398,44,51
+Coordinates=315,398,44,51
 Visible=True
 
 [Glyph3]
@@ -126,15 +126,15 @@ Coordinates=10,233,85,33
 Visible=False
 
 [lbPartiallyPaidC]
-Coordinates=10,303,92,51
+Coordinates=284,303,92,51
 Visible=True
 
 [dm.qActiveClients]
 Visible=True
-Coordinates=338,511,104,33
+Coordinates=105,511,104,33
 
 [dm.qContracts]
-Coordinates=310,10,95,177
+Coordinates=310,10,95,231
 
 [dm.qClientSelection]
 Coordinates=10,10,113,33
@@ -148,7 +148,7 @@ Visible=False
 Coordinates=179,37,95,195
 
 [BindingsListActiveCli]
-Coordinates=192,511,120,33
+Coordinates=308,511,120,33
 Visible=True
 
 [BindSourceDBActiveCli]
@@ -170,15 +170,15 @@ Visible=False
 Coordinates=193,398,96,87
 
 [BindSourceDB2]
-Coordinates=456,285,92,87
+Coordinates=166,285,92,87
 
 [BindSourceDB3]
-Coordinates=182,285,92,87
+Coordinates=456,285,92,87
 
 [dm.qRecentContracts]
 Coordinates=246,10,121,33
 Visible=False
 
 [BindSourceDB4]
-Coordinates=179,37,105,195
+Coordinates=10,10,105,249
 

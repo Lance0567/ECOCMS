@@ -21,9 +21,6 @@ Coordinates=304,362,112,51
 [lClientSelection]
 Coordinates=10,439,91,51
 
-[dDate]
-Coordinates=619,267,115,51
-
 [lDescription]
 Coordinates=664,362,73,51
 
@@ -37,9 +34,6 @@ Coordinates=10,362,40,51
 [lName]
 Coordinates=357,267,45,51
 Visible=True
-
-[lDate]
-Coordinates=428,267,40,51
 
 [lTitleC]
 Coordinates=319,439,45,33
@@ -97,4 +91,10 @@ Coordinates=190,10,97,231
 
 [lytButtonH]
 Coordinates=10,516,53,33
+
+[lContractDate]
+Coordinates=428,267,40,51
+
+[dContractDate]
+Coordinates=619,267,115,51
 

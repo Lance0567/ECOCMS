@@ -70,7 +70,7 @@ object fContracts: TfContracts
       Position.X = 20.000000000000000000
       Position.Y = 20.000000000000000000
       Size.Width = 659.000000000000000000
-      Size.Height = 530.000000000000000000
+      Size.Height = 575.000000000000000000
       Size.PlatformDefault = False
       Stroke.Color = xFFDBD9D9
       XRadius = 10.000000000000000000
@@ -111,11 +111,11 @@ object fContracts: TfContracts
       object ScrollBox2: TScrollBox
         Align = Client
         Size.Width = 619.000000000000000000
-        Size.Height = 450.000000000000000000
+        Size.Height = 495.000000000000000000
         Size.PlatformDefault = False
         TabOrder = 2
         Viewport.Width = 619.000000000000000000
-        Viewport.Height = 450.000000000000000000
+        Viewport.Height = 495.000000000000000000
         object gTableRecord: TGrid
           Align = Client
           CanFocus = True
@@ -123,23 +123,23 @@ object fContracts: TfContracts
           Margins.Top = 20.000000000000000000
           PopupMenu = PopupMenuContracts
           Size.Width = 619.000000000000000000
-          Size.Height = 430.000000000000000000
+          Size.Height = 475.000000000000000000
           Size.PlatformDefault = False
           TabOrder = 1
-          RowCount = 0
+          RowCount = 6
           Options = [ColumnResize, ColumnMove, ColLines, RowLines, RowSelect, Tabs, Header, HeaderClick, AutoDisplacement]
           OnResized = gTableRecordResized
           Viewport.Width = 615.000000000000000000
-          Viewport.Height = 405.000000000000000000
+          Viewport.Height = 434.000000000000000000
         end
       end
     end
     object Layout1: TLayout
       Align = Top
-      Margins.Top = 50.000000000000000000
-      Position.Y = 600.000000000000000000
+      Margins.Top = 15.000000000000000000
+      Position.Y = 610.000000000000000000
       Size.Width = 699.000000000000000000
-      Size.Height = 50.000000000000000000
+      Size.Height = 30.000000000000000000
       Size.PlatformDefault = False
       TabOrder = 1
     end
@@ -171,13 +171,29 @@ object fContracts: TfContracts
           Width = 150
         end
         item
-          MemberName = 'date'
-          Header = 'Date'
+          MemberName = 'created_at'
+          Header = 'Date created'
           Width = 120
         end
         item
-          MemberName = 'status'
-          Header = 'Status'
+          MemberName = 'payment_status'
+          Header = 'Payment Status'
+          Width = 100
+        end
+        item
+          MemberName = 'first_treatment'
+          Header = 'First Treatment'
+          Width = 100
+        end
+        item
+          MemberName = 'second_treatment'
+          Header = 'Second Treatment'
+          Width = 120
+        end
+        item
+          MemberName = 'third_treatment'
+          Header = 'Third Treatment'
+          Width = 100
         end>
     end
   end

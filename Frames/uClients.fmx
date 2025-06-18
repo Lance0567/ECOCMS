@@ -62,7 +62,7 @@ object fClients: TfClients
       Position.X = 20.000000000000000000
       Position.Y = 20.000000000000000000
       Size.Width = 659.000000000000000000
-      Size.Height = 530.000000000000000000
+      Size.Height = 575.000000000000000000
       Size.PlatformDefault = False
       Stroke.Color = xFFDBD9D9
       XRadius = 10.000000000000000000
@@ -105,34 +105,34 @@ object fClients: TfClients
       object ScrollBox2: TScrollBox
         Align = Client
         Size.Width = 619.000000000000000000
-        Size.Height = 450.000000000000000000
+        Size.Height = 495.000000000000000000
         Size.PlatformDefault = False
         TabOrder = 2
         Viewport.Width = 619.000000000000000000
-        Viewport.Height = 450.000000000000000000
+        Viewport.Height = 495.000000000000000000
         object gTableRecord: TGrid
           Align = Client
           CanFocus = True
           ClipChildren = True
           Margins.Top = 20.000000000000000000
           Size.Width = 619.000000000000000000
-          Size.Height = 430.000000000000000000
+          Size.Height = 475.000000000000000000
           Size.PlatformDefault = False
           TabOrder = 1
           RowCount = 1
           Options = [ColumnResize, ColumnMove, ColLines, RowLines, Tabs, Header, HeaderClick, AutoDisplacement]
           OnResized = gTableRecordResized
           Viewport.Width = 615.000000000000000000
-          Viewport.Height = 389.000000000000000000
+          Viewport.Height = 434.000000000000000000
         end
       end
     end
     object Layout1: TLayout
       Align = Top
       Margins.Top = 15.000000000000000000
-      Position.Y = 565.000000000000000000
+      Position.Y = 610.000000000000000000
       Size.Width = 699.000000000000000000
-      Size.Height = 50.000000000000000000
+      Size.Height = 30.000000000000000000
       Size.PlatformDefault = False
       TabOrder = 1
     end

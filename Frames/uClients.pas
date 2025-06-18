@@ -68,7 +68,7 @@ var
 begin
   NewWidth := gTableRecord.Width / gTableRecord.ColumnCount;
   for i := 0 to gTableRecord.ColumnCount - 1 do
-    gTableRecord.Columns[i].Width := NewWidth - 5;
+    gTableRecord.Columns[i].Width := NewWidth - 2;
 end;
 
 procedure TfClients.gTableRecordResized(Sender: TObject);

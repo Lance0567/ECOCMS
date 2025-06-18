@@ -24,8 +24,8 @@ type
     lDescription: TLabel;
     lTreatmentInclusion: TLabel;
     mTreatmentInclusion: TMemo;
-    lDate: TLabel;
-    dDate: TDateEdit;
+    lContractDate: TLabel;
+    dContractDate: TDateEdit;
     rClientData: TRectangle;
     lName: TLabel;
     lAddress: TLabel;
@@ -48,6 +48,12 @@ type
     Layout1: TLayout;
     cbPaymentStatus: TComboBox;
     ePartialAmount: TEdit;
+    gbTreatmentPhases: TGroupBox;
+    lTreatmentPhaseW: TLabel;
+    cbFirstTreatment: TCheckBox;
+    cbSecondTreatment: TCheckBox;
+    cbThirdTreatment: TCheckBox;
+    lLabelPartialAmount: TLabel;
     procedure btnSaveContractClick(Sender: TObject);
     procedure cbClientSelectionClosePopup(Sender: TObject);
     procedure cbClientSelectionEnter(Sender: TObject);
@@ -55,11 +61,14 @@ type
     procedure FrameEnter(Sender: TObject);
     procedure sbPreviewClick(Sender: TObject);
     procedure cbPaymentStatusChange(Sender: TObject);
+    procedure cbSecondTreatmentChange(Sender: TObject);
+    procedure cbThirdTreatmentChange(Sender: TObject);
   private
     procedure ClearItems;
     { Private declarations }
   public
     { Public declarations }
+    RecordsStatus: String;
   end;
 
 implementation
@@ -71,6 +80,10 @@ uses uDm, uMain;
 var
   qName: String;
   qAddress: String;
+  qDate: String;
+  firstT: Boolean;
+  secondT: Boolean;
+  thirdT: Boolean;
 
 procedure TfCreateContract.ClearItems;
 begin
@@ -78,33 +91,116 @@ begin
   lName.Text := 'Name: ';
   lAddress.Text := 'Address: ';
   mTreatmentInclusion.Lines.Clear;
-  dDate.Date := now;
+  dContractDate.Date := now;
   cbPaymentStatus.ItemIndex := 0;
 end;
 
+{ On Enter Frame }
 procedure TfCreateContract.FrameEnter(Sender: TObject);
 begin
   lytContractDetails.Visible := True;
   fPDFCreation1.Visible := False;
+
+  // Reset components
+  lTreatmentPhaseW.Visible := False;
+  gbTreatmentPhases.Height := 125;
+
+  // checkbox reset trigger
+  firstT := False;
+  secondT := False;
+  thirdT := False;
 end;
 
+{ Contract Details }
 procedure TfCreateContract.sbContractDetailsClick(Sender: TObject);
 begin
   lytContractDetails.Visible := True;
   fPDFCreation1.Visible := False;
 end;
 
+{ Number to word contract price }
+function NumberToWords(Number: Integer): string;
+
+  function ConvertHundreds(N: Integer): string;
+  const
+    Units: array[0..19] of string =
+      ('ZERO', 'ONE', 'TWO', 'THREE', 'FOUR', 'FIVE', 'SIX', 'SEVEN', 'EIGHT',
+       'NINE', 'TEN', 'ELEVEN', 'TWELVE', 'THIRTEEN', 'FOURTEEN', 'FIFTEEN',
+       'SIXTEEN', 'SEVENTEEN', 'EIGHTEEN', 'NINETEEN');
+    Tens: array[2..9] of string =
+      ('TWENTY', 'THIRTY', 'FORTY', 'FIFTY', 'SIXTY', 'SEVENTY', 'EIGHTY', 'NINETY');
+  var
+    Res: string;
+  begin
+    Res := '';
+    if N >= 100 then
+    begin
+      Res := Res + Units[N div 100] + ' HUNDRED';
+      N := N mod 100;
+      if N > 0 then
+        Res := Res + ' ';
+    end;
+
+    if N >= 20 then
+    begin
+      Res := Res + Tens[N div 10];
+      if (N mod 10) > 0 then
+        Res := Res + '-' + Units[N mod 10];
+    end
+    else if N > 0 then
+      Res := Res + Units[N];
+
+    Result := Res;
+  end;
+
+var
+  Thousands, Remainder: Integer;
+begin
+  if Number = 0 then
+    Exit('ZERO');
+
+  Result := '';
+  Thousands := Number div 1000;
+  Remainder := Number mod 1000;
+
+  if Thousands > 0 then
+  begin
+    Result := Result + ConvertHundreds(Thousands) + ' THOUSAND';
+    if Remainder > 0 then
+      Result := Result + ' ';
+  end;
+
+  if Remainder > 0 then
+    Result := Result + ConvertHundreds(Remainder);
+end;
+
+{ Contract Preview }
 procedure TfCreateContract.sbPreviewClick(Sender: TObject);
+var
+  AmountValue: Integer;
+  AmountInWords: string;
 begin
   lytContractDetails.Visible := False;
   fPDFCreation1.Visible := True;
 
   fPDFCreation1.slClientName.Words.Items[1].Text := qName;
   fPDFCreation1.slAddressH.Words.Items[1].Text := qAddress;
-  fPDFCreation1.slDateH.Text := dDate.Text;
+  fPDFCreation1.slDateH.Text := dContractDate.Text;
   fPDFCreation1.slClientNameSig.Words.Items[0].Text := qName;
+
+  // Convert numeric amount to words and assign to a label or slide
+  if TryStrToInt(ePartialAmount.Text, AmountValue) then
+  begin
+    AmountInWords := NumberToWords(AmountValue) + ' PESOS';
+    fPDFCreation1.SkLabel12.Words.Items[2].Text := AmountInWords; // Make sure slAmountInWords exists
+  end
+  else
+  begin
+    fPDFCreation1.SkLabel12.Words.Items[2].Text := 'INVALID AMOUNT';
+  end;
 end;
 
+{ Save contract }
 procedure TfCreateContract.btnSaveContractClick(Sender: TObject);
 var
   HasError: Boolean;
@@ -129,6 +225,24 @@ begin
     lClientSelection.TextSettings.FontColor := TAlphaColorRec.Black;
   end;
 
+  // Prevent saving the record if newly created & treatment phase has no check
+  if RecordsStatus = 'Create' then
+  begin
+    if cbFirstTreatment.IsChecked = False then
+    begin
+      lTreatmentPhaseW.Visible := True;
+      cbFirstTreatment.Margins.Top := 10;
+      gbTreatmentPhases.Height := 140;
+      Exit;
+    end
+    else
+    begin
+      lTreatmentPhaseW.Visible := False;
+      cbFirstTreatment.Margins.Top := 30;
+      gbTreatmentPhases.Height := 125;
+    end;
+  end;
+
   // Stop if any error is found
   if HasError = True then
   begin
@@ -149,12 +263,30 @@ begin
     dm.qContracts.Edit;
   end;
 
+  // Data to store
   dm.qContracts.FieldByName('client_name').AsString := qName;
   dm.qContracts.FieldByName('address').AsString := qAddress;
   dm.qContracts.FieldByName('treatment_inclusion').AsString := mTreatmentInclusion.Text;
-  dm.qContracts.FieldByName('date').AsDateTime := dDate.Date;
-  dm.qContracts.FieldByName('status').AsString := cbPaymentStatus.Text;
+  dm.qContracts.FieldByName('created_at').AsDateTime := dContractDate.Date;
+  dm.qContracts.FieldByName('payment_status').AsString := cbPaymentStatus.Text;
   dm.qContracts.FieldByName('partial_amount').AsString := ePartialAmount.Text;
+
+  // Trigger for checkbox
+  if firstT = True then
+  begin
+    dm.qContracts.FieldByName('first_treatment').AsString := 'Done';
+  end;
+
+  if secondT = True then
+  begin
+    dm.qContracts.FieldByName('second_treatment').AsString := 'Done';
+  end;
+
+  if thirdT = True then
+  begin
+    dm.qContracts.FieldByName('third_treatment').AsString := 'Done';
+  end;
+
   dm.qContracts.Post;
 
   dm.qContracts.Refresh;
@@ -162,6 +294,7 @@ begin
   ClearItems;
 end;
 
+{ Client Selection on Close }
 procedure TfCreateContract.cbClientSelectionClosePopup(Sender: TObject);
 begin
   // Disable required warning and return to normal
@@ -181,7 +314,7 @@ begin
 
   // Use query qTemp
   dm.qTemp.Close;
-  dm.qTemp.SQL.Text := 'SELECT name, address FROM clients WHERE name = ' +
+  dm.qTemp.SQL.Text := 'SELECT name, address, contract_date FROM clients WHERE name = ' +
   QuotedStr(cbClientSelection.Text);
   dm.qTemp.Open;
 
@@ -190,11 +323,13 @@ begin
   begin
     qName := dm.qTemp.FieldByName('name').AsString;
     qAddress := dm.qTemp.FieldByName('address').AsString;
+    qDate := dm.qTemp.FieldByName('contract_date').AsString;
   end
   else
   begin
     qName := '';
     qAddress := '';
+    qDate := '';
   end;
 
   // Close query
@@ -205,6 +340,7 @@ begin
   lAddress.Text := 'Address: ' + qAddress;
 end;
 
+{ Client Selection on Enter }
 procedure TfCreateContract.cbClientSelectionEnter(Sender: TObject);
 begin
   // Ensure dataset is refreshed before LiveBindings display
@@ -214,17 +350,42 @@ begin
     dm.qClientSelection.Active := True;
 end;
 
+{ Second Treatment Checkbox }
+procedure TfCreateContract.cbSecondTreatmentChange(Sender: TObject);
+begin
+  if cbSecondTreatment.IsChecked = True then
+  begin
+    secondT := True;
+  end
+  else
+  begin
+    secondT := False;
+  end;
+end;
+
+{ Third Treatment Checkbox }
+procedure TfCreateContract.cbThirdTreatmentChange(Sender: TObject);
+begin
+  if cbSecondTreatment.IsChecked = True then
+  begin
+    thirdT := True;
+  end
+  else
+  begin
+    thirdT := False;
+  end;
+end;
+
+{ Payment status change }
 procedure TfCreateContract.cbPaymentStatusChange(Sender: TObject);
 begin
   if cbPaymentStatus.Text = 'Initially Paid' then
   begin
-    ePartialAmount.Visible := True;
-    rContractDetails.Height := 470;
+    lLabelPartialAmount.Text := 'Partial Amount';
   end
   else
   begin
-    ePartialAmount.Visible := False;
-    rContractDetails.Height := 420;
+    lLabelPartialAmount.Text := 'Amount';
   end;
 end;
 

@@ -115,7 +115,7 @@ object fCreateContract: TfCreateContract
       Position.X = 20.000000000000000000
       Position.Y = 110.000000000000000000
       Size.Width = 649.000000000000000000
-      Size.Height = 844.000000000000000000
+      Size.Height = 1004.000000000000000000
       Size.PlatformDefault = False
       TabOrder = 2
       object rClientSelection: TRectangle
@@ -251,7 +251,7 @@ object fCreateContract: TfCreateContract
         Margins.Top = 15.000000000000000000
         Position.Y = 285.000000000000000000
         Size.Width = 649.000000000000000000
-        Size.Height = 470.000000000000000000
+        Size.Height = 635.000000000000000000
         Size.PlatformDefault = False
         Stroke.Color = xFFDBD9D9
         XRadius = 10.000000000000000000
@@ -286,9 +286,9 @@ object fCreateContract: TfCreateContract
         object lTreatmentInclusion: TLabel
           Align = Top
           StyledSettings = [Family, FontColor]
-          Margins.Top = 25.000000000000000000
+          Margins.Top = 10.000000000000000000
           Position.X = 20.000000000000000000
-          Position.Y = 94.000000000000000000
+          Position.Y = 239.000000000000000000
           Size.Width = 609.000000000000000000
           Size.Height = 17.000000000000000000
           Size.PlatformDefault = False
@@ -303,7 +303,7 @@ object fCreateContract: TfCreateContract
           Align = Top
           Margins.Top = 10.000000000000000000
           Position.X = 20.000000000000000000
-          Position.Y = 121.000000000000000000
+          Position.Y = 266.000000000000000000
           Size.Width = 609.000000000000000000
           Size.Height = 140.000000000000000000
           Size.PlatformDefault = False
@@ -311,31 +311,31 @@ object fCreateContract: TfCreateContract
           Viewport.Width = 609.000000000000000000
           Viewport.Height = 140.000000000000000000
         end
-        object lDate: TLabel
+        object lContractDate: TLabel
           Align = Top
-          StyledSettings = [Family, FontColor]
+          StyledSettings = [Family]
           Margins.Top = 10.000000000000000000
           Position.X = 20.000000000000000000
-          Position.Y = 271.000000000000000000
+          Position.Y = 416.000000000000000000
           Size.Width = 609.000000000000000000
           Size.Height = 20.000000000000000000
           Size.PlatformDefault = False
           TextSettings.Font.Size = 14.000000000000000000
           TextSettings.Font.StyleExt = {00060000000000000004000000}
-          Text = 'Date'
+          Text = 'Contract Date'
           TabOrder = 1
         end
-        object dDate: TDateEdit
+        object dContractDate: TDateEdit
           Date = 45790.000000000000000000
           DateFormatKind = Long
           Align = Top
           Margins.Top = 5.000000000000000000
           Position.X = 20.000000000000000000
-          Position.Y = 296.000000000000000000
+          Position.Y = 441.000000000000000000
           Size.Width = 609.000000000000000000
           Size.Height = 35.000000000000000000
           Size.PlatformDefault = False
-          StyledSettings = [Family, Style, FontColor]
+          StyledSettings = [Family, Style]
           TabOrder = 2
           TextSettings.Font.Size = 14.000000000000000000
         end
@@ -344,7 +344,7 @@ object fCreateContract: TfCreateContract
           StyledSettings = [Family, FontColor]
           Margins.Top = 10.000000000000000000
           Position.X = 20.000000000000000000
-          Position.Y = 341.000000000000000000
+          Position.Y = 486.000000000000000000
           Size.Width = 609.000000000000000000
           Size.Height = 20.000000000000000000
           Size.PlatformDefault = False
@@ -356,9 +356,9 @@ object fCreateContract: TfCreateContract
         object Layout1: TLayout
           Align = Top
           Position.X = 20.000000000000000000
-          Position.Y = 361.000000000000000000
+          Position.Y = 506.000000000000000000
           Size.Width = 609.000000000000000000
-          Size.Height = 90.000000000000000000
+          Size.Height = 126.000000000000000000
           Size.PlatformDefault = False
           TabOrder = 7
           object cbPaymentStatus: TComboBox
@@ -372,18 +372,105 @@ object fCreateContract: TfCreateContract
             Size.Width = 609.000000000000000000
             Size.Height = 35.000000000000000000
             Size.PlatformDefault = False
-            TabOrder = 8
+            TabOrder = 6
             OnChange = cbPaymentStatusChange
           end
           object ePartialAmount: TEdit
             Touch.InteractiveGestures = [LongTap, DoubleTap]
-            Align = Top
-            TabOrder = 7
-            Position.Y = 50.000000000000000000
-            Margins.Top = 10.000000000000000000
+            Align = Bottom
+            TabOrder = 5
+            Position.Y = 76.000000000000000000
+            Margins.Bottom = 15.000000000000000000
             Size.Width = 609.000000000000000000
             Size.Height = 35.000000000000000000
             Size.PlatformDefault = False
+            StyledSettings = [Family, Size, Style]
+          end
+          object lLabelPartialAmount: TLabel
+            Align = Top
+            StyledSettings = [Family]
+            Margins.Top = 10.000000000000000000
+            Position.Y = 50.000000000000000000
+            Size.Width = 609.000000000000000000
+            Size.Height = 20.000000000000000000
+            Size.PlatformDefault = False
+            TextSettings.Font.Size = 14.000000000000000000
+            TextSettings.Font.StyleExt = {00060000000000000004000000}
+            Text = 'Partial Amount'
+            TabOrder = 0
+          end
+        end
+        object gbTreatmentPhases: TGroupBox
+          Align = Top
+          StyledSettings = [Family, FontColor, Other]
+          Margins.Top = 20.000000000000000000
+          Position.X = 20.000000000000000000
+          Position.Y = 89.000000000000000000
+          Size.Width = 609.000000000000000000
+          Size.Height = 140.000000000000000000
+          Size.PlatformDefault = False
+          Text = 'Treatment Phases:'
+          TextSettings.Font.Size = 14.000000000000000000
+          TextSettings.Font.StyleExt = {00060000000000000004000000}
+          TabOrder = 8
+          object lTreatmentPhaseW: TLabel
+            Align = Top
+            StyledSettings = [Family, Style]
+            Margins.Left = 10.000000000000000000
+            Margins.Top = 20.000000000000000000
+            Position.X = 10.000000000000000000
+            Position.Y = 20.000000000000000000
+            Size.Width = 599.000000000000000000
+            Size.Height = 17.000000000000000000
+            Size.PlatformDefault = False
+            TextSettings.Font.Size = 15.000000000000000000
+            TextSettings.FontColor = claRed
+            Text = 'Client Selection is required'
+            TabOrder = 3
+          end
+          object cbFirstTreatment: TCheckBox
+            Align = Top
+            StyledSettings = [Family, Style, FontColor]
+            Margins.Left = 10.000000000000000000
+            Margins.Top = 15.000000000000000000
+            Position.X = 10.000000000000000000
+            Position.Y = 52.000000000000000000
+            Size.Width = 599.000000000000000000
+            Size.Height = 19.000000000000000000
+            Size.PlatformDefault = False
+            TabOrder = 39
+            Text = 'First Treatment'
+            TextSettings.Font.Size = 14.000000000000000000
+          end
+          object cbSecondTreatment: TCheckBox
+            Align = Top
+            StyledSettings = [Family, Style, FontColor]
+            Margins.Left = 10.000000000000000000
+            Margins.Top = 5.000000000000000000
+            Position.X = 10.000000000000000000
+            Position.Y = 76.000000000000000000
+            Size.Width = 599.000000000000000000
+            Size.Height = 19.000000000000000000
+            Size.PlatformDefault = False
+            TabOrder = 38
+            Text = 'Second Treatment'
+            TextSettings.Font.Size = 14.000000000000000000
+            OnChange = cbSecondTreatmentChange
+          end
+          object cbThirdTreatment: TCheckBox
+            Align = Top
+            StyledSettings = [Family, Style, FontColor]
+            Margins.Left = 10.000000000000000000
+            Margins.Top = 5.000000000000000000
+            Position.X = 10.000000000000000000
+            Position.Y = 100.000000000000000000
+            Size.Width = 599.000000000000000000
+            Size.Height = 19.000000000000000000
+            Size.PlatformDefault = False
+            TabOrder = 37
+            Text = 'Third Treatment'
+            TextSettings.Font.Size = 14.000000000000000000
+            OnChange = cbThirdTreatmentChange
           end
         end
       end
@@ -392,7 +479,7 @@ object fCreateContract: TfCreateContract
         Padding.Top = 15.000000000000000000
         Padding.Bottom = 15.000000000000000000
         Margins.Top = 10.000000000000000000
-        Position.Y = 765.000000000000000000
+        Position.Y = 930.000000000000000000
         Size.Width = 649.000000000000000000
         Size.Height = 70.000000000000000000
         Size.PlatformDefault = False
@@ -439,7 +526,7 @@ object fCreateContract: TfCreateContract
       Align = Top
       Padding.Top = 10.000000000000000000
       Position.X = 20.000000000000000000
-      Position.Y = 954.000000000000000000
+      Position.Y = 1114.000000000000000000
       Size.Width = 649.000000000000000000
       Size.Height = 630.000000000000000000
       Size.PlatformDefault = False
@@ -588,6 +675,12 @@ object fCreateContract: TfCreateContract
                           'n termites. This contact does not provide protection from any ot' +
                           'her wood destroying organism.'
                       end>
+                  end
+                  inherited SkLabel13: TSkLabel
+                    Position.Y = 579.000000000000000000
+                  end
+                  inherited SkLabel6: TSkLabel
+                    Position.Y = 153.000000000000000000
                   end
                 end
               end

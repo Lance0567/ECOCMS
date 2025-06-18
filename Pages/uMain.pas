@@ -184,6 +184,7 @@ begin
   // hide the visibility of Add client modal
   rBackground.Visible := False;
   rModalAdd.Visible := False;
+  dm.qClients.Cancel;
 end;
 
 { Close modal button }
@@ -450,8 +451,9 @@ begin
   fCreateContract1.cbClientSelection.Visible := false;
   fCreateContract1.lClientSelectionR.Visible := false;
   fCreateContract1.cbPaymentStatus.Visible := false;
+  fCreateContract1.fPDFCreation1.Visible := false;
 
-  // adjust height
+  // Adjust height
   fCreateContract1.rClientSelection.Height := 200;
 
   // Show component
@@ -463,14 +465,17 @@ begin
   fCreateContract1.lName.Text := clientName;
   fCreateContract1.lAddress.Text := clientAddress;
   fCreateContract1.mTreatmentInclusion.Text := dm.qContracts.FieldByName('treatment_inclusion').AsString;
-  fCreateContract1.dDate.DateTime := dm.qContracts.FieldByName('date').AsDateTime;
-  fCreateContract1.ePartialAmount.Text := dm.qContracts.FieldByName('status').AsString;
+  fCreateContract1.dContractDate.DateTime := dm.qContracts.FieldByName('contract_date').AsDateTime;
+  fCreateContract1.ePartialAmount.Text := dm.qContracts.FieldByName('payment_status').AsString;
 
   // Switch tab index
   tcController.TabIndex := 3;
   fCreateContract1.Visible := True;
   fCreateContract1.ScrollBox1.ViewportPosition := PointF(0,0); // reset scroll bar
   fCreateContract1.Tag := 1;
+
+  // Set record status
+  fCreateContract1.RecordsStatus := 'Edit';
 end;
 
 { Client Search Procedure }
@@ -660,16 +665,18 @@ end;
 { Create contract }
 procedure TfrmMain.fContracts1btnTriggerClick(Sender: TObject);
 begin
-  // hide other components
+  // Hide other components
   HideFrames;
+  fCreateContract1.lTreatmentPhaseW.Visible := false;
+  fCreateContract1.lClientSelectionR.Visible := false;
+  fCreateContract1.fPDFCreation1.Visible := false;
+
+  // Show component
+  fCreateContract1.ePartialAmount.Visible := true;
   fCreateContract1.cbClientSelection.Visible := true;
-  fCreateContract1.lClientSelectionR.Visible := true;
   fCreateContract1.cbPaymentStatus.Visible := true;
 
-   // Show component
-  fCreateContract1.ePartialAmount.Visible := true;
-
-  // adjust height
+  // Adjust height
   fCreateContract1.rClientSelection.Height := 255;
 
   // Switch tab index
@@ -689,6 +696,14 @@ begin
 
   // Empty the Partial payment input
   fCreateContract1.ePartialAmount.Text := '';
+
+  // Set record status to create
+  fCreateContract1.RecordsStatus := 'Create';
+
+  // Component adjustment
+  fCreateContract1.cbFirstTreatment.Margins.Top := 30;
+  fCreateContract1.gbTreatmentPhases.Height := 115;
+  fCreateContract1.rContractDetails.Height := 635;
 end;
 
 // Contract Search Procedure
