@@ -215,7 +215,16 @@ object fCreateContract: TfCreateContract
         object cbClientSelection: TComboBox
           Align = Top
           Items.Strings = (
-            'Francis')
+            'dsada'
+            ''
+            ''
+            ''
+            ''
+            'Francis'
+            'asdasd'
+            ''
+            ''
+            '')
           ItemIndex = 0
           Margins.Top = 10.000000000000000000
           Position.X = 20.000000000000000000
@@ -372,13 +381,13 @@ object fCreateContract: TfCreateContract
             Size.Width = 609.000000000000000000
             Size.Height = 35.000000000000000000
             Size.PlatformDefault = False
-            TabOrder = 6
+            TabOrder = 5
             OnChange = cbPaymentStatusChange
           end
           object ePartialAmount: TEdit
             Touch.InteractiveGestures = [LongTap, DoubleTap]
             Align = Bottom
-            TabOrder = 5
+            TabOrder = 4
             Position.Y = 76.000000000000000000
             Margins.Bottom = 15.000000000000000000
             Size.Width = 609.000000000000000000

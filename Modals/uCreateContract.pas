@@ -1,4 +1,4 @@
-unit uCreateContract;
+﻿unit uCreateContract;
 
 interface
 
@@ -154,14 +154,22 @@ function NumberToWords(Number: Integer): string;
   end;
 
 var
-  Thousands, Remainder: Integer;
+  Millions, Thousands, Remainder: Integer;
 begin
   if Number = 0 then
     Exit('ZERO');
 
   Result := '';
-  Thousands := Number div 1000;
+  Millions := Number div 1000000;
+  Thousands := (Number div 1000) mod 1000;
   Remainder := Number mod 1000;
+
+  if Millions > 0 then
+  begin
+    Result := Result + ConvertHundreds(Millions) + ' MILLION';
+    if (Thousands > 0) or (Remainder > 0) then
+      Result := Result + ' ';
+  end;
 
   if Thousands > 0 then
   begin
@@ -174,11 +182,12 @@ begin
     Result := Result + ConvertHundreds(Remainder);
 end;
 
+
 { Contract Preview }
 procedure TfCreateContract.sbPreviewClick(Sender: TObject);
 var
   AmountValue: Integer;
-  AmountInWords: string;
+  AmountInWords, FormattedAmount: string;
 begin
   lytContractDetails.Visible := False;
   fPDFCreation1.Visible := True;
@@ -186,17 +195,21 @@ begin
   fPDFCreation1.slClientName.Words.Items[1].Text := qName;
   fPDFCreation1.slAddressH.Words.Items[1].Text := qAddress;
   fPDFCreation1.slDateH.Text := dContractDate.Text;
-  fPDFCreation1.slClientNameSig.Words.Items[0].Text := qName;
+  fPDFCreation1.slClientNameSig.Words.Items[0].Text := UpperCase(qName);
 
   // Convert numeric amount to words and assign to a label or slide
   if TryStrToInt(ePartialAmount.Text, AmountValue) then
   begin
     AmountInWords := NumberToWords(AmountValue) + ' PESOS';
-    fPDFCreation1.SkLabel12.Words.Items[2].Text := AmountInWords; // Make sure slAmountInWords exists
+    FormattedAmount := FormatFloat('#,##0', AmountValue); // This adds the comma separator
+
+    fPDFCreation1.SkLabel12.Words.Items[2].Text := AmountInWords + ' ';
+    fPDFCreation1.SkLabel12.Words.Items[3].Text := '(PHP ' + FormattedAmount + ')';
   end
   else
   begin
     fPDFCreation1.SkLabel12.Words.Items[2].Text := 'INVALID AMOUNT';
+    fPDFCreation1.SkLabel12.Words.Items[3].Text := ' ()';
   end;
 end;
 
