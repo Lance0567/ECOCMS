@@ -32,7 +32,7 @@ object frmMain: TfrmMain
         Size.Width = 617.000000000000000000
         Size.Height = 505.000000000000000000
         Size.PlatformDefault = False
-        TabIndex = 1
+        TabIndex = 3
         TabOrder = 0
         TabPosition = None
         OnChange = tcControllerChange
@@ -233,7 +233,7 @@ object frmMain: TfrmMain
             item
             end>
           TextSettings.Trimming = None
-          IsSelected = True
+          IsSelected = False
           Size.Width = 12.000000000000000000
           Size.Height = 12.000000000000000000
           Size.PlatformDefault = False
@@ -432,8 +432,8 @@ object frmMain: TfrmMain
                     StyleLookup = 'gridstyleOriginal'
                     TextSettings.Font.Family = '(Default)'
                     StyledSettings = [Size, Style]
-                    Viewport.Width = 526.000000000000000000
-                    Viewport.Height = 475.000000000000000000
+                    Viewport.Width = 522.000000000000000000
+                    Viewport.Height = 430.000000000000000000
                   end
                 end
               end
@@ -501,7 +501,7 @@ object frmMain: TfrmMain
             item
             end>
           TextSettings.Trimming = None
-          IsSelected = False
+          IsSelected = True
           Size.Width = 12.000000000000000000
           Size.Height = 12.000000000000000000
           Size.PlatformDefault = False
@@ -566,9 +566,6 @@ object frmMain: TfrmMain
                   inherited lClientSelection: TLabel
                     Size.Width = 516.000000000000000000
                     TextSettings.Font.StyleExt = {00060000000000000004000000}
-                    inherited Label2: TLabel
-                      TabOrder = 4
-                    end
                   end
                   inherited lDescription1: TLabel
                     Size.Width = 516.000000000000000000
@@ -656,7 +653,6 @@ object frmMain: TfrmMain
                     inherited cbFirstTreatment: TCheckBox
                       StyledSettings = [Family, Style]
                       Size.Width = 506.000000000000000000
-                      TabOrder = 40
                     end
                     inherited cbSecondTreatment: TCheckBox
                       StyledSettings = [Family, Style]

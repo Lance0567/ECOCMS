@@ -215,7 +215,7 @@ object fCreateContract: TfCreateContract
         object cbClientSelection: TComboBox
           Align = Top
           Items.Strings = (
-            'Lara'
+            'Laraa'
             ''
             ''
             ''
@@ -232,7 +232,15 @@ object fCreateContract: TfCreateContract
             'Lance'
             ''
             ''
-            '')
+            ''
+            ''
+            'Lsda'
+            ''
+            ''
+            'sadas'
+            'adsadsad'
+            'asasdaasdas'
+            'Law')
           ItemIndex = 0
           Margins.Top = 10.000000000000000000
           Position.X = 20.000000000000000000
@@ -325,8 +333,8 @@ object fCreateContract: TfCreateContract
           Size.Height = 140.000000000000000000
           Size.PlatformDefault = False
           TabOrder = 6
-          Viewport.Width = 605.000000000000000000
-          Viewport.Height = 136.000000000000000000
+          Viewport.Width = 609.000000000000000000
+          Viewport.Height = 140.000000000000000000
         end
         object lCreatedDate: TLabel
           Align = Top
@@ -743,14 +751,14 @@ object fCreateContract: TfCreateContract
   object BindSourceDBClientSel: TBindSourceDB
     DataSet = dm.qClientSelection
     ScopeMappings = <>
-    Left = 456
-    Top = 13
+    Left = 632
+    Top = 149
   end
   object BindingsListClientSel: TBindingsList
     Methods = <>
     OutputConverters = <>
-    Left = 316
-    Top = 13
+    Left = 492
+    Top = 149
     object LinkListControlToField1: TLinkListControlToField
       Category = 'Quick Bindings'
       DataSource = BindSourceDBClientSel

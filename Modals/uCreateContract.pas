@@ -319,6 +319,21 @@ begin
   dm.qContracts.Close;
   ClearItems;
 
+  // Populate variables from extracted query
+  if not dm.qTemp.IsEmpty then
+  begin
+    dm.qTemp.FieldByName('contract').AsString := 'true';
+  end
+  else
+  begin
+    ShowMessage('No data has found from the selected client');
+  end;
+
+  dm.qTemp.Post;
+
+  // Close query
+  dm.qTemp.Close;
+
   // Record Message
   frmMain.RecordMessage('contract');
 end;
@@ -343,9 +358,10 @@ begin
 
   // Use query qTemp
   dm.qTemp.Close;
-  dm.qTemp.SQL.Text := 'SELECT name, address, contract_date FROM clients WHERE name = ' +
+  dm.qTemp.SQL.Text := 'SELECT name, address, contract_date, contract FROM clients WHERE name = ' +
   QuotedStr(cbClientSelection.Text);
   dm.qTemp.Open;
+  dm.qTemp.Edit;
 
   // Populate variables from extracted query
   if not dm.qTemp.IsEmpty then
@@ -360,9 +376,6 @@ begin
     qAddress := '';
     qDate := '';
   end;
-
-  // Close query
-  dm.qTemp.Close;
 
   // Display the values
   lName.Text := 'Name: ' + qName;

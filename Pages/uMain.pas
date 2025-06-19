@@ -847,7 +847,7 @@ begin
 
   if not fCreateContract1.lClientSelectionR.Visible = True then
   begin
-    // hide other components
+    // Hide other components
     HideFrames;
 
     // Switch tab index
