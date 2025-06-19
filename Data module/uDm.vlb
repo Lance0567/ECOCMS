@@ -23,7 +23,7 @@ Coordinates=113,251,48,51
 Coordinates=263,251,66,69
 
 []
-Coordinates=115,10,88,195
+Coordinates=228,10,88,213
 
 [qPartiallyPaid]
 Coordinates=171,251,82,69
@@ -33,7 +33,4 @@ Coordinates=10,251,93,69
 
 [qRecentContracts]
 Coordinates=10,10,103,213
-
-[qClients]
-Coordinates=228,10,88,213
 

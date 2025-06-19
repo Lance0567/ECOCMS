@@ -31,7 +31,7 @@ type
     qPartiallyPaid: TFDQuery;
     qTotalContracts: TFDQuery;
     qRecentContracts: TFDQuery;
-    qClients: TFDQuery;
+    qClient: TFDQuery;
     procedure DataModuleCreate(Sender: TObject);
     procedure DataModuleDestroy(Sender: TObject);
   private
@@ -74,7 +74,7 @@ begin
   qFullyPaid.Close;
   qPartiallyPaid.Close;
   qRecentContracts.Close;
-  qClients.Close;
+  qClient.Close;
   qContracts.Close;
   qClientSelection.Close;
 

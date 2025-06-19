@@ -54321,7 +54321,7 @@ object dm: Tdm
     Left = 272
     Top = 232
   end
-  object qClients: TFDQuery
+  object qClient: TFDQuery
     Active = True
     Connection = cData
     SQL.Strings = (

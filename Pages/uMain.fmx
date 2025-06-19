@@ -297,8 +297,8 @@ object frmMain: TfrmMain
                     StyleLookup = 'gridstyleOriginal'
                     StyledSettings = [Family, Size, Style]
                     Options = [ColumnResize, ColumnMove, ColLines, RowLines, RowSelect, Tabs, Header, HeaderClick, AutoDisplacement]
-                    Viewport.Width = 522.000000000000000000
-                    Viewport.Height = 430.000000000000000000
+                    Viewport.Width = 526.000000000000000000
+                    Viewport.Height = 475.000000000000000000
                   end
                 end
               end
@@ -315,14 +315,6 @@ object frmMain: TfrmMain
               inherited Delete: TMenuItem
                 OnClick = fClients1DeleteClick
               end
-            end
-            inherited BindSourceDBClients: TBindSourceDB
-              Left = 328
-              Top = 192
-            end
-            inherited BindingsListClients: TBindingsList
-              Left = 476
-              Top = 189
             end
           end
         end
@@ -560,10 +552,8 @@ object frmMain: TfrmMain
                       ItemIndex = 1
                       Size.Width = 516.000000000000000000
                       Size.Height = 32.000000000000000000
-                      TabOrder = 2
                     end
                     inherited ePartialAmount: TEdit
-                      TabOrder = 1
                       Position.Y = 79.000000000000000000
                       Margins.Top = 10.000000000000000000
                       Size.Width = 516.000000000000000000

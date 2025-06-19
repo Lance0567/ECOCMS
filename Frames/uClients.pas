@@ -27,9 +27,9 @@ type
     Edit: TMenuItem;
     Delete: TMenuItem;
     eSearch: TEdit;
-    BindSourceDBClients: TBindSourceDB;
-    BindingsListClients: TBindingsList;
-    LinkGridToClients: TLinkGridToDataSource;
+    BindSourceDB1: TBindSourceDB;
+    BindingsList1: TBindingsList;
+    LinkGridToDataSourceBindSourceDB1: TLinkGridToDataSource;
     procedure btnTriggerClick(Sender: TObject);
     procedure gTableRecordResized(Sender: TObject);
     procedure eSearchChange(Sender: TObject);

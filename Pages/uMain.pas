@@ -13,7 +13,7 @@ uses
   System.Bindings.Outputs, Fmx.Bind.Editors, Data.Bind.Components,
   Data.Bind.Grid, Data.Bind.DBScope, FMX.Edit, FMX.DateTimeCtrls, uContracts,
   FMX.Memo.Types, FMX.DialogService, FMX.ScrollBox, FMX.Memo, uCreateContract,
-  uCompile, FMX.Ani;
+  uCompile, FMX.Ani, Data.DB;
 
 type
   TfrmMain = class(TForm)
@@ -137,7 +137,7 @@ begin
   dm.qFullyPaid.Active := false;
   dm.qPartiallyPaid.Active := false;
   dm.qTotalContracts.Active := false;
-  dm.qClients.Active := false;
+  dm.qClient.Active := false;
   dm.qContracts.Active := false;
 end;
 
@@ -185,7 +185,7 @@ end;
 procedure TfrmMain.btnCancelClick(Sender: TObject);
 begin
   // hide the visibility of Add client modal
-  dm.qClients.Cancel;
+  dm.qClient.Cancel;
   rBackground.Visible := False;
   rModalAdd.Visible := False;
 end;
@@ -194,7 +194,7 @@ end;
 procedure TfrmMain.btnCloseClick(Sender: TObject);
 begin
   // visibility hide of Add client modal
-  dm.qClients.Cancel;
+  dm.qClient.Cancel;
   rBackground.Visible := False;
   rModalAdd.Visible := False;
 end;
@@ -298,18 +298,25 @@ begin
     Exit;
   end;
 
-  dm.qClients.Edit;
+  if Self.Tag = 0 then
+  begin
+    dm.qClient.Append;
+  end
+  else if Self.Tag = 1 then
+  begin
+    dm.qClient.Edit;
+  end;
 
   // Proceed to save
-  dm.qClients.FieldByName('name').AsString := eFullname.Text;
-  dm.qClients.FieldByName('address').AsString := eAddress.Text;
-  dm.qClients.FieldByName('contract_price').AsFloat := StrToFloat(eContractPrice.Text);
-  dm.qClients.FieldByName('contract_date').AsString := dContractDate.Text;
-  dm.qClients.FieldByName('first_treatment').AsString := dFirstTD.Text;
-  dm.qClients.FieldByName('second_treatment').AsString := dSecondTD.Text;
-  dm.qClients.FieldByName('third_treatment').AsString := dThirdTD.Text;
-  dm.qClients.Post;
-  dm.qClients.Refresh;
+  dm.qClient.FieldByName('name').AsString := eFullname.Text;
+  dm.qClient.FieldByName('address').AsString := eAddress.Text;
+  dm.qClient.FieldByName('contract_price').AsFloat := StrToFloat(eContractPrice.Text);
+  dm.qClient.FieldByName('contract_date').AsString := dContractDate.Text;
+  dm.qClient.FieldByName('first_treatment').AsString := dFirstTD.Text;
+  dm.qClient.FieldByName('second_treatment').AsString := dSecondTD.Text;
+  dm.qClient.FieldByName('third_treatment').AsString := dThirdTD.Text;
+  dm.qClient.Post;
+  dm.qClient.Refresh;
 
   rBackground.Visible := False;
   rModalAdd.Visible := False;
@@ -345,7 +352,9 @@ end;
 procedure TfrmMain.fClients1btnTriggerClick(Sender: TObject);
 begin
   recordStatus := 'create';
-  dm.qClients.Insert;
+  if not (dm.qClient.State in [dsEdit, dsInsert]) then
+  dm.qClient.Edit;
+
   fClients1.btnTriggerClick(Sender);
 
   // Set Date components
@@ -389,7 +398,7 @@ begin
               try
                 if setDelete = 'client' then
                 begin
-                  dm.qClients.Delete;
+                  dm.qClient.Delete;
                   setDelete := '';
 
                   frmMain.Tag := 2; // Record Message
@@ -454,13 +463,13 @@ begin
   recordStatus := 'edit';
 
   // Populate the form
-  eFullname.Text := dm.qClients.FieldByName('name').AsString;;
-  eAddress.Text := dm.qClients.FieldByName('address').AsString;;
-  dContractDate.Text := dm.qClients.FieldByName('contract_date').AsString;
-  eContractPrice.Text := dm.qClients.FieldByName('contract_price').AsString;
-  dFirstTD.Text := dm.qClients.FieldByName('first_treatment').AsString;
-  dSecondTD.Text := dm.qClients.FieldByName('second_treatment').AsString;
-  dThirdTD.Text := dm.qClients.FieldByName('third_treatment').AsString;
+  eFullname.Text := dm.qClient.FieldByName('name').AsString;;
+  eAddress.Text := dm.qClient.FieldByName('address').AsString;;
+  dContractDate.Text := dm.qClient.FieldByName('contract_date').AsString;
+  eContractPrice.Text := dm.qClient.FieldByName('contract_price').AsString;
+  dFirstTD.Text := dm.qClient.FieldByName('first_treatment').AsString;
+  dSecondTD.Text := dm.qClient.FieldByName('second_treatment').AsString;
+  dThirdTD.Text := dm.qClient.FieldByName('third_treatment').AsString;
 
   // visibility show of Add client modal
   frmMain.rBackground.Visible := True;
@@ -554,26 +563,26 @@ procedure TfrmMain.fClients1eSearchChangeTracking(Sender: TObject);
 var
   SearchText: string;
 begin
-  dm.qClients.DisableControls;
+  dm.qClient.DisableControls;
   try
-    dm.qClients.Close;
+    dm.qClient.Close;
 
     if Trim(fClients1.eSearch.Text) = '' then
     begin
       // No search: load all records
-      dm.qClients.SQL.Text := 'SELECT * FROM clients';
+      dm.qClient.SQL.Text := 'SELECT * FROM clients';
     end
     else
     begin
       // Search with parameter
-      dm.qClients.SQL.Text := 'SELECT * FROM clients WHERE name LIKE :search';
+      dm.qClient.SQL.Text := 'SELECT * FROM clients WHERE name LIKE :search';
       SearchText := '%' + fClients1.eSearch.Text + '%';
-      dm.qClients.ParamByName('search').AsString := SearchText;
+      dm.qClient.ParamByName('search').AsString := SearchText;
     end;
 
-    dm.qClients.Open;
+    dm.qClient.Open;
   finally
-    dm.qClients.EnableControls;
+    dm.qClient.EnableControls;
   end;
 end;
 
@@ -690,7 +699,7 @@ begin
 
   case tcController.TabIndex of
     0: dashboard;
-    1: dm.qClients.Open;
+    1: dm.qClient.Open;
     2: dm.qContracts.Open;
     3: dm.qContracts.Open;
   end;

@@ -15,7 +15,7 @@ Coordinates=246,1186,128,33
 Coordinates=10,1009,131,33
 
 [fDashboard1.ListView1]
-Coordinates=10,46,127,213
+Coordinates=10,46,127,195
 
 [mvSidebar]
 Coordinates=1210,1009,67,33
@@ -498,7 +498,7 @@ Coordinates=567,242,100,33
 Visible=False
 
 [fDashboard1.BindSourceDB4]
-Coordinates=217,10,158,285
+Coordinates=217,10,158,249
 
 [fDashboard1.BindSourceDB3]
 Coordinates=1357,321,158,87
@@ -620,4 +620,38 @@ Coordinates=365,583,56,51
 
 [FloatAnimation1]
 Coordinates=1014,384,95,33
+
+[dm.qClient]
+Visible=False
+Coordinates=0,0,67,33
+
+[fCreateContract1.lLabelPartialAmount]
+Coordinates=1130,206,200,51
+
+[fCreateContract1.dCreatedDate]
+Coordinates=436,427,167,51
+
+[fCreateContract1.gbTreatmentPhases]
+Coordinates=1012,1,199,51
+
+[fCreateContract1.cbFirstTreatment]
+Coordinates=436,497,184,51
+
+[fCreateContract1.cbThirdTreatment]
+Coordinates=725,409,188,51
+
+[fClients1.BindingsList1]
+Coordinates=416,279,128,33
+
+[fCreateContract1.cbSecondTreatment]
+Coordinates=1130,276,199,51
+
+[fClients1.BindSourceDB1]
+Coordinates=156,260,139,231
+
+[fCreateContract1.lTreatmentPhaseW]
+Coordinates=725,242,193,51
+
+[fCreateContract1.lCreatedDate]
+Coordinates=63,529,164,51
 
