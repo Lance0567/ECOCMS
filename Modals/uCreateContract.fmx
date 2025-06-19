@@ -152,7 +152,7 @@ object fCreateContract: TfCreateContract
             TextSettings.Font.Size = 17.000000000000000000
             TextSettings.FontColor = claRed
             Text = '*'
-            TabOrder = 3
+            TabOrder = 4
           end
         end
         object lDescription1: TLabel
@@ -446,7 +446,7 @@ object fCreateContract: TfCreateContract
             Size.Width = 599.000000000000000000
             Size.Height = 19.000000000000000000
             Size.PlatformDefault = False
-            TabOrder = 40
+            TabOrder = 39
             Text = 'First Treatment'
             TextSettings.Font.Size = 14.000000000000000000
           end
@@ -460,7 +460,7 @@ object fCreateContract: TfCreateContract
             Size.Width = 599.000000000000000000
             Size.Height = 19.000000000000000000
             Size.PlatformDefault = False
-            TabOrder = 39
+            TabOrder = 38
             Text = 'Second Treatment'
             TextSettings.Font.Size = 14.000000000000000000
             OnChange = cbSecondTreatmentChange
@@ -475,7 +475,7 @@ object fCreateContract: TfCreateContract
             Size.Width = 599.000000000000000000
             Size.Height = 19.000000000000000000
             Size.PlatformDefault = False
-            TabOrder = 38
+            TabOrder = 37
             Text = 'Third Treatment'
             TextSettings.Font.Size = 14.000000000000000000
             OnChange = cbThirdTreatmentChange

@@ -52,7 +52,6 @@ procedure TfClients.btnTriggerClick(Sender: TObject);
 begin
   // Reset tag
   frmMain.Tag := 0;
-  dm.qClients.Insert;
 
   // visibility show of Add client modal
   frmMain.rBackground.Visible := True;

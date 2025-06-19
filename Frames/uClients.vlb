@@ -1,25 +1,25 @@
 ﻿[Layout2]
-Coordinates=337,233,53,33
+Coordinates=337,233,60,36
 Visible=False
 
 [btnTrigger]
-Coordinates=193,233,65,33
+Coordinates=193,233,73,36
 Visible=False
 
 [lytHeader]
-Coordinates=400,233,61,33
+Coordinates=400,233,70,36
 Visible=False
 
 [lbTitle]
-Coordinates=197,10,44,33
+Coordinates=197,10,49,36
 Visible=False
 
 [gTableRecord]
-Coordinates=211,64,83,123
+Coordinates=393,76,95,146
 Visible=True
 
 [SkLabel1]
-Coordinates=268,233,59,33
+Coordinates=268,233,68,36
 Visible=False
 
 []
@@ -27,75 +27,75 @@ Coordinates=420,10,53,33
 Visible=False
 
 [dm.qClients]
-Coordinates=10,10,73,33
+Coordinates=10,10,83,36
 Visible=False
 
 [Layout1]
-Coordinates=164,276,53,33
+Coordinates=164,276,60,36
 Visible=False
 
 [ScrollBox1]
-Coordinates=10,276,68,33
+Coordinates=10,276,76,36
 Visible=False
 
 [dm.]
 Coordinates=129,130,95,33
 
 [rContainer]
-Coordinates=88,276,66,33
+Coordinates=88,276,75,36
 Visible=False
 
 [dm.qActiveClients]
 Visible=False
-Coordinates=359,1,104,33
+Coordinates=359,1,118,36
 
 [dm.qContracts]
 Visible=False
-Coordinates=204,150,87,33
+Coordinates=204,150,98,36
 
 [ScrollBox2]
-Coordinates=115,233,68,33
+Coordinates=115,233,76,36
 Visible=False
 
 [Delete]
-Coordinates=60,233,45,33
+Coordinates=60,233,52,36
 Visible=False
 
 [eSearch]
-Coordinates=133,10,54,33
+Coordinates=133,10,62,36
 Visible=False
 
 [Edit]
-Coordinates=10,233,40,33
+Coordinates=10,233,40,36
 Visible=False
 
 [dm.qTemp]
-Coordinates=251,10,66,33
+Coordinates=251,10,76,36
 Visible=False
 
 [PopupMenuClients]
-Coordinates=359,193,107,33
+Coordinates=359,193,123,36
 Visible=False
 
 [dm.qClientSelection]
-Coordinates=10,10,113,33
+Coordinates=10,10,129,36
 Visible=False
 
 [BindingsListClients]
-Coordinates=121,1,111,33
+Coordinates=121,1,124,36
 
 [BindSourceDBClients]
-Coordinates=10,10,121,231
+Coordinates=175,10,138,278
 
 [dm.qPartiallyPaid]
-Coordinates=10,470,100,69
+Coordinates=10,314,115,80
 
 [dm.qRecentContracts]
-Coordinates=10,267,121,177
+Coordinates=10,10,139,278
 
 [dm.qFullyPaid]
-Coordinates=294,267,84,69
+Coordinates=514,10,96,80
 
 [dm.qTotalContracts]
-Coordinates=157,267,111,69
+Coordinates=151,314,127,80
 

@@ -212,22 +212,24 @@ begin
   case Self.Tag of
     0:
       begin
+        lbPopUp.TextSettings.FontColor := TAlphaColors.White;
         lbPopUp.Text := 'Successfully added the ' + AEntity + '!';
         rPopUp.Fill.Color := TAlphaColorRec.Green;
       end;
     1:
       begin
+        lbPopUp.TextSettings.FontColor := TAlphaColors.Black;
         lbPopUp.Text := 'Successfully updated the ' + AEntity + '!';
         rPopUp.Fill.Color := TAlphaColorRec.Yellow;
       end;
     2:
       begin
+        lbPopUp.TextSettings.FontColor := TAlphaColors.White;
         lbPopUp.Text := 'Successfully deleted the ' + AEntity + '!';
         rPopUp.Fill.Color := TAlphaColorRec.Red;
       end;
   end;
 end;
-
 
 { Save button }
 procedure TfrmMain.btnSaveClick(Sender: TObject);
@@ -343,6 +345,7 @@ end;
 procedure TfrmMain.fClients1btnTriggerClick(Sender: TObject);
 begin
   recordStatus := 'create';
+  dm.qClients.Insert;
   fClients1.btnTriggerClick(Sender);
 
   // Set Date components
@@ -453,11 +456,11 @@ begin
   // Populate the form
   eFullname.Text := dm.qClients.FieldByName('name').AsString;;
   eAddress.Text := dm.qClients.FieldByName('address').AsString;;
-  dContractDate.DateTime := dm.qClients.FieldByName('contract_date').AsDateTime;
+  dContractDate.Text := dm.qClients.FieldByName('contract_date').AsString;
   eContractPrice.Text := dm.qClients.FieldByName('contract_price').AsString;
-  dFirstTD.DateTime := dm.qClients.FieldByName('first_treatment').AsDateTime;
-  dSecondTD.DateTime := dm.qClients.FieldByName('second_treatment').AsDateTime;
-  dThirdTD.DateTime := dm.qClients.FieldByName('third_treatment').AsDateTime;
+  dFirstTD.Text := dm.qClients.FieldByName('first_treatment').AsString;
+  dSecondTD.Text := dm.qClients.FieldByName('second_treatment').AsString;
+  dThirdTD.Text := dm.qClients.FieldByName('third_treatment').AsString;
 
   // visibility show of Add client modal
   frmMain.rBackground.Visible := True;
@@ -814,7 +817,7 @@ end;
 { Cancel button from Create Contract }
 procedure TfrmMain.fCreateContract1btnCancelClick(Sender: TObject);
 begin
-  // hide other components
+  // Hide other components
   HideFrames;
 
   // Switch tab index
