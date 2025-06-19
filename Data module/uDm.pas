@@ -32,6 +32,25 @@ type
     qTotalContracts: TFDQuery;
     qRecentContracts: TFDQuery;
     qClient: TFDQuery;
+    qClientid: TFDAutoIncField;
+    qClientname: TStringField;
+    qClientaddress: TStringField;
+    qClientcontract_price: TBCDField;
+    qClientcontract_date: TStringField;
+    qClientfirst_treatment: TStringField;
+    qClientsecond_treatment: TStringField;
+    qClientthird_treatment: TStringField;
+    qClientcontract: TStringField;
+    qContractsid: TFDAutoIncField;
+    qContractsclient_name: TStringField;
+    qContractsaddress: TStringField;
+    qContractstreatment_inclusion: TWideMemoField;
+    qContractspayment_status: TStringField;
+    qContractscreated_at: TStringField;
+    qContractspartial_amount: TIntegerField;
+    qContractsfirst_treatment: TStringField;
+    qContractssecond_treatment: TStringField;
+    qContractsthird_treatment: TStringField;
     procedure DataModuleCreate(Sender: TObject);
     procedure DataModuleDestroy(Sender: TObject);
   private

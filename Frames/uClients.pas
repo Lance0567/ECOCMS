@@ -65,12 +65,12 @@ end;
 { Responsive grid procedure }
 procedure TfClients.eSearchChange(Sender: TObject);
 begin
-//  GridContentsResponsive;
+  GridContentsResponsive;
 end;
 
 procedure TfClients.FrameClick(Sender: TObject);
 begin
-//  GridContentsResponsive;
+  GridContentsResponsive;
 end;
 
 procedure TfClients.GridContentsResponsive;
@@ -87,14 +87,14 @@ procedure TfClients.gTableRecordResized(Sender: TObject);
 begin
   if Self.Tag = 0 then
   begin
-//    GridContentsResponsive;
+    GridContentsResponsive;
     Self.Tag := 1;
   end;
 end;
 
 procedure TfClients.rContainerClick(Sender: TObject);
 begin
-//  GridContentsResponsive;
+  GridContentsResponsive;
 end;
 
 end.

@@ -54268,6 +54268,57 @@ object dm: Tdm
       'SELECT * FROM contracts')
     Left = 272
     Top = 144
+    object qContractsid: TFDAutoIncField
+      FieldName = 'id'
+      Origin = 'id'
+      ProviderFlags = [pfInWhere, pfInKey]
+      ReadOnly = False
+    end
+    object qContractsclient_name: TStringField
+      FieldName = 'client_name'
+      Origin = 'client_name'
+      Size = 100
+    end
+    object qContractsaddress: TStringField
+      FieldName = 'address'
+      Origin = 'address'
+      Size = 200
+    end
+    object qContractstreatment_inclusion: TWideMemoField
+      FieldName = 'treatment_inclusion'
+      Origin = 'treatment_inclusion'
+      BlobType = ftWideMemo
+    end
+    object qContractspayment_status: TStringField
+      FieldName = 'payment_status'
+      Origin = 'payment_status'
+      Size = 50
+    end
+    object qContractscreated_at: TStringField
+      FieldName = 'created_at'
+      Origin = 'created_at'
+      Size = 50
+    end
+    object qContractspartial_amount: TIntegerField
+      FieldName = 'partial_amount'
+      Origin = 'partial_amount'
+      DisplayFormat = #8369'0,.00'
+    end
+    object qContractsfirst_treatment: TStringField
+      FieldName = 'first_treatment'
+      Origin = 'first_treatment'
+      Size = 10
+    end
+    object qContractssecond_treatment: TStringField
+      FieldName = 'second_treatment'
+      Origin = 'second_treatment'
+      Size = 10
+    end
+    object qContractsthird_treatment: TStringField
+      FieldName = 'third_treatment'
+      Origin = 'third_treatment'
+      Size = 10
+    end
   end
   object qClientSelection: TFDQuery
     Active = True
@@ -54328,5 +54379,53 @@ object dm: Tdm
       'SELECT * FROM clients')
     Left = 168
     Top = 56
+    object qClientid: TFDAutoIncField
+      FieldName = 'id'
+      Origin = 'id'
+      ProviderFlags = [pfInWhere, pfInKey]
+      ReadOnly = False
+    end
+    object qClientname: TStringField
+      FieldName = 'name'
+      Origin = 'name'
+      Size = 100
+    end
+    object qClientaddress: TStringField
+      FieldName = 'address'
+      Origin = 'address'
+      Size = 255
+    end
+    object qClientcontract_price: TBCDField
+      FieldName = 'contract_price'
+      Origin = 'contract_price'
+      DisplayFormat = #8369'0,.00'
+      Precision = 15
+      Size = 2
+    end
+    object qClientcontract_date: TStringField
+      FieldName = 'contract_date'
+      Origin = 'contract_date'
+      Size = 50
+    end
+    object qClientfirst_treatment: TStringField
+      FieldName = 'first_treatment'
+      Origin = 'first_treatment'
+      Size = 50
+    end
+    object qClientsecond_treatment: TStringField
+      FieldName = 'second_treatment'
+      Origin = 'second_treatment'
+      Size = 50
+    end
+    object qClientthird_treatment: TStringField
+      FieldName = 'third_treatment'
+      Origin = 'third_treatment'
+      Size = 50
+    end
+    object qClientcontract: TStringField
+      FieldName = 'contract'
+      Origin = 'contract'
+      Size = 5
+    end
   end
 end

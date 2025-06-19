@@ -633,10 +633,10 @@ begin
     Self.Width := 817;
   end;
 
-//  case tcController.TabIndex of
-//    1:fClients1.GridContentsResponsive;
+  case tcController.TabIndex of
+    1:fClients1.GridContentsResponsive;
 //    2:fContracts1.GridContentsResponsive;
-//  end;
+  end;
 end;
 
 { Sidebar Resize }
@@ -651,21 +651,21 @@ end;
 
 procedure TfrmMain.lytSidebarResized(Sender: TObject);
 begin
-//  if lytSidebar.Width = 50 then
-//  begin
-//    case tcController.TabIndex of
-//      1:fClients1.GridContentsResponsive;
+  if lytSidebar.Width = 50 then
+  begin
+    case tcController.TabIndex of
+      1:fClients1.GridContentsResponsive;
 //      2:fContracts1.GridContentsResponsive;
-//    end;
-//  end;
-//
-//  if lytSidebar.Width = 200 then
-//  begin
-//    case tcController.TabIndex of
-//      1:fClients1.GridContentsResponsive;
+    end;
+  end;
+
+  if lytSidebar.Width = 200 then
+  begin
+    case tcController.TabIndex of
+      1:fClients1.GridContentsResponsive;
 //      2:fContracts1.GridContentsResponsive;
-//    end;
-//  end;
+    end;
+  end;
 end;
 
 procedure TfrmMain.mvSidebarResized(Sender: TObject);
@@ -731,7 +731,7 @@ begin
   fClients1.ScrollBox1.ViewportPosition := PointF(0,0); // reset scroll bar
 
   // Activate responsiveness
-//  fClients1.GridContentsResponsive;
+  fClients1.GridContentsResponsive;
 end;
 
 { Show Tab for contracts }

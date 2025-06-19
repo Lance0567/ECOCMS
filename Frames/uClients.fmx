@@ -122,7 +122,7 @@ object fClients: TfClients
           Size.Height = 475.000000000000000000
           Size.PlatformDefault = False
           TabOrder = 1
-          RowCount = 18
+          RowCount = 26
           Options = [ColumnResize, ColumnMove, ColLines, RowLines, Tabs, Header, HeaderClick, AutoDisplacement]
           OnResized = gTableRecordResized
           Viewport.Width = 619.000000000000000000
