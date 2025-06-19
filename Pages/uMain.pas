@@ -553,6 +553,7 @@ begin
   fCreateContract1.Visible := True;
   fCreateContract1.ScrollBox1.ViewportPosition := PointF(0,0); // reset scroll bar
   fCreateContract1.Tag := 1;
+  Self.Tag := 1;
 
   // Set record status
   fCreateContract1.RecordsStatus := 'Edit';
@@ -632,10 +633,10 @@ begin
     Self.Width := 817;
   end;
 
-  case tcController.TabIndex of
-    1:fClients1.GridContentsResponsive;
-    2:fContracts1.GridContentsResponsive;
-  end;
+//  case tcController.TabIndex of
+//    1:fClients1.GridContentsResponsive;
+//    2:fContracts1.GridContentsResponsive;
+//  end;
 end;
 
 { Sidebar Resize }
@@ -650,21 +651,21 @@ end;
 
 procedure TfrmMain.lytSidebarResized(Sender: TObject);
 begin
-  if lytSidebar.Width = 50 then
-  begin
-    case tcController.TabIndex of
-      1:fClients1.GridContentsResponsive;
-      2:fContracts1.GridContentsResponsive;
-    end;
-  end;
-
-  if lytSidebar.Width = 200 then
-  begin
-    case tcController.TabIndex of
-      1:fClients1.GridContentsResponsive;
-      2:fContracts1.GridContentsResponsive;
-    end;
-  end;
+//  if lytSidebar.Width = 50 then
+//  begin
+//    case tcController.TabIndex of
+//      1:fClients1.GridContentsResponsive;
+//      2:fContracts1.GridContentsResponsive;
+//    end;
+//  end;
+//
+//  if lytSidebar.Width = 200 then
+//  begin
+//    case tcController.TabIndex of
+//      1:fClients1.GridContentsResponsive;
+//      2:fContracts1.GridContentsResponsive;
+//    end;
+//  end;
 end;
 
 procedure TfrmMain.mvSidebarResized(Sender: TObject);
@@ -730,7 +731,7 @@ begin
   fClients1.ScrollBox1.ViewportPosition := PointF(0,0); // reset scroll bar
 
   // Activate responsiveness
-  fClients1.GridContentsResponsive;
+//  fClients1.GridContentsResponsive;
 end;
 
 { Show Tab for contracts }
@@ -745,12 +746,14 @@ begin
   fContracts1.ScrollBox1.ViewportPosition := PointF(0,0); // reset scroll bar
 
   // Activate responsiveness
-  fContracts1.GridContentsResponsive;
+//  fContracts1.GridContentsResponsive;
 end;
 
 { Create contract }
 procedure TfrmMain.fContracts1btnTriggerClick(Sender: TObject);
 begin
+  Self.Tag := 0;
+
   // Hide other components
   HideFrames;
   fCreateContract1.lTreatmentPhaseW.Visible := false;
@@ -834,7 +837,7 @@ begin
   fContracts1.Visible := True;
   fContracts1.ScrollBox1.ViewportPosition := PointF(0, 0); // reset scroll bar
 
-  fContracts1.GridContentsResponsive;
+//  fContracts1.GridContentsResponsive;
 end;
 
 { Save button from Create contract }
@@ -852,7 +855,7 @@ begin
     fContracts1.Visible := True;
     fContracts1.ScrollBox1.ViewportPosition := PointF(0, 0); // reset scroll bar
 
-    fContracts1.GridContentsResponsive;
+//    fContracts1.GridContentsResponsive;
   end;
 end;
 

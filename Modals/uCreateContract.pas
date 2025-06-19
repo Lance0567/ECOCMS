@@ -63,6 +63,7 @@ type
     procedure cbPaymentStatusChange(Sender: TObject);
     procedure cbSecondTreatmentChange(Sender: TObject);
     procedure cbThirdTreatmentChange(Sender: TObject);
+    procedure cbFirstTreatmentChange(Sender: TObject);
   private
     procedure ClearItems;
     { Private declarations }
@@ -378,6 +379,19 @@ begin
     dm.qClientSelection.Active := True;
 end;
 
+{ First Treatment Checkbox }
+procedure TfCreateContract.cbFirstTreatmentChange(Sender: TObject);
+begin
+  if cbFirstTreatment.IsChecked = True then
+  begin
+    firstT := True;
+  end
+  else
+  begin
+    firstT := False;
+  end;
+end;
+
 { Second Treatment Checkbox }
 procedure TfCreateContract.cbSecondTreatmentChange(Sender: TObject);
 begin
@@ -394,7 +408,7 @@ end;
 { Third Treatment Checkbox }
 procedure TfCreateContract.cbThirdTreatmentChange(Sender: TObject);
 begin
-  if cbSecondTreatment.IsChecked = True then
+  if cbThirdTreatment.IsChecked = True then
   begin
     thirdT := True;
   end

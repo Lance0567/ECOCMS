@@ -94,9 +94,9 @@ Coordinates=136,267,111,69
 Coordinates=141,10,67,33
 Visible=False
 
-[BindSourceDB1]
-Coordinates=157,10,92,231
-
 [BindingsList1]
 Coordinates=301,98,82,33
+
+[BindSourceDBClient]
+Coordinates=157,10,92,231
 

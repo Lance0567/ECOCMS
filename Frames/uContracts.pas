@@ -48,7 +48,7 @@ uses uMain;
 { Responsive grid procedure }
 procedure TfContracts.FrameClick(Sender: TObject);
 begin
-  GridContentsResponsive;
+//  GridContentsResponsive;
 end;
 
 procedure TfContracts.GridContentsResponsive;
@@ -66,14 +66,14 @@ procedure TfContracts.gTableRecordResized(Sender: TObject);
 begin
   if Self.Tag = 0 then
   begin
-    GridContentsResponsive;
+//    GridContentsResponsive;
     Self.Tag := 1;
   end;
 end;
 
 procedure TfContracts.rContainerClick(Sender: TObject);
 begin
-  GridContentsResponsive;
+//  GridContentsResponsive;
 end;
 
 end.

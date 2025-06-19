@@ -125,8 +125,8 @@ object fClients: TfClients
           RowCount = 18
           Options = [ColumnResize, ColumnMove, ColLines, RowLines, Tabs, Header, HeaderClick, AutoDisplacement]
           OnResized = gTableRecordResized
-          Viewport.Width = 615.000000000000000000
-          Viewport.Height = 434.000000000000000000
+          Viewport.Width = 619.000000000000000000
+          Viewport.Height = 475.000000000000000000
         end
       end
     end
@@ -150,7 +150,7 @@ object fClients: TfClients
       Text = 'Delete'
     end
   end
-  object BindSourceDB1: TBindSourceDB
+  object BindSourceDBClient: TBindSourceDB
     DataSet = dm.qClient
     ScopeMappings = <>
     Left = 344
@@ -159,11 +159,11 @@ object fClients: TfClients
   object BindingsList1: TBindingsList
     Methods = <>
     OutputConverters = <>
-    Left = 20
-    Top = 5
+    Left = 236
+    Top = 285
     object LinkGridToDataSourceBindSourceDB1: TLinkGridToDataSource
       Category = 'Quick Bindings'
-      DataSource = BindSourceDB1
+      DataSource = BindSourceDBClient
       GridControl = gTableRecord
       Columns = <
         item
@@ -180,6 +180,7 @@ object fClients: TfClients
           MemberName = 'contract_price'
           Header = 'Contract Price'
           ShowThousandSeparator = True
+          Alignment = taLeftJustify
         end
         item
           MemberName = 'contract_date'

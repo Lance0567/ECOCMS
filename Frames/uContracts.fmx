@@ -165,27 +165,31 @@ object fContracts: TfContracts
         item
           MemberName = 'client_name'
           Header = 'Client Name'
-          Width = 150
+          Width = 170
         end
         item
           MemberName = 'address'
           Header = 'Address'
-          Width = 150
+          Width = 170
         end
         item
           MemberName = 'created_at'
           Header = 'Date created'
-          Width = 120
+          Width = 150
         end
         item
           MemberName = 'payment_status'
           Header = 'Payment Status'
-          Width = 100
+          Width = 120
+        end
+        item
+          MemberName = 'partial_amount'
+          Header = 'Contract Price'
         end
         item
           MemberName = 'first_treatment'
           Header = 'First Treatment'
-          Width = 100
+          Width = 120
         end
         item
           MemberName = 'second_treatment'
@@ -195,7 +199,7 @@ object fContracts: TfContracts
         item
           MemberName = 'third_treatment'
           Header = 'Third Treatment'
-          Width = 100
+          Width = 120
         end>
     end
   end

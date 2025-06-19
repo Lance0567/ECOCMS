@@ -41,9 +41,6 @@ Coordinates=97,619,53,33
 []
 Coordinates=10,529,53,33
 
-[dm.qClients]
-Coordinates=481,10,88,213
-
 [dm.qContracts]
 Coordinates=231,10,87,33
 Visible=False
@@ -77,4 +74,7 @@ Coordinates=542,303,84,69
 
 [dm.qRecentContracts]
 Coordinates=334,10,121,231
+
+[dm.]
+Coordinates=481,10,88,213
 

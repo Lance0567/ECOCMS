@@ -61,9 +61,6 @@ Visible=True
 [dm.qActiveClients]
 Coordinates=10,267,104,69
 
-[dm.qClients]
-Coordinates=313,10,88,195
-
 []
 Coordinates=548,10,100,123
 
@@ -97,4 +94,7 @@ Coordinates=428,267,40,51
 
 [dCreatedDate]
 Coordinates=619,267,115,51
+
+[dm.]
+Coordinates=313,10,88,195
 

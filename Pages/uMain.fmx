@@ -32,7 +32,7 @@ object frmMain: TfrmMain
         Size.Width = 617.000000000000000000
         Size.Height = 505.000000000000000000
         Size.PlatformDefault = False
-        TabIndex = 1
+        TabIndex = 2
         TabOrder = 0
         TabPosition = None
         OnChange = tcControllerChange
@@ -211,8 +211,8 @@ object frmMain: TfrmMain
               Top = 317
             end
             inherited BindSourceDB1: TBindSourceDB
-              Left = 248
-              Top = 304
+              Left = 136
+              Top = 328
             end
             inherited BindSourceDB2: TBindSourceDB
               Left = 640
@@ -233,7 +233,7 @@ object frmMain: TfrmMain
             item
             end>
           TextSettings.Trimming = None
-          IsSelected = True
+          IsSelected = False
           Size.Width = 12.000000000000000000
           Size.Height = 12.000000000000000000
           Size.PlatformDefault = False
@@ -316,6 +316,14 @@ object frmMain: TfrmMain
                 OnClick = fClients1DeleteClick
               end
             end
+            inherited BindSourceDBClient: TBindSourceDB
+              Left = 96
+              Top = 264
+            end
+            inherited BindingsList1: TBindingsList
+              Left = 196
+              Top = 269
+            end
           end
         end
         object tiContracts: TTabItem
@@ -323,7 +331,7 @@ object frmMain: TfrmMain
             item
             end>
           TextSettings.Trimming = None
-          IsSelected = False
+          IsSelected = True
           Size.Width = 12.000000000000000000
           Size.Height = 12.000000000000000000
           Size.PlatformDefault = False
@@ -399,8 +407,8 @@ object frmMain: TfrmMain
                     StyleLookup = 'gridstyleOriginal'
                     TextSettings.Font.Family = '(Default)'
                     StyledSettings = [Size, Style]
-                    Viewport.Width = 526.000000000000000000
-                    Viewport.Height = 475.000000000000000000
+                    Viewport.Width = 522.000000000000000000
+                    Viewport.Height = 430.000000000000000000
                   end
                 end
               end
@@ -415,6 +423,51 @@ object frmMain: TfrmMain
             inherited BindingsListContracts: TBindingsList
               Left = 325
               Top = 244
+              inherited LinkGridToContracts: TLinkGridToDataSource
+                Columns = <
+                  item
+                    MemberName = 'client_name'
+                    Header = 'Client Name'
+                    Width = 170
+                  end
+                  item
+                    MemberName = 'address'
+                    Header = 'Address'
+                    Width = 170
+                  end
+                  item
+                    MemberName = 'created_at'
+                    Header = 'Date created'
+                    Width = 150
+                  end
+                  item
+                    MemberName = 'payment_status'
+                    Header = 'Payment Status'
+                    Width = 170
+                  end
+                  item
+                    MemberName = 'partial_amount'
+                    Header = 'Contract Price'
+                    Width = 170
+                    ShowThousandSeparator = True
+                    Alignment = taLeftJustify
+                  end
+                  item
+                    MemberName = 'first_treatment'
+                    Header = 'First Treatment'
+                    Width = 150
+                  end
+                  item
+                    MemberName = 'second_treatment'
+                    Header = 'Second Treatment'
+                    Width = 150
+                  end
+                  item
+                    MemberName = 'third_treatment'
+                    Header = 'Third Treatment'
+                    Width = 150
+                  end>
+              end
             end
           end
         end
@@ -488,6 +541,9 @@ object frmMain: TfrmMain
                   inherited lClientSelection: TLabel
                     Size.Width = 516.000000000000000000
                     TextSettings.Font.StyleExt = {00060000000000000004000000}
+                    inherited Label2: TLabel
+                      TabOrder = 4
+                    end
                   end
                   inherited lDescription1: TLabel
                     Size.Width = 516.000000000000000000
@@ -575,6 +631,7 @@ object frmMain: TfrmMain
                     inherited cbFirstTreatment: TCheckBox
                       StyledSettings = [Family, Style]
                       Size.Width = 506.000000000000000000
+                      TabOrder = 40
                     end
                     inherited cbSecondTreatment: TCheckBox
                       StyledSettings = [Family, Style]
