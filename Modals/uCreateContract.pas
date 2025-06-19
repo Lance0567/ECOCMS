@@ -24,8 +24,8 @@ type
     lDescription: TLabel;
     lTreatmentInclusion: TLabel;
     mTreatmentInclusion: TMemo;
-    lContractDate: TLabel;
-    dContractDate: TDateEdit;
+    lCreatedDate: TLabel;
+    dCreatedDate: TDateEdit;
     rClientData: TRectangle;
     lName: TLabel;
     lAddress: TLabel;
@@ -91,7 +91,7 @@ begin
   lName.Text := 'Name: ';
   lAddress.Text := 'Address: ';
   mTreatmentInclusion.Lines.Clear;
-  dContractDate.Date := now;
+  dCreatedDate.Date := now;
   cbPaymentStatus.ItemIndex := 0;
 end;
 
@@ -194,7 +194,7 @@ begin
 
   fPDFCreation1.slClientName.Words.Items[1].Text := qName;
   fPDFCreation1.slAddressH.Words.Items[1].Text := qAddress;
-  fPDFCreation1.slDateH.Text := dContractDate.Text;
+  fPDFCreation1.slDateH.Text := dCreatedDate.Text;
   fPDFCreation1.slClientNameSig.Words.Items[0].Text := UpperCase(qName);
 
   // Convert numeric amount to words and assign to a label or slide
@@ -213,7 +213,7 @@ begin
   end;
 end;
 
-{ Save contract }
+{ Save button }
 procedure TfCreateContract.btnSaveContractClick(Sender: TObject);
 var
   HasError: Boolean;
@@ -280,7 +280,7 @@ begin
   dm.qContracts.FieldByName('client_name').AsString := qName;
   dm.qContracts.FieldByName('address').AsString := qAddress;
   dm.qContracts.FieldByName('treatment_inclusion').AsString := mTreatmentInclusion.Text;
-  dm.qContracts.FieldByName('created_at').AsDateTime := dContractDate.Date;
+  dm.qContracts.FieldByName('created_at').AsDateTime := dCreatedDate.Date;
   dm.qContracts.FieldByName('payment_status').AsString := cbPaymentStatus.Text;
   dm.qContracts.FieldByName('partial_amount').AsString := ePartialAmount.Text;
 
@@ -288,16 +288,28 @@ begin
   if firstT = True then
   begin
     dm.qContracts.FieldByName('first_treatment').AsString := 'Done';
+  end
+  else
+  begin
+    dm.qContracts.FieldByName('first_treatment').AsString := 'Pending';
   end;
 
   if secondT = True then
   begin
     dm.qContracts.FieldByName('second_treatment').AsString := 'Done';
+  end
+  else
+  begin
+    dm.qContracts.FieldByName('second_treatment').AsString := 'Pending';
   end;
 
   if thirdT = True then
   begin
     dm.qContracts.FieldByName('third_treatment').AsString := 'Done';
+  end
+  else
+  begin
+    dm.qContracts.FieldByName('third_treatment').AsString := 'Pending';
   end;
 
   dm.qContracts.Post;

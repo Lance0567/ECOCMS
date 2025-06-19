@@ -30,6 +30,8 @@ type
     BindingsListContracts: TBindingsList;
     LinkGridToContracts: TLinkGridToDataSource;
     procedure gTableRecordResized(Sender: TObject);
+    procedure FrameClick(Sender: TObject);
+    procedure rContainerClick(Sender: TObject);
   private
     { Private declarations }
   public
@@ -44,6 +46,11 @@ implementation
 uses uMain;
 
 { Responsive grid procedure }
+procedure TfContracts.FrameClick(Sender: TObject);
+begin
+  GridContentsResponsive;
+end;
+
 procedure TfContracts.GridContentsResponsive;
 var
   i: Integer;
@@ -54,6 +61,7 @@ begin
     gTableRecord.Columns[i].Width := NewWidth - 2;
 end;
 
+{ Resized Reponsiveness }
 procedure TfContracts.gTableRecordResized(Sender: TObject);
 begin
   if Self.Tag = 0 then
@@ -61,6 +69,11 @@ begin
     GridContentsResponsive;
     Self.Tag := 1;
   end;
+end;
+
+procedure TfContracts.rContainerClick(Sender: TObject);
+begin
+  GridContentsResponsive;
 end;
 
 end.

@@ -357,9 +357,6 @@ procedure TfrmMain.fClients1DeleteClick(Sender: TObject);
 begin
   setDelete := 'client';
   ShowConfirmationDialog('You wish to delete the selected client?');
-
-  frmMain.Tag := 2; // Record Message
-  RecordMessage('client');
 end;
 
 { Delete contract }
@@ -367,9 +364,6 @@ procedure TfrmMain.fContracts1DeleteClick(Sender: TObject);
 begin
   setDelete := 'contract';
   ShowConfirmationDialog('You wish to delete the selected contract?');
-
-  frmMain.Tag := 2; // Record Message
-  RecordMessage('contract');
 end;
 
 { Show Confirmation dialog for client & contract }
@@ -394,11 +388,17 @@ begin
                 begin
                   dm.qClients.Delete;
                   setDelete := '';
+
+                  frmMain.Tag := 2; // Record Message
+                  RecordMessage('client');
                 end
                 else if setDelete = 'contract' then
                 begin
                   dm.qContracts.Delete;
                   setDelete := '';
+
+                  frmMain.Tag := 2; // Record Message
+                  RecordMessage('contract');
                 end;
               except
                 ShowMessageDialog('Cannot be deleted unless the saved datas inside are deleted');
@@ -474,7 +474,15 @@ procedure TfrmMain.fContracts1EditClick(Sender: TObject);
 var
   clientName: String;
   clientAddress: String;
+  firstTreatment: String;
+  secondTreatment: String;
+  thirdTreatment: String;
 begin
+  // Checkbox reference
+  firstTreatment := dm.qContracts.FieldByName('first_treatment').AsString;
+  secondTreatment := dm.qContracts.FieldByName('second_treatment').AsString;
+  thirdTreatment := dm.qContracts.FieldByName('third_treatment').AsString;
+
   // Hide other components
   HideFrames;
   fCreateContract1.cbClientSelection.Visible := false;
@@ -493,8 +501,39 @@ begin
   clientAddress := 'Address: ' + dm.qContracts.FieldByName('address').AsString;
   fCreateContract1.lName.Text := clientName;
   fCreateContract1.lAddress.Text := clientAddress;
+
+  // First treatment
+  if firstTreatment = 'Done' then
+  begin
+    fCreateContract1.cbFirstTreatment.IsChecked := true;
+  end
+  else
+  begin
+    fCreateContract1.cbFirstTreatment.IsChecked := false;
+  end;
+
+  // Second treatment
+  if secondTreatment = 'Done' then
+  begin
+    fCreateContract1.cbSecondTreatment.IsChecked := true;
+  end
+  else
+  begin
+    fCreateContract1.cbSecondTreatment.IsChecked := false;
+  end;
+
+  // Third treatment
+  if thirdTreatment = 'Done' then
+  begin
+    fCreateContract1.cbThirdTreatment.IsChecked := true;
+  end
+  else
+  begin
+    fCreateContract1.cbThirdTreatment.IsChecked := false;
+  end;
+
   fCreateContract1.mTreatmentInclusion.Text := dm.qContracts.FieldByName('treatment_inclusion').AsString;
-  fCreateContract1.dContractDate.DateTime := dm.qContracts.FieldByName('contract_date').AsDateTime;
+  fCreateContract1.dCreatedDate.DateTime := dm.qContracts.FieldByName('contract_date').AsDateTime;
   fCreateContract1.ePartialAmount.Text := dm.qContracts.FieldByName('payment_status').AsString;
 
   // Switch tab index

@@ -92,9 +92,9 @@ Coordinates=190,10,97,231
 [lytButtonH]
 Coordinates=10,516,53,33
 
-[lContractDate]
+[lCreatedDate]
 Coordinates=428,267,40,51
 
-[dContractDate]
+[dCreatedDate]
 Coordinates=619,267,115,51
 
