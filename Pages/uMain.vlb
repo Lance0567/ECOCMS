@@ -3,142 +3,143 @@ Coordinates=482,10,92,213
 Visible=True
 
 [sbMenu]
-Coordinates=612,624,53,51
+Coordinates=94,855,53,51
 
 [fDashboard1.cbtnViewAllContracts]
 Coordinates=1757,1150,186,33
 
 [fDashboard1.lytCardD2]
-Coordinates=1203,1091,128,33
+Coordinates=10,1168,128,33
 
 [fDashboard1.btnTrigger]
-Coordinates=10,914,131,33
+Coordinates=990,1050,131,33
 
 [fDashboard1.ListView1]
 Coordinates=692,37,127,195
 
 [mvSidebar]
-Coordinates=914,973,67,33
+Coordinates=290,1109,67,33
 Visible=True
 
 [fClients1.btnTrigger]
-Coordinates=190,1209,112,33
+Coordinates=341,1050,112,33
 
 [fDashboard1.Glyph2]
-Coordinates=761,1032,115,33
+Coordinates=190,991,115,33
 
 [fDashboard1.lbTotalContracts]
-Coordinates=1327,547,161,51
+Coordinates=286,701,161,51
 
 [fDashboard1.lytCardD1]
-Coordinates=1164,1150,128,33
+Coordinates=896,1109,128,33
 
 [fDashboard1.lbTotalContractsC]
 Coordinates=1092,303,169,51
 Visible=True
 
 [fDashboard1.lbTitle]
-Coordinates=1587,701,110,51
+Coordinates=759,624,110,51
 
 [lytContent]
-Coordinates=1004,1150,65,33
+Coordinates=1029,932,65,33
 
 [fClients1.Layout2]
-Coordinates=10,973,100,33
+Coordinates=1123,1109,100,33
 
 [fClients1]
-Coordinates=1674,1150,57,33
+Coordinates=383,1109,57,33
 
 [fDashboard1.Layout2]
 Coordinates=1339,914,119,33
 
 [sbDashboard]
-Coordinates=818,434,80,51
+Coordinates=276,778,80,51
+Visible=True
 
 [fClients1.lbTitle]
-Coordinates=924,434,91,51
+Coordinates=870,434,91,51
 
 [fClients1.Layout1]
-Coordinates=430,973,100,33
+Coordinates=693,1050,100,33
 
 [fDashboard1.lytHeader]
-Coordinates=136,973,127,33
+Coordinates=339,932,127,33
 
 [fDashboard1.glytCards]
-Coordinates=1582,778,127,33
+Coordinates=1103,991,127,33
 
 [fClients1.rRecentContracts]
 Coordinates=564,584,147,33
 
 [fDashboard1.lytCardD3]
-Coordinates=341,1150,128,33
+Coordinates=187,1050,128,33
 
 [sbSettings]
-Coordinates=433,778,66,51
+Coordinates=174,547,66,51
 
 [fDashboard1.Glyph4]
-Coordinates=289,973,115,33
+Coordinates=10,1109,115,33
 
 [fDashboard1.lytCardD4]
-Coordinates=467,1032,128,33
+Coordinates=875,932,128,33
 
 [fDashboard1.lbActiveClientsC]
 Coordinates=629,303,161,51
 
 [sbContracts]
-Coordinates=514,434,74,51
+Coordinates=692,547,74,51
 
 [fDashboard1.rCard2]
-Coordinates=10,1032,113,33
+Coordinates=1338,1168,113,33
 Visible=True
 
 [fClients1.ScrollBox1]
-Coordinates=1649,1032,114,33
+Coordinates=1352,1050,114,33
 
 [fDashboard1.rRecentContracts]
 Coordinates=349,1091,166,33
 
 [fDashboard1.lytBottom]
-Coordinates=1585,855,128,33
+Coordinates=1642,991,128,33
 
 [fDashboard1.lbNotYetPaidC]
 Coordinates=917,403,151,51
 
 [fDashboard1.lbActiveClients]
-Coordinates=253,778,154,51
+Coordinates=684,701,154,51
 
 [lytSidebar]
-Coordinates=1584,1150,64,33
+Coordinates=806,1109,64,33
 
 [fDashboard1.rCard1]
-Coordinates=794,1091,113,33
+Coordinates=631,932,113,33
 Visible=True
 
 [fDashboard1]
-Coordinates=167,914,77,33
+Coordinates=748,1227,77,33
 
 [fDashboard1.rCard3]
-Coordinates=1445,1150,113,33
+Coordinates=151,1109,113,33
 
 [tiClients]
-Coordinates=270,914,54,33
+Coordinates=466,1109,54,33
 
 [fDashboard1.ScrollBox1]
-Coordinates=635,1091,133,33
+Coordinates=305,1168,133,33
 Visible=True
 
 [fClients1.lytHeader]
-Coordinates=208,1150,107,33
+Coordinates=546,1109,107,33
 
 [fClients1.SkLabel1]
-Coordinates=933,1091,105,33
+Coordinates=1583,1168,105,33
 Visible=True
 
 [fDashboard1.lbFullyPaidC]
 Coordinates=223,303,142,51
 
 [tiContracts]
-Coordinates=541,1091,68,33
+Coordinates=1625,855,68,33
 
 [fDashboard1.SkLabel1]
 Coordinates=1082,914,125,33
@@ -147,238 +148,238 @@ Coordinates=1082,914,125,33
 Coordinates=823,326,144,51
 
 [fDashboard1.Glyph1]
-Coordinates=790,1150,115,33
+Coordinates=646,855,115,33
 
 [fDashboard1.rCard4]
-Coordinates=628,855,113,33
+Coordinates=1492,1050,113,33
 
 [sbClients]
-Coordinates=10,778,60,51
+Coordinates=1483,624,60,51
 
 [fDashboard1.Glyph3]
-Coordinates=1107,973,115,33
+Coordinates=164,1168,115,33
 
 [fDashboard1.lbFullyPaid]
-Coordinates=502,547,135,51
+Coordinates=1208,778,135,51
 
 [tiDashboard]
-Coordinates=1007,973,74,33
+Coordinates=1321,855,74,33
 
 [fClients1.ScrollBox2]
-Coordinates=621,1032,114,33
+Coordinates=1502,991,114,33
 
 [fClients1.gTableRecord]
-Coordinates=1086,64,129,123
+Coordinates=695,64,129,123
 Visible=True
 
 [tcController]
-Coordinates=110,1150,72,33
+Coordinates=787,855,72,33
 
 [dm.qClients]
 Coordinates=376,97,73,33
 Visible=False
 
 [lAddress]
-Coordinates=1041,434,58,51
+Coordinates=10,855,58,51
 
 [eFullname]
-Coordinates=1152,624,65,51
+Coordinates=550,624,65,51
 
 [lytBtn]
-Coordinates=1095,1150,43,33
+Coordinates=885,855,43,33
 
 [dSecondTD]
-Coordinates=506,701,115,51
+Coordinates=1148,547,115,51
 
 [SpinEditButton1]
-Coordinates=898,855,95,33
+Coordinates=1120,932,95,33
 
 [lFullname]
-Coordinates=1125,434,62,51
+Coordinates=953,547,62,51
 
 [eAddress]
-Coordinates=1738,547,61,51
+Coordinates=286,855,61,51
 
 [fClients1.Preview]
 Coordinates=10,1238,99,33
 
 [lFirstTD]
-Coordinates=929,778,53,51
+Coordinates=874,547,53,51
 
 [lytTitle]
-Coordinates=931,1150,47,33
+Coordinates=1050,1109,47,33
 
 [lytContainer]
-Coordinates=10,1150,74,33
+Coordinates=1421,855,74,33
 
 [fClients1.rContainer]
-Coordinates=1019,855,112,33
+Coordinates=965,991,112,33
 
 [Label1]
-Coordinates=961,547,46,51
+Coordinates=1479,547,46,51
 
 [fClients1.Delete]
-Coordinates=797,973,91,33
+Coordinates=631,1227,91,33
 
 [rModalAdd]
-Coordinates=1555,1032,68,33
+Coordinates=1408,932,68,33
 
 [btnClose]
-Coordinates=418,547,58,51
+Coordinates=1557,701,58,51
 
 [lSecondTD]
-Coordinates=1514,547,68,51
+Coordinates=382,778,68,51
 
 [lThirdTD]
-Coordinates=1201,778,56,51
+Coordinates=432,434,56,51
 
 [dFirstTD]
-Coordinates=136,547,115,51
+Coordinates=187,624,115,51
 
 [btnSave]
-Coordinates=1575,973,54,33
+Coordinates=1422,991,54,33
 
 [rBackground]
-Coordinates=328,1209,78,33
+Coordinates=1521,855,78,33
 
 [fClients1.Edit]
-Coordinates=1233,914,80,33
+Coordinates=1477,1168,80,33
 
 [fClients1.PopupMenu1]
 Coordinates=1257,221,125,33
 
 [btnCancel]
-Coordinates=495,1150,64,33
+Coordinates=1241,932,64,33
 
 [dThirdTD]
-Coordinates=277,547,115,51
+Coordinates=1369,778,115,51
 
 [ScrollBox1]
-Coordinates=556,973,68,33
+Coordinates=1502,932,68,33
 
 [dm.qActiveClients]
 Coordinates=658,20,104,33
 Visible=False
 
 [fClients1.eSearch]
-Coordinates=10,547,100,51
+Coordinates=10,778,100,51
 
 [lContractDate]
-Coordinates=399,701,81,51
+Coordinates=1041,547,81,51
 
 [lContractPrice]
-Coordinates=1042,624,84,51
+Coordinates=1223,701,84,51
 
 [eContractPrice]
-Coordinates=1283,778,87,51
+Coordinates=173,855,87,51
 
 [dContractDate]
-Coordinates=788,778,115,51
+Coordinates=1551,547,115,51
 
 [fDashboard1.lbPartiallyPaidC]
 Coordinates=10,452,158,51
 
 [Label4]
-Coordinates=716,778,46,51
+Coordinates=10,701,46,51
 
 [Label3]
-Coordinates=663,547,46,51
+Coordinates=478,624,46,51
 
 [fDashboard1.lbPartiallyPaid]
-Coordinates=1681,624,151,51
+Coordinates=10,624,151,51
 
 [lytContractPriceC]
-Coordinates=1318,1150,101,33
+Coordinates=679,1109,101,33
 
 [lAddressR]
-Coordinates=521,624,65,51
+Coordinates=701,778,65,51
 
 [lContractPriceR]
-Coordinates=1413,624,92,51
+Coordinates=641,624,92,51
 
 [lytFullnameC]
-Coordinates=1248,973,79,33
+Coordinates=770,932,79,33
 
 [lytAddressC]
-Coordinates=1474,973,75,33
+Coordinates=1237,1168,75,33
 
 [Label2]
-Coordinates=235,624,46,51
+Coordinates=102,547,46,51
 
 [lFullnameR]
-Coordinates=1268,701,69,51
+Coordinates=1692,547,69,51
 
 [fContracts1.SkLabel1]
-Coordinates=840,914,119,33
+Coordinates=389,1227,119,33
 
 [fContracts1.lbTitle]
-Coordinates=1608,547,104,51
+Coordinates=740,434,104,51
 
 [fContracts1.Layout1]
-Coordinates=1064,1091,113,33
+Coordinates=492,932,113,33
 
 [fContracts1.Edit]
-Coordinates=1357,1091,93,33
+Coordinates=373,855,93,33
 
 [fContracts1.btnTrigger]
-Coordinates=1484,914,125,33
+Coordinates=1719,855,125,33
 
 [fContracts1.lytHeader]
-Coordinates=650,973,121,33
+Coordinates=464,1168,121,33
 
 [fContracts1.ScrollBox1]
-Coordinates=1655,973,128,33
+Coordinates=492,855,128,33
 
 [dm.qContracts]
 Coordinates=600,10,87,33
 Visible=False
 
 [fContracts1]
-Coordinates=985,914,71,33
+Coordinates=534,1227,71,33
 
 [fContracts1.Preview]
 Coordinates=150,1238,113,33
 
 [fContracts1.rContainer]
-Coordinates=688,914,126,33
+Coordinates=1596,932,126,33
 
 [fContracts1.Delete]
-Coordinates=767,855,105,33
+Coordinates=628,991,105,33
 
 [fContracts1.PopupMenu1]
 Coordinates=1245,381,139,33
 
 [fContracts1.gTableRecord]
-Coordinates=285,46,143,177
+Coordinates=285,37,143,195
 Visible=True
 
 [fContracts1.Layout2]
-Coordinates=328,1032,113,33
+Coordinates=826,991,113,33
 
 [fContracts1.ScrollBox2]
-Coordinates=1735,778,128,33
+Coordinates=690,1168,128,33
 
 [fCreateContract1.mServiceDescription]
 Coordinates=1240,336,234,58
 
 [fCreateContract1.lTitle]
-Coordinates=1531,624,124,51
+Coordinates=328,624,124,51
 
 [fCreateContract1.ceClientSelection]
 Coordinates=927,10,216,102
 Visible=True
 
 [tiCreateContract]
-Coordinates=1353,973,95,33
+Coordinates=507,991,95,33
 
 [fCreateContract1.lServiceDescription]
 Coordinates=1322,504,227,58
 
 [fCreateContract1]
-Coordinates=10,855,97,33
+Coordinates=10,932,97,33
 
 [fCreateContract1.lTitleC]
-Coordinates=191,1091,132,33
+Coordinates=954,855,132,33
 
 [fCreateContract1.gbRadioQuestion]
 Coordinates=1256,588,216,58
@@ -393,7 +394,7 @@ Coordinates=1125,336,169,58
 Coordinates=316,504,180,58
 
 [fCreateContract1.ScrollBox1]
-Coordinates=10,1209,154,33
+Coordinates=10,991,154,33
 
 [fCreateContract1.flytDate]
 Coordinates=630,818,160,36
@@ -405,7 +406,7 @@ Coordinates=1498,588,174,58
 Coordinates=309,672,178,58
 
 [fContracts1.eSearch]
-Coordinates=902,624,114,51
+Coordinates=136,778,114,51
 
 [fCreateContract1.rbTypeA]
 Coordinates=282,818,165,36
@@ -436,16 +437,16 @@ Coordinates=547,295,113,33
 Visible=False
 
 [Line1]
-Coordinates=1116,1032,41,33
+Coordinates=759,991,41,33
 
 [dm.qTemp]
-Coordinates=1235,547,66,51
+Coordinates=10,547,66,51
 
 [fCreateContract1.BindSourceDB1]
 Coordinates=10,10,179,231
 
 [fCreateContract1.Layout1]
-Coordinates=1389,1032,140,33
+Coordinates=1256,991,140,33
 
 [fCreateContract1.BindingsList1]
 Coordinates=1443,186,168,33
@@ -466,7 +467,7 @@ Coordinates=214,1,184,33
 Coordinates=164,214,207,33
 
 [fCreateContract1.BindSourceDBClientSel]
-Coordinates=1241,10,217,231
+Coordinates=1117,10,217,231
 
 [fClients1.BindingsListClients]
 Coordinates=523,75,157,33
@@ -511,17 +512,16 @@ Coordinates=445,285,158,87
 Coordinates=1341,285,158,87
 
 [dm.qRecentContracts]
-Visible=False
-Coordinates=115,260,121,33
+Coordinates=1360,10,121,231
 
 [fCreateContract1.lbContractDetails]
-Coordinates=837,701,186,51
+Coordinates=480,547,186,51
 
 [fCreateContract1.lTreatmentInclusion]
-Coordinates=1363,701,198,51
+Coordinates=1333,701,198,51
 
 [fCreateContract1.lytContractDetails]
-Coordinates=1371,855,188,33
+Coordinates=479,1050,188,33
 
 [fCreateContract1.cbPaymentStatus]
 Coordinates=10,285,187,123
@@ -530,94 +530,94 @@ Coordinates=10,285,187,123
 Coordinates=1014,384,180,51
 
 [fCreateContract1.btnCancel]
-Coordinates=452,855,150,33
+Coordinates=331,991,150,33
 
 [fCreateContract1.lClientSelectionR]
-Coordinates=691,624,185,51
+Coordinates=473,701,185,51
 
 [fCreateContract1.sbPreview]
-Coordinates=1635,914,151,33
+Coordinates=10,1050,151,33
 
 [fCreateContract1.lDescription]
-Coordinates=1396,778,160,51
+Coordinates=792,778,160,51
 
 [fCreateContract1.rContractDetails]
-Coordinates=1183,1032,180,33
+Coordinates=133,932,180,33
 
 [fCreateContract1.GridPanelLayout1]
-Coordinates=1157,855,188,33
+Coordinates=1499,1109,188,33
 
 [fCreateContract1.rClientData]
-Coordinates=10,1091,155,33
+Coordinates=10,1227,155,33
 
 [fCreateContract1.lName]
-Coordinates=96,778,131,51
+Coordinates=864,701,131,51
 
 [fCreateContract1.dDate]
 Coordinates=1025,660,129,51
 
 [fCreateContract1.lytButtonH]
-Coordinates=149,1032,153,33
+Coordinates=844,1168,153,33
 
 [fCreateContract1.rButtonH]
-Coordinates=1632,1091,145,33
+Coordinates=819,1050,145,33
 
 [fCreateContract1.btnSaveContract]
-Coordinates=479,914,183,33
+Coordinates=1112,855,183,33
 
 [fCreateContract1.mTreatmentInclusion]
-Coordinates=10,701,204,51
+Coordinates=978,778,204,51
 
 [fCreateContract1.Label2]
-Coordinates=240,701,133,51
+Coordinates=1120,624,133,51
 
 [fCreateContract1.lDescription1]
-Coordinates=525,778,165,51
+Coordinates=1180,434,165,51
 
 [fCreateContract1.rClientSelection]
-Coordinates=585,1150,179,33
+Coordinates=1147,1050,179,33
 
 [fCreateContract1.sbContractDetails]
-Coordinates=902,1032,188,33
+Coordinates=1023,1168,188,33
 
 [fCreateContract1.fPDFCreation1]
-Coordinates=133,855,172,33
+Coordinates=191,1227,172,33
 
 [fCreateContract1.lAddress]
-Coordinates=1243,624,144,51
+Coordinates=1510,778,144,51
 
 [fCreateContract1.cbClientSelection]
-Coordinates=1538,64,187,123
+Coordinates=850,64,187,123
 
 [fCreateContract1.lDate]
 Coordinates=1157,470,125,51
 
 [fCreateContract1.lPaymentStatus]
-Coordinates=1648,434,178,51
+Coordinates=1279,624,178,51
 
 [fCreateContract1.lClientSelection]
-Coordinates=614,434,178,51
+Coordinates=82,701,178,51
 
 [Timer1]
 Coordinates=679,260,48,33
 
 [lytPopUpMessage]
-Coordinates=350,914,103,33
+Coordinates=1249,1109,103,33
 
 [gPopUp]
-Coordinates=1476,1091,53,33
+Coordinates=611,1168,53,33
 
 [fCreateContract1.ePartialAmount]
-Coordinates=1033,547,176,51
+Coordinates=1021,701,176,51
 
 [rPopUp]
-Coordinates=1555,1091,51,33
+Coordinates=1331,932,51,33
 
 [lytPopUpBottom]
-Coordinates=331,855,95,33
+Coordinates=1378,1109,95,33
 
 [lbPopUp]
-Coordinates=432,434,56,51
+Coordinates=792,547,56,51
 
 [FloatAnimation1]
 Coordinates=1014,384,95,33
@@ -627,35 +627,35 @@ Visible=False
 Coordinates=0,0,67,33
 
 [fCreateContract1.lLabelPartialAmount]
-Coordinates=735,547,200,51
+Coordinates=514,434,200,51
 
 [fCreateContract1.dCreatedDate]
-Coordinates=1008,778,167,51
+Coordinates=987,434,167,51
 
 [fCreateContract1.gbTreatmentPhases]
-Coordinates=1423,434,199,51
+Coordinates=476,778,199,51
 
 [fCreateContract1.cbFirstTreatment]
-Coordinates=1213,434,184,51
+Coordinates=1371,434,184,51
 
 [fCreateContract1.cbThirdTreatment]
-Coordinates=307,624,188,51
+Coordinates=266,547,188,51
 
 [fClients1.BindingsList1]
 Coordinates=416,279,128,33
 
 [fCreateContract1.cbSecondTreatment]
-Coordinates=10,624,199,51
+Coordinates=895,624,199,51
 
 [fClients1.BindSourceDB1]
 Coordinates=156,260,139,231
 
 [fCreateContract1.lTreatmentPhaseW]
-Coordinates=1049,701,193,51
+Coordinates=1569,624,193,51
 
 [fCreateContract1.lCreatedDate]
-Coordinates=647,701,164,51
+Coordinates=1289,547,164,51
 
 [fClients1.BindSourceDBClient]
-Coordinates=845,10,161,231
+Coordinates=454,10,161,231
 

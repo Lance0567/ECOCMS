@@ -689,7 +689,6 @@ begin
   dm.qActiveClients.Active := true;
   dm.qFullyPaid.Active := true;
   dm.qPartiallyPaid.Active := true;
-  dm.qRecentContracts.Open;
 end;
 
 { Open query based on the tab }

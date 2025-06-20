@@ -9,16 +9,13 @@ uses
   FMX.ListView.Adapters.Base, FMX.ListView, FMX.Skia, FMX.Layouts, FMX.Objects,
   FMX.Controls.Presentation, FMX.ImgList, Math, Data.Bind.EngExt,
   Fmx.Bind.DBEngExt, System.Rtti, System.Bindings.Outputs, Fmx.Bind.Editors,
-  Data.Bind.Components, Data.Bind.DBScope;
+  Data.Bind.Components, Data.Bind.DBScope, FMX.Grid.Style, FMX.ScrollBox,
+  FMX.Grid, FMX.Calendar;
 
 type
   TfDashboard = class(TFrame)
     ScrollBox1: TScrollBox;
     lytBottom: TLayout;
-    rRecentContracts: TRectangle;
-    Layout2: TLayout;
-    SkLabel1: TSkLabel;
-    ListView1: TListView;
     glytCards: TGridLayout;
     rCard1: TRectangle;
     lytCardD1: TLayout;
@@ -36,7 +33,6 @@ type
     lytCardD4: TLayout;
     lbPartiallyPaid: TLabel;
     lbPartiallyPaidC: TLabel;
-    cbtnViewAllContracts: TCornerButton;
     Glyph1: TGlyph;
     Glyph2: TGlyph;
     Glyph3: TGlyph;
@@ -53,8 +49,13 @@ type
     LinkPropertyToFieldText3: TLinkPropertyToField;
     BindSourceDB3: TBindSourceDB;
     LinkPropertyToFieldText4: TLinkPropertyToField;
-    LinkListControlToField1: TLinkListControlToField;
-    BindSourceDB4: TBindSourceDB;
+    rUrgentContracts: TRectangle;
+    Layout2: TLayout;
+    SkLabel1: TSkLabel;
+    btnViewAllContracts: TCornerButton;
+    Layout1: TLayout;
+    cUrgentContracts: TCalendar;
+    gUrgentContracts: TGrid;
     procedure FrameResize(Sender: TObject);
     procedure glytCardsResize(Sender: TObject);
     procedure GridResponsive;

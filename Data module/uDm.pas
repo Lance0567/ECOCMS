@@ -30,7 +30,6 @@ type
     qFullyPaid: TFDQuery;
     qPartiallyPaid: TFDQuery;
     qTotalContracts: TFDQuery;
-    qRecentContracts: TFDQuery;
     qClient: TFDQuery;
     qClientid: TFDAutoIncField;
     qClientname: TStringField;
@@ -51,6 +50,7 @@ type
     qContractsfirst_treatment: TStringField;
     qContractssecond_treatment: TStringField;
     qContractsthird_treatment: TStringField;
+    qUrgentContracts: TFDQuery;
     procedure DataModuleCreate(Sender: TObject);
     procedure DataModuleDestroy(Sender: TObject);
   private
@@ -92,7 +92,6 @@ begin
   qTotalContracts.Close;
   qFullyPaid.Close;
   qPartiallyPaid.Close;
-  qRecentContracts.Close;
   qClient.Close;
   qContracts.Close;
   qClientSelection.Close;

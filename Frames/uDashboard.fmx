@@ -14,137 +14,11 @@ object fDashboard: TfDashboard
     object lytBottom: TLayout
       Align = Top
       Margins.Top = 20.000000000000000000
-      Position.Y = 878.000000000000000000
+      Position.Y = 756.000000000000000000
       Size.Width = 564.000000000000000000
       Size.Height = 50.000000000000000000
       Size.PlatformDefault = False
       TabOrder = 0
-    end
-    object rRecentContracts: TRectangle
-      Align = Top
-      Fill.Color = claWhite
-      Padding.Left = 20.000000000000000000
-      Padding.Top = 20.000000000000000000
-      Padding.Right = 20.000000000000000000
-      Padding.Bottom = 20.000000000000000000
-      Margins.Left = 20.000000000000000000
-      Margins.Top = 20.000000000000000000
-      Margins.Right = 20.000000000000000000
-      Position.X = 20.000000000000000000
-      Position.Y = 406.000000000000000000
-      Size.Width = 524.000000000000000000
-      Size.Height = 452.000000000000000000
-      Size.PlatformDefault = False
-      Stroke.Color = xFFDBD9D9
-      XRadius = 10.000000000000000000
-      YRadius = 10.000000000000000000
-      object Layout2: TLayout
-        Align = Top
-        Position.X = 20.000000000000000000
-        Position.Y = 20.000000000000000000
-        Size.Width = 484.000000000000000000
-        Size.Height = 70.000000000000000000
-        Size.PlatformDefault = False
-        TabOrder = 2
-        object SkLabel1: TSkLabel
-          Align = Top
-          Size.Width = 484.000000000000000000
-          Size.Height = 53.000000000000000000
-          Size.PlatformDefault = False
-          Words = <
-            item
-              Font.Families = 'Segue UI'
-              Font.Size = 24.000000000000000000
-              Font.Weight = Bold
-              Name = 'Item 0'
-              StyledSettings = [FontColor]
-              Text = 'Recent Contracts'
-            end
-            item
-              Font.Families = 'Inter'
-              Font.Size = 16.000000000000000000
-              FontColor = claDimgray
-              Name = 'Item 1'
-              StyledSettings = [Style]
-              Text = #13#10'Your most recently created contracts'
-            end>
-        end
-      end
-      object ListView1: TListView
-        ItemAppearanceClassName = 'TDynamicAppearance'
-        ItemEditAppearanceClassName = 'TDynamicAppearance'
-        HeaderAppearanceClassName = 'TListHeaderObjects'
-        FooterAppearanceClassName = 'TListHeaderObjects'
-        ItemIndex = 0
-        Align = Top
-        Position.X = 20.000000000000000000
-        Position.Y = 90.000000000000000000
-        Size.Width = 484.000000000000000000
-        Size.Height = 300.000000000000000000
-        Size.PlatformDefault = False
-        TabOrder = 1
-        ItemAppearance.ItemHeight = 65
-        ItemAppearanceObjects.ItemObjects.ObjectsCollection = <
-          item
-            AppearanceObjectName = 'Text1'
-            AppearanceClassName = 'TTextObjectAppearance'
-            Appearance.Font.Size = 15.000000000000000000
-            Appearance.TextAlign = Leading
-            Appearance.TextColor = claGray
-            Appearance.Width = 353.000000000000000000
-            Appearance.Height = 25.000000000000000000
-            Appearance.PlaceOffset.X = 7.000000000000000000
-            Appearance.PlaceOffset.Y = 3.000000000000000000
-          end
-          item
-            AppearanceObjectName = 'Text3'
-            AppearanceClassName = 'TTextObjectAppearance'
-            Appearance.TextAlign = Leading
-            Appearance.TextColor = claGray
-            Appearance.Width = 73.000000000000000000
-            Appearance.Height = 20.000000000000000000
-            Appearance.PlaceOffset.X = 7.000000000000000000
-            Appearance.PlaceOffset.Y = 30.000000000000000000
-          end
-          item
-            AppearanceObjectName = 'Accessory5'
-            AppearanceClassName = 'TAccessoryObjectAppearance'
-            Appearance.Width = 40.000000000000000000
-            Appearance.Height = 40.000000000000000000
-            Appearance.PlaceOffset.X = 424.000000000000000000
-            Appearance.PlaceOffset.Y = 8.000000000000000000
-          end
-          item
-            AppearanceObjectName = 'TextButton6'
-            AppearanceClassName = 'TTextButtonObjectAppearance'
-            Appearance.Enabled = False
-            Appearance.TextColor = claWhite
-            Appearance.Width = 105.000000000000000000
-            Appearance.Height = 25.000000000000000000
-            Appearance.PlaceOffset.X = 91.000000000000000000
-            Appearance.PlaceOffset.Y = 27.000000000000000000
-          end>
-        ItemAppearanceObjects.ItemEditObjects.ObjectsCollection = <
-          item
-            AppearanceObjectName = 'Text1'
-            AppearanceClassName = 'TTextObjectAppearance'
-          end>
-      end
-      object cbtnViewAllContracts: TCornerButton
-        Align = Top
-        Margins.Top = 10.000000000000000000
-        Position.X = 20.000000000000000000
-        Position.Y = 400.000000000000000000
-        Sides = [Top, Left, Bottom, Right]
-        Size.Width = 484.000000000000000000
-        Size.Height = 35.000000000000000000
-        Size.PlatformDefault = False
-        TabOrder = 3
-        Text = 'View All Contracts'
-        TextSettings.Trimming = None
-        XRadius = 5.000000000000000000
-        YRadius = 5.000000000000000000
-      end
     end
     object glytCards: TGridLayout
       Align = Top
@@ -158,7 +32,7 @@ object fDashboard: TfDashboard
       Size.Width = 549.000000000000000000
       Size.Height = 321.000000000000000000
       Size.PlatformDefault = False
-      TabOrder = 3
+      TabOrder = 2
       OnResize = glytCardsResize
       object rCard1: TRectangle
         Align = Center
@@ -215,7 +89,7 @@ object fDashboard: TfDashboard
           Size.PlatformDefault = False
           TextSettings.Font.Size = 24.000000000000000000
           TextSettings.Font.StyleExt = {00070000000000000004000000}
-          Text = '6'
+          Text = '18'
           TabOrder = 1
         end
       end
@@ -274,7 +148,7 @@ object fDashboard: TfDashboard
           Size.PlatformDefault = False
           TextSettings.Font.Size = 24.000000000000000000
           TextSettings.Font.StyleExt = {00070000000000000004000000}
-          Text = '1'
+          Text = '29'
           TabOrder = 1
         end
       end
@@ -392,7 +266,7 @@ object fDashboard: TfDashboard
           Size.PlatformDefault = False
           TextSettings.Font.Size = 24.000000000000000000
           TextSettings.Font.StyleExt = {00070000000000000004000000}
-          Text = '0'
+          Text = '11'
           TabOrder = 1
         end
       end
@@ -437,6 +311,99 @@ object fDashboard: TfDashboard
         YRadius = 8.000000000000000000
       end
     end
+    object rUrgentContracts: TRectangle
+      Align = Top
+      Padding.Left = 20.000000000000000000
+      Padding.Top = 10.000000000000000000
+      Padding.Right = 20.000000000000000000
+      Padding.Bottom = 20.000000000000000000
+      Margins.Left = 20.000000000000000000
+      Margins.Right = 25.000000000000000000
+      Position.X = 20.000000000000000000
+      Position.Y = 386.000000000000000000
+      Size.Width = 519.000000000000000000
+      Size.Height = 350.000000000000000000
+      Size.PlatformDefault = False
+      Stroke.Kind = None
+      XRadius = 9.000000000000000000
+      YRadius = 9.000000000000000000
+      object Layout2: TLayout
+        Align = Top
+        Padding.Bottom = 10.000000000000000000
+        Position.X = 20.000000000000000000
+        Position.Y = 10.000000000000000000
+        Size.Width = 479.000000000000000000
+        Size.Height = 63.000000000000000000
+        Size.PlatformDefault = False
+        TabOrder = 1
+        object SkLabel1: TSkLabel
+          Align = Left
+          Size.Width = 259.549987792968800000
+          Size.Height = 53.000000000000000000
+          Size.PlatformDefault = False
+          StyledSettings = [Family, Size, FontColor]
+          TextSettings.Font.Weight = Semibold
+          Words = <
+            item
+              Font.Size = 24.000000000000000000
+              Font.Weight = Semibold
+              Name = 'Item 0'
+              StyledSettings = [Family, FontColor]
+              Text = 'Urgent Contracts'
+            end
+            item
+              FontColor = xFF686868
+              Name = 'Item 1'
+              StyledSettings = [Family, Size, Style]
+              Text = #13#10'Contracts that requires immediate action'
+            end>
+        end
+      end
+      object btnViewAllContracts: TCornerButton
+        Align = Top
+        Margins.Top = 10.000000000000000000
+        Position.X = 20.000000000000000000
+        Position.Y = 299.000000000000000000
+        Sides = [Top, Left, Bottom, Right]
+        Size.Width = 479.000000000000000000
+        Size.Height = 30.000000000000000000
+        Size.PlatformDefault = False
+        TabOrder = 2
+        Text = 'View All Contracts'
+        TextSettings.Trimming = None
+        XRadius = 3.000000000000000000
+        YRadius = 3.000000000000000000
+      end
+      object Layout1: TLayout
+        Align = Top
+        Position.X = 20.000000000000000000
+        Position.Y = 73.000000000000000000
+        Size.Width = 479.000000000000000000
+        Size.Height = 216.000000000000000000
+        Size.PlatformDefault = False
+        TabOrder = 3
+        object cUrgentContracts: TCalendar
+          Align = Left
+          Date = 45828.000000000000000000
+          Size.Width = 230.000000000000000000
+          Size.Height = 216.000000000000000000
+          Size.PlatformDefault = False
+          TabOrder = 4
+        end
+        object gUrgentContracts: TGrid
+          Align = Client
+          CanFocus = True
+          ClipChildren = True
+          Margins.Left = 5.000000000000000000
+          Size.Width = 244.000000000000000000
+          Size.Height = 216.000000000000000000
+          Size.PlatformDefault = False
+          TabOrder = 3
+          Viewport.Width = 240.000000000000000000
+          Viewport.Height = 191.000000000000000000
+        end
+      end
+    end
   end
   object BindSourceDBActiveCli: TBindSourceDB
     DataSet = dm.qActiveClients
@@ -477,18 +444,6 @@ object fDashboard: TfDashboard
       Component = lbPartiallyPaidC
       ComponentProperty = 'Text'
     end
-    object LinkListControlToField1: TLinkListControlToField
-      Category = 'Quick Bindings'
-      DataSource = BindSourceDB4
-      Control = ListView1
-      FillExpressions = <
-        item
-          SourceMemberName = 'client_name'
-          ControlMemberName = 'Text1'
-        end>
-      FillHeaderExpressions = <>
-      FillBreakGroups = <>
-    end
   end
   object BindSourceDB1: TBindSourceDB
     DataSet = dm.qTotalContracts
@@ -507,11 +462,5 @@ object fDashboard: TfDashboard
     ScopeMappings = <>
     Left = 240
     Top = 152
-  end
-  object BindSourceDB4: TBindSourceDB
-    DataSet = dm.qRecentContracts
-    ScopeMappings = <>
-    Left = 280
-    Top = 192
   end
 end

@@ -54351,7 +54351,7 @@ object dm: Tdm
     SQL.Strings = (
       'SELECT COUNT(payment_status) as '#39'Partially Paid'#39
       'FROM contracts'
-      'WHERE payment_status = '#39'Partially Paid'#39';')
+      'WHERE payment_status = '#39'Initially Paid'#39';')
     Left = 371
     Top = 144
   end
@@ -54363,14 +54363,6 @@ object dm: Tdm
       'FROM contracts;')
     Left = 75
     Top = 224
-  end
-  object qRecentContracts: TFDQuery
-    Active = True
-    Connection = cData
-    SQL.Strings = (
-      'SELECT * FROM contracts LIMIT 3;')
-    Left = 272
-    Top = 232
   end
   object qClient: TFDQuery
     Active = True
@@ -54427,5 +54419,17 @@ object dm: Tdm
       Origin = 'contract'
       Size = 5
     end
+  end
+  object qUrgentContracts: TFDQuery
+    Active = True
+    Connection = cData
+    SQL.Strings = (
+      'SELECT '
+      
+        'client_name, address, payment_status, first_treatment, second_tr' +
+        'eatment, third_treatment  '
+      'FROM contracts')
+    Left = 272
+    Top = 224
   end
 end

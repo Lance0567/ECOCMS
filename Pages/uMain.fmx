@@ -32,7 +32,7 @@ object frmMain: TfrmMain
         Size.Width = 617.000000000000000000
         Size.Height = 505.000000000000000000
         Size.PlatformDefault = False
-        TabIndex = 3
+        TabIndex = 0
         TabOrder = 0
         TabPosition = None
         OnChange = tcControllerChange
@@ -50,13 +50,13 @@ object frmMain: TfrmMain
             item
             end>
           TextSettings.Trimming = None
-          IsSelected = False
+          IsSelected = True
           Size.Width = 12.000000000000000000
           Size.Height = 12.000000000000000000
           Size.PlatformDefault = False
           StyleLookup = ''
           TabOrder = 0
-          Text = 'Dashboard'
+          Text = 'W'
           ExplicitSize.cx = 12.000000000000000000
           ExplicitSize.cy = 12.000000000000000000
           inline fDashboard1: TfDashboard
@@ -70,51 +70,10 @@ object frmMain: TfrmMain
               Viewport.Width = 606.000000000000000000
               Viewport.Height = 505.000000000000000000
               inherited lytBottom: TLayout
+                Margins.Top = 10.000000000000000000
+                Position.Y = 836.000000000000000000
                 Size.Width = 606.000000000000000000
-              end
-              inherited rRecentContracts: TRectangle
-                Size.Width = 566.000000000000000000
-                inherited Layout2: TLayout
-                  Size.Width = 526.000000000000000000
-                  inherited SkLabel1: TSkLabel
-                    Size.Width = 526.000000000000000000
-                  end
-                end
-                inherited ListView1: TListView
-                  Size.Width = 526.000000000000000000
-                  ItemAppearanceObjects.ItemObjects.ObjectsCollection = <
-                    item
-                      AppearanceObjectName = 'Text1'
-                      AppearanceClassName = 'TTextObjectAppearance'
-                      Appearance.Font.Size = 15.000000000000000000
-                      Appearance.TextAlign = Leading
-                      Appearance.TextColor = claGray
-                      Appearance.Width = 353.000000000000000000
-                      Appearance.Height = 25.000000000000000000
-                      Appearance.PlaceOffset.X = 7.000000000000000000
-                      Appearance.PlaceOffset.Y = 3.000000000000000000
-                    end
-                    item
-                      AppearanceObjectName = 'Text3'
-                      AppearanceClassName = 'TTextObjectAppearance'
-                      Appearance.TextAlign = Leading
-                      Appearance.TextColor = claGray
-                      Appearance.Width = 73.000000000000000000
-                      Appearance.Height = 20.000000000000000000
-                      Appearance.PlaceOffset.X = 7.000000000000000000
-                      Appearance.PlaceOffset.Y = 30.000000000000000000
-                    end
-                    item
-                      AppearanceObjectName = 'Accessory5'
-                      AppearanceClassName = 'TAccessoryObjectAppearance'
-                      Appearance.Width = 40.000000000000000000
-                      Appearance.Height = 40.000000000000000000
-                    end>
-                end
-                inherited cbtnViewAllContracts: TCornerButton
-                  Size.Width = 526.000000000000000000
-                  OnClick = fDashboard1cbtnViewAllContractsClick
-                end
+                Size.Height = 10.000000000000000000
               end
               inherited glytCards: TGridLayout
                 ItemWidth = 290.000000000000000000
@@ -201,6 +160,45 @@ object frmMain: TfrmMain
                   OnClick = fContracts1btnTriggerClick
                 end
               end
+              inherited Rectangle1: TRectangle
+                Padding.Top = 20.000000000000000000
+                Margins.Top = 10.000000000000000000
+                Position.Y = 396.000000000000000000
+                Size.Width = 561.000000000000000000
+                Size.Height = 430.000000000000000000
+                inherited Layout2: TLayout
+                  Position.Y = 20.000000000000000000
+                  Size.Width = 521.000000000000000000
+                  Size.Height = 55.000000000000000000
+                  inherited SkLabel1: TSkLabel
+                    Size.Height = 45.000000000000000000
+                  end
+                end
+                inherited btnViewAllContracts: TCornerButton
+                  Align = Bottom
+                  Margins.Top = 15.000000000000000000
+                  Position.Y = 380.000000000000000000
+                  Size.Width = 521.000000000000000000
+                end
+                inherited Layout1: TLayout
+                  Align = Client
+                  Margins.Top = 10.000000000000000000
+                  Size.Width = 521.000000000000000000
+                  Size.Height = 280.000000000000000000
+                  inherited Calendar1: TCalendar
+                    Margins.Top = -25.000000000000000000
+                    Position.Y = 1.000000000000000000
+                    Size.Width = 298.000000000000000000
+                    Size.Height = 252.000000000000000000
+                  end
+                  inherited Grid1: TGrid
+                    Size.Width = 218.000000000000000000
+                    Size.Height = 280.000000000000000000
+                    Viewport.Width = 216.000000000000000000
+                    Viewport.Height = 248.000000000000000000
+                  end
+                end
+              end
             end
             inherited BindSourceDBActiveCli: TBindSourceDB
               Left = 464
@@ -221,10 +219,6 @@ object frmMain: TfrmMain
             inherited BindSourceDB3: TBindSourceDB
               Left = 640
               Top = 312
-            end
-            inherited BindSourceDB4: TBindSourceDB
-              Left = 632
-              Top = 392
             end
           end
         end
@@ -432,8 +426,8 @@ object frmMain: TfrmMain
                     StyleLookup = 'gridstyleOriginal'
                     TextSettings.Font.Family = '(Default)'
                     StyledSettings = [Size, Style]
-                    Viewport.Width = 522.000000000000000000
-                    Viewport.Height = 430.000000000000000000
+                    Viewport.Width = 526.000000000000000000
+                    Viewport.Height = 475.000000000000000000
                   end
                 end
               end
@@ -501,7 +495,7 @@ object frmMain: TfrmMain
             item
             end>
           TextSettings.Trimming = None
-          IsSelected = True
+          IsSelected = False
           Size.Width = 12.000000000000000000
           Size.Height = 12.000000000000000000
           Size.PlatformDefault = False
