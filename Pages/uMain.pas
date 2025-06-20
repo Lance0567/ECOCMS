@@ -13,7 +13,7 @@ uses
   System.Bindings.Outputs, Fmx.Bind.Editors, Data.Bind.Components,
   Data.Bind.Grid, Data.Bind.DBScope, FMX.Edit, FMX.DateTimeCtrls, uContracts,
   FMX.Memo.Types, FMX.DialogService, FMX.ScrollBox, FMX.Memo, uCreateContract,
-  uCompile, FMX.Ani, Data.DB;
+  uCompile, FMX.Ani, Data.DB, System.DateUtils;
 
 type
   TfrmMain = class(TForm)
@@ -106,10 +106,12 @@ type
     procedure SpinEditButton1DownClick(Sender: TObject);
     procedure Timer1Timer(Sender: TObject);
     procedure FloatAnimation1Finish(Sender: TObject);
+    procedure fDashboard1cUrgentContractsChange(Sender: TObject);
   private
     procedure HideFrames;
     procedure ShowConfirmationDialog(const TheMessage: string);
     procedure ShowMessageDialog(const TheMessage: string);
+    procedure LoadUrgentContracts;
     { Private declarations }
   public
     { Public declarations }
@@ -139,6 +141,7 @@ begin
   dm.qTotalContracts.Active := false;
   dm.qClient.Active := false;
   dm.qContracts.Active := false;
+  dm.qUrgentContracts.Active := false;
 end;
 
 { Hide fields from the add client modal }
@@ -311,10 +314,13 @@ begin
   dm.qClient.FieldByName('name').AsString := eFullname.Text;
   dm.qClient.FieldByName('address').AsString := eAddress.Text;
   dm.qClient.FieldByName('contract_price').AsFloat := StrToFloat(eContractPrice.Text);
-  dm.qClient.FieldByName('contract_date').AsString := dContractDate.Text;
+  dm.qClient.FieldByName('created_at').AsString := dContractDate.Text;
   dm.qClient.FieldByName('first_treatment').AsString := dFirstTD.Text;
+  dm.qClient.FieldByName('first_date').AsDateTime := dFirstTD.Date;
   dm.qClient.FieldByName('second_treatment').AsString := dSecondTD.Text;
+  dm.qClient.FieldByName('first_date').AsDateTime := dSecondTD.Date;
   dm.qClient.FieldByName('third_treatment').AsString := dThirdTD.Text;
+  dm.qClient.FieldByName('third_date').AsDateTime := dThirdTD.Date;
   dm.qClient.Post;
   dm.qClient.Refresh;
 
@@ -507,6 +513,7 @@ begin
 
   // Show component
   fCreateContract1.ePartialAmount.Visible := true;
+  fCreateContract1.cbPaymentStatus.Visible := true;
 
   // Populate fields
   clientName := 'Name: ' + dm.qContracts.FieldByName('client_name').AsString;
@@ -545,7 +552,7 @@ begin
   end;
 
   fCreateContract1.mTreatmentInclusion.Text := dm.qContracts.FieldByName('treatment_inclusion').AsString;
-  fCreateContract1.dCreatedDate.DateTime := dm.qContracts.FieldByName('contract_date').AsDateTime;
+  fCreateContract1.dCreatedDate.Text := dm.qContracts.FieldByName('created_at').AsString;
   fCreateContract1.ePartialAmount.Text := dm.qContracts.FieldByName('payment_status').AsString;
 
   // Switch tab index
@@ -591,6 +598,34 @@ end;
 procedure TfrmMain.FormClose(Sender: TObject; var Action: TCloseAction);
 begin
   Application.Terminate;
+end;
+
+procedure TfrmMain.LoadUrgentContracts;
+var
+  StartOfWeek, EndOfWeek: TDate;
+begin
+  // Set calendar to today
+  fDashboard1.cUrgentContracts.Date := Date;
+
+  // Get current week's Monday to Sunday
+  StartOfWeek := StartOfTheWeek(Date);
+  EndOfWeek := EndOfTheWeek(Date);
+
+  // Apply to qUrgentContracts
+  dm.qUrgentContracts.Close;
+  dm.qUrgentContracts.SQL.Text :=
+    'SELECT name, address, ' +
+    'first_date, second_date, third_date ' +
+    'FROM clients ' +
+    'WHERE ' +
+    'first_date BETWEEN :StartOfWeek AND :EndOfWeek OR ' +
+    'second_date BETWEEN :StartOfWeek AND :EndOfWeek OR ' +
+    'third_date BETWEEN :StartOfWeek AND :EndOfWeek ' +
+    'ORDER BY first_date';
+
+  dm.qUrgentContracts.ParamByName('StartOfWeek').AsDate := StartOfWeek;
+  dm.qUrgentContracts.ParamByName('EndOfWeek').AsDate := EndOfWeek;
+  dm.qUrgentContracts.Open;
 end;
 
 { Form Create }
@@ -689,6 +724,8 @@ begin
   dm.qActiveClients.Active := true;
   dm.qFullyPaid.Active := true;
   dm.qPartiallyPaid.Active := true;
+  dm.qUrgentContracts.Active := true;
+  LoadUrgentContracts;
 end;
 
 { Open query based on the tab }
@@ -863,6 +900,22 @@ procedure TfrmMain.fDashboard1cbtnViewAllContractsClick(Sender: TObject);
 begin
   tcController.TabIndex := 2;
   fContracts1.Visible := True;
+end;
+
+procedure TfrmMain.fDashboard1cUrgentContractsChange(Sender: TObject);
+var
+  SelectedDate: TDate;
+  StartOfWeek, EndOfWeek: TDate;
+begin
+  SelectedDate := fDashboard1.cUrgentContracts.Date;
+
+  StartOfWeek := StartOfTheWeek(SelectedDate);
+  EndOfWeek := EndOfTheWeek(SelectedDate);
+
+  dm.qUrgentContracts.Close;
+  dm.qUrgentContracts.ParamByName('StartOfWeek').AsDate := StartOfWeek;
+  dm.qUrgentContracts.ParamByName('EndOfWeek').AsDate := EndOfWeek;
+  dm.qUrgentContracts.Open;
 end;
 
 end.

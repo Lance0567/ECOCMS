@@ -1,8 +1,8 @@
 ﻿[qActiveClients]
-Coordinates=431,10,85,69
+Coordinates=492,10,85,69
 
 [qContracts]
-Coordinates=123,10,95,231
+Coordinates=10,10,95,231
 
 [cData]
 Coordinates=239,53,42,33
@@ -14,22 +14,22 @@ Coordinates=239,105,68,33
 Coordinates=239,261,70,33
 
 [qClientSelection]
-Coordinates=326,10,95,213
+Coordinates=249,10,95,213
 
 [qTemp]
-Coordinates=113,251,48,51
+Coordinates=315,298,48,51
 
 [qFullyPaid]
-Coordinates=263,251,66,69
+Coordinates=10,298,66,69
 
 []
 Coordinates=10,10,103,231
 
 [qPartiallyPaid]
-Coordinates=171,251,82,69
+Coordinates=211,298,82,69
 
 [qTotalContracts]
-Coordinates=10,251,93,69
+Coordinates=95,298,93,69
 
 [qClientthird_treatment]
 Coordinates=459,98,124,33
@@ -56,7 +56,7 @@ Coordinates=291,443,76,33
 Coordinates=291,495,89,33
 
 [qClient]
-Coordinates=132,260,88,213
+Coordinates=134,10,88,213
 
 [qClientfirst_treatment]
 Coordinates=347,294,121,33
@@ -90,4 +90,7 @@ Coordinates=493,462,157,33
 
 [qContractstreatment_inclusion]
 Coordinates=474,511,166,33
+
+[qUrgentContracts]
+Coordinates=367,10,101,141
 

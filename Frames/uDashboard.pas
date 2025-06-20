@@ -10,7 +10,7 @@ uses
   FMX.Controls.Presentation, FMX.ImgList, Math, Data.Bind.EngExt,
   Fmx.Bind.DBEngExt, System.Rtti, System.Bindings.Outputs, Fmx.Bind.Editors,
   Data.Bind.Components, Data.Bind.DBScope, FMX.Grid.Style, FMX.ScrollBox,
-  FMX.Grid, FMX.Calendar;
+  FMX.Grid, FMX.Calendar, Fmx.Bind.Grid, Data.Bind.Grid;
 
 type
   TfDashboard = class(TFrame)
@@ -56,6 +56,8 @@ type
     Layout1: TLayout;
     cUrgentContracts: TCalendar;
     gUrgentContracts: TGrid;
+    BindSourceDB4: TBindSourceDB;
+    LinkGridToDataSourceBindSourceDB4: TLinkGridToDataSource;
     procedure FrameResize(Sender: TObject);
     procedure glytCardsResize(Sender: TObject);
     procedure GridResponsive;

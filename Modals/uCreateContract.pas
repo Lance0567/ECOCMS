@@ -281,7 +281,7 @@ begin
   dm.qContracts.FieldByName('client_name').AsString := qName;
   dm.qContracts.FieldByName('address').AsString := qAddress;
   dm.qContracts.FieldByName('treatment_inclusion').AsString := mTreatmentInclusion.Text;
-  dm.qContracts.FieldByName('created_at').AsDateTime := dCreatedDate.Date;
+  dm.qContracts.FieldByName('created_at').AsString := dCreatedDate.Text;
   dm.qContracts.FieldByName('payment_status').AsString := cbPaymentStatus.Text;
   dm.qContracts.FieldByName('partial_amount').AsString := ePartialAmount.Text;
 

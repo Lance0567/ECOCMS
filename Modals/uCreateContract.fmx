@@ -152,7 +152,7 @@ object fCreateContract: TfCreateContract
             TextSettings.Font.Size = 17.000000000000000000
             TextSettings.FontColor = claRed
             Text = '*'
-            TabOrder = 3
+            TabOrder = 4
           end
         end
         object lDescription1: TLabel
@@ -215,11 +215,9 @@ object fCreateContract: TfCreateContract
         object cbClientSelection: TComboBox
           Align = Top
           Items.Strings = (
-            'Laraa'
             ''
             ''
             ''
-            'Francis'
             'Totoy'
             'Miguel'
             ''
@@ -351,7 +349,7 @@ object fCreateContract: TfCreateContract
           TabOrder = 1
         end
         object dCreatedDate: TDateEdit
-          Date = 45827.000000000000000000
+          Date = 45828.000000000000000000
           TodayDefault = True
           DateFormatKind = Long
           Align = Top
@@ -464,7 +462,7 @@ object fCreateContract: TfCreateContract
             Size.Width = 599.000000000000000000
             Size.Height = 19.000000000000000000
             Size.PlatformDefault = False
-            TabOrder = 39
+            TabOrder = 40
             Text = 'First Treatment'
             TextSettings.Font.Size = 14.000000000000000000
             OnChange = cbFirstTreatmentChange
@@ -479,7 +477,7 @@ object fCreateContract: TfCreateContract
             Size.Width = 599.000000000000000000
             Size.Height = 19.000000000000000000
             Size.PlatformDefault = False
-            TabOrder = 38
+            TabOrder = 39
             Text = 'Second Treatment'
             TextSettings.Font.Size = 14.000000000000000000
             OnChange = cbSecondTreatmentChange
@@ -494,7 +492,7 @@ object fCreateContract: TfCreateContract
             Size.Width = 599.000000000000000000
             Size.Height = 19.000000000000000000
             Size.PlatformDefault = False
-            TabOrder = 37
+            TabOrder = 38
             Text = 'Third Treatment'
             TextSettings.Font.Size = 14.000000000000000000
             OnChange = cbThirdTreatmentChange

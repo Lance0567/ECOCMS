@@ -659,3 +659,6 @@ Coordinates=1289,547,164,51
 [fClients1.BindSourceDBClient]
 Coordinates=454,10,161,231
 
+[dm.qUrgentContracts]
+Visible=False
+

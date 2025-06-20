@@ -14,9 +14,9 @@ object fDashboard: TfDashboard
     object lytBottom: TLayout
       Align = Top
       Margins.Top = 20.000000000000000000
-      Position.Y = 756.000000000000000000
+      Position.Y = 816.000000000000000000
       Size.Width = 564.000000000000000000
-      Size.Height = 50.000000000000000000
+      Size.Height = 10.000000000000000000
       Size.PlatformDefault = False
       TabOrder = 0
     end
@@ -318,11 +318,12 @@ object fDashboard: TfDashboard
       Padding.Right = 20.000000000000000000
       Padding.Bottom = 20.000000000000000000
       Margins.Left = 20.000000000000000000
+      Margins.Top = 10.000000000000000000
       Margins.Right = 25.000000000000000000
       Position.X = 20.000000000000000000
-      Position.Y = 386.000000000000000000
+      Position.Y = 396.000000000000000000
       Size.Width = 519.000000000000000000
-      Size.Height = 350.000000000000000000
+      Size.Height = 400.000000000000000000
       Size.PlatformDefault = False
       Stroke.Kind = None
       XRadius = 9.000000000000000000
@@ -360,10 +361,10 @@ object fDashboard: TfDashboard
         end
       end
       object btnViewAllContracts: TCornerButton
-        Align = Top
+        Align = Bottom
         Margins.Top = 10.000000000000000000
         Position.X = 20.000000000000000000
-        Position.Y = 299.000000000000000000
+        Position.Y = 350.000000000000000000
         Sides = [Top, Left, Bottom, Right]
         Size.Width = 479.000000000000000000
         Size.Height = 30.000000000000000000
@@ -375,18 +376,16 @@ object fDashboard: TfDashboard
         YRadius = 3.000000000000000000
       end
       object Layout1: TLayout
-        Align = Top
-        Position.X = 20.000000000000000000
-        Position.Y = 73.000000000000000000
+        Align = Client
         Size.Width = 479.000000000000000000
-        Size.Height = 216.000000000000000000
+        Size.Height = 267.000000000000000000
         Size.PlatformDefault = False
         TabOrder = 3
         object cUrgentContracts: TCalendar
           Align = Left
           Date = 45828.000000000000000000
           Size.Width = 230.000000000000000000
-          Size.Height = 216.000000000000000000
+          Size.Height = 267.000000000000000000
           Size.PlatformDefault = False
           TabOrder = 4
         end
@@ -396,11 +395,12 @@ object fDashboard: TfDashboard
           ClipChildren = True
           Margins.Left = 5.000000000000000000
           Size.Width = 244.000000000000000000
-          Size.Height = 216.000000000000000000
+          Size.Height = 267.000000000000000000
           Size.PlatformDefault = False
           TabOrder = 3
+          RowCount = 0
           Viewport.Width = 240.000000000000000000
-          Viewport.Height = 191.000000000000000000
+          Viewport.Height = 242.000000000000000000
         end
       end
     end
@@ -444,6 +444,37 @@ object fDashboard: TfDashboard
       Component = lbPartiallyPaidC
       ComponentProperty = 'Text'
     end
+    object LinkGridToDataSourceBindSourceDB4: TLinkGridToDataSource
+      Category = 'Quick Bindings'
+      DataSource = BindSourceDB4
+      GridControl = gUrgentContracts
+      Columns = <
+        item
+          MemberName = 'name'
+          Header = 'Client Name'
+          Width = 150
+        end
+        item
+          MemberName = 'address'
+          Header = 'Address'
+          Width = 150
+        end
+        item
+          MemberName = 'first_date'
+          Header = 'First Treatment'
+          Width = 170
+        end
+        item
+          MemberName = 'second_date'
+          Header = 'Second Treatment'
+          Width = 170
+        end
+        item
+          MemberName = 'third_date'
+          Header = 'Third Treatment'
+          Width = 170
+        end>
+    end
   end
   object BindSourceDB1: TBindSourceDB
     DataSet = dm.qTotalContracts
@@ -462,5 +493,11 @@ object fDashboard: TfDashboard
     ScopeMappings = <>
     Left = 240
     Top = 152
+  end
+  object BindSourceDB4: TBindSourceDB
+    DataSet = dm.qUrgentContracts
+    ScopeMappings = <>
+    Left = 280
+    Top = 192
   end
 end

@@ -175,7 +175,7 @@ object fContracts: TfContracts
         item
           MemberName = 'created_at'
           Header = 'Date created'
-          Width = 150
+          Width = 200
         end
         item
           MemberName = 'payment_status'

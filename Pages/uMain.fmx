@@ -71,9 +71,8 @@ object frmMain: TfrmMain
               Viewport.Height = 505.000000000000000000
               inherited lytBottom: TLayout
                 Margins.Top = 10.000000000000000000
-                Position.Y = 836.000000000000000000
+                Position.Y = 806.000000000000000000
                 Size.Width = 606.000000000000000000
-                Size.Height = 10.000000000000000000
               end
               inherited glytCards: TGridLayout
                 ItemWidth = 290.000000000000000000
@@ -160,42 +159,26 @@ object frmMain: TfrmMain
                   OnClick = fContracts1btnTriggerClick
                 end
               end
-              inherited Rectangle1: TRectangle
-                Padding.Top = 20.000000000000000000
-                Margins.Top = 10.000000000000000000
-                Position.Y = 396.000000000000000000
+              inherited rUrgentContracts: TRectangle
                 Size.Width = 561.000000000000000000
-                Size.Height = 430.000000000000000000
                 inherited Layout2: TLayout
-                  Position.Y = 20.000000000000000000
                   Size.Width = 521.000000000000000000
-                  Size.Height = 55.000000000000000000
-                  inherited SkLabel1: TSkLabel
-                    Size.Height = 45.000000000000000000
-                  end
                 end
                 inherited btnViewAllContracts: TCornerButton
-                  Align = Bottom
-                  Margins.Top = 15.000000000000000000
-                  Position.Y = 380.000000000000000000
                   Size.Width = 521.000000000000000000
                 end
                 inherited Layout1: TLayout
-                  Align = Client
-                  Margins.Top = 10.000000000000000000
                   Size.Width = 521.000000000000000000
-                  Size.Height = 280.000000000000000000
-                  inherited Calendar1: TCalendar
-                    Margins.Top = -25.000000000000000000
-                    Position.Y = 1.000000000000000000
+                  inherited cUrgentContracts: TCalendar
+                    Position.Y = 8.000000000000000000
                     Size.Width = 298.000000000000000000
                     Size.Height = 252.000000000000000000
+                    OnChange = fDashboard1cUrgentContractsChange
                   end
-                  inherited Grid1: TGrid
+                  inherited gUrgentContracts: TGrid
                     Size.Width = 218.000000000000000000
-                    Size.Height = 280.000000000000000000
                     Viewport.Width = 216.000000000000000000
-                    Viewport.Height = 248.000000000000000000
+                    Viewport.Height = 235.000000000000000000
                   end
                 end
               end
@@ -457,7 +440,7 @@ object frmMain: TfrmMain
                   item
                     MemberName = 'created_at'
                     Header = 'Date created'
-                    Width = 150
+                    Width = 200
                   end
                   item
                     MemberName = 'payment_status'
