@@ -8,7 +8,7 @@ uses
   FMX.Controls.Presentation, FMX.MultiView, System.ImageList, FMX.ImgList,
   FMX.Layouts, uDashboard, FMX.Objects, FMX.TabControl, FMX.Effects,
   FMX.Filter.Effects, FMX.ListView.Types, FMX.ListView.Appearances,
-  FMX.ListView.Adapters.Base, FMX.ListView, System.Skia, FMX.Skia, uClients,
+  FMX.ListView.Adapters.Base, FMX.ListView, FMX.Grid, System.Skia, FMX.Skia, uClients,
   Data.Bind.EngExt, Fmx.Bind.DBEngExt, Fmx.Bind.Grid, System.Rtti,
   System.Bindings.Outputs, Fmx.Bind.Editors, Data.Bind.Components,
   Data.Bind.Grid, Data.Bind.DBScope, FMX.Edit, FMX.DateTimeCtrls, uContracts,
@@ -110,12 +110,15 @@ type
     procedure fDashboard1btnViewAllContractsClick(Sender: TObject);
     procedure fDashboard1cUrgentContractsDateSelected(Sender: TObject);
     procedure fDashboard1cUrgentContractsChange(Sender: TObject);
+    procedure fContracts1gTableRecordCellDblClick(const Column: TColumn;
+      const Row: Integer);
   private
     procedure HideFrames;
     procedure ShowConfirmationDialog(const TheMessage: string);
     procedure ShowMessageDialog(const TheMessage: string);
     procedure LoadContractsForMonth(ADate: TDate);
     procedure LoadContractsForExactDay(ADate: TDate);
+    procedure EditContract;
     { Private declarations }
   public
     { Public declarations }
@@ -491,8 +494,8 @@ begin
   frmMain.Tag := 1;
 end;
 
-{ Edit contract }
-procedure TfrmMain.fContracts1EditClick(Sender: TObject);
+{ Code for edit contract }
+procedure TfrmMain.EditContract;
 var
   clientName: String;
   clientAddress: String;
@@ -568,6 +571,12 @@ begin
 
   // Set record status
   fCreateContract1.RecordsStatus := 'Edit';
+end;
+
+{ Edit contract }
+procedure TfrmMain.fContracts1EditClick(Sender: TObject);
+begin
+  EditContract;
 end;
 
 { Client Search Procedure }
@@ -833,6 +842,13 @@ begin
   finally
     dm.qContracts.EnableControls;
   end;
+end;
+
+{ Double click event on contract }
+procedure TfrmMain.fContracts1gTableRecordCellDblClick(const Column: TColumn;
+  const Row: Integer);
+begin
+  EditContract;
 end;
 
 { Cancel button from Create Contract }

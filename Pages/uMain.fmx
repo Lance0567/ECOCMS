@@ -173,9 +173,9 @@ object frmMain: TfrmMain
                   Size.Width = 521.000000000000000000
                   inherited cUrgentContracts: TCalendar
                     Margins.Top = -40.000000000000000000
-                    Position.Y = 2.000000000000000000
+                    Position.Y = -40.000000000000000000
                     Size.Width = 298.000000000000000000
-                    Size.Height = 252.000000000000000000
+                    Size.Height = 337.000000000000000000
                     OnChange = fDashboard1cUrgentContractsChange
                     OnDateSelected = fDashboard1cUrgentContractsDateSelected
                   end
@@ -414,6 +414,7 @@ object frmMain: TfrmMain
                     StyleLookup = 'gridstyleOriginal'
                     TextSettings.Font.Family = '(Default)'
                     StyledSettings = [Size, Style]
+                    OnCellDblClick = fContracts1gTableRecordCellDblClick
                     Viewport.Width = 526.000000000000000000
                     Viewport.Height = 475.000000000000000000
                   end
@@ -1205,7 +1206,7 @@ object frmMain: TfrmMain
             TextSettings.Font.Size = 17.000000000000000000
             TextSettings.FontColor = claRed
             Text = '*'
-            TabOrder = 3
+            TabOrder = 4
           end
         end
         object lFullnameR: TLabel
@@ -1260,7 +1261,7 @@ object frmMain: TfrmMain
             TextSettings.Font.Size = 17.000000000000000000
             TextSettings.FontColor = claRed
             Text = '*'
-            TabOrder = 3
+            TabOrder = 4
           end
         end
         object lAddressR: TLabel
@@ -1325,7 +1326,7 @@ object frmMain: TfrmMain
             TextSettings.Font.Size = 17.000000000000000000
             TextSettings.FontColor = claRed
             Text = '*'
-            TabOrder = 3
+            TabOrder = 4
           end
         end
         object lContractPriceR: TLabel
