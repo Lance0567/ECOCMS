@@ -95,6 +95,7 @@ begin
   qClient.Close;
   qContracts.Close;
   qClientSelection.Close;
+  qUrgentContracts.Close;
 
   // activate connection
   cData.Connected := True;
