@@ -125,6 +125,7 @@ object fClients: TfClients
           RowCount = 29
           Options = [ColumnResize, ColumnMove, ColLines, RowLines, Tabs, Header, HeaderClick, AutoDisplacement]
           OnResized = gTableRecordResized
+          OnCellDblClick = gTableRecordCellDblClick
           Viewport.Width = 599.000000000000000000
           Viewport.Height = 434.000000000000000000
         end

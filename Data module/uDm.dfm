@@ -54421,28 +54421,24 @@ object dm: Tdm
     end
   end
   object qUrgentContracts: TFDQuery
+    Active = True
     Connection = cData
     SQL.Strings = (
       'SELECT '
       '  name, address, first_date, second_date, third_date'
       'FROM clients'
-      'WHERE'
-      '  date(first_date) BETWEEN :StartOfWeek AND :EndOfWeek OR'
-      '  date(second_date) BETWEEN :StartOfWeek AND :EndOfWeek OR'
-      '  date(third_date) BETWEEN :StartOfWeek AND :EndOfWeek')
+      'WHERE '
+      '  strftime('#39'%Y-%m'#39', first_date) = :SelectedMonth'
+      '  OR strftime('#39'%Y-%m'#39', second_date) = :SelectedMonth'
+      '  OR strftime('#39'%Y-%m'#39', third_date) = :SelectedMonth')
     Left = 272
     Top = 224
     ParamData = <
       item
-        Name = 'STARTOFWEEK'
-        DataType = ftDate
+        Name = 'SELECTEDMONTH'
+        DataType = ftString
         ParamType = ptInput
-        Value = Null
-      end
-      item
-        Name = 'ENDOFWEEK'
-        DataType = ftDate
-        ParamType = ptInput
+        Size = 7
         Value = Null
       end>
   end

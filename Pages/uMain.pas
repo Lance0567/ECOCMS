@@ -107,11 +107,13 @@ type
     procedure Timer1Timer(Sender: TObject);
     procedure FloatAnimation1Finish(Sender: TObject);
     procedure fDashboard1cUrgentContractsChange(Sender: TObject);
+    procedure FormShow(Sender: TObject);
+    procedure fDashboard1btnViewAllContractsClick(Sender: TObject);
   private
     procedure HideFrames;
     procedure ShowConfirmationDialog(const TheMessage: string);
     procedure ShowMessageDialog(const TheMessage: string);
-    procedure LoadUrgentContracts;
+    procedure LoadContractsForMonth(ADate: TDate);
     { Private declarations }
   public
     { Public declarations }
@@ -314,7 +316,7 @@ begin
   dm.qClient.FieldByName('name').AsString := eFullname.Text;
   dm.qClient.FieldByName('address').AsString := eAddress.Text;
   dm.qClient.FieldByName('contract_price').AsFloat := StrToFloat(eContractPrice.Text);
-  dm.qClient.FieldByName('created_at').AsString := dContractDate.Text;
+  dm.qClient.FieldByName('contract_date').AsString := dContractDate.Text;
   dm.qClient.FieldByName('first_treatment').AsString := dFirstTD.Text;
   dm.qClient.FieldByName('first_date').AsDateTime := dFirstTD.Date;
   dm.qClient.FieldByName('second_treatment').AsString := dSecondTD.Text;
@@ -600,31 +602,15 @@ begin
   Application.Terminate;
 end;
 
-procedure TfrmMain.LoadUrgentContracts;
+procedure TfrmMain.LoadContractsForMonth(ADate: TDate);
 var
-  StartOfWeek, EndOfWeek: TDate;
+  MonthKey: string;
 begin
-  // Set calendar to today
-  fDashboard1.cUrgentContracts.Date := Date;
+  // Format the date to 'YYYY-MM' to match the SQL filter
+  MonthKey := FormatDateTime('yyyy-mm', ADate);
 
-  // Get current week's Monday to Sunday
-  StartOfWeek := StartOfTheWeek(Date);
-  EndOfWeek := EndOfTheWeek(Date);
-
-  // Apply to qUrgentContracts
   dm.qUrgentContracts.Close;
-  dm.qUrgentContracts.SQL.Text :=
-    'SELECT name, address, ' +
-    'first_date, second_date, third_date ' +
-    'FROM clients ' +
-    'WHERE ' +
-    'first_date BETWEEN :StartOfWeek AND :EndOfWeek OR ' +
-    'second_date BETWEEN :StartOfWeek AND :EndOfWeek OR ' +
-    'third_date BETWEEN :StartOfWeek AND :EndOfWeek ' +
-    'ORDER BY first_date';
-
-  dm.qUrgentContracts.ParamByName('StartOfWeek').AsDate := StartOfWeek;
-  dm.qUrgentContracts.ParamByName('EndOfWeek').AsDate := EndOfWeek;
+  dm.qUrgentContracts.ParamByName('SelectedMonth').AsString := MonthKey;
   dm.qUrgentContracts.Open;
 end;
 
@@ -672,6 +658,12 @@ begin
     1:fClients1.GridContentsResponsive;
 //    2:fContracts1.GridContentsResponsive;
   end;
+end;
+
+procedure TfrmMain.FormShow(Sender: TObject);
+begin
+  fDashboard1.cUrgentContracts.Date := Date; // sets today's date
+  LoadContractsForMonth(fDashboard1.cUrgentContracts.Date);
 end;
 
 { Sidebar Resize }
@@ -725,7 +717,7 @@ begin
   dm.qFullyPaid.Active := true;
   dm.qPartiallyPaid.Active := true;
   dm.qUrgentContracts.Active := true;
-  LoadUrgentContracts;
+  LoadContractsForMonth(fDashboard1.cUrgentContracts.Date);
 end;
 
 { Open query based on the tab }
@@ -788,50 +780,7 @@ end;
 { Create contract }
 procedure TfrmMain.fContracts1btnTriggerClick(Sender: TObject);
 begin
-  Self.Tag := 0;
-
-  // Hide other components
-  HideFrames;
-  fCreateContract1.lTreatmentPhaseW.Visible := false;
-  fCreateContract1.lClientSelectionR.Visible := false;
-  fCreateContract1.fPDFCreation1.Visible := false;
-
-  // Show component
-  fCreateContract1.ePartialAmount.Visible := true;
-  fCreateContract1.cbClientSelection.Visible := true;
-  fCreateContract1.cbPaymentStatus.Visible := true;
-
-  // Adjust height
-  fCreateContract1.rClientSelection.Height := 255;
-
-  // Switch tab index
-  tcController.TabIndex := 3;
-  fCreateContract1.Visible := True;
-  fCreateContract1.ScrollBox1.ViewportPosition := PointF(0,0); // reset scroll bar
-
-  // Populate cbClientSelection (ComboBox)
-  fCreateContract1.cbClientSelection.Items.Clear;
-  fCreateContract1.cbClientSelection.Items.Add('Select a client');
-  fCreateContract1.cbClientSelection.ItemIndex := 0;
-  fCreateContract1.cbPaymentStatus.ItemIndex := 0;
-  fCreateContract1.rClientSelection.Height := 135;
-  fCreateContract1.lClientSelectionR.Visible := False;
-  fCreateContract1.rClientData.Visible := False;
-  fCreateContract1.Tag := 0;
-
-  // Empty the Partial payment input
-  fCreateContract1.ePartialAmount.Text := '';
-
-  // Set record status to create
-  fCreateContract1.RecordsStatus := 'Create';
-
-  // Component adjustment
-  fCreateContract1.cbFirstTreatment.Margins.Top := 30;
-  fCreateContract1.gbTreatmentPhases.Height := 115;
-  fCreateContract1.rContractDetails.Height := 635;
-
-  // Checkbox set to check
-  fCreateContract1.cbFirstTreatment.IsChecked := True;
+  fContracts1btnTriggerClick(Sender);
 end;
 
 // Contract Search Procedure
@@ -896,26 +845,38 @@ begin
 end;
 
 // View all contract
+procedure TfrmMain.fDashboard1btnViewAllContractsClick(Sender: TObject);
+begin
+  // hide other components
+  HideFrames;
+
+  // Switch tab index
+  tcController.TabIndex := 2;
+  fContracts1.Visible := True;
+  fContracts1.ScrollBox1.ViewportPosition := PointF(0,0); // reset scroll bar
+end;
+
 procedure TfrmMain.fDashboard1cbtnViewAllContractsClick(Sender: TObject);
 begin
   tcController.TabIndex := 2;
   fContracts1.Visible := True;
 end;
 
+// Selected day on the calendar
 procedure TfrmMain.fDashboard1cUrgentContractsChange(Sender: TObject);
 var
   SelectedDate: TDate;
   StartOfWeek, EndOfWeek: TDate;
 begin
-  SelectedDate := fDashboard1.cUrgentContracts.Date;
-
-  StartOfWeek := StartOfTheWeek(SelectedDate);
-  EndOfWeek := EndOfTheWeek(SelectedDate);
-
-  dm.qUrgentContracts.Close;
-  dm.qUrgentContracts.ParamByName('StartOfWeek').AsDate := StartOfWeek;
-  dm.qUrgentContracts.ParamByName('EndOfWeek').AsDate := EndOfWeek;
-  dm.qUrgentContracts.Open;
+//  SelectedDate := fDashboard1.cUrgentContracts.Date;
+//
+//  StartOfWeek := StartOfTheWeek(SelectedDate);
+//  EndOfWeek := EndOfTheWeek(SelectedDate);
+//
+//  dm.qUrgentContracts.Close;
+//  dm.qUrgentContracts.ParamByName('StartOfWeek').AsDate := StartOfWeek;
+//  dm.qUrgentContracts.ParamByName('EndOfWeek').AsDate := EndOfWeek;
+//  dm.qUrgentContracts.Open;
 end;
 
 end.

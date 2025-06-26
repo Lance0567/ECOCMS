@@ -35,6 +35,8 @@ type
     procedure eSearchChange(Sender: TObject);
     procedure rContainerClick(Sender: TObject);
     procedure FrameClick(Sender: TObject);
+    procedure gTableRecordCellDblClick(const Column: TColumn;
+      const Row: Integer);
   private
     { Private declarations }
   public
@@ -81,6 +83,31 @@ begin
   NewWidth := gTableRecord.Width / gTableRecord.ColumnCount;
   for i := 0 to gTableRecord.ColumnCount - 1 do
     gTableRecord.Columns[i].Width := NewWidth - 2;
+end;
+
+procedure TfClients.gTableRecordCellDblClick(const Column: TColumn;
+  const Row: Integer);
+begin
+  // Set Record status
+  recordStatus := 'edit';
+
+  // Populate the form
+  frmMain.eFullname.Text := dm.qClient.FieldByName('name').AsString;;
+  frmMain.eAddress.Text := dm.qClient.FieldByName('address').AsString;;
+  frmMain.dContractDate.Text := dm.qClient.FieldByName('contract_date').AsString;
+  frmMain.eContractPrice.Text := dm.qClient.FieldByName('contract_price').AsString;
+  frmMain.dFirstTD.Text := dm.qClient.FieldByName('first_treatment').AsString;
+  frmMain.dSecondTD.Text := dm.qClient.FieldByName('second_treatment').AsString;
+  frmMain.dThirdTD.Text := dm.qClient.FieldByName('third_treatment').AsString;
+
+  // visibility show of Add client modal
+  frmMain.rBackground.Visible := True;
+  frmMain.rModalAdd.Visible := True;
+
+  ScrollBox1.ViewportPosition := PointF(0,0);
+  frmMain.HideComponents;
+
+  frmMain.Tag := 1;
 end;
 
 procedure TfClients.gTableRecordResized(Sender: TObject);
