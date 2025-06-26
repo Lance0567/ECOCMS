@@ -109,6 +109,7 @@ type
     procedure FormShow(Sender: TObject);
     procedure fDashboard1btnViewAllContractsClick(Sender: TObject);
     procedure fDashboard1cUrgentContractsDateSelected(Sender: TObject);
+    procedure fDashboard1cUrgentContractsChange(Sender: TObject);
   private
     procedure HideFrames;
     procedure ShowConfirmationDialog(const TheMessage: string);
@@ -608,10 +609,16 @@ procedure TfrmMain.LoadContractsForMonth(ADate: TDate);
 var
   MonthKey: string;
 begin
-  // Format the date to 'YYYY-MM' to match the SQL filter
   MonthKey := FormatDateTime('yyyy-mm', ADate);
 
   dm.qUrgentContracts.Close;
+  dm.qUrgentContracts.SQL.Text :=
+    'SELECT name, address, first_date, second_date, third_date ' +
+    'FROM clients ' +
+    'WHERE strftime(''%Y-%m'', first_date) = :SelectedMonth ' +
+    'OR strftime(''%Y-%m'', second_date) = :SelectedMonth ' +
+    'OR strftime(''%Y-%m'', third_date) = :SelectedMonth';
+
   dm.qUrgentContracts.ParamByName('SelectedMonth').AsString := MonthKey;
   dm.qUrgentContracts.Open;
 end;
@@ -880,6 +887,11 @@ begin
 end;
 
 // Selected day on the calendar
+procedure TfrmMain.fDashboard1cUrgentContractsChange(Sender: TObject);
+begin
+  LoadContractsForMonth(fDashboard1.cUrgentContracts.Date);
+end;
+
 procedure TfrmMain.fDashboard1cUrgentContractsDateSelected(Sender: TObject);
 begin
   LoadContractsForExactDay(fDashboard1.cUrgentContracts.Date);

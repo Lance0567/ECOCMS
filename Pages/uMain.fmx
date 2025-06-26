@@ -176,13 +176,14 @@ object frmMain: TfrmMain
                     Position.Y = 2.000000000000000000
                     Size.Width = 298.000000000000000000
                     Size.Height = 252.000000000000000000
+                    OnChange = fDashboard1cUrgentContractsChange
                     OnDateSelected = fDashboard1cUrgentContractsDateSelected
                   end
                   inherited gUrgentContracts: TGrid
                     Size.Width = 218.000000000000000000
                     StyledSettings = [Family, Size, Style]
-                    Viewport.Width = 216.000000000000000000
-                    Viewport.Height = 265.000000000000000000
+                    Viewport.Width = 218.000000000000000000
+                    Viewport.Height = 297.000000000000000000
                   end
                 end
               end
