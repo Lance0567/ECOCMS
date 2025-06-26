@@ -644,7 +644,13 @@ end;
 
 { Load day based on the calendar }
 procedure TfrmMain.LoadContractsForExactDay(ADate: TDate);
+var
+  DayLabel: String;
 begin
+  // Format the date label as 'Month Day, Year' (e.g., 'June 26, 2025')
+  DayLabel := FormatDateTime('mmmm dd, yyyy', ADate);
+
+  // Prepare and execute query
   dm.qUrgentContracts.Close;
   dm.qUrgentContracts.SQL.Text :=
     'SELECT name, address, first_date, second_date, third_date ' +
@@ -655,6 +661,9 @@ begin
 
   dm.qUrgentContracts.ParamByName('SelectedDay').AsDate := ADate;
   dm.qUrgentContracts.Open;
+
+  // Update status label
+  lCalendarStatus.Text := 'Calendar Status: ' + DayLabel;
 end;
 
 { Form Create }
@@ -971,9 +980,6 @@ end;
 procedure TfrmMain.fDashboard1cUrgentContractsDateSelected(Sender: TObject);
 begin
   LoadContractsForExactDay(fDashboard1.cUrgentContracts.Date);
-
-  // Display status label
-  lCalendarStatus.Text := 'Calendar Status: Today';
 end;
 
 end.
