@@ -106,14 +106,15 @@ type
     procedure SpinEditButton1DownClick(Sender: TObject);
     procedure Timer1Timer(Sender: TObject);
     procedure FloatAnimation1Finish(Sender: TObject);
-    procedure fDashboard1cUrgentContractsChange(Sender: TObject);
     procedure FormShow(Sender: TObject);
     procedure fDashboard1btnViewAllContractsClick(Sender: TObject);
+    procedure fDashboard1cUrgentContractsDateSelected(Sender: TObject);
   private
     procedure HideFrames;
     procedure ShowConfirmationDialog(const TheMessage: string);
     procedure ShowMessageDialog(const TheMessage: string);
     procedure LoadContractsForMonth(ADate: TDate);
+    procedure LoadContractsForExactDay(ADate: TDate);
     { Private declarations }
   public
     { Public declarations }
@@ -602,6 +603,7 @@ begin
   Application.Terminate;
 end;
 
+{ Load Month based on the calendar }
 procedure TfrmMain.LoadContractsForMonth(ADate: TDate);
 var
   MonthKey: string;
@@ -611,6 +613,21 @@ begin
 
   dm.qUrgentContracts.Close;
   dm.qUrgentContracts.ParamByName('SelectedMonth').AsString := MonthKey;
+  dm.qUrgentContracts.Open;
+end;
+
+{ Load day based on the calendar }
+procedure TfrmMain.LoadContractsForExactDay(ADate: TDate);
+begin
+  dm.qUrgentContracts.Close;
+  dm.qUrgentContracts.SQL.Text :=
+    'SELECT name, address, first_date, second_date, third_date ' +
+    'FROM clients ' +
+    'WHERE date(first_date) = :SelectedDay ' +
+    'OR date(second_date) = :SelectedDay ' +
+    'OR date(third_date) = :SelectedDay';
+
+  dm.qUrgentContracts.ParamByName('SelectedDay').AsDate := ADate;
   dm.qUrgentContracts.Open;
 end;
 
@@ -863,20 +880,9 @@ begin
 end;
 
 // Selected day on the calendar
-procedure TfrmMain.fDashboard1cUrgentContractsChange(Sender: TObject);
-var
-  SelectedDate: TDate;
-  StartOfWeek, EndOfWeek: TDate;
+procedure TfrmMain.fDashboard1cUrgentContractsDateSelected(Sender: TObject);
 begin
-//  SelectedDate := fDashboard1.cUrgentContracts.Date;
-//
-//  StartOfWeek := StartOfTheWeek(SelectedDate);
-//  EndOfWeek := EndOfTheWeek(SelectedDate);
-//
-//  dm.qUrgentContracts.Close;
-//  dm.qUrgentContracts.ParamByName('StartOfWeek').AsDate := StartOfWeek;
-//  dm.qUrgentContracts.ParamByName('EndOfWeek').AsDate := EndOfWeek;
-//  dm.qUrgentContracts.Open;
+  LoadContractsForExactDay(fDashboard1.cUrgentContracts.Date);
 end;
 
 end.
