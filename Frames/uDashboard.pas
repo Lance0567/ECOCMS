@@ -53,11 +53,12 @@ type
     Layout2: TLayout;
     SkLabel1: TSkLabel;
     btnViewAllContracts: TCornerButton;
-    Layout1: TLayout;
+    lytUrgentContracts: TLayout;
     cUrgentContracts: TCalendar;
     gUrgentContracts: TGrid;
     BindSourceDB4: TBindSourceDB;
     LinkGridToDataSourceBindSourceDB4: TLinkGridToDataSource;
+    lytCalendarH: TLayout;
     procedure FrameResize(Sender: TObject);
     procedure glytCardsResize(Sender: TObject);
     procedure GridResponsive;

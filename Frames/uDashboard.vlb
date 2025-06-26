@@ -178,9 +178,6 @@ Coordinates=409,526,115,36
 [Layout2]
 Coordinates=645,526,60,36
 
-[Layout1]
-Coordinates=731,526,60,36
-
 [SkLabel1]
 Coordinates=315,526,68,36
 
@@ -190,4 +187,7 @@ Visible=True
 
 [BindSourceDB4]
 Coordinates=281,10,124,190
+
+[lytUrgentContracts]
+Coordinates=731,526,60,36
 

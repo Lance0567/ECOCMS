@@ -76,6 +76,7 @@ type
     FloatAnimation1: TFloatAnimation;
     gPopUp: TGlyph;
     Timer1: TTimer;
+    lCalendarStatus: TLabel;
     procedure mvSidebarResize(Sender: TObject);
     procedure FormCreate(Sender: TObject);
     procedure sbDashboardClick(Sender: TObject);
@@ -616,10 +617,15 @@ end;
 { Load Month based on the calendar }
 procedure TfrmMain.LoadContractsForMonth(ADate: TDate);
 var
-  MonthKey: string;
+  MonthKey, MonthLabel: string;
 begin
+  // Format for SQLite comparison: 'yyyy-mm' (e.g., '2025-06')
   MonthKey := FormatDateTime('yyyy-mm', ADate);
 
+  // Format for user-friendly label: 'MMMM yyyy' (e.g., 'June 2025')
+  MonthLabel := FormatDateTime('MMMM yyyy', ADate);
+
+  // Query setup
   dm.qUrgentContracts.Close;
   dm.qUrgentContracts.SQL.Text :=
     'SELECT name, address, first_date, second_date, third_date ' +
@@ -630,6 +636,9 @@ begin
 
   dm.qUrgentContracts.ParamByName('SelectedMonth').AsString := MonthKey;
   dm.qUrgentContracts.Open;
+
+  // Display status label
+  lCalendarStatus.Text := 'Calendar Status: ' + MonthLabel;
 end;
 
 { Load day based on the calendar }
@@ -902,15 +911,19 @@ begin
   fContracts1.Visible := True;
 end;
 
-// Selected day on the calendar
+{ Selected month on the calendar }
 procedure TfrmMain.fDashboard1cUrgentContractsChange(Sender: TObject);
 begin
   LoadContractsForMonth(fDashboard1.cUrgentContracts.Date);
 end;
 
+{ Selected day on the calendar }
 procedure TfrmMain.fDashboard1cUrgentContractsDateSelected(Sender: TObject);
 begin
   LoadContractsForExactDay(fDashboard1.cUrgentContracts.Date);
+
+  // Display status label
+  lCalendarStatus.Text := 'Calendar Status: Today';
 end;
 
 end.

@@ -33,7 +33,7 @@ object frmMain: TfrmMain
         Size.Width = 617.000000000000000000
         Size.Height = 505.000000000000000000
         Size.PlatformDefault = False
-        TabIndex = 2
+        TabIndex = 0
         TabOrder = 0
         TabPosition = None
         OnChange = tcControllerChange
@@ -51,7 +51,7 @@ object frmMain: TfrmMain
             item
             end>
           TextSettings.Trimming = None
-          IsSelected = False
+          IsSelected = True
           Size.Width = 12.000000000000000000
           Size.Height = 12.000000000000000000
           Size.PlatformDefault = False
@@ -169,21 +169,34 @@ object frmMain: TfrmMain
                   Size.Width = 521.000000000000000000
                   OnClick = fDashboard1btnViewAllContractsClick
                 end
-                inherited Layout1: TLayout
+                inherited lytUrgentContracts: TLayout
                   Size.Width = 521.000000000000000000
-                  inherited cUrgentContracts: TCalendar
-                    Margins.Top = -40.000000000000000000
-                    Position.Y = -40.000000000000000000
-                    Size.Width = 298.000000000000000000
-                    Size.Height = 337.000000000000000000
-                    OnChange = fDashboard1cUrgentContractsChange
-                    OnDateSelected = fDashboard1cUrgentContractsDateSelected
-                  end
                   inherited gUrgentContracts: TGrid
                     Size.Width = 218.000000000000000000
                     StyledSettings = [Family, Size, Style]
-                    Viewport.Width = 218.000000000000000000
-                    Viewport.Height = 297.000000000000000000
+                    Viewport.Width = 216.000000000000000000
+                    Viewport.Height = 265.000000000000000000
+                  end
+                  inherited lytCalendarH: TLayout
+                    Size.Width = 298.000000000000000000
+                    inherited cUrgentContracts: TCalendar
+                      Align = Top
+                      Size.Width = 298.000000000000000000
+                      Size.Height = 252.000000000000000000
+                      OnChange = fDashboard1cUrgentContractsChange
+                      OnDateSelected = fDashboard1cUrgentContractsDateSelected
+                    end
+                    object lCalendarStatus: TLabel
+                      Align = Top
+                      StyledSettings = [Family, Size, Style]
+                      Margins.Top = 15.000000000000000000
+                      Position.Y = 267.000000000000000000
+                      Size.Width = 298.000000000000000000
+                      Size.Height = 25.000000000000000000
+                      Size.PlatformDefault = False
+                      Text = 'Calendar Status: Month'
+                      TabOrder = 5
+                    end
                   end
                 end
               end
@@ -338,7 +351,7 @@ object frmMain: TfrmMain
             item
             end>
           TextSettings.Trimming = None
-          IsSelected = True
+          IsSelected = False
           Size.Width = 12.000000000000000000
           Size.Height = 12.000000000000000000
           Size.PlatformDefault = False

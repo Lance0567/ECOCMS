@@ -207,7 +207,7 @@ object fDashboard: TfDashboard
           Size.PlatformDefault = False
           TextSettings.Font.Size = 24.000000000000000000
           TextSettings.Font.StyleExt = {00070000000000000004000000}
-          Text = '0'
+          Text = '1'
           TabOrder = 1
         end
       end
@@ -266,7 +266,7 @@ object fDashboard: TfDashboard
           Size.PlatformDefault = False
           TextSettings.Font.Size = 24.000000000000000000
           TextSettings.Font.StyleExt = {00070000000000000004000000}
-          Text = '14'
+          Text = '13'
           TabOrder = 1
         end
       end
@@ -375,20 +375,12 @@ object fDashboard: TfDashboard
         XRadius = 3.000000000000000000
         YRadius = 3.000000000000000000
       end
-      object Layout1: TLayout
+      object lytUrgentContracts: TLayout
         Align = Client
         Size.Width = 479.000000000000000000
         Size.Height = 297.000000000000000000
         Size.PlatformDefault = False
         TabOrder = 3
-        object cUrgentContracts: TCalendar
-          Align = Left
-          Date = 45828.000000000000000000
-          Size.Width = 200.000000000000000000
-          Size.Height = 297.000000000000000000
-          Size.PlatformDefault = False
-          TabOrder = 4
-        end
         object gUrgentContracts: TGrid
           Align = Client
           CanFocus = True
@@ -399,8 +391,23 @@ object fDashboard: TfDashboard
           Size.PlatformDefault = False
           TabOrder = 3
           RowCount = 0
-          Viewport.Width = 270.000000000000000000
-          Viewport.Height = 272.000000000000000000
+          Viewport.Width = 274.000000000000000000
+          Viewport.Height = 297.000000000000000000
+        end
+        object lytCalendarH: TLayout
+          Align = Left
+          Size.Width = 200.000000000000000000
+          Size.Height = 297.000000000000000000
+          Size.PlatformDefault = False
+          TabOrder = 4
+          object cUrgentContracts: TCalendar
+            Align = Left
+            Date = 45828.000000000000000000
+            Size.Width = 200.000000000000000000
+            Size.Height = 297.000000000000000000
+            Size.PlatformDefault = False
+            TabOrder = 4
+          end
         end
       end
     end
