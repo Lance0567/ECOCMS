@@ -120,6 +120,7 @@ type
     procedure LoadContractsForMonth(ADate: TDate);
     procedure LoadContractsForExactDay(ADate: TDate);
     procedure EditContract;
+    procedure CreateContract;
     { Private declarations }
   public
     { Public declarations }
@@ -819,10 +820,59 @@ begin
 //  fContracts1.GridContentsResponsive;
 end;
 
+{ Code for creating contract }
+procedure TfrmMain.CreateContract;
+begin
+  Self.Tag := 0;
+
+  // Hide other components
+  HideFrames;
+  fCreateContract1.lTreatmentPhaseW.Visible := false;
+  fCreateContract1.lClientSelectionR.Visible := false;
+  fCreateContract1.fPDFCreation1.Visible := false;
+
+  // Show component
+  fCreateContract1.ePartialAmount.Visible := true;
+  fCreateContract1.cbClientSelection.Visible := true;
+  fCreateContract1.cbPaymentStatus.Visible := true;
+
+  // Adjust height
+  fCreateContract1.rClientSelection.Height := 255;
+
+  // Switch tab index
+  tcController.TabIndex := 3;
+  fCreateContract1.Visible := True;
+  fCreateContract1.ScrollBox1.ViewportPosition := PointF(0,0); // reset scroll bar
+
+  // Populate cbClientSelection (ComboBox)
+  fCreateContract1.cbClientSelection.Items.Clear;
+  fCreateContract1.cbClientSelection.Items.Add('Select a client');
+  fCreateContract1.cbClientSelection.ItemIndex := 0;
+  fCreateContract1.cbPaymentStatus.ItemIndex := 0;
+  fCreateContract1.rClientSelection.Height := 135;
+  fCreateContract1.lClientSelectionR.Visible := False;
+  fCreateContract1.rClientData.Visible := False;
+  fCreateContract1.Tag := 0;
+
+  // Empty the Partial payment input
+  fCreateContract1.ePartialAmount.Text := '';
+
+  // Set record status to create
+  fCreateContract1.RecordsStatus := 'Create';
+
+  // Component adjustment
+  fCreateContract1.cbFirstTreatment.Margins.Top := 30;
+  fCreateContract1.gbTreatmentPhases.Height := 115;
+  fCreateContract1.rContractDetails.Height := 635;
+
+  // Checkbox set to check
+  fCreateContract1.cbFirstTreatment.IsChecked := True;
+end;
+
 { Create contract }
 procedure TfrmMain.fContracts1btnTriggerClick(Sender: TObject);
 begin
-  fContracts1btnTriggerClick(Sender);
+  CreateContract;
 end;
 
 // Contract Search Procedure

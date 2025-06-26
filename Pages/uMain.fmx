@@ -170,15 +170,20 @@ object frmMain: TfrmMain
                   OnClick = fDashboard1btnViewAllContractsClick
                 end
                 inherited lytUrgentContracts: TLayout
+                  Margins.Top = 10.000000000000000000
+                  Margins.Bottom = 10.000000000000000000
                   Size.Width = 521.000000000000000000
+                  Size.Height = 277.000000000000000000
                   inherited gUrgentContracts: TGrid
                     Size.Width = 218.000000000000000000
+                    Size.Height = 277.000000000000000000
                     StyledSettings = [Family, Size, Style]
                     Viewport.Width = 216.000000000000000000
-                    Viewport.Height = 265.000000000000000000
+                    Viewport.Height = 245.000000000000000000
                   end
                   inherited lytCalendarH: TLayout
                     Size.Width = 298.000000000000000000
+                    Size.Height = 277.000000000000000000
                     inherited cUrgentContracts: TCalendar
                       Align = Top
                       Size.Width = 298.000000000000000000
@@ -189,8 +194,8 @@ object frmMain: TfrmMain
                     object lCalendarStatus: TLabel
                       Align = Top
                       StyledSettings = [Family, Size, Style]
-                      Margins.Top = 15.000000000000000000
-                      Position.Y = 267.000000000000000000
+                      Margins.Top = 5.000000000000000000
+                      Position.Y = 257.000000000000000000
                       Size.Width = 298.000000000000000000
                       Size.Height = 25.000000000000000000
                       Size.PlatformDefault = False
@@ -562,6 +567,9 @@ object frmMain: TfrmMain
                   inherited lClientSelection: TLabel
                     Size.Width = 516.000000000000000000
                     TextSettings.Font.StyleExt = {00060000000000000004000000}
+                    inherited Label2: TLabel
+                      TabOrder = 3
+                    end
                   end
                   inherited lDescription1: TLabel
                     Size.Width = 516.000000000000000000
