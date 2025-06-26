@@ -33,7 +33,7 @@ object frmMain: TfrmMain
         Size.Width = 617.000000000000000000
         Size.Height = 505.000000000000000000
         Size.PlatformDefault = False
-        TabIndex = 0
+        TabIndex = 2
         TabOrder = 0
         TabPosition = None
         OnChange = tcControllerChange
@@ -51,7 +51,7 @@ object frmMain: TfrmMain
             item
             end>
           TextSettings.Trimming = None
-          IsSelected = True
+          IsSelected = False
           Size.Width = 12.000000000000000000
           Size.Height = 12.000000000000000000
           Size.PlatformDefault = False
@@ -338,7 +338,7 @@ object frmMain: TfrmMain
             item
             end>
           TextSettings.Trimming = None
-          IsSelected = False
+          IsSelected = True
           Size.Width = 12.000000000000000000
           Size.Height = 12.000000000000000000
           Size.PlatformDefault = False
@@ -1205,7 +1205,7 @@ object frmMain: TfrmMain
             TextSettings.Font.Size = 17.000000000000000000
             TextSettings.FontColor = claRed
             Text = '*'
-            TabOrder = 4
+            TabOrder = 3
           end
         end
         object lFullnameR: TLabel
@@ -1260,7 +1260,7 @@ object frmMain: TfrmMain
             TextSettings.Font.Size = 17.000000000000000000
             TextSettings.FontColor = claRed
             Text = '*'
-            TabOrder = 4
+            TabOrder = 3
           end
         end
         object lAddressR: TLabel
@@ -1325,7 +1325,7 @@ object frmMain: TfrmMain
             TextSettings.Font.Size = 17.000000000000000000
             TextSettings.FontColor = claRed
             Text = '*'
-            TabOrder = 4
+            TabOrder = 3
           end
         end
         object lContractPriceR: TLabel
