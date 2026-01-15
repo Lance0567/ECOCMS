@@ -48,7 +48,7 @@ The system focuses on the entire lifecycle of client management—from initial r
   <tr>
     <td width="50%">
       <h3 align="center">Dashboard Analytics</h3>
-      <img src="./assets/screenshot/clients.png" alt="Analytics" width="100%">
+      <img src="./assets/screenshot/dashboard.png" alt="Analytics" width="100%">
     </td>
     <td width="50%">
       <h3 align="center">Client Logs</h3>
