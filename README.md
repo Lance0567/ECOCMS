@@ -15,7 +15,7 @@
     <img src="https://img.shields.io/badge/UI/UX-Modern_VCL-green?style=for-the-badge&logo=windows&logoColor=white" alt="UI" />
   </p>
 
-  <img src="./assets/screenshot/mockup.png" alt="Eco Pro Dashboard" width="100%" height="500px">
+  <img src="./assets/screenshot/mockup.png" alt="Eco Pro Dashboard" width="500px" height="500px">
 
 </div>
 
